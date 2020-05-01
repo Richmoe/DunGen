@@ -27,45 +27,50 @@ class MapTileSet {
         //createAllDirections(imageName: "BaseTile.png", defWallString: "PPPP")
         
         //Top
-        createAllDirections(imageName: "WallN.png", defWallString: "WPPP")
-        createAllDirections(imageName: "WallN.png", defWallString: "SPPP")
+        createAllDirections(imageName: "WallN128.png", defWallString: "WPPP")
+        createAllDirections(imageName: "WallN128.png", defWallString: "SPPP")
  
-        createAllDirections(imageName: "DoorN.png", defWallString: "DPPP")
+        createAllDirections(imageName: "DoorN128.png", defWallString: "DPPP")
         
         
         //Corner
-        createAllDirections(imageName: "WallNE.png", defWallString: "WWPP")
-        createAllDirections(imageName: "WallNE.png", defWallString: "SWPP")
-        createAllDirections(imageName: "WallNE.png", defWallString: "WSPP")
+        createAllDirections(imageName: "WallNW128.png", defWallString: "WPPW")
+        createAllDirections(imageName: "WallNW128.png", defWallString: "SPPW")
+        createAllDirections(imageName: "WallNW128.png", defWallString: "WPPS")
 
-        createAllDirections(imageName: "DoorNwE.png", defWallString: "DWPP")
-        createAllDirections(imageName: "WallNdE.png", defWallString: "WDPP")
+        createAllDirections(imageName: "DoorNwW128.png", defWallString: "DPPW")
+        createAllDirections(imageName: "DoorNwE128.png", defWallString: "DWPP")
         
         
         //Top & Bottom
-        createAllDirections(imageName: "WallNS.png", defWallString: "WPWP")
-        createAllDirections(imageName: "WallNS.png", defWallString: "SPWP") //This should cover Secret N and Secet S
+        createAllDirections(imageName: "WallNS128.png", defWallString: "WPWP")
+        createAllDirections(imageName: "WallNS128.png", defWallString: "SPWP") //This should cover Secret N and Secet S
         
-        createAllDirections(imageName: "DoorNwS.png", defWallString: "DPWP") //This should cover Door N and Door S
+        createAllDirections(imageName: "DoorNwS128.png", defWallString: "DPWP") //This should cover Door N and Door S
         
         
         //3 wall
-        createAllDirections(imageName: "WallNES.png", defWallString: "WWWP")
-        createAllDirections(imageName: "WallNES.png", defWallString: "SWWP")
-        createAllDirections(imageName: "WallNES.png", defWallString: "WSWP")
-        createAllDirections(imageName: "WallNES.png", defWallString: "WWSP")
+        createAllDirections(imageName: "WallNEW128.png", defWallString: "WWPW")
+        createAllDirections(imageName: "WallNEW128.png", defWallString: "SWPW")
+        createAllDirections(imageName: "WallNEW128.png", defWallString: "WSPW")
+        createAllDirections(imageName: "WallNEW128.png", defWallString: "WWPS")
         
-        createAllDirections(imageName: "DoorENS.png", defWallString: "WDWP")
+        //Door in middle
+        createAllDirections(imageName: "DoorNwEW128.png", defWallString: "DWPW")
         
-        createAllDirections(imageName: "WallNEdW.png", defWallString: "WWPD")
-        createAllDirections(imageName: "WallNWdE.png", defWallString: "WDPW")
+        createAllDirections(imageName: "DoorNwSW128.png", defWallString: "DPWW")
+        createAllDirections(imageName: "DoorNwES128.png", defWallString: "DWWP")
+  
         
         //4 wall
-        createAllDirections(imageName: "WallNESdW.png", defWallString: "WDWW")
+        createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWWW")
+         createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWWS")
+            createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWSW")
+            createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DSWW")
         
         //stairs
-        createAllDirections(imageName: "StairUpS.png", defWallString: "+WWW")
-        createAllDirections(imageName: "StairsNdown.png", defWallString: "WW-W")
+        createAllDirections(imageName: "StairUpS128.png", defWallString: "+WWW") //Note code doesn't match file name
+        createAllDirections(imageName: "StairDownS128.png", defWallString: "WW-W")
 
     }
 

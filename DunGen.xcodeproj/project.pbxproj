@@ -15,7 +15,11 @@
 		9739B51D245A74B300C043B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9739B51B245A74B300C043B7 /* Main.storyboard */; };
 		9739B51F245A74B500C043B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9739B51E245A74B500C043B7 /* Assets.xcassets */; };
 		9739B522245A74B500C043B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9739B520245A74B500C043B7 /* LaunchScreen.storyboard */; };
-		9739B52A245A751D00C043B7 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 9739B529245A751D00C043B7 /* Model */; };
+		977E0A50245CE35800AC41B1 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A4F245CE35800AC41B1 /* MapModel.swift */; };
+		977E0A52245CE36B00AC41B1 /* MapBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A51245CE36B00AC41B1 /* MapBlockModel.swift */; };
+		977E0A54245CE36D00AC41B1 /* MapTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A53245CE36D00AC41B1 /* MapTypes.swift */; };
+		977E0A56245CE36E00AC41B1 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A55245CE36E00AC41B1 /* PlayerModel.swift */; };
+		977E0A59245CE37100AC41B1 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A58245CE37100AC41B1 /* RoomModel.swift */; };
 		97BCDC63245C759700D7C191 /* MapTileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC61245C759700D7C191 /* MapTileSet.swift */; };
 		97BCDC64245C759700D7C191 /* MapGenRand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC62245C759700D7C191 /* MapGenRand.swift */; };
 		97BCDC66245C75A800D7C191 /* DungeonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC65245C75A800D7C191 /* DungeonScene.swift */; };
@@ -32,7 +36,11 @@
 		9739B51E245A74B500C043B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9739B521245A74B500C043B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9739B523245A74B500C043B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9739B529245A751D00C043B7 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
+		977E0A4F245CE35800AC41B1 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		977E0A51245CE36B00AC41B1 /* MapBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBlockModel.swift; sourceTree = "<group>"; };
+		977E0A53245CE36D00AC41B1 /* MapTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTypes.swift; sourceTree = "<group>"; };
+		977E0A55245CE36E00AC41B1 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		977E0A58245CE37100AC41B1 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		97BCDC61245C759700D7C191 /* MapTileSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTileSet.swift; sourceTree = "<group>"; };
 		97BCDC62245C759700D7C191 /* MapGenRand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapGenRand.swift; sourceTree = "<group>"; };
 		97BCDC65245C75A800D7C191 /* DungeonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonScene.swift; sourceTree = "<group>"; };
@@ -68,7 +76,6 @@
 		9739B510245A74B300C043B7 /* DunGen */ = {
 			isa = PBXGroup;
 			children = (
-				9739B529245A751D00C043B7 /* Model */,
 				9739B511245A74B300C043B7 /* AppDelegate.swift */,
 				9739B513245A74B300C043B7 /* GameScene.sks */,
 				97BCDC65245C75A800D7C191 /* DungeonScene.swift */,
@@ -78,11 +85,24 @@
 				97BCDC62245C759700D7C191 /* MapGenRand.swift */,
 				97BCDC61245C759700D7C191 /* MapTileSet.swift */,
 				9739B51B245A74B300C043B7 /* Main.storyboard */,
+				977E0A5B245CE3C700AC41B1 /* Models */,
 				9739B51E245A74B500C043B7 /* Assets.xcassets */,
 				9739B520245A74B500C043B7 /* LaunchScreen.storyboard */,
 				9739B523245A74B500C043B7 /* Info.plist */,
 			);
 			path = DunGen;
+			sourceTree = "<group>";
+		};
+		977E0A5B245CE3C700AC41B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				977E0A4F245CE35800AC41B1 /* MapModel.swift */,
+				977E0A51245CE36B00AC41B1 /* MapBlockModel.swift */,
+				977E0A53245CE36D00AC41B1 /* MapTypes.swift */,
+				977E0A55245CE36E00AC41B1 /* PlayerModel.swift */,
+				977E0A58245CE37100AC41B1 /* RoomModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +163,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9739B52A245A751D00C043B7 /* Model in Resources */,
 				9739B51D245A74B300C043B7 /* Main.storyboard in Resources */,
 				9739B514245A74B300C043B7 /* GameScene.sks in Resources */,
 				9739B51F245A74B500C043B7 /* Assets.xcassets in Resources */,
@@ -159,10 +178,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				977E0A56245CE36E00AC41B1 /* PlayerModel.swift in Sources */,
+				977E0A52245CE36B00AC41B1 /* MapBlockModel.swift in Sources */,
 				9739B518245A74B300C043B7 /* GameScene.swift in Sources */,
+				977E0A54245CE36D00AC41B1 /* MapTypes.swift in Sources */,
 				9739B51A245A74B300C043B7 /* GameViewController.swift in Sources */,
+				977E0A59245CE37100AC41B1 /* RoomModel.swift in Sources */,
 				9739B512245A74B300C043B7 /* AppDelegate.swift in Sources */,
 				97BCDC64245C759700D7C191 /* MapGenRand.swift in Sources */,
+				977E0A50245CE35800AC41B1 /* MapModel.swift in Sources */,
 				97BCDC63245C759700D7C191 /* MapTileSet.swift in Sources */,
 				97BCDC66245C75A800D7C191 /* DungeonScene.swift in Sources */,
 			);
