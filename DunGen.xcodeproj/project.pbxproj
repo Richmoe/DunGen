@@ -16,6 +16,9 @@
 		9739B51F245A74B500C043B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9739B51E245A74B500C043B7 /* Assets.xcassets */; };
 		9739B522245A74B500C043B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9739B520245A74B500C043B7 /* LaunchScreen.storyboard */; };
 		9739B52A245A751D00C043B7 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 9739B529245A751D00C043B7 /* Model */; };
+		97BCDC63245C759700D7C191 /* MapTileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC61245C759700D7C191 /* MapTileSet.swift */; };
+		97BCDC64245C759700D7C191 /* MapGenRand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC62245C759700D7C191 /* MapGenRand.swift */; };
+		97BCDC66245C75A800D7C191 /* DungeonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC65245C75A800D7C191 /* DungeonScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		9739B521245A74B500C043B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9739B523245A74B500C043B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9739B529245A751D00C043B7 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
+		97BCDC61245C759700D7C191 /* MapTileSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTileSet.swift; sourceTree = "<group>"; };
+		97BCDC62245C759700D7C191 /* MapGenRand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapGenRand.swift; sourceTree = "<group>"; };
+		97BCDC65245C75A800D7C191 /* DungeonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +71,12 @@
 				9739B529245A751D00C043B7 /* Model */,
 				9739B511245A74B300C043B7 /* AppDelegate.swift */,
 				9739B513245A74B300C043B7 /* GameScene.sks */,
+				97BCDC65245C75A800D7C191 /* DungeonScene.swift */,
 				9739B515245A74B300C043B7 /* Actions.sks */,
 				9739B517245A74B300C043B7 /* GameScene.swift */,
 				9739B519245A74B300C043B7 /* GameViewController.swift */,
+				97BCDC62245C759700D7C191 /* MapGenRand.swift */,
+				97BCDC61245C759700D7C191 /* MapTileSet.swift */,
 				9739B51B245A74B300C043B7 /* Main.storyboard */,
 				9739B51E245A74B500C043B7 /* Assets.xcassets */,
 				9739B520245A74B500C043B7 /* LaunchScreen.storyboard */,
@@ -153,6 +162,9 @@
 				9739B518245A74B300C043B7 /* GameScene.swift in Sources */,
 				9739B51A245A74B300C043B7 /* GameViewController.swift in Sources */,
 				9739B512245A74B300C043B7 /* AppDelegate.swift in Sources */,
+				97BCDC64245C759700D7C191 /* MapGenRand.swift in Sources */,
+				97BCDC63245C759700D7C191 /* MapTileSet.swift in Sources */,
+				97BCDC66245C75A800D7C191 /* DungeonScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
