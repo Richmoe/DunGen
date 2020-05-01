@@ -15,6 +15,7 @@
 		9739B51D245A74B300C043B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9739B51B245A74B300C043B7 /* Main.storyboard */; };
 		9739B51F245A74B500C043B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9739B51E245A74B500C043B7 /* Assets.xcassets */; };
 		9739B522245A74B500C043B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9739B520245A74B500C043B7 /* LaunchScreen.storyboard */; };
+		9739B52A245A751D00C043B7 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 9739B529245A751D00C043B7 /* Model */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9739B51E245A74B500C043B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9739B521245A74B500C043B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9739B523245A74B500C043B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9739B529245A751D00C043B7 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		9739B510245A74B300C043B7 /* DunGen */ = {
 			isa = PBXGroup;
 			children = (
+				9739B529245A751D00C043B7 /* Model */,
 				9739B511245A74B300C043B7 /* AppDelegate.swift */,
 				9739B513245A74B300C043B7 /* GameScene.sks */,
 				9739B515245A74B300C043B7 /* Actions.sks */,
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9739B52A245A751D00C043B7 /* Model in Resources */,
 				9739B51D245A74B300C043B7 /* Main.storyboard in Resources */,
 				9739B514245A74B300C043B7 /* GameScene.sks in Resources */,
 				9739B51F245A74B500C043B7 /* Assets.xcassets in Resources */,
