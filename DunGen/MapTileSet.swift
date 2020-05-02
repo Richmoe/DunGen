@@ -44,12 +44,15 @@ class MapTileSet {
         createAllDirections(imageName: "DoorNwW128.png", defWallString: "DPPW")
         createAllDirections(imageName: "DoorNwE128.png", defWallString: "DWPP")
         
+        createAllDirections(imageName: "DoorNE128.png", defWallString: "DDPP")
+        
         
         //Top & Bottom
         createAllDirections(imageName: "WallNS128.png", defWallString: "WPWP")
         createAllDirections(imageName: "WallNS128.png", defWallString: "SPWP") //This should cover Secret N and Secet S
         
         createAllDirections(imageName: "DoorNwS128.png", defWallString: "DPWP") //This should cover Door N and Door S
+        createAllDirections(imageName: "DoorNS128.png", defWallString: "DPDP")
         
         
         //3 wall
@@ -63,6 +66,15 @@ class MapTileSet {
         
         createAllDirections(imageName: "DoorNwSW128.png", defWallString: "DPWW")
         createAllDirections(imageName: "DoorNwES128.png", defWallString: "DWWP")
+        
+        //2 door
+        createAllDirections(imageName: "DoorNEwS128.png", defWallString: "DDWP")
+        
+        createAllDirections(imageName: "DoorNEwW128.png", defWallString: "DDPW")
+        
+        createAllDirections(imageName: "DoorNSwE128.png", defWallString: "DWDP")
+        
+        
   
         
         //4 wall
@@ -73,7 +85,7 @@ class MapTileSet {
         
         //stairs
         createAllDirections(imageName: "StairUpS128.png", defWallString: "+WWW") //Note code doesn't match file name
-        createAllDirections(imageName: "StairDownS128.png", defWallString: "WW-W")
+        createAllDirections(imageName: "StairDS128.png", defWallString: "WW-W")
 
     }
 

@@ -182,7 +182,7 @@ class Room {
         #endif
 
         
-        print("No space for exit on \(exit.direction) wall. Aborting.")
+        //print("No space for exit on \(exit.direction) wall. Aborting.")
         return MapPoint(row: -1, col: -1)
     }
     

@@ -12,6 +12,8 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    var currentDungeon: DungeonScene!
+    
     @IBOutlet weak var TestButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,9 @@ class GameViewController: UIViewController {
                 
                 // Present the scene
                 view.presentScene(scene)
+                
+                currentDungeon = scene
+                
             }
             
             view.ignoresSiblingOrder = true
@@ -47,6 +52,7 @@ class GameViewController: UIViewController {
 
     @IBAction func testButtonPressed(_ sender: Any) {
         print ("Here I am!")
+        currentDungeon.testRebuildMap()
     }
     
     override var prefersStatusBarHidden: Bool {

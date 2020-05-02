@@ -89,6 +89,19 @@ class DungeonScene: SKScene {
 
     }
     
+    func testRebuildMap() {
+        map = Map()
+        
+        mapLayer.removeFromParent()
+        
+                let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+        
+        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: map.mapWidth, rows: map.mapHeight, tileSize: size)
+        backgroundLayer.addChild(mapLayer)
+        
+                renderMap(map: map)
+    }
+    
     
     func renderMap (map: Map) {
 //        let one = mapLayer.tileSet.tileGroups[0]

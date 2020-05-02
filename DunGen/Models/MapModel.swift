@@ -40,7 +40,7 @@ class Map {
          9EEZ
          
          */
-        //seedString = "CA4U"
+        //seedString = "LE6F"
         
         MapGenRand.sharedInstance.setSeed(seedString: seedString)
         floor = Array(repeating: Array(repeating: 0, count: mapWidth), count: mapHeight)
@@ -109,10 +109,10 @@ class Map {
         let moves = getPassageMoves()
         
         if (moves.count == 0) {
-            print ("room?")
+            //print ("room?")
             generateRoom(from: from, entrance: pass)
         } else {
-            print("moves: \(moves)")
+            //print("moves: \(moves)")
             doMoves(passageMoves: moves, fromPassage: pass, fromPt: from)
         }
         
@@ -148,6 +148,7 @@ class Map {
             case 19,20:
 
                 //bias dead-ends later in the map. Don't want one right at the beginning.
+                print ("In deaded - depth \(depth)")
                 if (depth > 10) {
                     if (MapGenRand.sharedInstance.getRand(to: 10) == 1) {
                         passageMoves = [TileCode.passage, TileCode.secretEnd]
@@ -164,7 +165,8 @@ class Map {
                 passageMoves = [TileCode.passage, TileCode.passageLeft, TileCode.passage]
             case 29...38:
                 //Room
-                print("room")
+                //print("room")
+                break
                 
             default:
                 print("stairs")
@@ -202,7 +204,7 @@ class Map {
             //Check offScreen
             if (offScreen(point: curPoint)) {
                 
-                print ("OFF SCREEN at \(curPoint)")
+                //print ("OFF SCREEN at \(curPoint)")
                 //Here's where we cap it off
                 mapBlocks[prevPt.row][prevPt.col].addWall(wallDir: curHeading.direction)
                 
@@ -212,7 +214,7 @@ class Map {
             //Check Overlap
             if (self.mapBlocks[curPoint.row][curPoint.col].tileCode != TileCode.null) {
                 //Here's where we check for what to do
-                print("Overlap! at \(curPoint)")
+                //print("Overlap! at \(curPoint)")
                 
 //                if (curPoint.row == 1) {
 //                    print("Break!")
@@ -220,7 +222,7 @@ class Map {
                 
                 //Check to see what the block has in my direction:
                 let code = self.mapBlocks[curPoint.row][curPoint.col].getWallCode(wallDir: curHeading.direction.opposite())
-                print ("the wall code at the collision is: \(code)")
+                //print ("the wall code at the collision is: \(code)")
                 
                 //For now just mirror that:
                 mapBlocks[prevPt.row][prevPt.col].addCode(codeDir: curHeading.direction, code: code)
@@ -471,12 +473,12 @@ class Map {
         
         //check offscreen
         if (offScreen(ptLL: room.at, ptUR: room.at + MapPoint(row: room.height - 1, col: room.width - 1))) {
-            print ("Offscreen! Aborting")
+            //print ("Offscreen! Aborting")
             return false
         }
         
         if (doesOverlap(room: room)) {
-            print("Overlapping! Aborting")
+            //print("Overlapping! Aborting")
             return false
         }
         
@@ -663,7 +665,7 @@ class Map {
                 let cm = c + room.at.col
                 if (self.mapBlocks[rm][cm].tileCode != TileCode.null) {
                     //if (floor[rm][cm] > 0) {
-                    print("Overlap at r:c \(rm):\(cm)")
+                    //print("Overlap at r:c \(rm):\(cm)")
                     return true
                 }
             }
@@ -677,7 +679,7 @@ class Map {
             for c in 0...(layout[0].count - 1) {
                 let cm = c + at.col
                 if (floor[rm][cm] > 0) { //TODO: we could check pixels in source...
-                    print("Overlap at r:c \(rm):\(cm)")
+                    //print("Overlap at r:c \(rm):\(cm)")
                 }
             }
         }
