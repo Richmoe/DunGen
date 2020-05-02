@@ -70,9 +70,9 @@ class DungeonScene: SKScene {
         createAndRenderMap()
         self.camera = camera
         
-        //scaleToFit()
+        scaleToFit()
         
-        self.camera!.setScale(0.25)
+        //self.camera!.setScale(0.25)
         
 
     }
@@ -80,7 +80,7 @@ class DungeonScene: SKScene {
 
     func createAndRenderMap() {
 
-        let size = CGSize(width: 64, height: 64)
+        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
 
         self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: map.mapWidth, rows: map.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)

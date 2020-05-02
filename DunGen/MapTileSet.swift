@@ -15,10 +15,13 @@ class MapTileSet {
     var tileSet : SKTileSet
     var tileDict = [String: Int]()
     
+    static let tileWidth = 128
+    static let tileHeight = 128
+    
     
     init() {
         print ("Initing MapTileSet")
-        let tileTexture = SKTexture(imageNamed: "BaseTile.png")
+        let tileTexture = SKTexture(imageNamed: "BaseTile128.png")
         let tileDef = SKTileDefinition(texture: tileTexture)
         let tileGroup = SKTileGroup(tileDefinition: tileDef)
         self.tileSet =  SKTileSet(tileGroups: [tileGroup])
