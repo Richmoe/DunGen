@@ -12,6 +12,7 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var TestButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +45,10 @@ class GameViewController: UIViewController {
         }
     }
 
+    @IBAction func testButtonPressed(_ sender: Any) {
+        print ("Here I am!")
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
