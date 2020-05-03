@@ -79,6 +79,8 @@ class MapTileSet {
         
         //4 wall
         createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWWW")
+        
+        createAllDirections(imageName: "DoorNwESW128.png", defWallString: "SWWW") //Note this this a secret door but the only time you find yourself in this tile is if you have already come through the secret door, so just use a regular door image.
          createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWWS")
             createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWSW")
             createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DSWW")
