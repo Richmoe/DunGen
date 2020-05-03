@@ -43,7 +43,7 @@ class Map {
          9EEZ
          
          */
-        //seedString = "LE6F"
+        //seedString = "X8LZ"
         
         MapGenRand.sharedInstance.setSeed(seedString: seedString)
         floor = Array(repeating: Array(repeating: 0, count: mapWidth), count: mapHeight)

@@ -10,15 +10,18 @@ import SpriteKit
 import GameplayKit
 
 class DungeonScene: SKScene {
-
+    
     
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
     var backgroundLayer: SKTileMapNode!
-    var dungeonLayer: SKTileMapNode!
-    var mapLayer: SKTileMapNode!
 
+    var mapLayer: SKTileMapNode!
+   
+        var debugLayer: SKTileMapNode!
+    
+    
     var tileDict = [Int: Int]()
     
     private var lastUpdateTime : TimeInterval = 0
@@ -29,57 +32,52 @@ class DungeonScene: SKScene {
     private var mapTileSet = MapTileSet()
     
     var player1: SKSpriteNode!
-
+    
+    var debugLayerOn = false
+    
     
     override func sceneDidLoad() {
-
+        
         self.lastUpdateTime = 0
         guard let backgroundLayer = childNode(withName: "Background") as? SKTileMapNode else {
             fatalError("Background node not loaded")
         }
         
-//        guard let dungeonLayer = backgroundLayer.childNode(withName: "Dungeon") as? SKTileMapNode else {
-//            fatalError("Background node not loaded")
-//        }
+        //        guard let dungeonLayer = backgroundLayer.childNode(withName: "Dungeon") as? SKTileMapNode else {
+        //            fatalError("Background node not loaded")
+        //        }
         
         
         //map.printFloor()
-    
         
-//        guard let gridLayer = childNode(withName: "grid") as? SKTileMapNode else {
-//            fatalError("Grid node not loaded")
-//        }
-//
-//        guard let selectionLayer = childNode(withName: "selection") as? SKTileMapNode else {
-//            fatalError("Selection node not loaded")
-//        }
-//
+        
+        //        guard let gridLayer = childNode(withName: "grid") as? SKTileMapNode else {
+        //            fatalError("Grid node not loaded")
+        //        }
+        //
+        //        guard let selectionLayer = childNode(withName: "selection") as? SKTileMapNode else {
+        //            fatalError("Selection node not loaded")
+        //        }
+        //
         guard let camera = self.childNode(withName: "GameCamera") as? SKCameraNode else {
             fatalError("Camera node not loaded")
         }
         
         self.backgroundLayer = backgroundLayer
-        //self.dungeonLayer = dungeonLayer
-        //self.gridLayer = gridLayer
-        //self.selectionLayer = selectionLayer
-        
-        
-        //temp
-        
-        
-        //testMap(map: map)
-        //test2()
+
         createAndRenderMap()
         self.camera = camera
         
-        //scaleToFit()
+        scaleToFit()
         
         //self.camera!.setScale(0.25)
         createPlayers()
         
         moveToTile(map.entrance)
         
-
+        createDebugLayer()
+        
+        
     }
     
     func createPlayers() {
@@ -92,16 +90,45 @@ class DungeonScene: SKScene {
         addChild(player1)
     }
     
-
+    
     func createAndRenderMap() {
-
+        
         let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
-
+        
         self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: map.mapWidth, rows: map.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)
-
+        
         renderMap(map: map)
-
+        
+    }
+    
+    func createDebugLayer() {
+        
+        debugLayerOn = true
+        mapTileSet.createDebugTiles()
+        
+        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+        
+        debugLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: map.mapWidth, rows: map.mapHeight, tileSize: size)
+        backgroundLayer.addChild(debugLayer)
+        
+        for row in 0..<map.mapBlocks.count {
+            for col in (0..<map.mapBlocks[row].count) {
+                
+                let tileBlock = (map.mapBlocks[row][col])
+                if (tileBlock.tileCode == TileCode.floor) {
+                
+                    renderTile(layer: debugLayer, code: "DEBUG_ROOM", col: col, row: row)
+                }
+                
+                //Secret will override:
+                if (tileBlock.wallString.contains("S")) {
+                    renderTile(layer: debugLayer, code: "Sxxx", col: col, row: row)
+                }
+                
+            }
+        }
+        
     }
     
     func testRebuildMap() {
@@ -109,55 +136,48 @@ class DungeonScene: SKScene {
         
         mapLayer.removeFromParent()
         
-                let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
         
         self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: map.mapWidth, rows: map.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)
         
-                renderMap(map: map)
+        renderMap(map: map)
+        
+        if (debugLayerOn) {
+            debugLayer.removeFromParent()
+            createDebugLayer()
+        }
     }
     
     
     func renderMap (map: Map) {
-//        let one = mapLayer.tileSet.tileGroups[0]
-//
-//        let zero = mapLayer.tileSet.tileGroups[2]
-//
-//        let two = SKTileSet(named: "DungeonSet")!.tileGroups[1]
         
-        #if false
-        var counter = 0
-        for r in 0...7 {
-            for c in 0...7 {
-                counter = min(counter + 1, mapLayer.tileSet.tileGroups.count-1)
-                mapLayer.setTileGroup(mapLayer.tileSet.tileGroups[counter], forColumn: c * 2, row: r * 2)
-            }
-        }
-        
-        #else
-
         for row in 0..<map.mapBlocks.count {
             for col in (0..<map.mapBlocks[row].count) {
                 
-                let tileID = (map.mapBlocks[row][col])
-
-                    renderTile(tile: tileID, col: col, row: row)
-                    
-                //} else {
-                    //mapLayer.setTileGroup(zero, forColumn: col, row: row)
-                //}
-
-                //            sktm.setTileGroup(tile, forColumn: x, row: y)
+                let tileBlock = (map.mapBlocks[row][col])
+                
+                renderTile(tile: tileBlock, col: col, row: row)
+                
+                
             }
-
         }
-        #endif
-
+    }
+    
+    func renderTile(layer: SKTileMapNode, code: String, col: Int, row: Int) {
+        //replace
+        if let groupIx = mapTileSet.tileDict[code] {
+            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
+            layer.setTileGroup(mapLayer.tileSet.tileGroups[groupIx], forColumn: col, row: row)
+        } else {
+            if (code != "0000") {
+                print ("Can't find tile: \(code) at rc: \(row), \(col)")
+            }
+        }
         
     }
     
     func renderTile(tile: MapBlock, col: Int, row: Int) {
-        
         
         //replace 
         if let groupIx = mapTileSet.tileDict[tile.wallString] {
@@ -178,27 +198,27 @@ class DungeonScene: SKScene {
     }
     
     func touchDown(atPoint pos : CGPoint) {
-//        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-//            n.position = pos
-//            n.strokeColor = SKColor.green
-//            self.addChild(n)
-//        }
+        //        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
+        //            n.position = pos
+        //            n.strokeColor = SKColor.green
+        //            self.addChild(n)
+        //        }
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-//        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-//            n.position = pos
-//            n.strokeColor = SKColor.blue
-//            self.addChild(n)
-//        }
+        //        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
+        //            n.position = pos
+        //            n.strokeColor = SKColor.blue
+        //            self.addChild(n)
+        //        }
     }
     
     func touchUp(atPoint pos : CGPoint) {
-//        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-//            n.position = pos
-//            n.strokeColor = SKColor.red
-//            self.addChild(n)
-//        }
+        //        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
+        //            n.position = pos
+        //            n.strokeColor = SKColor.red
+        //            self.addChild(n)
+        //        }
         
         #if false
         map.nextInQueue()
@@ -206,14 +226,14 @@ class DungeonScene: SKScene {
         #else
         print("---")
         print ("TouchUp: \(pos)")
-
+        
         print("Camera was at: \(camera!.position)")
         
-//        let delta = CGPoint(x: pos.x - cameraNode!.position.x, y: pos.y - cameraNode!.position.y)
-//        print ("Delta: \(delta)")
+        //        let delta = CGPoint(x: pos.x - cameraNode!.position.x, y: pos.y - cameraNode!.position.y)
+        //        print ("Delta: \(delta)")
         let norm = normalize(pt: pos - camera!.position)
-//        moveDir(dv: normalize(pt: delta))
-//
+        //        moveDir(dv: normalize(pt: delta))
+        //
         moveDir(dirPt: norm)
         
         let tileR = backgroundLayer.tileRowIndex(fromPosition: pos)
@@ -232,10 +252,10 @@ class DungeonScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if let label = self.label {
-//            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-//        }
-//
+        //        if let label = self.label {
+        //            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+        //        }
+        //
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
     
@@ -273,7 +293,7 @@ class DungeonScene: SKScene {
     
     
     func moveDir(dirPt: CGPoint) {
-      
+        
         //Round the vector to get nice even numbers:
         let dx: Int = Int(dirPt.x.rounded())
         let dy: Int = Int(dirPt.y.rounded())
@@ -304,7 +324,7 @@ class DungeonScene: SKScene {
         return pt
         
     }
-     
+    
     func scaleToFit() {
         
         let w = self.size.width
@@ -327,7 +347,7 @@ class DungeonScene: SKScene {
     
     
     func getTileData(atCol: Int, row: Int) {
-        let tileDef : SKTileDefinition! = dungeonLayer.tileDefinition(atColumn: atCol, row: row)
+        let tileDef : SKTileDefinition! = mapLayer.tileDefinition(atColumn: atCol, row: row)
         if let userData = tileDef.userData {
             //get information from it here and do what we want
         }

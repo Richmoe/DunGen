@@ -128,8 +128,17 @@ class MapTileSet {
             tileSet.tileGroups.append(SKTileGroup(tileDefinition: tileDef))
             tileDict[wallString] = tileDict.count
         }
-
+    }
+    
+    func createDebugTiles() {
         
+        let tileTexture = SKTexture(imageNamed: "DebugRoom128.png")
+        let tileDef = SKTileDefinition(texture: tileTexture)
+
+        tileSet.tileGroups.append(SKTileGroup(tileDefinition: tileDef))
+        tileDict["DEBUG_ROOM"] = tileDict.count
+
+        createAllDirections(imageName: "DebugSecretN128.png", defWallString: "Sxxx")
     }
     
 }
