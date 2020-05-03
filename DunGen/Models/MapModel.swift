@@ -30,6 +30,9 @@ class Map {
     
     var rooms = [Room]()
     
+    var entrance : MapPoint
+    var entranceLanding : MapPoint
+    
     
     init() {
         
@@ -47,7 +50,10 @@ class Map {
         
         mapBlocks = Array(repeating: Array(repeating: MapBlock(), count: mapWidth), count: mapHeight)
         
-        generateStart(at: MapPoint(row: 1, col: Int(mapWidth / 2)))
+        
+        entrance = MapPoint(row: 1, col: Int(mapWidth / 2))
+        entranceLanding = entrance + MapPoint(row: 1, col: 0)
+        generateStart(at: entrance)
         processQueue()
         fixUpMap()
     }

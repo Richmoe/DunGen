@@ -27,6 +27,8 @@ class DungeonScene: SKScene {
     
     private var mapBaseLayer = [[MapBlock]]()
     private var mapTileSet = MapTileSet()
+    
+    var player1: SKSpriteNode!
 
     
     override func sceneDidLoad() {
@@ -70,11 +72,24 @@ class DungeonScene: SKScene {
         createAndRenderMap()
         self.camera = camera
         
-        scaleToFit()
+        //scaleToFit()
         
         //self.camera!.setScale(0.25)
+        createPlayers()
+        
+        moveToTile(map.entrance)
         
 
+    }
+    
+    func createPlayers() {
+        player1 = SKSpriteNode(imageNamed: "TestAvatar")
+        player1.name = "Test"
+        
+        
+        let pos = getPtFromTilePt(map.entranceLanding)
+        player1.position = pos
+        addChild(player1)
     }
     
 
@@ -278,6 +293,18 @@ class DungeonScene: SKScene {
     }
     
     
+    func moveToTile(_ tile: MapPoint) {
+        let movePt = backgroundLayer.centerOfTile(atColumn: tile.col, row: tile.row)
+        print ("moveToTile: \(tile.col), \(tile.row): \(movePt)")
+        camera!.position = movePt
+    }
+    
+    func getPtFromTilePt(_ tile: MapPoint) -> CGPoint {
+        let pt = backgroundLayer.centerOfTile(atColumn: tile.col, row: tile.row)
+        return pt
+        
+    }
+     
     func scaleToFit() {
         
         let w = self.size.width
