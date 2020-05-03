@@ -35,6 +35,9 @@ class DungeonScene: SKScene {
     
     var debugLayerOn = false
     
+    let cameraOffset = 400.0
+    var currentScale : CGFloat = 1.0
+    
     
     override func sceneDidLoad() {
         
@@ -309,14 +312,17 @@ class DungeonScene: SKScene {
     func moveToTile(col: Int, row: Int) {
         let movePt = backgroundLayer.centerOfTile(atColumn: col, row: row)
         print ("moveToTile: \(col), \(row): \(movePt)")
-        camera!.position = movePt
+        camera!.position = movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale))
     }
     
     
     func moveToTile(_ tile: MapPoint) {
         let movePt = backgroundLayer.centerOfTile(atColumn: tile.col, row: tile.row)
-        print ("moveToTile: \(tile.col), \(tile.row): \(movePt)")
-        camera!.position = movePt
+        print ("moveToTile: \(tile.col), \(tile.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
+        camera!.position = movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale))
+        print ("Camera position: \(camera!.position)")
+        
+        
     }
     
     func getPtFromTilePt(_ tile: MapPoint) -> CGPoint {
@@ -342,7 +348,9 @@ class DungeonScene: SKScene {
         
         camera!.setScale(1/scale)
         
-        print ("Scaling to \(scale)")
+        currentScale = CGFloat( scale)
+        
+        print ("Scaling to \(scale) , \(currentScale)")
     }
     
     
