@@ -57,6 +57,31 @@ class Map {
         processQueue()
         fixUpMap()
     }
+    // MARK: - Room logic
+    
+    func move(from: MapPoint, dir: Direction) -> (Bool, MapPoint) {
+        
+        let mv = getMoveVector(dir: dir)
+        
+        let toMP = from + mv
+        
+        let toType = mapBlocks[toMP.row][toMP.col]
+        
+        print("Moving to tile: \(toType.tileCode)")
+        
+        if (toType.tileCode == TileCode.null) {
+            return (false, toMP)
+        } else {
+            //Check wall
+            let dirWall = toType.getWallCode(wallDir: dir.opposite())
+            if (dirWall == "W") {
+                return (false, toMP)
+            } else {
+                return (true, toMP)
+            }
+            
+        }
+    }
     
     
     // MARK: - Move Queue

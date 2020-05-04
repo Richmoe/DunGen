@@ -23,7 +23,9 @@ class Player {
     var armorClass: Int
     var hitPoints: Int
     
-    init(name: String, level: Int, experience: Int, armorClass: Int, hitPoints: Int)
+    var avatar: String  //for now, an image
+    
+    init(name: String, level: Int, experience: Int, armorClass: Int, hitPoints: Int, avatar: String)
     {
         self.uid = UUID()
         self.name = name
@@ -31,6 +33,7 @@ class Player {
         self.experience = experience
         self.armorClass = armorClass
         self.hitPoints = hitPoints
+        self.avatar = avatar
         
     }
     

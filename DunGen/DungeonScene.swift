@@ -32,10 +32,11 @@ class DungeonScene: SKScene {
     private var mapTileSet = MapTileSet()
     
     var player1: SKSpriteNode!
+    var party = Party()
     
     var debugLayerOn = false
     
-    let cameraOffset = 400.0
+    let cameraOffset = 0.0
     var currentScale : CGFloat = 1.0
     
     
@@ -71,12 +72,12 @@ class DungeonScene: SKScene {
         createAndRenderMap()
         self.camera = camera
         
-        scaleToFit()
+        //scaleToFit()
         
         //self.camera!.setScale(0.25)
         createPlayers()
         
-        moveToTile(map.entrance)
+        goToTile(map.entrance)
         
         createDebugLayer()
         
@@ -84,13 +85,33 @@ class DungeonScene: SKScene {
     }
     
     func createPlayers() {
-        player1 = SKSpriteNode(imageNamed: "TestAvatar")
-        player1.name = "Test"
         
+//
+//        player1 = SKSpriteNode(imageNamed: "TestAvatar")
+//        player1.name = "Test"
+//
+//
+//        let pos = getPtFromTilePt(map.entranceLanding)
+//        player1.position = pos
+//        addChild(player1)
         
-        let pos = getPtFromTilePt(map.entranceLanding)
-        player1.position = pos
-        addChild(player1)
+        var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "TestAvatar")
+
+        party.addPlayer(p1)
+        
+        p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "TestAvatar")
+        party.addPlayer(p1)
+        
+        p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "TestAvatar")
+        party.addPlayer(p1)
+        
+        p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "TestAvatar")
+        party.addPlayer(p1)
+        
+        party.initAvatars(onLayer: self)
+        
+        party.renderParty(atPt: getPtFromTilePt(map.entranceLanding), atTile: map.entranceLanding)
+        
     }
     
     
@@ -227,16 +248,14 @@ class DungeonScene: SKScene {
         map.nextInQueue()
         renderMap(map: map)
         #else
+        
+        
         print("---")
-        print ("TouchUp: \(pos)")
+
+        let partyAt = backgroundLayer.centerOfTile(atColumn: party.at.col, row: party.at.row)
         
-        print("Camera was at: \(camera!.position)")
-        
-        //        let delta = CGPoint(x: pos.x - cameraNode!.position.x, y: pos.y - cameraNode!.position.y)
-        //        print ("Delta: \(delta)")
-        let norm = normalize(pt: pos - camera!.position)
-        //        moveDir(dv: normalize(pt: delta))
-        //
+        let norm = normalize(pt: pos - partyAt) //- camera!.position)
+
         moveDir(dirPt: norm)
         
         let tileR = backgroundLayer.tileRowIndex(fromPosition: pos)
@@ -291,6 +310,11 @@ class DungeonScene: SKScene {
             entity.update(deltaTime: dt)
         }
         
+        let movePt = backgroundLayer.centerOfTile(atColumn: party.at.col, row: party.at.row)
+        camera!.position = (movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
+        
+        
+        
         self.lastUpdateTime = currentTime
     }
     
@@ -301,28 +325,68 @@ class DungeonScene: SKScene {
         let dx: Int = Int(dirPt.x.rounded())
         let dy: Int = Int(dirPt.y.rounded())
         
-        //get current tile
-        let tR = backgroundLayer.tileRowIndex(fromPosition: camera!.position)
-        let tC = backgroundLayer.tileColumnIndex(fromPosition: camera!.position)
+        var dir: Direction?
         
-        moveToTile(col: tC + dx, row: tR + dy)
+        //Redo this but for now:
+        if (dx == 1 ) {
+            if (dy == 1) {
+                dir = Direction.northeast
+            } else if (dy == -1){
+                dir = Direction.southeast
+            } else {
+                dir = Direction.east
+            }
+        } else if (dx == -1) {
+            if (dy == 1) {
+                dir = Direction.northwest
+            } else if (dy == -1) {
+                dir = Direction.southwest
+            } else {
+                dir = Direction.west
+            }
+        } else { //dx == 0
+            if (dy == 1) {
+                dir = Direction.north
+            } else if (dy == -1) {
+                dir = Direction.south
+            } else {
+                //No move
+            }
+        }
+
+        if let d = dir {
+            move(from: party.at, dir: d)
+        } else {
+            print ("No move!")
+        }
     }
     
     
-    func moveToTile(col: Int, row: Int) {
-        let movePt = backgroundLayer.centerOfTile(atColumn: col, row: row)
-        print ("moveToTile: \(col), \(row): \(movePt)")
-        camera!.position = movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale))
+    func move(from: MapPoint, dir: Direction) {
+        
+        //first check to see if we can move
+        let (canMove, newSpot) = map.move(from: from, dir: dir)
+        
+        //Then rerender map?
+        if (canMove) {
+            
+            //Do the move
+            let movePt = backgroundLayer.centerOfTile(atColumn: newSpot.col, row: newSpot.row)
+            print ("moveToTile: \(newSpot.col), \(newSpot.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
+            
+            party.renderParty(atPt: movePt, atTile: MapPoint(row: newSpot.row, col: newSpot.col))
+            
+            //TODO fog of war?
+        }
+
+        
     }
     
-    
-    func moveToTile(_ tile: MapPoint) {
+    func goToTile(_ tile: MapPoint) {
         let movePt = backgroundLayer.centerOfTile(atColumn: tile.col, row: tile.row)
-        print ("moveToTile: \(tile.col), \(tile.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
-        camera!.position = movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale))
-        print ("Camera position: \(camera!.position)")
+        print ("goToTile: \(tile.col), \(tile.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
         
-        
+        party.renderParty(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
     }
     
     func getPtFromTilePt(_ tile: MapPoint) -> CGPoint {
