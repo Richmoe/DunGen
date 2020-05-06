@@ -32,7 +32,7 @@ class MapTileSet {
         //Top
         createAllDirections(imageName: "WallN128.png", defWallString: "WPPP")
         createAllDirections(imageName: "WallN128.png", defWallString: "SPPP")
- 
+        
         createAllDirections(imageName: "DoorN128.png", defWallString: "DPPP")
         
         
@@ -40,7 +40,7 @@ class MapTileSet {
         createAllDirections(imageName: "WallNW128.png", defWallString: "WPPW")
         createAllDirections(imageName: "WallNW128.png", defWallString: "SPPW")
         createAllDirections(imageName: "WallNW128.png", defWallString: "WPPS")
-
+        
         createAllDirections(imageName: "DoorNwW128.png", defWallString: "DPPW")
         createAllDirections(imageName: "DoorNwE128.png", defWallString: "DWPP")
         
@@ -75,35 +75,33 @@ class MapTileSet {
         createAllDirections(imageName: "DoorNSwE128.png", defWallString: "DWDP")
         
         
-  
-        
         //4 wall
         createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWWW")
         
         createAllDirections(imageName: "DoorNwESW128.png", defWallString: "SWWW") //Note this this a secret door but the only time you find yourself in this tile is if you have already come through the secret door, so just use a regular door image.
-         createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWWS")
-            createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWSW")
-            createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DSWW")
+        createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWWS")
+        createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DWSW")
+        createAllDirections(imageName: "DoorNwESW128.png", defWallString: "DSWW")
         
         //stairs
         createAllDirections(imageName: "StairUpS128.png", defWallString: "+WWW") //Note code doesn't match file name
         createAllDirections(imageName: "StairDS128.png", defWallString: "WW-W")
-
+        
     }
-
+    
     func createAllDirections(imageName: String, defWallString: String) {
-
+        
         var wallString = defWallString
         let tileTexture = SKTexture(imageNamed: imageName)
         var tileDef = SKTileDefinition(texture: tileTexture)
-
+        
         if (tileDict[wallString] == nil) {
             tileSet.tileGroups.append(SKTileGroup(tileDefinition: tileDef))
             tileDict[wallString] = tileDict.count
         }
-
+        
         wallString.append(wallString.removeFirst())
-
+        
         //Rotate for W:
         tileDef = SKTileDefinition(texture: tileTexture)
         tileDef.rotation = .rotation90
@@ -111,7 +109,7 @@ class MapTileSet {
             tileSet.tileGroups.append(SKTileGroup(tileDefinition: tileDef))
             tileDict[wallString] = tileDict.count
         }
-
+        
         wallString.append(wallString.removeFirst())
         
         //Rotate for S:
@@ -136,10 +134,10 @@ class MapTileSet {
         
         let tileTexture = SKTexture(imageNamed: "DebugRoom128.png")
         let tileDef = SKTileDefinition(texture: tileTexture)
-
+        
         tileSet.tileGroups.append(SKTileGroup(tileDefinition: tileDef))
         tileDict["DEBUG_ROOM"] = tileDict.count
-
+        
         createAllDirections(imageName: "DebugSecretN128.png", defWallString: "Sxxx")
     }
     

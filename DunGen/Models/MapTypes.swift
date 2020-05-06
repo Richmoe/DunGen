@@ -41,7 +41,7 @@ struct Passage {
 }
 
 
-enum PassageType : Int{
+enum PassageType : Int {
     case hallway = 0
     case secret = 1
     case secretLocked = 2
@@ -58,7 +58,7 @@ enum PassageType : Int{
     case portcullisLocked
     case stairsDown
     case stairsUp
-
+    
 }
 
 enum Direction : Int {
@@ -111,7 +111,7 @@ enum TileCode : Int {
     
     case singleWall
     case singleDoor
-
+    
     case roomUL
     case roomUR
     case roomLL
@@ -120,10 +120,36 @@ enum TileCode : Int {
     case stairsDown
     case stairsUp
     
-
+    
 }
 
 func getMoveVector(dir: Direction) -> MapPoint {
+    
+    let moveVector: MapPoint
+    switch dir {
+    case .north:
+        moveVector = MapPoint(row: 1, col: 0)
+    case .east:
+        moveVector = MapPoint(row: 0, col: 1)
+    case .south:
+        moveVector = MapPoint(row: -1, col: 0)
+    case .west:
+        moveVector = MapPoint(row: 0, col: -1)
+    case .northeast:
+        moveVector = MapPoint(row: 1, col: 1)
+    case .northwest:
+        moveVector = MapPoint(row: 1, col: -1)
+    case .southeast:
+        moveVector = MapPoint(row: -1, col: 1)
+    case .southwest:
+        moveVector = MapPoint(row: -1, col: -1)
+    default:
+        moveVector = MapPoint(row: 0, col: 0)
+    }
+    return moveVector
+}
+
+func getCardinalMoveVector(dir: Direction) -> MapPoint {
     
     let moveVector: MapPoint
     switch dir {
@@ -139,4 +165,36 @@ func getMoveVector(dir: Direction) -> MapPoint {
         moveVector = MapPoint(row: 0, col: 0)
     }
     return moveVector
+}
+
+func getDirFromVector(vector: MapPoint) -> Direction {
+    
+    var dir: Direction = Direction.north
+    let col = vector.col
+    let row = vector.row
+    
+    //Redo this but for now:
+    switch (row, col) {
+    case (1, 0):
+        dir = .north
+    case (0, 1):
+        dir = .east
+    case (-1, 0):
+        dir = .south
+    case (0, -1):
+        dir = .west
+    case (1, 1):
+        dir = .northeast
+    case (1, -1):
+        dir = .northwest
+    case (-1,1):
+        dir = .southeast
+    case (-1, -1):
+        dir = .southwest
+    default:
+        break
+        
+    }
+    
+    return dir
 }

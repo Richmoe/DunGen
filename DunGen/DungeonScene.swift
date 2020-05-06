@@ -16,10 +16,10 @@ class DungeonScene: SKScene {
     var graphs = [String : GKGraph]()
     
     var backgroundLayer: SKTileMapNode!
-
+    
     var mapLayer: SKTileMapNode!
-   
-        var debugLayer: SKTileMapNode!
+    
+    var debugLayer: SKTileMapNode!
     
     
     var tileDict = [Int: Int]()
@@ -28,10 +28,9 @@ class DungeonScene: SKScene {
     
     private var map: Map = Map()
     
-    private var mapBaseLayer = [[MapBlock]]()
+
     private var mapTileSet = MapTileSet()
     
-    var player1: SKSpriteNode!
     var party = Party()
     
     var debugLayerOn = false
@@ -47,28 +46,13 @@ class DungeonScene: SKScene {
             fatalError("Background node not loaded")
         }
         
-        //        guard let dungeonLayer = backgroundLayer.childNode(withName: "Dungeon") as? SKTileMapNode else {
-        //            fatalError("Background node not loaded")
-        //        }
         
-        
-        //map.printFloor()
-        
-        
-        //        guard let gridLayer = childNode(withName: "grid") as? SKTileMapNode else {
-        //            fatalError("Grid node not loaded")
-        //        }
-        //
-        //        guard let selectionLayer = childNode(withName: "selection") as? SKTileMapNode else {
-        //            fatalError("Selection node not loaded")
-        //        }
-        //
         guard let camera = self.childNode(withName: "GameCamera") as? SKCameraNode else {
             fatalError("Camera node not loaded")
         }
         
         self.backgroundLayer = backgroundLayer
-
+        
         createAndRenderMap()
         self.camera = camera
         
@@ -77,26 +61,18 @@ class DungeonScene: SKScene {
         //self.camera!.setScale(0.25)
         createPlayers()
         
-        goToTile(map.entrance)
+        goToTile(map.entranceLanding)
         
-        createDebugLayer()
+        //createDebugLayer()
         
         
     }
     
     func createPlayers() {
         
-//
-//        player1 = SKSpriteNode(imageNamed: "TestAvatar")
-//        player1.name = "Test"
-//
-//
-//        let pos = getPtFromTilePt(map.entranceLanding)
-//        player1.position = pos
-//        addChild(player1)
         
         var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "TestAvatar")
-
+        
         party.addPlayer(p1)
         
         p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "TestAvatar")
@@ -109,8 +85,7 @@ class DungeonScene: SKScene {
         party.addPlayer(p1)
         
         party.initAvatars(onLayer: self)
-        
-        party.renderParty(atPt: getPtFromTilePt(map.entranceLanding), atTile: map.entranceLanding)
+
         
     }
     
@@ -141,7 +116,7 @@ class DungeonScene: SKScene {
                 
                 let tileBlock = (map.mapBlocks[row][col])
                 if (tileBlock.tileCode == TileCode.floor) {
-                
+                    
                     renderTile(layer: debugLayer, code: "DEBUG_ROOM", col: col, row: row)
                 }
                 
@@ -183,7 +158,6 @@ class DungeonScene: SKScene {
                 
                 renderTile(tile: tileBlock, col: col, row: row)
                 
-                
             }
         }
     }
@@ -213,13 +187,7 @@ class DungeonScene: SKScene {
             }
         }
     }
-    
-    func renderTile(tile: Int, col: Int, row: Int) {
-        
-        if let groupIx = tileDict[tile] {
-            mapLayer.setTileGroup(mapLayer.tileSet.tileGroups[groupIx], forColumn: col, row: row)
-        }
-    }
+
     
     func touchDown(atPoint pos : CGPoint) {
         //        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
@@ -238,38 +206,21 @@ class DungeonScene: SKScene {
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        //        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-        //            n.position = pos
-        //            n.strokeColor = SKColor.red
-        //            self.addChild(n)
-        //        }
-        
-        #if false
-        map.nextInQueue()
-        renderMap(map: map)
-        #else
-        
-        
-        print("---")
+
+//        map.nextInQueue()
+//        renderMap(map: map)
+
 
         let partyAt = backgroundLayer.centerOfTile(atColumn: party.at.col, row: party.at.row)
         
         let norm = normalize(pt: pos - partyAt) //- camera!.position)
-
+        
         moveDir(dirPt: norm)
-        
-        let tileR = backgroundLayer.tileRowIndex(fromPosition: pos)
-        let tileC = backgroundLayer.tileColumnIndex(fromPosition: pos)
-        print ("Click on tile: \(tileC), \(tileR)")
-        
-        let tileDef : SKTileDefinition! = backgroundLayer.tileDefinition(atColumn: tileC, row: tileR)
-        
-        print("TileDef: \(tileDef)")
-        //moveToTile(col: tileC, row: tileR)
-        
-        //
-        //scaleToFit()
-        #endif
+//
+//        let tileR = backgroundLayer.tileRowIndex(fromPosition: pos)
+//        let tileC = backgroundLayer.tileColumnIndex(fromPosition: pos)
+//        print ("Click on tile: \(tileC), \(tileR)")
+
         
     }
     
@@ -324,41 +275,9 @@ class DungeonScene: SKScene {
         //Round the vector to get nice even numbers:
         let dx: Int = Int(dirPt.x.rounded())
         let dy: Int = Int(dirPt.y.rounded())
-        
-        var dir: Direction?
-        
-        //Redo this but for now:
-        if (dx == 1 ) {
-            if (dy == 1) {
-                dir = Direction.northeast
-            } else if (dy == -1){
-                dir = Direction.southeast
-            } else {
-                dir = Direction.east
-            }
-        } else if (dx == -1) {
-            if (dy == 1) {
-                dir = Direction.northwest
-            } else if (dy == -1) {
-                dir = Direction.southwest
-            } else {
-                dir = Direction.west
-            }
-        } else { //dx == 0
-            if (dy == 1) {
-                dir = Direction.north
-            } else if (dy == -1) {
-                dir = Direction.south
-            } else {
-                //No move
-            }
-        }
 
-        if let d = dir {
-            move(from: party.at, dir: d)
-        } else {
-            print ("No move!")
-        }
+        move(from: party.at, dir: getDirFromVector(vector: MapPoint(row: dy, col: dx)))
+
     }
     
     
@@ -378,7 +297,7 @@ class DungeonScene: SKScene {
             
             //TODO fog of war?
         }
-
+        
         
     }
     
@@ -389,11 +308,6 @@ class DungeonScene: SKScene {
         party.renderParty(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
     }
     
-    func getPtFromTilePt(_ tile: MapPoint) -> CGPoint {
-        let pt = backgroundLayer.centerOfTile(atColumn: tile.col, row: tile.row)
-        return pt
-        
-    }
     
     func scaleToFit() {
         
@@ -406,9 +320,7 @@ class DungeonScene: SKScene {
         let scale  = CGFloat(min( (w/mw), (h/mh)))
         
         print("scaleToFit() : w,h: \(w), \(h); MapSize: \(mw),\(mh)")
-        
-        //self.backgroundLayer.xScale = scale
-        //self.backgroundLayer.yScale = scale
+
         
         camera!.setScale(1/scale)
         
@@ -416,12 +328,5 @@ class DungeonScene: SKScene {
         
         print ("Scaling to \(scale) , \(currentScale)")
     }
-    
-    
-    func getTileData(atCol: Int, row: Int) {
-        let tileDef : SKTileDefinition! = mapLayer.tileDefinition(atColumn: atCol, row: row)
-        if let userData = tileDef.userData {
-            //get information from it here and do what we want
-        }
-    }
+
 }

@@ -103,7 +103,7 @@ class Room {
     }
     
     func generateRandomExit(entrance: Passage)  -> (MapPoint, Passage){
-
+        
         //get location:
         //Todo: we need to be able to readjust if loc takes us into collision which means we need view into overall map in this classs
         
@@ -159,31 +159,14 @@ class Room {
         let rA = MapGenRand.sharedInstance.shuffle(array: rowArray)
         let cA = MapGenRand.sharedInstance.shuffle(array: colArray)
         
-        //changing this to instead walking through array, fail if we can't find one
-        #if true
-        
         if (floorPlan[rA[0] as! Int][cA[0] as! Int] == 1) {
-            //setExit(at: MapPoint(row: r, col: c), exit: exit )
-            //floorPlan[r][c] = wall.rawValue
+            
             return MapPoint(row: rA[0] as! Int, col: cA[0] as! Int)
+        } else {
+            
+            //print("No space for exit on \(exit.direction) wall. Aborting.")
+            return MapPoint(row: -1, col: -1)
         }
-        
-        #else
-        
-        for r in rA {
-            for c in cA {
-                if (floorPlan[r as! Int][c as! Int] == 1) {
-                    //setExit(at: MapPoint(row: r, col: c), exit: exit )
-                    //floorPlan[r][c] = wall.rawValue
-                    return MapPoint(row: r as! Int, col: c as! Int)
-                }
-            }
-        }
-        #endif
-
-        
-        //print("No space for exit on \(exit.direction) wall. Aborting.")
-        return MapPoint(row: -1, col: -1)
     }
     
     func setExit(at: MapPoint, exit: Passage) {

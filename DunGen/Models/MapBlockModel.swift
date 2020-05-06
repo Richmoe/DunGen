@@ -60,10 +60,6 @@ class MapBlock {
         
         //Probably need to store off door info?
         
-        if (tileCode == TileCode.null) {
-                print ("xxx")
-        }
-        //TODO Stairs
         
         //print ("Code, type: \(tileCode), \(fromPassage.type): Before: \(wallString)")
         if (fromPassage.type == .hallway) {
@@ -74,7 +70,7 @@ class MapBlock {
             addCode(codeDir: fromPassage.direction.opposite(), code: "D")
         }
         
-       // print ("After: \(wallString)")
+        // print ("After: \(wallString)")
     }
     
     init() {
@@ -131,16 +127,12 @@ class MapBlock {
             wallString = "WWPP"
         case .roomLR:
             wallString = "WPPW"
-            
         case .singleWall:
             wallString = "WPPP"
-            
         case .stairsDown:
             wallString = "-WWW"
         case .stairsUp:
             wallString = "+WWW"
-            
-            
         default:
             print("No String for code: \(tileCode)")
             break
@@ -150,29 +142,30 @@ class MapBlock {
     
     func addWall(wallDir: Direction) {
         
-        if (tileCode == TileCode.null) {
-//            print ("xxx")
-            return
-        }
-        //print("Adding wall to the \(wallDir) (was \(wallString)")
-        var chars = Array(wallString)     // gets an array of characters
-        let ix = Int(wallDir.rawValue / 2)
-        
-
-        
-        chars[ix] = "W"
-        
-        wallString = String(chars)
+        //        if (tileCode == TileCode.null) {
+        ////            print ("xxx")
+        //            return
+        //        }
+        //        //print("Adding wall to the \(wallDir) (was \(wallString)")
+        //        var chars = Array(wallString)     // gets an array of characters
+        //        let ix = Int(wallDir.rawValue / 2)
+        //
+        //        chars[ix] = "W"
+        //
+        //        wallString = String(chars)
+        addCode(codeDir: wallDir, code: "W")
     }
     
     func addDoor(doorDir: Direction) {
-        //print("Adding door to the \(doorDir) (was \(wallString)")
-        var chars = Array(wallString)     // gets an array of characters
-        let ix = Int(doorDir.rawValue / 2)
+        //        //print("Adding door to the \(doorDir) (was \(wallString)")
+        //        var chars = Array(wallString)     // gets an array of characters
+        //        let ix = Int(doorDir.rawValue / 2)
+        //
+        //        chars[ix] = "D"
+        //
+        //        wallString = String(chars)
         
-        chars[ix] = "D"
-        
-        wallString = String(chars)
+        addCode(codeDir: doorDir, code: "D")
     }
     func addCode(codeDir: Direction, code: Character) {
         //print("Adding \(code) to the \(codeDir) (was \(wallString)")
@@ -210,10 +203,40 @@ class MapBlock {
     }
     
     func getWallCode(wallDir: Direction) -> Character {
+        //bias toward walls on diagonal
         let chars = Array(wallString)
-        let ix = Int(wallDir.rawValue / 2)
-        
-        return chars[ix]
+        var c: Character
+        switch wallDir {
+        case .north:
+            c = chars[0]
+        case .east:
+            c = chars[1]
+        case .south:
+            c = chars[2]
+        case .west:
+            c = chars[3]
+        case .northeast:
+            c = chars[0]
+            if (c != "W") {
+                c = chars[1]
+            }
+        case .northwest:
+            c = chars[0]
+            if (c != "W") {
+                c = chars[3]
+            }
+        case .southeast:
+            c = chars[2]
+            if (c != "W") {
+                c = chars[1]
+            }
+        case .southwest:
+            c = chars[2]
+            if (c != "W") {
+                c = chars[3]
+            }
+        }
+        return c
     }
     
     

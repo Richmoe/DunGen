@@ -16,7 +16,6 @@ class Map {
     //Todo: Make array of maps
     
     
-    
     var floor: [[Int]]
     
     var mapBlocks: [[MapBlock]]
@@ -61,7 +60,7 @@ class Map {
     
     func move(from: MapPoint, dir: Direction) -> (Bool, MapPoint) {
         
-        let mv = getMoveVector(dir: dir)
+        let mv = getCardinalMoveVector(dir: dir)
         
         let toMP = from + mv
         
@@ -94,11 +93,8 @@ class Map {
     
     func processQueue() {
         
-        
-        //testing
-        //return
         var reRoll = false
-
+        
         while (passageQueue.count > 0) {
             let (from, pass) = passageQueue.removeFirst()
             //print ("Next move: \(from) \(pass) queue count: \(passageQueue.count)")
@@ -113,7 +109,7 @@ class Map {
                     } else {
                         generateRoom(from: from, entrance: pass)
                     }
-
+                    
                 } else {
                     
                     doMoves(passageMoves: moves, fromPassage: pass, fromPt: from)
@@ -123,7 +119,7 @@ class Map {
             depth += 1
             
             if (depth > 100) {
-                        print ("Total rooms: \(rooms.count)")
+                print ("Total rooms: \(rooms.count)")
                 return
             }
             
@@ -153,19 +149,19 @@ class Map {
     // MARK: - Passage
     func getPassageMoves() -> [TileCode] {
         var passageMoves = [TileCode]()
-        var r: Int
+        var roll: Int
         //let r = Int.random(in: 1...19) //20)
         //let r = 10
         //Get rid of switch
         
         //let test = [4, 2, 2, 2, 4, 4, 2, 4, 4, 10, 2]
         repeat {
-            r = MapGenRand.sharedInstance.getRand(to: 40)
-
-            switch r {
+            roll = MapGenRand.sharedInstance.getRand(to: 40)
+            
+            switch roll {
             case 1...4:
                 
-                passageMoves = Array(repeating: TileCode.passage, count: r)
+                passageMoves = Array(repeating: TileCode.passage, count: roll)
             case 5,6:
                 passageMoves = [TileCode.passage, TileCode.doorRight, TileCode.passage]
             case 7,8:
@@ -177,7 +173,7 @@ class Map {
             case 15...18:
                 passageMoves = [TileCode.passage, TileCode.passageLeft, TileCode.passage]
             case 19,20:
-
+                
                 //bias dead-ends later in the map. Don't want one right at the beginning.
                 print ("In deaded - depth \(depth)")
                 if (depth > 10) {
@@ -187,7 +183,7 @@ class Map {
                         passageMoves = [TileCode.passage, TileCode.deadend]
                     }
                 } else {
-                    r = 0
+                    roll = 0
                 }
                 
             case 21...24:
@@ -202,7 +198,7 @@ class Map {
             default:
                 print("stairs")
             }
-        } while (r == 0)
+        } while (roll == 0)
         
         return passageMoves
     }
@@ -247,9 +243,6 @@ class Map {
                 //Here's where we check for what to do
                 //print("Overlap! at \(curPoint)")
                 
-//                if (curPoint.row == 1) {
-//                    print("Break!")
-//                }
                 
                 //Check to see what the block has in my direction:
                 let code = self.mapBlocks[curPoint.row][curPoint.col].getWallCode(wallDir: curHeading.direction.opposite())
@@ -273,39 +266,22 @@ class Map {
             case TileCode.deadend:
                 pushEnd = false
             case TileCode.passageRight, TileCode.secretRight:
-                //generatePassage(fromPassage: Passage(type: .hallway, direction: curHeading.direction.right()), fromPt: curPoint)
                 addToQueue(from: curPoint, passage: Passage(type: .hallway, direction: curHeading.direction.right()))
             case TileCode.doorRight:
-                //generatePassage(fromPassage: Passage(type: .stone, direction: curHeading.direction.right()), fromPt: curPoint)
                 addToQueue(from: curPoint, passage: Passage(type: .wooden, direction: curHeading.direction.right()))
-                
             case TileCode.passageLeft, TileCode.secretLeft:
-                //generatePassage(fromPassage: Passage(type: .stone, direction: curHeading.direction.left()), fromPt: curPoint)
-                
                 addToQueue(from: curPoint, passage: Passage(type: .hallway, direction: curHeading.direction.left()))
             case TileCode.doorLeft:
-                //generatePassage(fromPassage: Passage(type: .stone, direction: curHeading.direction.left()), fromPt: curPoint)
                 addToQueue(from: curPoint, passage: Passage(type: .wooden, direction: curHeading.direction.left()))
-                
             case TileCode.doorEnd:
-                //generatePassage(entrance: EntranceType(doorType: .stone, direction: entrance.direction), at: curPoint)
                 curHeading = Passage(type: .wooden, direction: curHeading.direction)
-                
                 break
             case TileCode.secretEnd:
-                //generatePassage(entrance: EntranceType(doorType: .stone, direction: entrance.direction), at: curPoint)
                 curHeading = Passage(type: .secret, direction: curHeading.direction)
-                
                 break
             case TileCode.crossroad:
-                //generatePassage(fromPassage: Passage(type: .hallway, direction: curHeading.direction.right()), fromPt: curPoint)
-                //generatePassage(fromPassage: Passage(type: .hallway, direction: curHeading.direction.left()), fromPt: curPoint)
-                
                 addToQueue(from: curPoint, passage: Passage(type: .hallway, direction: curHeading.direction.right()))
                 addToQueue(from: curPoint, passage: Passage(type: .hallway, direction: curHeading.direction.left()))
-                
-                
-                
             case TileCode.turnLeft:
                 curHeading = Passage(type: .hallway, direction: curHeading.direction.left())
                 moveVector = getMoveVector(dir: curHeading.direction)
@@ -322,14 +298,10 @@ class Map {
         
         if (pushEnd) {
             //            print("Done with moveblock, pushing end")
-            //generatePassage(fromPassage: curHeading, fromPt: curPoint)
             addToQueue(from: curPoint, passage: curHeading)
-            //
         } else {
             print("Deadend?")
         }
-        
-        return
     }
     
     
@@ -348,10 +320,10 @@ class Map {
         mapSpot += MapPoint(row: 1, col: 0)
         
         //let r = Int.random(in: 1...10)
-        let r = MapGenRand.sharedInstance.getRand(to: 10)
-        print ("room type: \(r)")
+        let roll = MapGenRand.sharedInstance.getRand(to: 10)
+        print ("room type: \(roll)")
         var passageTypes = [PassageType.hallway, PassageType.hallway, PassageType.hallway]
-        switch r {
+        switch roll {
         case 1:
             room = Room(at: mapSpot, width: 3, height: 3)
         case 2:
@@ -362,8 +334,6 @@ class Map {
             passageTypes = [PassageType.wooden, PassageType.wooden, PassageType.wooden]
         case 4:
             room = Room(at: mapSpot, width: 8, height: 2)
-            
-
         case 5:
             room = Room(at: mapSpot, width: 2, height: 4)
         case 6:
@@ -395,7 +365,7 @@ class Map {
             mapBlocks[mapSpot.row][mapSpot.col - 1] = MapBlock(tileCode: .passage, fromPassage: passage)
             addToQueue(from: MapPoint(row: mapSpot.row, col: mapSpot.col - 1), passage: passage)
             
-            if (r == 10) {
+            if (roll == 10) {
                 //Hall North
                 passage = Passage(type: .hallway, direction: .north)
                 mapBlocks[mapSpot.row][mapSpot.col].addCode(exit: Passage(type: .hallway, direction: .north))
@@ -415,8 +385,8 @@ class Map {
         
         room.at -= entrancePoint
         
-        if (r <= 8) {
-
+        if (roll <= 8) {
+            
             let pType = (MapGenRand.sharedInstance.shuffle(array: passageTypes))
             
             var at = MapPoint(row: Int(room.height / 2), col: room.width - 1)
@@ -430,7 +400,7 @@ class Map {
             room.setExit(at: at, exit: exit)
             addToQueue(from: room.at + at, passage: exit)
             
-            if (r == 4) {
+            if (roll == 4) {
                 //quarters
                 at = MapPoint(row: room.height - 1, col: 1)
                 exit = Passage(type: pType[2] as! PassageType, direction: .north)
@@ -526,7 +496,6 @@ class Map {
                 
                 //so we'll just plop it and plot room below will take care of it
                 room.setExit(at: exitAt, exit: passage)
-                //generatePassage(fromPassage: passage, fromPt: exitAt + room.at)
                 addToQueue(from: exitAt + room.at, passage: passage)
                 
             }
@@ -556,53 +525,41 @@ class Map {
     
     
     
-    // MARK: Print
-    
-    
-    func printFloorplan(floorPlan: [[Int]], at: MapPoint) {
-        var tempMap = Array(repeating: Array(repeating: 0, count: mapWidth), count: mapHeight)
-        for r in at.row...at.row + floorPlan.count - 1{
-            for c in at.col...at.col + floorPlan[0].count - 1 {
-                tempMap[r][c] = floorPlan[r - at.row][c - at.col]
-            }
-        }
-        printFloor(floor: tempMap)
-    }
-    
-    func printMapBlocks() {
-        
-        var str = ""
-        for r in (0..<floor.count).reversed() {
-            str = "\(String(format: "%02d", r)): "
-            for c in 0..<floor[r].count {
-                str += "\(mapBlocks[r][c] )"
-                str += " "
-            }
-            print(str)
-        }
-        str = "    "
-        for c in 0..<floor[0].count {
-            str += "\(String(format: "%02d", c)) "
-        }
-        print (str)
-    }
-    
-    func printFloor(floor: [[Int]]) {
-        var str = ""
-        for r in (0..<floor.count).reversed() {
-            str = "\(String(format: "%02d", r)): "
-            for c in 0..<floor[r].count {
-                str += String(format: "%02d", floor[r][c])
-                str += " "
-            }
-            print(str)
-        }
-        str = "    "
-        for c in 0..<floor[0].count {
-            str += "\(String(format: "%02d", c)) "
-        }
-        print (str)
-    }
+    //    // MARK: Print
+    //    func printMapBlocks() {
+    //
+    //        var str = ""
+    //        for r in (0..<floor.count).reversed() {
+    //            str = "\(String(format: "%02d", r)): "
+    //            for c in 0..<floor[r].count {
+    //                str += "\(mapBlocks[r][c] )"
+    //                str += " "
+    //            }
+    //            print(str)
+    //        }
+    //        str = "    "
+    //        for c in 0..<floor[0].count {
+    //            str += "\(String(format: "%02d", c)) "
+    //        }
+    //        print (str)
+    //    }
+    //
+    //    func printFloor(floor: [[Int]]) {
+    //        var str = ""
+    //        for r in (0..<floor.count).reversed() {
+    //            str = "\(String(format: "%02d", r)): "
+    //            for c in 0..<floor[r].count {
+    //                str += String(format: "%02d", floor[r][c])
+    //                str += " "
+    //            }
+    //            print(str)
+    //        }
+    //        str = "    "
+    //        for c in 0..<floor[0].count {
+    //            str += "\(String(format: "%02d", c)) "
+    //        }
+    //        print (str)
+    //    }
     
     //MARK: Fixup
     
@@ -704,19 +661,6 @@ class Map {
         return false
     }
     
-    func doesOverlap(layout: [[Int]], at: MapPoint) -> Bool {
-        for r in 0...(layout.count - 1) {
-            let rm = r + at.row
-            for c in 0...(layout[0].count - 1) {
-                let cm = c + at.col
-                if (floor[rm][cm] > 0) { //TODO: we could check pixels in source...
-                    //print("Overlap at r:c \(rm):\(cm)")
-                }
-            }
-        }
-        return false
-    }//We will leave a 1 block border around the map to make the fixup work.
-    
     
     func offScreen(point: MapPoint) -> Bool {
         if (point.col < 1 || point.col >= (mapWidth - 1) || point.row < 1 || point.row >= (mapHeight - 1)) {
@@ -740,25 +684,25 @@ class Map {
         return false
     }
     
-    func loadFromResource(fileName: String) {
-        
-        let path = Bundle.main.path(forResource: fileName, ofType: nil)
-        do {
-            let fileContents = try String(contentsOfFile:path!, encoding: String.Encoding.utf8)
-            let lines = fileContents.components(separatedBy: "\n")
-            
-            for row in 0..<lines.count {
-                let items = lines[row].components(separatedBy: " ")
-                var str = ""
-                for column in 0..<items.count {
-                    str += items[column] + " "
-                }
-                print ("row: \(row): \(str)")
-            }
-        } catch {
-            print("Error loading map")
-        }
-    }
+    //    func loadFromResource(fileName: String) {
+    //        
+    //        let path = Bundle.main.path(forResource: fileName, ofType: nil)
+    //        do {
+    //            let fileContents = try String(contentsOfFile:path!, encoding: String.Encoding.utf8)
+    //            let lines = fileContents.components(separatedBy: "\n")
+    //            
+    //            for row in 0..<lines.count {
+    //                let items = lines[row].components(separatedBy: " ")
+    //                var str = ""
+    //                for column in 0..<items.count {
+    //                    str += items[column] + " "
+    //                }
+    //                print ("row: \(row): \(str)")
+    //            }
+    //        } catch {
+    //            print("Error loading map")
+    //        }
+    //    }
     
 }
 
