@@ -64,7 +64,7 @@ class Map {
         
         let toMP = from + mv
         
-        let toType = mapBlocks[toMP.row][toMP.col]
+        let toType = getBlock(toMP) //mapBlocks[toMP.row][toMP.col]
         
         print("Moving to tile: \(toType.tileCode)")
         
@@ -104,7 +104,7 @@ class Map {
                 
                 if (moves.count == 0) {
                     //reroll if I get a room connecting to a room via a hallway. Don't like that.
-                    if (mapBlocks[from.row][from.col].tileCode == TileCode.floor && pass.type == .hallway) {
+                    if (getBlock(from).tileCode == TileCode.floor && pass.type == .hallway) {
                         reRoll = true
                     } else {
                         generateRoom(from: from, entrance: pass)
@@ -645,6 +645,13 @@ class Map {
     
     
     // MARK: - Helpers
+    
+    func getBlock(_ pt: MapPoint) -> MapBlock {
+        //TODO - range checking?
+        
+        return mapBlocks[pt.row][pt.col]
+    }
+    
     //func doesOverlap(map: [[Int]]) -> Bool {
     func doesOverlap(room: Room) -> Bool {
         for r in 0...(room.height - 1) {
