@@ -42,7 +42,7 @@ class Map {
          9EEZ
          
          */
-        //seedString = "X8LZ"
+        //seedString = "3ZWM"
         
         MapGenRand.sharedInstance.setSeed(seedString: seedString)
         floor = Array(repeating: Array(repeating: 0, count: mapWidth), count: mapHeight)
@@ -82,6 +82,32 @@ class Map {
         }
     }
     
+    func canSee(from: MapPoint, to: MapPoint) -> Bool {
+        
+        //All we need is from and which way we're going:
+        
+        if (offScreen(point: to)) {
+            return false
+        }
+        
+        let fromBlock = getBlock(from)
+        
+        let dir = getDirFromVector(to - from)
+        
+        let dirWall = fromBlock.getWallCode(wallDir: dir)
+        
+        if (["W","D","0"].contains(dirWall)) {
+            return false
+        } else {
+            //now check to walls
+            let dirWall = getBlock(to).getWallCode(wallDir: dir.opposite())
+            if (["W","D","0"].contains(dirWall)) {
+                return false
+            } else {
+                return true
+            }
+        }
+    }
     
     // MARK: - Move Queue
     

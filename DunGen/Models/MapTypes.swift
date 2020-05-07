@@ -167,7 +167,7 @@ func getCardinalMoveVector(dir: Direction) -> MapPoint {
     return moveVector
 }
 
-func getDirFromVector(vector: MapPoint) -> Direction {
+func getDirFromVector(_ vector: MapPoint) -> Direction {
     
     var dir: Direction = Direction.north
     let col = vector.col

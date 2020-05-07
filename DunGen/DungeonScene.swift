@@ -28,7 +28,7 @@ class DungeonScene: SKScene {
     
     private var map: Map = Map()
     
-
+    
     private var mapTileSet = MapTileSet()
     
     var party = Party()
@@ -37,6 +37,8 @@ class DungeonScene: SKScene {
     
     let cameraOffset = 0.0
     var currentScale : CGFloat = 1.0
+    
+    let maxLineOfSight = 6 //Can see 60' or 6 10x10 tiles
     
     
     override func sceneDidLoad() {
@@ -56,7 +58,7 @@ class DungeonScene: SKScene {
         createAndRenderMap()
         self.camera = camera
         
-        //scaleToFit()
+        scaleToFit()
         
         //self.camera!.setScale(0.25)
         createPlayers()
@@ -65,7 +67,7 @@ class DungeonScene: SKScene {
         
         //createDebugLayer()
         
-        
+        fogOfWar()
     }
     
     func createPlayers() {
@@ -85,7 +87,7 @@ class DungeonScene: SKScene {
         party.addPlayer(p1)
         
         party.initAvatars(onLayer: self)
-
+        
         
     }
     
@@ -97,7 +99,43 @@ class DungeonScene: SKScene {
         self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: map.mapWidth, rows: map.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)
         
-        renderMap(map: map)
+       //renderMap(map: map)
+        
+    }
+    
+    func fogOfWar() {
+        //input new position
+        
+        for a in 0...59 { //6deg increments
+            let ang = 6 * Double(a)
+            let x = sin(ang  * (.pi / 180))
+            let y = cos(ang * (.pi / 180))
+            var fromPt = party.at
+            var lastXx = 0
+            var lastYy = 0
+            
+            for i in 1...maxLineOfSight {
+                let xx = Int(round(x * Double(i)))
+                let yy = Int(round(y * Double(i)))
+                if (xx != 0 || yy != 0) {
+                    
+                    let moveVector = MapPoint(row: yy - lastYy, col: xx - lastXx)
+                    
+                    lastXx = xx
+                    lastYy = yy
+                    
+                    let toPt = fromPt + moveVector
+                    
+                    if (map.canSee(from: fromPt, to: toPt)) {
+                        //Yes there are multiple renders of the same thing. Is this slower? I should benchmark
+                        renderTile(toPt)
+                        fromPt = toPt
+                    } else {
+                        break
+                    }
+                }
+            }
+        }
         
     }
     
@@ -154,9 +192,10 @@ class DungeonScene: SKScene {
         for row in 0..<map.mapBlocks.count {
             for col in (0..<map.mapBlocks[row].count) {
                 
-                let tileBlock = (map.mapBlocks[row][col])
+                //let tileBlock = (map.mapBlocks[row][col])
                 
-                renderTile(tile: tileBlock, col: col, row: row)
+                //renderTile(tile: tileBlock, col: col, row: row)
+                renderTile(MapPoint(row: row, col: col))
                 
             }
         }
@@ -187,7 +226,21 @@ class DungeonScene: SKScene {
             }
         }
     }
-
+    
+    func renderTile(_ mp: MapPoint) {
+        
+        let mb = map.getBlock(mp)
+        if let groupIx = mapTileSet.tileDict[mb.wallString] {
+            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
+            mapLayer.setTileGroup(mapLayer.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
+        } else {
+            if (mb.wallString != "0000") {
+                print ("Can't find tile: \(mb.wallString) at rc: \(mp.row), \(mp.col)")
+            }
+        }
+    }
+    
+    
     
     func touchDown(atPoint pos : CGPoint) {
         //        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
@@ -206,21 +259,21 @@ class DungeonScene: SKScene {
     }
     
     func touchUp(atPoint pos : CGPoint) {
-
-//        map.nextInQueue()
-//        renderMap(map: map)
-
-
+        
+        //        map.nextInQueue()
+        //        renderMap(map: map)
+        
+        
         let partyAt = backgroundLayer.centerOfTile(atColumn: party.at.col, row: party.at.row)
         
         let norm = normalize(pt: pos - partyAt) //- camera!.position)
         
         moveDir(dirPt: norm)
-//
-//        let tileR = backgroundLayer.tileRowIndex(fromPosition: pos)
-//        let tileC = backgroundLayer.tileColumnIndex(fromPosition: pos)
-//        print ("Click on tile: \(tileC), \(tileR)")
-
+        //
+        //        let tileR = backgroundLayer.tileRowIndex(fromPosition: pos)
+        //        let tileC = backgroundLayer.tileColumnIndex(fromPosition: pos)
+        //        print ("Click on tile: \(tileC), \(tileR)")
+        
         
     }
     
@@ -275,9 +328,9 @@ class DungeonScene: SKScene {
         //Round the vector to get nice even numbers:
         let dx: Int = Int(dirPt.x.rounded())
         let dy: Int = Int(dirPt.y.rounded())
-
-        move(from: party.at, dir: getDirFromVector(vector: MapPoint(row: dy, col: dx)))
-
+        
+        move(from: party.at, dir: getDirFromVector(MapPoint(row: dy, col: dx)))
+        
     }
     
     
@@ -295,7 +348,10 @@ class DungeonScene: SKScene {
             
             party.renderParty(atPt: movePt, atTile: MapPoint(row: newSpot.row, col: newSpot.col))
             
-            //TODO fog of war?
+            //just in case:
+            renderTile(newSpot)
+
+            fogOfWar()
         }
         
         
@@ -306,6 +362,8 @@ class DungeonScene: SKScene {
         print ("goToTile: \(tile.col), \(tile.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
         
         party.renderParty(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
+        
+        renderTile(tile)
     }
     
     
@@ -320,7 +378,7 @@ class DungeonScene: SKScene {
         let scale  = CGFloat(min( (w/mw), (h/mh)))
         
         print("scaleToFit() : w,h: \(w), \(h); MapSize: \(mw),\(mh)")
-
+        
         
         camera!.setScale(1/scale)
         
@@ -328,5 +386,5 @@ class DungeonScene: SKScene {
         
         print ("Scaling to \(scale) , \(currentScale)")
     }
-
+    
 }
