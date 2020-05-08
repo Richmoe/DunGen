@@ -19,10 +19,9 @@ class Map {
     var floor: [[Int]]
     
     var mapBlocks: [[MapBlock]]
-    
-    let mapWidth = 30
-    let mapHeight = 30
-    
+
+    let mapWidth : Int
+    let mapHeight : Int
     var depth = 0
     
     var passageQueue = [(MapPoint, Passage)]()
@@ -33,7 +32,7 @@ class Map {
     var entranceLanding : MapPoint
     
     
-    init() {
+    init(width: Int, height: Int) {
         
         var seedString = MapGenRand.getSeedString()
         print("THE SEED ___________ \(seedString) ___________")
@@ -43,6 +42,9 @@ class Map {
          
          */
         //seedString = "3ZWM"
+        
+        mapWidth = width
+        mapHeight = height
         
         MapGenRand.sharedInstance.setSeed(seedString: seedString)
         floor = Array(repeating: Array(repeating: 0, count: mapWidth), count: mapHeight)
@@ -56,58 +58,7 @@ class Map {
         processQueue()
         fixUpMap()
     }
-    // MARK: - Room logic
     
-    func move(from: MapPoint, dir: Direction) -> (Bool, MapPoint) {
-        
-        let mv = getCardinalMoveVector(dir: dir)
-        
-        let toMP = from + mv
-        
-        let toType = getBlock(toMP) //mapBlocks[toMP.row][toMP.col]
-        
-        print("Moving to tile: \(toType.tileCode)")
-        
-        if (toType.tileCode == TileCode.null) {
-            return (false, toMP)
-        } else {
-            //Check wall
-            let dirWall = toType.getWallCode(wallDir: dir.opposite())
-            if (dirWall == "W") {
-                return (false, toMP)
-            } else {
-                return (true, toMP)
-            }
-            
-        }
-    }
-    
-    func canSee(from: MapPoint, to: MapPoint) -> Bool {
-        
-        //All we need is from and which way we're going:
-        
-        if (offScreen(point: to)) {
-            return false
-        }
-        
-        let fromBlock = getBlock(from)
-        
-        let dir = getDirFromVector(to - from)
-        
-        let dirWall = fromBlock.getWallCode(wallDir: dir)
-        
-        if (["W","D","0"].contains(dirWall)) {
-            return false
-        } else {
-            //now check to walls
-            let dirWall = getBlock(to).getWallCode(wallDir: dir.opposite())
-            if (["W","D","0"].contains(dirWall)) {
-                return false
-            } else {
-                return true
-            }
-        }
-    }
     
     // MARK: - Move Queue
     

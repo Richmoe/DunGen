@@ -35,6 +35,7 @@ class Party {
         for p in player {
             let a = SKSpriteNode(imageNamed: p.avatar)
             a.name = p.name
+            a.setScale(0.5)
             
             onLayer.addChild(a)
             avatar.append(a)

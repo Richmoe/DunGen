@@ -25,11 +25,10 @@ class DungeonScene: SKScene {
     var tileDict = [Int: Int]()
     
     private var lastUpdateTime : TimeInterval = 0
-    
-    private var map: Map = Map()
-    
-    
+
     private var mapTileSet = MapTileSet()
+    
+    private var mapController = MapController()
     
     var party = Party()
     
@@ -63,7 +62,7 @@ class DungeonScene: SKScene {
         //self.camera!.setScale(0.25)
         createPlayers()
         
-        goToTile(map.entranceLanding)
+        goToTile(mapController.getPlayerEntrance())
         
         //createDebugLayer()
         
@@ -72,23 +71,19 @@ class DungeonScene: SKScene {
     
     func createPlayers() {
         
-        
-        var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "TestAvatar")
-        
+        var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "Avatar1")
         party.addPlayer(p1)
         
-        p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "TestAvatar")
+        p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "Avatar2")
         party.addPlayer(p1)
         
-        p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "TestAvatar")
+        p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "Avatar3")
         party.addPlayer(p1)
         
-        p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "TestAvatar")
+        p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "Avatar4")
         party.addPlayer(p1)
         
         party.initAvatars(onLayer: self)
-        
-        
     }
     
     
@@ -96,11 +91,10 @@ class DungeonScene: SKScene {
         
         let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
         
-        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: map.mapWidth, rows: map.mapHeight, tileSize: size)
+        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)
         
        //renderMap(map: map)
-        
     }
     
     func fogOfWar() {
@@ -126,7 +120,7 @@ class DungeonScene: SKScene {
                     
                     let toPt = fromPt + moveVector
                     
-                    if (map.canSee(from: fromPt, to: toPt)) {
+                    if (mapController.canSee(from: fromPt, to: toPt)) {
                         //Yes there are multiple renders of the same thing. Is this slower? I should benchmark
                         renderTile(toPt)
                         fromPt = toPt
@@ -136,7 +130,6 @@ class DungeonScene: SKScene {
                 }
             }
         }
-        
     }
     
     func createDebugLayer() {
@@ -146,13 +139,13 @@ class DungeonScene: SKScene {
         
         let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
         
-        debugLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: map.mapWidth, rows: map.mapHeight, tileSize: size)
+        debugLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
         backgroundLayer.addChild(debugLayer)
         
-        for row in 0..<map.mapBlocks.count {
-            for col in (0..<map.mapBlocks[row].count) {
+        for row in 0..<mapController.mapHeight {
+            for col in 0..<mapController.mapWidth {
                 
-                let tileBlock = (map.mapBlocks[row][col])
+                let tileBlock = (mapController.getBlock(MapPoint(row: row, col: col)))
                 if (tileBlock.tileCode == TileCode.floor) {
                     
                     renderTile(layer: debugLayer, code: "DEBUG_ROOM", col: col, row: row)
@@ -162,23 +155,23 @@ class DungeonScene: SKScene {
                 if (tileBlock.wallString.contains("S")) {
                     renderTile(layer: debugLayer, code: "Sxxx", col: col, row: row)
                 }
-                
             }
         }
-        
     }
     
     func testRebuildMap() {
-        map = Map()
+        
+        mapController.rebuild()
+
         
         mapLayer.removeFromParent()
         
         let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
         
-        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: map.mapWidth, rows: map.mapHeight, tileSize: size)
+        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)
         
-        renderMap(map: map)
+        renderMap()
         
         if (debugLayerOn) {
             debugLayer.removeFromParent()
@@ -187,10 +180,10 @@ class DungeonScene: SKScene {
     }
     
     
-    func renderMap (map: Map) {
+    func renderMap () {
         
-        for row in 0..<map.mapBlocks.count {
-            for col in (0..<map.mapBlocks[row].count) {
+        for row in 0..<mapController.mapHeight {
+            for col in 0..<mapController.mapWidth {
                 
                 //let tileBlock = (map.mapBlocks[row][col])
                 
@@ -229,7 +222,7 @@ class DungeonScene: SKScene {
     
     func renderTile(_ mp: MapPoint) {
         
-        let mb = map.getBlock(mp)
+        let mb = mapController.getBlock(mp)
         if let groupIx = mapTileSet.tileDict[mb.wallString] {
             //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
             mapLayer.setTileGroup(mapLayer.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
@@ -260,21 +253,11 @@ class DungeonScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         
-        //        map.nextInQueue()
-        //        renderMap(map: map)
-        
-        
         let partyAt = backgroundLayer.centerOfTile(atColumn: party.at.col, row: party.at.row)
         
-        let norm = normalize(pt: pos - partyAt) //- camera!.position)
+        let norm = normalize(pt: pos - partyAt)
         
         moveDir(dirPt: norm)
-        //
-        //        let tileR = backgroundLayer.tileRowIndex(fromPosition: pos)
-        //        let tileC = backgroundLayer.tileColumnIndex(fromPosition: pos)
-        //        print ("Click on tile: \(tileC), \(tileR)")
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -317,8 +300,6 @@ class DungeonScene: SKScene {
         let movePt = backgroundLayer.centerOfTile(atColumn: party.at.col, row: party.at.row)
         camera!.position = (movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
         
-        
-        
         self.lastUpdateTime = currentTime
     }
     
@@ -337,7 +318,7 @@ class DungeonScene: SKScene {
     func move(from: MapPoint, dir: Direction) {
         
         //first check to see if we can move
-        let (canMove, newSpot) = map.move(from: from, dir: dir)
+        let (canMove, newSpot) = mapController.move(from: from, dir: dir)
         
         //Then rerender map?
         if (canMove) {
@@ -353,8 +334,6 @@ class DungeonScene: SKScene {
 
             fogOfWar()
         }
-        
-        
     }
     
     func goToTile(_ tile: MapPoint) {
