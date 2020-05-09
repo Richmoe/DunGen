@@ -8,11 +8,12 @@
 
 import Foundation
 import SpriteKit
+import SwiftUI
 
-class Party {
+class Party : ObservableObject {
     
-    var player = [Player]()
-    var at = MapPoint(row: 0, col: 0)
+    @Published var player = [Player]()
+    @Published var at = MapPoint(row: 0, col: 0)
     
     var avatar = [SKSpriteNode]()
     

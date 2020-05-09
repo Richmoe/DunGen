@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import SwiftUI
 
 class GameViewController: UIViewController {
 
@@ -19,20 +20,31 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
+            
             // Load the SKScene from 'GameScene.sks'
             if let scene = DungeonScene(fileNamed: "DungeonScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
+
                 // Present the scene
                 view.presentScene(scene)
-                
+
                 currentDungeon = scene
-                
+
             }
             
-            view.ignoresSiblingOrder = true
+            let dungeonUI = DungeonUIView(party: currentDungeon.party)
+            let uiController = UIHostingController(rootView: dungeonUI)
+            addChild(uiController)
             
+            uiController.view.frame = view.frame
+            uiController.view.backgroundColor = UIColor.clear
+            
+            view.addSubview(uiController.view)
+
+
+            view.ignoresSiblingOrder = true
+
             view.showsFPS = true
             view.showsNodeCount = true
         }

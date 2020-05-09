@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9726D6E2246454FE00840A04 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726D6E1246454FE00840A04 /* MapController.swift */; };
+		9726D6E62466573400840A04 /* DungeonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726D6E52466573400840A04 /* DungeonUIView.swift */; };
 		9739B512245A74B300C043B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9739B511245A74B300C043B7 /* AppDelegate.swift */; };
 		9739B514245A74B300C043B7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9739B513245A74B300C043B7 /* GameScene.sks */; };
 		9739B516245A74B300C043B7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9739B515245A74B300C043B7 /* Actions.sks */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		9726D6E1246454FE00840A04 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		9726D6E52466573400840A04 /* DungeonUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonUIView.swift; sourceTree = "<group>"; };
 		9739B50E245A74B300C043B7 /* DunGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DunGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9739B511245A74B300C043B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9739B513245A74B300C043B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				9739B515245A74B300C043B7 /* Actions.sks */,
 				9739B517245A74B300C043B7 /* GameScene.swift */,
 				9739B519245A74B300C043B7 /* GameViewController.swift */,
+				9726D6E52466573400840A04 /* DungeonUIView.swift */,
 				97BCDC62245C759700D7C191 /* MapGenRand.swift */,
 				97BCDC61245C759700D7C191 /* MapTileSet.swift */,
 				9739B51B245A74B300C043B7 /* Main.storyboard */,
@@ -198,6 +201,7 @@
 				9739B51A245A74B300C043B7 /* GameViewController.swift in Sources */,
 				977E0A5D245F91A600AC41B1 /* PartyModel.swift in Sources */,
 				977E0A59245CE37100AC41B1 /* RoomModel.swift in Sources */,
+				9726D6E62466573400840A04 /* DungeonUIView.swift in Sources */,
 				9739B512245A74B300C043B7 /* AppDelegate.swift in Sources */,
 				9726D6E2246454FE00840A04 /* MapController.swift in Sources */,
 				97BCDC64245C759700D7C191 /* MapGenRand.swift in Sources */,

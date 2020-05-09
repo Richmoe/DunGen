@@ -41,7 +41,7 @@ class Map {
          9EEZ
          
          */
-        //seedString = "3ZWM"
+        seedString = "WPH7"
         
         mapWidth = width
         mapHeight = height
