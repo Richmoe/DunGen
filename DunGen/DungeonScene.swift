@@ -57,9 +57,9 @@ class DungeonScene: SKScene {
         createAndRenderMap()
         self.camera = camera
         
-        scaleToFit()
+        //scaleToFit()
         
-        //self.camera!.setScale(0.25)
+        self.camera!.setScale(1.5)
         createPlayers()
         
         goToTile(mapController.getPlayerEntrance())
