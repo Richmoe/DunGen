@@ -77,3 +77,55 @@ class MapGenRand {
 }
 
 
+
+func GetHDRoll (dice: String) -> Int {
+
+    let pattern = "(?<dCount>[0-9]*)\\s*[D]\\s*(?<die>[0-9]+)\\s*(?<op>[//+//-]*)\\s*(?<mod>[0-9]*)"
+    
+    let regex = try? NSRegularExpression(
+        pattern: pattern,
+        options: .caseInsensitive
+    )
+    
+
+    var dCount: Int = 1
+    var die: Int = 0
+    var op: String = "+"
+    var mod: Int = 0
+    
+    if let match = regex?.firstMatch(in: dice, options: [], range: NSRange(location: 0, length: dice.utf16.count)) {
+        if let r = Range(match.range(withName: "dCount"), in: dice) {
+            if let m = Int(String(dice[r])) {
+                dCount = m
+            }
+        }
+        if let r = Range(match.range(withName: "die"), in: dice) {
+            die = Int(String(dice[r]))!
+        }
+        if let r = Range(match.range(withName: "op"), in: dice) {
+            let str = String(dice[r])
+            if (str.count > 0) {
+                op = str
+            }
+        }
+        if let r = Range(match.range(withName: "mod"), in: dice) {
+            if let m = Int(String(dice[r])) {
+                mod = m
+            }
+        }
+    }
+    
+    var roll =  0
+    for _ in 1...dCount {
+        roll += Int.random(in: 1...die)
+    }
+    
+    if (op == "-") {
+        roll -= mod
+    } else {
+        roll += mod
+    }
+
+    return roll
+}
+
