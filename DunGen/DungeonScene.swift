@@ -73,16 +73,16 @@ class DungeonScene: SKScene {
     
     func createPlayers() {
         
-        var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "Avatar1")
+        var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar1")
         party.addPlayer(p1)
         
-        p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "Avatar2")
+        p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar2")
         party.addPlayer(p1)
         
-        p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "Avatar3")
+        p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar3")
         party.addPlayer(p1)
         
-        p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, avatar: "Avatar4")
+        p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar4")
         party.addPlayer(p1)
         
         party.initAvatars(onLayer: self)
