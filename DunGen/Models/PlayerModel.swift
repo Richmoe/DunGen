@@ -9,32 +9,20 @@
 import Foundation
 
 
-class Player {
+class Player : Mob {
     
-    let uid:UUID?
     
-    var name: String
-    //var baseClass: BaseClass
-    //var race: Race
-    
-    var level: Int
+    var level : Int
     var experience: Int
     
-    var armorClass: Int
-    var hitPoints: Int
     
-    var avatar: String  //for now, an image
-    
-    init(name: String, level: Int, experience: Int, armorClass: Int, hitPoints: Int, avatar: String)
+    init(name: String, level: Int, experience: Int, armorClass: Int, hitPoints: Int, initiativeBonus: Int, avatar: String)
     {
-        self.uid = UUID()
-        self.name = name
         self.level = level
         self.experience = experience
-        self.armorClass = armorClass
-        self.hitPoints = hitPoints
-        self.avatar = avatar
         
+        super.init(name: name, armorClass: armorClass, hitPoints: hitPoints, initiativeBonus: initiativeBonus, image: avatar)
+
     }
     
     

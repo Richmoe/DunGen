@@ -66,6 +66,8 @@ class DungeonScene: SKScene {
         
         //createDebugLayer()
         
+        let x = MobFactory()
+        
         fogOfWar()
     }
     

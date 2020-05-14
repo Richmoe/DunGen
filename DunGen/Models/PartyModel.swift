@@ -34,7 +34,7 @@ class Party : ObservableObject {
     
     func initAvatars(onLayer: SKScene) {
         for p in player {
-            let a = SKSpriteNode(imageNamed: p.avatar)
+            let a = SKSpriteNode(imageNamed: p.image)
             a.name = p.name
             a.setScale(0.5)
             
