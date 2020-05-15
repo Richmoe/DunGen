@@ -20,9 +20,7 @@ class MobFactory {
     
     func parseMonsterList() {
         
-        let content = loadFromResource(fileName: "Monsters.csv")
-        
-        let parsedCSV: [[String]] = content.components(separatedBy: "\n").map{ $0.components(separatedBy: ",") }
+        let parsedCSV: [[String]] = Helper.loadFromCSV(fileName: "Monsters.csv")
         
         //Create monsterList elements:
         //Skip row one for now, unless we want to use it to lookup. Seems like too much overhead though
@@ -56,24 +54,5 @@ class MobFactory {
     
     
     
-    func loadFromResource(fileName: String) -> String {
-        let fileContents: String
-        let path = Bundle.main.path(forResource: fileName, ofType: nil)
-        do {
-            fileContents = try String(contentsOfFile:path!, encoding: String.Encoding.utf8)
-            //                let lines = fileContents.components(separatedBy: "\n")
-            //
-            //                for row in 0..<lines.count {
-            //                    let items = lines[row].components(separatedBy: " ")
-            //                    var str = ""
-            //                    for column in 0..<items.count {
-            //                        str += items[column] + " "
-            //                    }
-            //                    print ("row: \(row): \(str)")
-            //                }
-        } catch {
-            fatalError("Error Reading Resource \(fileName)")
-        }
-        return fileContents
-    }
+    
 }
