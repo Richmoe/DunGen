@@ -11,29 +11,20 @@ import Foundation
 
 class MapController {
     
+    var dungeon : Dungeon
+    var mapHeight: Int
+    var mapWidth: Int
     
-    var currentLevel = 0
-    
-    var level : [Map] = []
-    
-    let mapWidth = 30
-    let mapHeight = 30
-    
-    init() {
+    init(dungeon: Dungeon) {
         
-        let m = Map(width: mapWidth, height: mapHeight)
-        self.level.append(m)
+        self.dungeon = dungeon
+        self.mapHeight = dungeon.mapHeight
+        self.mapWidth = dungeon.mapWidth
     }
     
     func getPlayerEntrance() -> MapPoint {
-        return level[currentLevel].entranceLanding
+        return dungeon.getPlayerEntrance()
     }
-    
-    func rebuild() {
-        let m = Map(width: mapWidth, height: mapHeight)
-        level[currentLevel] = m
-    }
-    
     
     
     func move(from: MapPoint, dir: Direction) -> (Bool, MapPoint) {
@@ -64,7 +55,7 @@ class MapController {
         
         //All we need is from and which way we're going:
         
-        if (level[currentLevel].offScreen(point: to)) {
+        if (dungeon.currentLevel().offScreen(point: to)) {
             return false
         }
         
@@ -88,7 +79,7 @@ class MapController {
     }
     
     func getBlock(_ pt: MapPoint) -> MapBlock {
-        return level[currentLevel].getBlock(pt)
+        return dungeon.getBlock(pt)
     }
     
     

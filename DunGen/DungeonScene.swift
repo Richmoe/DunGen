@@ -28,9 +28,9 @@ class DungeonScene: SKScene {
 
     private var mapTileSet = MapTileSet()
     
-    private var mapController = MapController()
+    private var mapController : MapController?
     
-    var party = Party()
+    var adventure : Adventure?
     
     var debugLayerOn = false
     
@@ -53,50 +53,61 @@ class DungeonScene: SKScene {
         }
         
         self.backgroundLayer = backgroundLayer
+     
         
-        createAndRenderMap()
+        
+        adventure = Adventure() //TODO - this needs to be inited and passed in
+        
+        createMapLayer()
         self.camera = camera
         
         //scaleToFit()
+
+        
+        
         
         self.camera!.setScale(1.5)
-        createPlayers()
         
-        goToTile(mapController.getPlayerEntrance())
+        adventure!.createPlayers()
+        
+        adventure!.party.initAvatars(onLayer: self)
+        
+        mapController = MapController(dungeon: adventure!.dungeon)
+        //createPlayers()
+        
+        goToTile(mapController!.getPlayerEntrance())
         
         //createDebugLayer()
-        
-        let x = MobFactory()
+    
         
         fogOfWar()
     }
     
-    func createPlayers() {
-        
-        var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar1")
-        party.addPlayer(p1)
-        
-        p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar2")
-        party.addPlayer(p1)
-        
-        p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar3")
-        party.addPlayer(p1)
-        
-        p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar4")
-        party.addPlayer(p1)
-        
-        party.initAvatars(onLayer: self)
-    }
+//    func createPlayers() {
+//
+//        var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar1")
+//        party.addPlayer(p1)
+//
+//        p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar2")
+//        party.addPlayer(p1)
+//
+//        p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar3")
+//        party.addPlayer(p1)
+//
+//        p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar4")
+//        party.addPlayer(p1)
+//
+//        party.initAvatars(onLayer: self)
+//    }
     
     
-    func createAndRenderMap() {
+    func createMapLayer() {
         
         let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
         
-        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
+        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: adventure!.dungeon.mapWidth, rows: adventure!.dungeon.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)
-        
-       //renderMap(map: map)
+
     }
     
     func fogOfWar() {
@@ -106,7 +117,7 @@ class DungeonScene: SKScene {
             let ang = 6 * Double(a)
             let x = sin(ang  * (.pi / 180))
             let y = cos(ang * (.pi / 180))
-            var fromPt = party.at
+            var fromPt = adventure!.party.at
             var lastXx = 0
             var lastYy = 0
             
@@ -122,7 +133,7 @@ class DungeonScene: SKScene {
                     
                     let toPt = fromPt + moveVector
                     
-                    if (mapController.canSee(from: fromPt, to: toPt)) {
+                    if (mapController!.canSee(from: fromPt, to: toPt)) {
                         //Yes there are multiple renders of the same thing. Is this slower? I should benchmark
                         renderTile(toPt)
                         fromPt = toPt
@@ -134,58 +145,58 @@ class DungeonScene: SKScene {
         }
     }
     
-    func createDebugLayer() {
-        
-        debugLayerOn = true
-        mapTileSet.createDebugTiles()
-        
-        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
-        
-        debugLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
-        backgroundLayer.addChild(debugLayer)
-        
-        for row in 0..<mapController.mapHeight {
-            for col in 0..<mapController.mapWidth {
-                
-                let tileBlock = (mapController.getBlock(MapPoint(row: row, col: col)))
-                if (tileBlock.tileCode == TileCode.floor) {
-                    
-                    renderTile(layer: debugLayer, code: "DEBUG_ROOM", col: col, row: row)
-                }
-                
-                //Secret will override:
-                if (tileBlock.wallString.contains("S")) {
-                    renderTile(layer: debugLayer, code: "Sxxx", col: col, row: row)
-                }
-            }
-        }
-    }
-    
-    func testRebuildMap() {
-        
-        mapController.rebuild()
-
-        
-        mapLayer.removeFromParent()
-        
-        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
-        
-        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
-        backgroundLayer.addChild(mapLayer)
-        
-        renderMap()
-        
-        if (debugLayerOn) {
-            debugLayer.removeFromParent()
-            createDebugLayer()
-        }
-    }
-    
+//    func createDebugLayer() {
+//
+//        debugLayerOn = true
+//        mapTileSet.createDebugTiles()
+//
+//        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+//
+//        debugLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: adventure!.dungeon.mapWidth, rows: mapController.mapHeight, tileSize: size)
+//        backgroundLayer.addChild(debugLayer)
+//
+//        for row in 0..<mapController.mapHeight {
+//            for col in 0..<mapController.mapWidth {
+//
+//                let tileBlock = (mapController.getBlock(MapPoint(row: row, col: col)))
+//                if (tileBlock.tileCode == TileCode.floor) {
+//
+//                    renderTile(layer: debugLayer, code: "DEBUG_ROOM", col: col, row: row)
+//                }
+//
+//                //Secret will override:
+//                if (tileBlock.wallString.contains("S")) {
+//                    renderTile(layer: debugLayer, code: "Sxxx", col: col, row: row)
+//                }
+//            }
+//        }
+//    }
+//
+//    func testRebuildMap() {
+//
+//        mapController.rebuild()
+//
+//
+//        mapLayer.removeFromParent()
+//
+//        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+//
+//        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
+//        backgroundLayer.addChild(mapLayer)
+//
+//        renderMap()
+//
+//        if (debugLayerOn) {
+//            debugLayer.removeFromParent()
+//            createDebugLayer()
+//        }
+//    }
+//
     
     func renderMap () {
         
-        for row in 0..<mapController.mapHeight {
-            for col in 0..<mapController.mapWidth {
+        for row in 0..<mapController!.mapHeight {
+            for col in 0..<mapController!.mapWidth {
                 
                 //let tileBlock = (map.mapBlocks[row][col])
                 
@@ -224,7 +235,7 @@ class DungeonScene: SKScene {
     
     func renderTile(_ mp: MapPoint) {
         
-        let mb = mapController.getBlock(mp)
+        let mb = mapController!.getBlock(mp)
         if let groupIx = mapTileSet.tileDict[mb.wallString] {
             //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
             mapLayer.setTileGroup(mapLayer.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
@@ -255,7 +266,7 @@ class DungeonScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         
-        let partyAt = backgroundLayer.centerOfTile(atColumn: party.at.col, row: party.at.row)
+        let partyAt = backgroundLayer.centerOfTile(atColumn: adventure!.party.at.col, row: adventure!.party.at.row)
         
         let norm = normalize(pt: pos - partyAt)
         
@@ -299,7 +310,7 @@ class DungeonScene: SKScene {
             entity.update(deltaTime: dt)
         }
         
-        let movePt = backgroundLayer.centerOfTile(atColumn: party.at.col, row: party.at.row)
+        let movePt = backgroundLayer.centerOfTile(atColumn: adventure!.party.at.col, row: adventure!.party.at.row)
         camera!.position = (movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
         
         self.lastUpdateTime = currentTime
@@ -312,7 +323,7 @@ class DungeonScene: SKScene {
         let dx: Int = Int(dirPt.x.rounded())
         let dy: Int = Int(dirPt.y.rounded())
         
-        move(from: party.at, dir: getDirFromVector(MapPoint(row: dy, col: dx)))
+        move(from: adventure!.party.at, dir: getDirFromVector(MapPoint(row: dy, col: dx)))
         
     }
     
@@ -320,7 +331,7 @@ class DungeonScene: SKScene {
     func move(from: MapPoint, dir: Direction) {
         
         //first check to see if we can move
-        let (canMove, newSpot) = mapController.move(from: from, dir: dir)
+        let (canMove, newSpot) = mapController!.move(from: from, dir: dir)
         
         //Then rerender map?
         if (canMove) {
@@ -329,7 +340,7 @@ class DungeonScene: SKScene {
             let movePt = backgroundLayer.centerOfTile(atColumn: newSpot.col, row: newSpot.row)
             print ("moveToTile: \(newSpot.col), \(newSpot.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
             
-            party.renderParty(atPt: movePt, atTile: MapPoint(row: newSpot.row, col: newSpot.col))
+            adventure!.party.renderParty(atPt: movePt, atTile: MapPoint(row: newSpot.row, col: newSpot.col))
             
             //just in case:
             renderTile(newSpot)
@@ -342,7 +353,7 @@ class DungeonScene: SKScene {
         let movePt = backgroundLayer.centerOfTile(atColumn: tile.col, row: tile.row)
         print ("goToTile: \(tile.col), \(tile.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
         
-        party.renderParty(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
+        adventure!.party.renderParty(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
         
         renderTile(tile)
     }

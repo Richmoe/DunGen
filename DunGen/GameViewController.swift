@@ -33,7 +33,7 @@ class GameViewController: UIViewController {
 
             }
             
-            let dungeonUI = DungeonUIView(party: currentDungeon.party)
+            let dungeonUI = DungeonUIView(party: currentDungeon.adventure!.party)
             let uiController = UIHostingController(rootView: dungeonUI)
             addChild(uiController)
             
@@ -64,7 +64,7 @@ class GameViewController: UIViewController {
 
     @IBAction func testButtonPressed(_ sender: Any) {
         print ("Here I am!")
-        currentDungeon.testRebuildMap()
+        //currentDungeon.testRebuildMap()
     }
     
     override var prefersStatusBarHidden: Bool {

@@ -11,6 +11,8 @@ import Foundation
 class Adventure {
     
     //Map
+    var dungeon: Dungeon
+    
     //Party
     var party : Party
     //Difficulty
@@ -24,6 +26,8 @@ class Adventure {
     
     init() {
         party = Party()
+        
+        dungeon = Dungeon()
     }
     
     func createPlayers() {
