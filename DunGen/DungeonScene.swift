@@ -66,7 +66,7 @@ class DungeonScene: SKScene {
         
         
         
-        self.camera!.setScale(1.5)
+        self.camera!.setScale(3.5)
         
         adventure!.createPlayers()
         

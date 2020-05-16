@@ -65,12 +65,12 @@ class MapController {
         
         let dirWall = fromBlock.getWallCode(wallDir: dir)
         
-        if (["W","D","0"].contains(dirWall)) {
+        if (["W","D","S","0"].contains(dirWall)) {
             return false
         } else {
             //now check to walls
             let dirWall = getBlock(to).getWallCode(wallDir: dir.opposite())
-            if (["W","D","0"].contains(dirWall)) {
+            if (["W","D","S","0"].contains(dirWall)) {
                 return false
             } else {
                 return true
