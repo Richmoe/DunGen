@@ -34,7 +34,7 @@ class Monster: Mob {
         
         //convert HitDice to HitPoints
         
-        self.hitPoints = GetHDRoll(dice: hitDice)
+        self.hitPoints = GetDiceRoll(hitDice)
         print ("Making \(self.name) with \(self.hitPoints) HPs \(self.hitDice)")
         
     }

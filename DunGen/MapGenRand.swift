@@ -78,7 +78,7 @@ class MapGenRand {
 
 
 
-func GetHDRoll (dice: String) -> Int {
+func GetDiceRoll (_ dice: String) -> Int {
 
     let pattern = "(?<dCount>[0-9]*)\\s*[D]\\s*(?<die>[0-9]+)\\s*(?<op>[//+//-]*)\\s*(?<mod>[0-9]*)"
     

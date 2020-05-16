@@ -80,6 +80,8 @@ class DungeonScene: SKScene {
         //createDebugLayer()
         
         let m = Encounter()
+        
+        let b = Battle(encounter: m, party: adventure!.party)
     
         
         fogOfWar()
