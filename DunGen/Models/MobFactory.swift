@@ -10,11 +10,13 @@ import Foundation
 
 
 class MobFactory {
-
+    
+    static let sharedInstance = MobFactory()
+    
     var monsterList : [Monster] = [Monster]()
     
-    init() {
-        
+    private init() {
+        print("------------ Mob Factory -----------")
         parseMonsterList()
     }
     
@@ -47,12 +49,17 @@ class MobFactory {
             if (mob.count < iCR) {
                 break
             }
-                //init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String, hitDice: String, challengeRating: Double)
+            //init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String, hitDice: String, challengeRating: Double)
             monsterList.append(Monster(name: mob[iName], armorClass: Int(mob[iAC])!, hitPoints: 0, initiativeBonus: Int(mob[iInitiative])!, image: "Avatar4", hitDice: mob[iHitDice], challengeRating: Double(iCR)))
         }
     }
     
-    
-    
-    
+    func makeMonster(name: String) -> Monster {
+        
+        if let mobData = monsterList.first(where: {$0.name.lowercased() == name.lowercased()}) {
+            return mobData.makeMob()
+        } else {
+            fatalError("Can't find mob: \(name)")
+        }
+    }
 }

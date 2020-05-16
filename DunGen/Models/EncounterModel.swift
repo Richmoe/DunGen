@@ -10,13 +10,27 @@ import Foundation
 
 class Encounter {
     
+    //Encounter is a generated list of monsters, their location, and their treasure
+    
+    
     
     //list of mobs
+    var mobs: [Monster] = [Monster]()
     
-    //Pass in party and mobs, roll initiatives, story them in array?
+    // Map location
+    
+    //Treasure
     
     
-    
-    
-    
+    init() {
+        
+        var m : Monster
+        for _ in 1...4 {
+            m =  MobFactory.sharedInstance.makeMonster(name: "goblin")
+            mobs.append(m)
+            
+        }
+    }
 }
+
+

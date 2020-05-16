@@ -78,6 +78,8 @@ class DungeonScene: SKScene {
         goToTile(mapController!.getPlayerEntrance())
         
         //createDebugLayer()
+        
+        let m = Encounter()
     
         
         fogOfWar()
