@@ -28,7 +28,7 @@ class Battle {
     var initiative: [(Int, Mob)] = []
     
     var current = -1
-    var round = 0
+    var round = 1
     
     
     init (encounter: Encounter, party: Party) {
@@ -67,13 +67,15 @@ class Battle {
     
     func nextTurn() {
         current += 1
+        if (current >= initiative.count) {
+            current = 0
+            nextRound()
+        }
         
         
     }
     
     func nextRound() {
         round += 1
-        
-        
     }
 }

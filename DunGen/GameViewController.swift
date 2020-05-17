@@ -33,7 +33,7 @@ class GameViewController: UIViewController {
 
             }
             
-            let dungeonUI = DungeonUIView(party: currentDungeon.adventure!.party)
+            let dungeonUI = DungeonUIView(adventure: currentDungeon.adventure!)
             let uiController = UIHostingController(rootView: dungeonUI)
             addChild(uiController)
             

@@ -30,6 +30,8 @@ class DungeonScene: SKScene {
     
     private var mapController : MapController?
     
+    var battle: Battle?
+    
     var adventure : Adventure?
     
     var debugLayerOn = false
@@ -79,30 +81,15 @@ class DungeonScene: SKScene {
         
         //createDebugLayer()
         
+        //Temp
         let m = Encounter()
         
-        let b = Battle(encounter: m, party: adventure!.party)
-    
+        battle = Battle(encounter: m, party: adventure!.party)
+        adventure!.currentBattle = battle
         
         fogOfWar()
     }
-    
-//    func createPlayers() {
-//
-//        var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar1")
-//        party.addPlayer(p1)
-//
-//        p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar2")
-//        party.addPlayer(p1)
-//
-//        p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar3")
-//        party.addPlayer(p1)
-//
-//        p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar4")
-//        party.addPlayer(p1)
-//
-//        party.initAvatars(onLayer: self)
-//    }
+
     
     
     func createMapLayer() {

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct DungeonUIView: View {
     
-    @ObservedObject var party : Party
+    @ObservedObject var adventure : Adventure
     
     var body: some View {
         GeometryReader { geometry in
@@ -20,14 +20,14 @@ struct DungeonUIView: View {
                     Spacer()
                         .frame(width: 3 * geometry.size.width / 4)
                     ZStack() {
-
+                        
                         Image("Char BG")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: geometry.size.width / 4)
-                                                EncounterListView()
-                                                    .frame(height: 650)
-                                                    .offset(CGSize(width: 40,height: 0))
+                        BattleListView(battle: self.adventure.currentBattle!)
+                            .frame(height: 650)
+                            .offset(CGSize(width: 40,height: 0))
                         
                     }
                 }
@@ -39,6 +39,6 @@ struct DungeonUIView: View {
 
 struct DungeonUIView_Previews: PreviewProvider {
     static var previews: some View {
-        DungeonUIView(party: Party())
+        DungeonUIView(adventure: Adventure())
     }
 }
