@@ -18,6 +18,7 @@ class Mob {
     
     var armorClass: Int
     var hitPoints: Int
+    var maxHitPoints: Int
     
     var image: String  //for now, an image
     
@@ -29,6 +30,7 @@ class Mob {
         self.name = name
         self.armorClass = armorClass
         self.hitPoints = hitPoints
+        self.maxHitPoints = hitPoints
         self.image = image
         self.initiativeBonus = initiativeBonus
         

@@ -28,6 +28,7 @@
 		975B75DB246F248E00E09936 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B75DA246F248E00E09936 /* Helper.swift */; };
 		975B75DD246F929900E09936 /* Dungeon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B75DC246F929900E09936 /* Dungeon.swift */; };
 		975B75DF2470551B00E09936 /* BattleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B75DE2470551B00E09936 /* BattleModel.swift */; };
+		975B75E12470D78900E09936 /* BattleMobItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B75E02470D78900E09936 /* BattleMobItem.swift */; };
 		977E0A50245CE35800AC41B1 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A4F245CE35800AC41B1 /* MapModel.swift */; };
 		977E0A52245CE36B00AC41B1 /* MapBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A51245CE36B00AC41B1 /* MapBlockModel.swift */; };
 		977E0A54245CE36D00AC41B1 /* MapTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A53245CE36D00AC41B1 /* MapTypes.swift */; };
@@ -65,6 +66,7 @@
 		975B75DA246F248E00E09936 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		975B75DC246F929900E09936 /* Dungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeon.swift; sourceTree = "<group>"; };
 		975B75DE2470551B00E09936 /* BattleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleModel.swift; sourceTree = "<group>"; };
+		975B75E02470D78900E09936 /* BattleMobItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleMobItem.swift; sourceTree = "<group>"; };
 		977E0A4F245CE35800AC41B1 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		977E0A51245CE36B00AC41B1 /* MapBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBlockModel.swift; sourceTree = "<group>"; };
 		977E0A53245CE36D00AC41B1 /* MapTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTypes.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				97BCDC62245C759700D7C191 /* MapGenRand.swift */,
 				97BCDC61245C759700D7C191 /* MapTileSet.swift */,
 				9739B51B245A74B300C043B7 /* Main.storyboard */,
+				975B75E02470D78900E09936 /* BattleMobItem.swift */,
 				9726D6E1246454FE00840A04 /* MapController.swift */,
 				97BCDC69245D1B7B00D7C191 /* DungeonScene.sks */,
 				977E0A5B245CE3C700AC41B1 /* Models */,
@@ -235,6 +238,7 @@
 				977E0A54245CE36D00AC41B1 /* MapTypes.swift in Sources */,
 				9739B51A245A74B300C043B7 /* GameViewController.swift in Sources */,
 				977E0A5D245F91A600AC41B1 /* PartyModel.swift in Sources */,
+				975B75E12470D78900E09936 /* BattleMobItem.swift in Sources */,
 				975B75CD246894BC00E09936 /* MonsterModel.swift in Sources */,
 				975B75CB2468931900E09936 /* MobModel.swift in Sources */,
 				975B75CF246B772800E09936 /* MobFactory.swift in Sources */,

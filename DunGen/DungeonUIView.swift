@@ -26,8 +26,7 @@ struct DungeonUIView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: geometry.size.width / 4)
                         BattleListView(battle: self.adventure.currentBattle!)
-                            .frame(height: 650)
-                            .offset(CGSize(width: 40,height: 0))
+                            .frame(width: geometry.size.width / 4 - 80, height: 650)
                         
                     }
                 }

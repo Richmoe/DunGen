@@ -13,12 +13,14 @@ struct BattleListView: View {
     var battle: Battle
     
     var body: some View {
-        List {
+        VStack (spacing: 10) {
             ForEach(0..<battle.initiative.count) { val in
-                Text("\(self.battle.initiative[val].0): \(self.battle.initiative[val].1.name)")
+                //Text("\(self.battle.initiative[val].0): \(self.battle.initiative[val].1.name)")
+                BattleMobItem(mob: self.battle.initiative[val].1)
+                //Spacer()
             }
-            .listRowBackground(Color.clear)
-        }
+//            .listRowBackground(Color.clear)
+       }
         
         
     }
