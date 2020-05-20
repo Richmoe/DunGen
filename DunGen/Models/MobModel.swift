@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Mob {
+class Mob : ObservableObject {
     
     
     let uid:UUID?
@@ -17,7 +17,7 @@ class Mob {
 
     
     var armorClass: Int
-    var hitPoints: Int
+    @Published var hitPoints: Int
     var maxHitPoints: Int
     
     var image: String  //for now, an image
@@ -34,5 +34,15 @@ class Mob {
         self.image = image
         self.initiativeBonus = initiativeBonus
         
+    }
+    
+    func decreaseHP() {
+        hitPoints -= 1
+        hitPoints = max(hitPoints, 0)
+    }
+    
+    func increaseHP() {
+        hitPoints += 1
+        hitPoints = min(hitPoints, maxHitPoints)
     }
 }

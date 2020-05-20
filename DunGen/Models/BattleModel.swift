@@ -19,7 +19,7 @@ import Foundation
  
  */
 
-class Battle {
+class Battle : ObservableObject {
     
     let encounter: Encounter
     
@@ -27,8 +27,8 @@ class Battle {
     
     var initiative: [(Int, Mob)] = []
     
-    var current = -1
-    var round = 1
+    @Published var current = 0
+    @Published var round = 1
     
     
     init (encounter: Encounter, party: Party) {
@@ -67,15 +67,17 @@ class Battle {
     
     func nextTurn() {
         current += 1
-        if (current >= initiative.count) {
-            current = 0
-            nextRound()
-        }
-        
-        
+//        if (current >= initiative.count) {
+//            current = 0
+//            nextRound()
+//        }
+        current = current % initiative.count
+
     }
     
     func nextRound() {
         round += 1
+        current = 0
+        print ("Round: \(round)")
     }
 }

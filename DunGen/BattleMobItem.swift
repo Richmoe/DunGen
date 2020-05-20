@@ -9,15 +9,18 @@
 import SwiftUI
 
 struct BattleMobItem: View {
-    var mob : Mob
+    @ObservedObject var mob : Mob
+    var order: Int
+    var isCurrent: Bool
     
+    let colorArray = [Color.blue, Color.red, Color.gray, Color.green, Color.orange, Color.black, Color.pink, Color.purple]
     
     var body: some View {
         
         HStack {
             Text(self.mob.name.prefix(1))
                 .padding(8)
-                .background(Color.blue)
+                .background(colorArray[ order % colorArray.count ])
                 .foregroundColor(Color.white)
                 .clipShape(Circle())
             
@@ -34,7 +37,7 @@ struct BattleMobItem: View {
             
             Spacer()
             HStack {
-                Button(action: {print ("1")}) {
+                Button(action: {self.mob.decreaseHP()}) {
                     Text("<")
                         .font(.title)
                 }
@@ -44,17 +47,21 @@ struct BattleMobItem: View {
                     Text("\(self.mob.hitPoints)")
                         .font(.headline)
                 }
-                Button(action: {print ("2")}) {
+                Button(action: {self.mob.increaseHP()}) {
                     Text(">")
                         .font(.title)
                 }
             }
+            
         }
+        .padding(8)
+        .border(Color.pink, width: (isCurrent == true ?  2 : 0))
+        .background((self.mob.hitPoints == 0 ? Color.gray : Color.clear))
     }
 }
 
 struct BattleMobItem_Previews: PreviewProvider {
     static var previews: some View {
-        BattleMobItem(mob: Mob(name: "Goblin", armorClass: 12, hitPoints: 12, initiativeBonus: 2, image: "") )
+        BattleMobItem(mob: Mob(name: "Goblin", armorClass: 12, hitPoints: 12, initiativeBonus: 2, image: ""), order: Int.random(in: 0...7), isCurrent: true)
     }
 }

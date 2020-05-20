@@ -10,16 +10,29 @@ import SwiftUI
 
 struct BattleListView: View {
     
-    var battle: Battle
+    @ObservedObject var battle: Battle
     
     var body: some View {
         VStack (spacing: 10) {
+            Text("Round: \(battle.round)")
             ForEach(0..<battle.initiative.count) { val in
-                //Text("\(self.battle.initiative[val].0): \(self.battle.initiative[val].1.name)")
-                BattleMobItem(mob: self.battle.initiative[val].1)
+                //Text("\(val): \(self.battle.current), \(Bool(self.battle.current == val))")
+                BattleMobItem(mob: self.battle.initiative[val].1, order: val, isCurrent: self.battle.current == val)
                 //Spacer()
             }
 //            .listRowBackground(Color.clear)
+            
+            HStack {
+                Spacer()
+                Button("Next") {
+                    self.battle.nextTurn()
+                }
+                Spacer()
+                Button("End Round") {
+                    self.battle.nextRound()
+                }
+                Spacer()
+            }
        }
         
         
