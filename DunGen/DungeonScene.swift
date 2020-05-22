@@ -32,9 +32,11 @@ class DungeonScene: SKScene {
     
     var battle: Battle?
     
-    var adventure : Adventure?
+    //var adventure : Adventure?
     
     var debugLayerOn = false
+    
+    var inBattle = true
     
     let cameraOffset = 0.0
     var currentScale : CGFloat = 1.0
@@ -43,6 +45,8 @@ class DungeonScene: SKScene {
     
     
     override func sceneDidLoad() {
+        
+        
         
         self.lastUpdateTime = 0
         guard let backgroundLayer = childNode(withName: "Background") as? SKTileMapNode else {
@@ -58,7 +62,7 @@ class DungeonScene: SKScene {
      
         
         
-        adventure = Adventure() //TODO - this needs to be inited and passed in
+        //adventure = Adventure() //TODO - this needs to be inited and passed in
         
         createMapLayer()
         self.camera = camera
@@ -70,11 +74,11 @@ class DungeonScene: SKScene {
         
         self.camera!.setScale(3.5)
         
-        adventure!.createPlayers()
+        Global.adventure.createPlayers()
         
-        adventure!.party.initAvatars(onLayer: self)
+        Global.adventure.party.initAvatars(onLayer: self)
         
-        mapController = MapController(dungeon: adventure!.dungeon)
+        mapController = MapController(dungeon: Global.adventure.dungeon)
         //createPlayers()
         
         goToTile(mapController!.getPlayerEntrance())
@@ -84,8 +88,8 @@ class DungeonScene: SKScene {
         //Temp
         let m = Encounter()
         
-        battle = Battle(encounter: m, party: adventure!.party)
-        adventure!.currentBattle = battle
+        battle = Battle(encounter: m, party: Global.adventure.party)
+        Global.adventure.currentBattle = battle
         
         fogOfWar()
     }
@@ -96,7 +100,7 @@ class DungeonScene: SKScene {
         
         let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
         
-        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: adventure!.dungeon.mapWidth, rows: adventure!.dungeon.mapHeight, tileSize: size)
+        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth, rows: Global.adventure.dungeon.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)
 
     }
@@ -108,7 +112,7 @@ class DungeonScene: SKScene {
             let ang = 6 * Double(a)
             let x = sin(ang  * (.pi / 180))
             let y = cos(ang * (.pi / 180))
-            var fromPt = adventure!.party.at
+            var fromPt = Global.adventure.party.at
             var lastXx = 0
             var lastYy = 0
             
@@ -257,7 +261,7 @@ class DungeonScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         
-        let partyAt = backgroundLayer.centerOfTile(atColumn: adventure!.party.at.col, row: adventure!.party.at.row)
+        let partyAt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
         
         let norm = normalize(pt: pos - partyAt)
         
@@ -277,7 +281,12 @@ class DungeonScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+        
+        for t in touches {
+            print (t)
+            self.touchUp(atPoint: t.location(in: self))
+            
+        }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -301,7 +310,7 @@ class DungeonScene: SKScene {
             entity.update(deltaTime: dt)
         }
         
-        let movePt = backgroundLayer.centerOfTile(atColumn: adventure!.party.at.col, row: adventure!.party.at.row)
+        let movePt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
         camera!.position = (movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
         
         self.lastUpdateTime = currentTime
@@ -314,7 +323,7 @@ class DungeonScene: SKScene {
         let dx: Int = Int(dirPt.x.rounded())
         let dy: Int = Int(dirPt.y.rounded())
         
-        move(from: adventure!.party.at, dir: getDirFromVector(MapPoint(row: dy, col: dx)))
+        move(from: Global.adventure.party.at, dir: getDirFromVector(MapPoint(row: dy, col: dx)))
         
     }
     
@@ -331,7 +340,7 @@ class DungeonScene: SKScene {
             let movePt = backgroundLayer.centerOfTile(atColumn: newSpot.col, row: newSpot.row)
             print ("moveToTile: \(newSpot.col), \(newSpot.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
             
-            adventure!.party.renderParty(atPt: movePt, atTile: MapPoint(row: newSpot.row, col: newSpot.col))
+            Global.adventure.party.renderParty(atPt: movePt, atTile: MapPoint(row: newSpot.row, col: newSpot.col))
             
             //just in case:
             renderTile(newSpot)
@@ -344,7 +353,7 @@ class DungeonScene: SKScene {
         let movePt = backgroundLayer.centerOfTile(atColumn: tile.col, row: tile.row)
         print ("goToTile: \(tile.col), \(tile.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
         
-        adventure!.party.renderParty(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
+        Global.adventure.party.renderParty(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
         
         renderTile(tile)
     }
