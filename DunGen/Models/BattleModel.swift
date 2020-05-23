@@ -62,22 +62,15 @@ class Battle : ObservableObject {
 
         //Sort descending
         initiative = temp.sorted { $0.0 > $1.0}
-        
     }
     
     func nextTurn() {
         current += 1
-//        if (current >= initiative.count) {
-//            current = 0
-//            nextRound()
-//        }
         current = current % initiative.count
-
     }
     
     func nextRound() {
         round += 1
         current = 0
-        print ("Round: \(round)")
     }
 }

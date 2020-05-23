@@ -33,6 +33,9 @@ class MapBlock {
     //to flip, do CW*2
     //To rotate CCW, CW*2
     
+    init() {
+        //Required stub
+    }
     
     func rotCCW() {
         wallString.append(wallString.removeFirst())
@@ -71,10 +74,6 @@ class MapBlock {
         }
         
         // print ("After: \(wallString)")
-    }
-    
-    init() {
-        print ("")
     }
     
     func rotateForDir(heading: Direction) {

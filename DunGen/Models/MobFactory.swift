@@ -16,7 +16,6 @@ class MobFactory {
     var monsterList : [Monster] = [Monster]()
     
     private init() {
-        print("------------ Mob Factory -----------")
         parseMonsterList()
     }
     

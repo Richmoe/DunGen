@@ -20,7 +20,7 @@ class MapTileSet {
     
     
     init() {
-        print ("Initing MapTileSet")
+        //print ("Initing MapTileSet")
         let tileTexture = SKTexture(imageNamed: "BaseTile128.png")
         let tileDef = SKTileDefinition(texture: tileTexture)
         let tileGroup = SKTileGroup(tileDefinition: tileDef)

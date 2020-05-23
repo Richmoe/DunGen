@@ -30,15 +30,9 @@ class DungeonScene: SKScene {
     
     private var mapController : MapController?
     
-    var battle: Battle?
-    
-    //var adventure : Adventure?
-    
     var debugLayerOn = false
     
-    var inBattle = true
-    
-    let cameraOffset = 0.0
+    var cameraOffset = 200.0
     var currentScale : CGFloat = 1.0
     
     let maxLineOfSight = 6 //Can see 60' or 6 10x10 tiles
@@ -59,20 +53,14 @@ class DungeonScene: SKScene {
         }
         
         self.backgroundLayer = backgroundLayer
-     
-        
-        
-        //adventure = Adventure() //TODO - this needs to be inited and passed in
+
         
         createMapLayer()
         self.camera = camera
         
-        //scaleToFit()
 
         
-        
-        
-        self.camera!.setScale(3.5)
+        //self.camera!.setScale(3.5)
         
         Global.adventure.createPlayers()
         
@@ -88,7 +76,7 @@ class DungeonScene: SKScene {
         //Temp
         let m = Encounter()
         
-        battle = Battle(encounter: m, party: Global.adventure.party)
+        let battle = Battle(encounter: m, party: Global.adventure.party)
         Global.adventure.currentBattle = battle
         
         fogOfWar()

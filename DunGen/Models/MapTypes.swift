@@ -143,8 +143,6 @@ func getMoveVector(dir: Direction) -> MapPoint {
         moveVector = MapPoint(row: -1, col: 1)
     case .southwest:
         moveVector = MapPoint(row: -1, col: -1)
-    default:
-        moveVector = MapPoint(row: 0, col: 0)
     }
     return moveVector
 }
