@@ -18,6 +18,7 @@ class DungeonScene: SKScene {
     var backgroundLayer: SKTileMapNode!
     
     var mapLayer: SKTileMapNode!
+    var battleOverlayLayer: SKTileMapNode!
     
     var debugLayer: SKTileMapNode!
     
@@ -56,6 +57,8 @@ class DungeonScene: SKScene {
 
         
         createMapLayer()
+        createBattleOverlay()
+        
         self.camera = camera
         
 
@@ -90,6 +93,23 @@ class DungeonScene: SKScene {
         
         self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth, rows: Global.adventure.dungeon.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)
+
+    }
+    
+    func createBattleOverlay() {
+        
+        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+        
+        self.battleOverlayLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth, rows: Global.adventure.dungeon.mapHeight, tileSize: size)
+        backgroundLayer.addChild(battleOverlayLayer)
+        
+        mapTileSet.createBattleOverlayTile()
+        
+        if let groupIx = mapTileSet.tileDict["BATTLE_OVERLAY"] {
+            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
+            battleOverlayLayer.fill(with: mapLayer.tileSet.tileGroups[groupIx])
+        }
+        
 
     }
     

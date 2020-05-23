@@ -141,4 +141,11 @@ class MapTileSet {
         createAllDirections(imageName: "DebugSecretN128.png", defWallString: "Sxxx")
     }
     
+    func createBattleOverlayTile() {
+        let tileTexture = SKTexture(imageNamed: "BattleGrid128.png")
+        let tileDef = SKTileDefinition(texture: tileTexture)
+        
+        tileSet.tileGroups.append(SKTileGroup(tileDefinition: tileDef))
+        tileDict["BATTLE_OVERLAY"] = tileDict.count
+    }
 }
