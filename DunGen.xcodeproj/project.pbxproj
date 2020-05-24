@@ -115,19 +115,16 @@
 				9739B511245A74B300C043B7 /* AppDelegate.swift */,
 				978D11C42478613600355716 /* SceneDelegate.swift */,
 				9739B515245A74B300C043B7 /* Actions.sks */,
-				978D11CB24787EDA00355716 /* Global.swift */,
 				97BCDC65245C75A800D7C191 /* DungeonScene.swift */,
 				97BCDC69245D1B7B00D7C191 /* DungeonScene.sks */,
-				97BCDC62245C759700D7C191 /* MapGenRand.swift */,
 				9726D6E1246454FE00840A04 /* MapController.swift */,
-				97BCDC61245C759700D7C191 /* MapTileSet.swift */,
-				975B75E02470D78900E09936 /* BattleMobItem.swift */,
-				975B75C82467B27A00E09936 /* BattleListView.swift */,
-				978D11C22478605700355716 /* AdventureView.swift */,
-				9726D6E52466573400840A04 /* DungeonUIView.swift */,
-				978D11C024785EEC00355716 /* MapView.swift */,
+				978D11CB24787EDA00355716 /* Global.swift */,
+				97BCDC62245C759700D7C191 /* MapGenRand.swift */,
+				975B75DA246F248E00E09936 /* Helper.swift */,
+				978D11CE247B36B400355716 /* UIView */,
 				977E0A5B245CE3C700AC41B1 /* Models */,
 				9739B51E245A74B500C043B7 /* Assets.xcassets */,
+				97BCDC61245C759700D7C191 /* MapTileSet.swift */,
 				9739B520245A74B500C043B7 /* LaunchScreen.storyboard */,
 				9739B51B245A74B300C043B7 /* Main.storyboard */,
 				975B75D2246CAEE800E09936 /* Monsters.csv */,
@@ -151,12 +148,23 @@
 				977E0A58245CE37100AC41B1 /* RoomModel.swift */,
 				975B75CC246894BC00E09936 /* MonsterModel.swift */,
 				975B75CE246B772800E09936 /* MobFactory.swift */,
-				975B75DA246F248E00E09936 /* Helper.swift */,
 				977E0A5C245F91A600AC41B1 /* PartyModel.swift */,
 				975B75CA2468931900E09936 /* MobModel.swift */,
 				975B75DC246F929900E09936 /* Dungeon.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		978D11CE247B36B400355716 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				975B75E02470D78900E09936 /* BattleMobItem.swift */,
+				975B75C82467B27A00E09936 /* BattleListView.swift */,
+				978D11C22478605700355716 /* AdventureView.swift */,
+				9726D6E52466573400840A04 /* DungeonUIView.swift */,
+				978D11C024785EEC00355716 /* MapView.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -142,10 +142,12 @@ class MapTileSet {
     }
     
     func createBattleOverlayTile() {
-        let tileTexture = SKTexture(imageNamed: "BattleGrid128.png")
+        let tileTexture = SKTexture(imageNamed: "BattleGrid64.png")
         let tileDef = SKTileDefinition(texture: tileTexture)
         
         tileSet.tileGroups.append(SKTileGroup(tileDefinition: tileDef))
         tileDict["BATTLE_OVERLAY"] = tileDict.count
+
+        
     }
 }

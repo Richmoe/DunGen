@@ -51,6 +51,11 @@ class MapController {
         }
     }
     
+    func battleMove(from: MapPoint, to: MapPoint) {
+        
+        
+    }
+    
     func canSee(from: MapPoint, to: MapPoint) -> Bool {
         
         //All we need is from and which way we're going:

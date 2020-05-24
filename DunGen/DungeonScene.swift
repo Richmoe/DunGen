@@ -98,9 +98,9 @@ class DungeonScene: SKScene {
     
     func createBattleOverlay() {
         
-        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+        let size = CGSize(width: 64, height: 64)
         
-        self.battleOverlayLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth, rows: Global.adventure.dungeon.mapHeight, tileSize: size)
+        self.battleOverlayLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth * 2, rows: Global.adventure.dungeon.mapHeight * 2, tileSize: size)
         backgroundLayer.addChild(battleOverlayLayer)
         
         mapTileSet.createBattleOverlayTile()
