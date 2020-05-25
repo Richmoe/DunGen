@@ -35,6 +35,7 @@ func * (left: MapPoint, right: Int) ->  MapPoint {
     return MapPoint(row: left.row * right, col: left.col * right)
 }
 
+
 struct Passage {
     let type : PassageType
     let direction: Direction

@@ -20,7 +20,7 @@ class Adventure  {
     //Set up Encounters
     
     //Manage battles?
-    var currentBattle: Battle?
+    var currentBattle: BattleController?
     var inBattle = true
     //End of Adventure calcs
     

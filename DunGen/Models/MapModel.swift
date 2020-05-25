@@ -59,6 +59,17 @@ class Map {
         fixUpMap()
     }
     
+    func ptToCGPoint(_ mapPoint: MapPoint) -> CGPoint {
+        let x = mapPoint.col * MapTileSet.tileWidth - (mapWidth * MapTileSet.tileWidth / 2)
+        let y = mapPoint.row * MapTileSet.tileHeight - (mapHeight * MapTileSet.tileHeight / 2)
+        return CGPoint(x: x, y: y)
+        
+    }
+    
+    func centerPtToCGPoint(_ mapPoint: MapPoint) -> CGPoint {
+        return ptToCGPoint(mapPoint) + CGPoint(x: MapTileSet.tileWidth / 2, y: MapTileSet.tileHeight / 2)
+        
+    }
     
     // MARK: - Move Queue
     

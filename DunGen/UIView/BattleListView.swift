@@ -10,7 +10,7 @@ import SwiftUI
 
 struct BattleListView: View {
     
-    @ObservedObject var battle: Battle
+    @ObservedObject var battle: BattleController
     
     var body: some View {
         VStack (spacing: 10) {
@@ -41,6 +41,6 @@ struct BattleListView: View {
 
 struct BattleListView_Previews: PreviewProvider {
     static var previews: some View {
-        BattleListView(battle: Battle(encounter: Encounter(), party: Party()))
+        BattleListView(battle: BattleController(encounter: Encounter(at: MapPoint(row: 0,col: 0)), party: Party()))
     }
 }

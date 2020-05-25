@@ -24,6 +24,8 @@ class Mob : ObservableObject {
     
     var initiativeBonus = 0
     
+    var battleAt = MapPoint(row: 0, col: 0)
+    
     init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String)
     {
         self.uid = UUID()
@@ -45,4 +47,6 @@ class Mob : ObservableObject {
         hitPoints += 1
         hitPoints = min(hitPoints, maxHitPoints)
     }
+    
+    
 }

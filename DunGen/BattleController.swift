@@ -1,5 +1,5 @@
 //
-//  BattleModel.swift
+//  BattleController.swift
 //  DunGen
 //
 //  Created by Richard Moe on 5/16/20.
@@ -7,10 +7,10 @@
 //
 
 import Foundation
+import SpriteKit
 
 
-
-/* Battle is:
+/* BattleController is:
  Encounter obj
  Party obj
  Initiative
@@ -19,7 +19,7 @@ import Foundation
  
  */
 
-class Battle : ObservableObject {
+class BattleController : ObservableObject {
     
     let encounter: Encounter
     
@@ -34,7 +34,22 @@ class Battle : ObservableObject {
     init (encounter: Encounter, party: Party) {
         self.encounter = encounter
         self.party = party
+        
         generateInitiative()
+        
+        placeMobs()
+    }
+    
+    func placeMobs() {
+        
+        //
+        
+        
+        
+    }
+    
+    func moveCurrent(to: CGPoint) {
+        
     }
     
     func generateInitiative() {
@@ -52,14 +67,14 @@ class Battle : ObservableObject {
         
         
         //Roll for Encounter mobs
-        for m in encounter.mobs {
+        for m in encounter.mob {
             var roll = GetDiceRoll("1d20")
             
             roll += m.initiativeBonus
             
             temp.append((roll, m))
         }
-
+        
         //Sort descending
         initiative = temp.sorted { $0.0 > $1.0}
     }

@@ -77,12 +77,14 @@ class DungeonScene: SKScene {
         //createDebugLayer()
         
         //Temp
-        let m = Encounter()
+        let m = Encounter(at: MapPoint(row: 3, col: 13))
+        m.initMobSprites(dungeon: self)
         
-        let battle = Battle(encounter: m, party: Global.adventure.party)
+        let battle = BattleController(encounter: m, party: Global.adventure.party)
         Global.adventure.currentBattle = battle
         
         fogOfWar()
+        
     }
 
     
@@ -269,11 +271,18 @@ class DungeonScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         
-        let partyAt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
-        
-        let norm = normalize(pt: pos - partyAt)
-        
-        moveDir(dirPt: norm)
+        if (Global.adventure.inBattle == true) {
+            //
+            if let bc = Global.adventure.currentBattle {
+                bc.moveCurrent(to: pos)
+            }
+        } else {
+            let partyAt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
+            
+            let norm = normalize(pt: pos - partyAt)
+            
+            moveDir(dirPt: norm)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -392,5 +401,6 @@ class DungeonScene: SKScene {
         
         print ("Scaling to \(scale) , \(currentScale)")
     }
+    
     
 }
