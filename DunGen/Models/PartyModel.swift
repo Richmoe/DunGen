@@ -27,9 +27,9 @@ class Party : ObservableObject {
     func removePlayer(_ p: Player) {
         //TODO
     }
-    
-    func moveParty() {
-        
+
+    func atPt() -> CGPoint {
+        return avatar[0].position - getOffset(0)
     }
     
     func initAvatars(onLayer: SKScene) {
@@ -43,21 +43,45 @@ class Party : ObservableObject {
         }
     }
     
-    func renderParty(atPt: CGPoint, atTile: MapPoint) {
+    func setAt(atPt: CGPoint, atTile: MapPoint) {
         at = atTile
-        //Assume a grid of 64x64 and AT is the center
-        //Assume max 4
-        avatar[0].position = atPt + CGPoint(x: -offset, y: -offset)
-        if (avatar.count > 1) {
-            avatar[1].position = atPt + CGPoint(x: +offset, y: -offset)
-            if (avatar.count > 2) {
-                avatar[2].position = atPt + CGPoint(x: -offset, y: +offset)
-                if (avatar.count > 3) {
-                       avatar[3].position = atPt + CGPoint(x: +offset, y: +offset)
-                }
-            }
+        for i in 0..<avatar.count {
+            let pt = atPt + getOffset(i)
+            avatar[i].position = pt
         }
         
+    }
+    
+    func moveParty(toPt: CGPoint, toTile: MapPoint) {
+        
+        at = toTile
+        
+        for i in 0..<avatar.count {
+            let mv = SKAction.move(to: toPt + getOffset(i), duration: 1.0 + (Double.random(in: -0.05...0.05)))
+            avatar[i].run(mv) {
+                //is moving = false
+            }
+        }
+    }
+    
+    
+    
+    func getOffset(_ ix: Int) -> CGPoint {
+        var off: CGPoint
+        switch ix {
+        case 0:
+            off = CGPoint(x: -offset, y: -offset)
+        case 1:
+            off = CGPoint(x: +offset, y: -offset)
+        case 2:
+            off = CGPoint(x: -offset, y: +offset)
+        case 3:
+            off = CGPoint(x: +offset, y: +offset)
+        default:
+            off = CGPoint(x: 0, y: 0)
+        }
+        
+        return off
     }
     
 }

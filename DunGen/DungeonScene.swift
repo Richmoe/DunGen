@@ -291,7 +291,7 @@ class DungeonScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for t in touches {
-            print (t)
+            //print (t)
             self.touchUp(atPoint: t.location(in: self))
             
         }
@@ -318,7 +318,9 @@ class DungeonScene: SKScene {
             entity.update(deltaTime: dt)
         }
         
-        let movePt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
+        //let movePt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
+        let movePt = Global.adventure.party.atPt()
+        
         camera!.position = (movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
         
         self.lastUpdateTime = currentTime
@@ -348,8 +350,12 @@ class DungeonScene: SKScene {
             let movePt = backgroundLayer.centerOfTile(atColumn: newSpot.col, row: newSpot.row)
             print ("moveToTile: \(newSpot.col), \(newSpot.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
             
-            Global.adventure.party.renderParty(atPt: movePt, atTile: MapPoint(row: newSpot.row, col: newSpot.col))
+            //Global.adventure.party.renderParty(atPt: movePt, atTile: MapPoint(row: newSpot.row, col: newSpot.col))
             
+            
+            //test
+            
+            Global.adventure.party.moveParty(toPt: movePt, toTile: MapPoint(row: newSpot.row, col: newSpot.col))
             //just in case:
             renderTile(newSpot)
 
@@ -361,8 +367,8 @@ class DungeonScene: SKScene {
         let movePt = backgroundLayer.centerOfTile(atColumn: tile.col, row: tile.row)
         print ("goToTile: \(tile.col), \(tile.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
         
-        Global.adventure.party.renderParty(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
-        
+        Global.adventure.party.setAt(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
+
         renderTile(tile)
     }
     
