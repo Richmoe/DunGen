@@ -53,14 +53,15 @@ class Encounter {
         
         self.dungeon = dungeon
         for i in 0..<mob.count {
-            let a = SKSpriteNode(imageNamed: mob[i].image)
-            a.name = mob[i].name
-            a.setScale(0.5)
+            
+            
+            let mobAt = Global.adventure.dungeon.currentLevel().centerPtToCGPoint(at)
+
+            let a = mob[i].instantiateSprite(at: (mobAt + getOffset(i)))
+
             
             dungeon.addChild(a)
-            mobSprite.append(a)
-            let mobAt = Global.adventure.dungeon.currentLevel().centerPtToCGPoint(at)
-            mobSprite[i].position = mobAt + getOffset(i)
+
         }
     }
     

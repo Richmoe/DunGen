@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SpriteKit
+
 
 class Mob : ObservableObject {
     
@@ -25,6 +27,8 @@ class Mob : ObservableObject {
     var initiativeBonus = 0
     
     var battleAt = MapPoint(row: 0, col: 0)
+    
+    var sprite : SKSpriteNode?
     
     init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String)
     {
@@ -48,5 +52,29 @@ class Mob : ObservableObject {
         hitPoints = min(hitPoints, maxHitPoints)
     }
     
+    func instantiateSprite(at: CGPoint) -> SKSpriteNode {
+        
+        let s  = SKSpriteNode(imageNamed: image)
+        s.name = name
+        s.setScale(0.5)
+        s.position = at
+        sprite = s
+        return s
+    }
+    
+    func move(toPt: CGPoint) {
+        let mv = SKAction.move(to: toPt, duration: 1.0 + (Double.random(in: -0.05...0.05)))
+        if let s = sprite {
+            s.run(mv) {
+                //is moving = false
+            }
+        }
+    }
+
+    func at(_ atPt: CGPoint) {
+        if let s = sprite {
+            s.position = atPt
+        }
+    }
     
 }

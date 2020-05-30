@@ -28,16 +28,11 @@ class Party : ObservableObject {
         //TODO
     }
 
-    func atPt() -> CGPoint {
-        return avatar[0].position - getOffset(0)
-    }
     
     func initAvatars(onLayer: SKScene) {
         for p in player {
-            let a = SKSpriteNode(imageNamed: p.image)
-            a.name = p.name
-            a.setScale(0.5)
-            
+            let a = p.instantiateSprite(at: CGPoint(x: 0, y: 0))
+
             onLayer.addChild(a)
             avatar.append(a)
         }
@@ -45,9 +40,9 @@ class Party : ObservableObject {
     
     func setAt(atPt: CGPoint, atTile: MapPoint) {
         at = atTile
-        for i in 0..<avatar.count {
+        for i in 0..<player.count {
             let pt = atPt + getOffset(i)
-            avatar[i].position = pt
+            player[i].at(pt)
         }
         
     }
@@ -56,11 +51,13 @@ class Party : ObservableObject {
         
         at = toTile
         
-        for i in 0..<avatar.count {
-            let mv = SKAction.move(to: toPt + getOffset(i), duration: 1.0 + (Double.random(in: -0.05...0.05)))
-            avatar[i].run(mv) {
-                //is moving = false
-            }
+        for i in 0..<player.count {
+            player[i].move(toPt: toPt + getOffset(i))
+            
+            //let mv = SKAction.move(to: toPt + getOffset(i), duration: 1.0 + (Double.random(in: -0.05...0.05)))
+            //avatar[i].run(mv) {
+            //    //is moving = false
+            //}
         }
     }
     

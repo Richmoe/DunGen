@@ -146,10 +146,10 @@
 				977E0A53245CE36D00AC41B1 /* MapTypes.swift */,
 				977E0A55245CE36E00AC41B1 /* PlayerModel.swift */,
 				977E0A58245CE37100AC41B1 /* RoomModel.swift */,
-				975B75CC246894BC00E09936 /* MonsterModel.swift */,
-				975B75CE246B772800E09936 /* MobFactory.swift */,
-				977E0A5C245F91A600AC41B1 /* PartyModel.swift */,
 				975B75CA2468931900E09936 /* MobModel.swift */,
+				975B75CC246894BC00E09936 /* MonsterModel.swift */,
+				977E0A5C245F91A600AC41B1 /* PartyModel.swift */,
+				975B75CE246B772800E09936 /* MobFactory.swift */,
 				975B75DC246F929900E09936 /* Dungeon.swift */,
 			);
 			path = Models;

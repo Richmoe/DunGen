@@ -271,14 +271,21 @@ class DungeonScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         
-        if (Global.adventure.inBattle == true) {
+        if (Global.adventure.inBattle == false) {
             //
+            //translate pos to battle grid spot
+            
+            //Need to check if we CAN move there too.
             if let bc = Global.adventure.currentBattle {
                 bc.moveCurrent(to: pos)
             }
         } else {
             let partyAt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
             
+            let pp = Global.adventure.dungeon.currentLevel().cgPointToPt(pos)
+            let bp = Global.adventure.dungeon.currentLevel().cgPointToBattlePt(pos)
+            print ("Clicked grid: \(pp) or battle grid: \(bp)")
+            print("Party is at: r: \(Global.adventure.party.at.row), c: \(Global.adventure.party.at.col)")
             let norm = normalize(pt: pos - partyAt)
             
             moveDir(dirPt: norm)
@@ -327,8 +334,8 @@ class DungeonScene: SKScene {
             entity.update(deltaTime: dt)
         }
         
-        //let movePt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
-        let movePt = Global.adventure.party.atPt()
+        let movePt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
+        //let moveMap = Global.adventure.party.mapPt()
         
         camera!.position = (movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
         
