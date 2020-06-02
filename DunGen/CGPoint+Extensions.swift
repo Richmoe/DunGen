@@ -26,9 +26,18 @@ public func -= ( left: inout CGPoint, right: CGPoint) {
   left = left - right
 }
 
-public func normalize(pt: CGPoint) -> CGPoint {
+public func normalize(_ pt: CGPoint) -> CGPoint {
     
     let maxLen = max(abs(pt.x), abs(pt.y))
 
     return (CGPoint(x: pt.x / maxLen, y: pt.y / maxLen))
+}
+
+public func normalizeRounded(_ pt: CGPoint) -> CGPoint {
+    
+    let norm = normalize(pt)
+    
+    
+    return CGPoint(x: norm.x.rounded(), y: norm.y.rounded())
+    
 }

@@ -80,8 +80,9 @@ class Encounter {
         
         
         let mv = SKAction.move(to: toPt + getOffset(mobIx), duration: 1.0 + (Double.random(in: -0.05...0.05)))
+        Global.isMoving = true
         mobSprite[mobIx].run(mv) {
-            //is moving = false
+            Global.isMoving = false
         }
         
     }

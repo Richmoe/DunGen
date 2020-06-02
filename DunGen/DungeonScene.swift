@@ -265,28 +265,34 @@ class DungeonScene: SKScene {
         //        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
         //            n.position = pos
         //            n.strokeColor = SKColor.blue
-        //            self.addChild(n)
+        //            self.addChild(na
         //        }
     }
     
     func touchUp(atPoint pos : CGPoint) {
         
-        if (Global.adventure.inBattle == false) {
+        if (Global.isMoving) {
+            return
+        }
+        
+        if (Global.adventure.inBattle == true) {
             //
             //translate pos to battle grid spot
-            
+            let bclick = Global.adventure.dungeon.currentLevel().cgPointToBattlePt(pos)
+            //print("Click: \(pos) to \(bclick)")
             //Need to check if we CAN move there too.
             if let bc = Global.adventure.currentBattle {
-                bc.moveCurrent(to: pos)
+                bc.moveCurrent(to: bclick)
             }
         } else {
             let partyAt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
             
-            let pp = Global.adventure.dungeon.currentLevel().cgPointToPt(pos)
-            let bp = Global.adventure.dungeon.currentLevel().cgPointToBattlePt(pos)
-            print ("Clicked grid: \(pp) or battle grid: \(bp)")
-            print("Party is at: r: \(Global.adventure.party.at.row), c: \(Global.adventure.party.at.col)")
-            let norm = normalize(pt: pos - partyAt)
+//            let pp = Global.adventure.dungeon.currentLevel().cgPointToMap(pos)
+//            let bp = Global.adventure.dungeon.currentLevel().cgPointToBattleMap(pos)
+//            let bc = Global.adventure.dungeon.currentLevel().cgPointToBattlePt(pos)
+//            print ("Click: \(pos), Clicked grid: \(pp) or battle grid: \(bp), battleClick = \(bc)")
+//            print("Party is at: r: \(Global.adventure.party.at.row), c: \(Global.adventure.party.at.col)")
+            let norm = normalize(pos - partyAt)
             
             moveDir(dirPt: norm)
         }

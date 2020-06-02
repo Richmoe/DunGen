@@ -49,11 +49,17 @@ class BattleController : ObservableObject {
     }
     
     func moveCurrent(to: CGPoint) {
-        print ("moveCurrent to \(to)")
+
         
         let (_, m) = initiative[0]
         
-        m.move(toPt: to)
+        print ("moveCurrent to \(to), at: \(m.at())")
+        
+        
+        let norm = normalizeRounded(to - m.at())
+        print ("norm: \(norm)")
+        
+        m.move(toPt: m.at() + CGPoint(x: norm.x * 64, y: norm.y * 64))
     }
     
     func generateInitiative() {

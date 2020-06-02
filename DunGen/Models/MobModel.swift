@@ -64,9 +64,11 @@ class Mob : ObservableObject {
     
     func move(toPt: CGPoint) {
         let mv = SKAction.move(to: toPt, duration: 1.0 + (Double.random(in: -0.05...0.05)))
+        Global.isMoving = true
         if let s = sprite {
             s.run(mv) {
                 //is moving = false
+                Global.isMoving = false
             }
         }
     }
@@ -74,6 +76,15 @@ class Mob : ObservableObject {
     func at(_ atPt: CGPoint) {
         if let s = sprite {
             s.position = atPt
+        }
+    }
+    
+    func at() -> CGPoint {
+        
+        if let s = sprite {
+            return s.position
+        } else {
+            return CGPoint(x: 0, y: 0)
         }
     }
     

@@ -59,6 +59,7 @@ class Map {
         fixUpMap()
     }
     
+    // MARK: Point conversions
     
     //Convert map point to CGPoint
     func ptToCGPoint(_ mapPoint: MapPoint) -> CGPoint {
@@ -75,11 +76,10 @@ class Map {
     }
     
     //Convert CGPoint to map Point
-    func cgPointToPt(_ pt: CGPoint) -> MapPoint {
+    func cgPointToMap(_ pt: CGPoint) -> MapPoint {
         //Note that CGPoint = -.5*MaxHW to +.5*MaxHW
         //normalize click:
         let nPt = pt + CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
-        
         
         let fmpc = (nPt.x / CGFloat(MapTileSet.tileWidth))
         let fmpr = (nPt.y / CGFloat(MapTileSet.tileHeight))
@@ -89,7 +89,7 @@ class Map {
     }
     
     //Convert CGPoint to map Battle Point
-    func cgPointToBattlePt(_ pt: CGPoint) -> MapPoint {
+    func cgPointToBattleMap(_ pt: CGPoint) -> MapPoint {
         //Note that CGPoint = -.5*MaxHW to +.5*MaxHW
         //normalize click:
         let nPt = pt + CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
@@ -100,6 +100,28 @@ class Map {
         
         
         return MapPoint(row: Int(fmpr), col: Int(fmpc))
+    }
+    
+    func cgPointToBattlePt(_ pt: CGPoint) -> CGPoint {
+        //Normalize to 0
+        let nPt = pt + CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
+        
+        
+        //divide by battle grid size (1/2 tile)
+        var tempC = Int(nPt.x / CGFloat(MapTileSet.tileWidth / 2))
+        var tempR = Int(nPt.y / CGFloat(MapTileSet.tileHeight / 2))
+        
+        //then remultiply to get whole number
+        tempC = tempC * (Int(MapTileSet.tileWidth / 2))
+        tempR = tempR * (Int(MapTileSet.tileHeight / 2))
+        
+        //and reset to -.5 to +.5
+        let newPt = CGPoint(x: tempC, y: tempR) - CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
+        
+        //then add center of battle tile (tilesize / 4)
+        return newPt + CGPoint(x: Int(MapTileSet.tileWidth / 4), y: Int(MapTileSet.tileHeight / 4))
+        
+        
     }
     
     // MARK: - Move Queue

@@ -11,4 +11,5 @@ import Foundation
 
 struct Global {
     static var adventure = Adventure()
+    static var isMoving = false //If sprite is moving, don't allow a click override
 }
