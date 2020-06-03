@@ -7,53 +7,78 @@
 //
 
 import Foundation
+import SpriteKit
 
 
 class MapController {
     
     var dungeon : Dungeon
-    var mapHeight: Int
-    var mapWidth: Int
+
+    var tileMap: SKTileMapNode
     
-    init(dungeon: Dungeon) {
+    init(dungeon: Dungeon, tileMap: SKTileMapNode) {
         
         self.dungeon = dungeon
-        self.mapHeight = dungeon.mapHeight
-        self.mapWidth = dungeon.mapWidth
+
+        self.tileMap = tileMap
     }
     
-    func getPlayerEntrance() -> MapPoint {
-        return dungeon.getPlayerEntrance()
-    }
-    
-    
-    func move(from: MapPoint, dir: Direction) -> (Bool, MapPoint) {
+    func move(from: MapPoint, dir: Direction)  {
         
         let mv = getCardinalMoveVector(dir: dir)
         
         let toMP = from + mv
         
-        let toType = getBlock(toMP) //mapBlocks[toMP.row][toMP.col]
+        let toType = dungeon.getBlock(toMP) //mapBlocks[toMP.row][toMP.col]
         
         print("Moving to tile: \(toType.tileCode)")
         
         if (toType.tileCode == TileCode.null) {
-            return (false, toMP)
+            return
         } else {
             //Check wall
             let dirWall = toType.getWallCode(wallDir: dir.opposite())
             if (dirWall == "W") {
-                return (false, toMP)
+                return
             } else {
-                return (true, toMP)
+                
+                //Do the move
+                let movePt = tileMap.centerOfTile(atColumn: toMP.col, row: toMP.row)
+                //print ("moveToTile: \(newSpot.col), \(newSpot.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
+                
+                Global.adventure.party.moveParty(toPt: movePt, toTile: MapPoint(row: toMP.row, col: toMP.col))
+                //just in case:
+                //renderTile(newSpot)
+
+                fogOfWar()
             }
             
         }
     }
     
-    func battleMove(from: MapPoint, to: MapPoint) {
+    func placeParty() {
+        goToTile(dungeon.getPlayerEntrance())
+        fogOfWar()
+    }
+    
+    
+    func moveDir(dirPt: CGPoint) {
         
+        //Round the vector to get nice even numbers:
+        let dx: Int = Int(dirPt.x.rounded())
+        let dy: Int = Int(dirPt.y.rounded())
         
+        move(from: Global.adventure.party.at, dir: getDirFromVector(MapPoint(row: dy, col: dx)))
+        
+    }
+    
+    
+    func goToTile(_ tile: MapPoint) {
+        let movePt = tileMap.centerOfTile(atColumn: tile.col, row: tile.row)
+
+        Global.adventure.party.setAt(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
+
+        renderTile(tile)
     }
     
     func canSee(from: MapPoint, to: MapPoint) -> Bool {
@@ -64,7 +89,7 @@ class MapController {
             return false
         }
         
-        let fromBlock = getBlock(from)
+        let fromBlock = dungeon.getBlock(from)
         
         let dir = getDirFromVector(to - from)
         
@@ -74,7 +99,7 @@ class MapController {
             return false
         } else {
             //now check to walls
-            let dirWall = getBlock(to).getWallCode(wallDir: dir.opposite())
+            let dirWall = dungeon.getBlock(to).getWallCode(wallDir: dir.opposite())
             if (["W","D","S","0"].contains(dirWall)) {
                 return false
             } else {
@@ -82,11 +107,54 @@ class MapController {
             }
         }
     }
-    
-    func getBlock(_ pt: MapPoint) -> MapBlock {
-        return dungeon.getBlock(pt)
+
+    func renderTile(_ mp: MapPoint) {
+        
+        let mb = dungeon.getBlock(mp)
+        if let groupIx = Global.mapTileSet.tileDict[mb.wallString] {
+            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
+            tileMap.setTileGroup(tileMap.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
+        } else {
+            if (mb.wallString != "0000") {
+                print ("Can't find tile: \(mb.wallString) at rc: \(mp.row), \(mp.col)")
+            }
+        }
     }
     
     
+    func fogOfWar() {
+        //input new position
+        
+        for a in 0...59 { //6deg increments
+            let ang = 6 * Double(a)
+            let x = sin(ang  * (.pi / 180))
+            let y = cos(ang * (.pi / 180))
+            var fromPt = Global.adventure.party.at
+            var lastXx = 0
+            var lastYy = 0
+            
+            for i in 1...Global.maxLineOfSight {
+                let xx = Int(round(x * Double(i)))
+                let yy = Int(round(y * Double(i)))
+                if (xx != 0 || yy != 0) {
+                    
+                    let moveVector = MapPoint(row: yy - lastYy, col: xx - lastXx)
+                    
+                    lastXx = xx
+                    lastYy = yy
+                    
+                    let toPt = fromPt + moveVector
+                    
+                    if (canSee(from: fromPt, to: toPt)) {
+                        //Yes there are multiple renders of the same thing. Is this slower? I should benchmark
+                        renderTile(toPt)
+                        fromPt = toPt
+                    } else {
+                        break
+                    }
+                }
+            }
+        }
+    }
     
 }

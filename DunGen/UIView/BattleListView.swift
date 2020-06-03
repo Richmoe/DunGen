@@ -41,6 +41,6 @@ struct BattleListView: View {
 
 struct BattleListView_Previews: PreviewProvider {
     static var previews: some View {
-        BattleListView(battle: BattleController(encounter: Encounter(at: MapPoint(row: 0,col: 0)), party: Party()))
+        BattleListView(battle: BattleController(encounter: Encounter(at: MapPoint(row: 0,col: 0)), map: Map(width: 30, height: 30)))
     }
 }

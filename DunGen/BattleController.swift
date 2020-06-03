@@ -25,15 +25,18 @@ class BattleController : ObservableObject {
     
     let party: Party
     
+    let map: Map
+    
     var initiative: [(Int, Mob)] = []
     
     @Published var current = 0
     @Published var round = 1
     
     
-    init (encounter: Encounter, party: Party) {
+    init (encounter: Encounter, map: Map) {
         self.encounter = encounter
-        self.party = party
+        self.party = Global.adventure.party
+        self.map = map
         
         generateInitiative()
         
@@ -45,6 +48,21 @@ class BattleController : ObservableObject {
         //
         
         
+        
+    }
+    
+    //wherein I figure out what to do with where I clicked:
+    func clickAt(clickPt: CGPoint) {
+        
+        //translate pos to battle grid spot
+        let bclick = map.cgPointToBattlePt(clickPt)
+        
+        //for now just move
+        
+        if (Global.isMoving) {
+            return
+        }
+        moveCurrent(to: bclick)
         
     }
     

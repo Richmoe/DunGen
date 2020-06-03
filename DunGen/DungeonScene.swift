@@ -26,8 +26,6 @@ class DungeonScene: SKScene {
     var tileDict = [Int: Int]()
     
     private var lastUpdateTime : TimeInterval = 0
-
-    private var mapTileSet = MapTileSet()
     
     private var mapController : MapController?
     
@@ -36,7 +34,7 @@ class DungeonScene: SKScene {
     var cameraOffset = 200.0
     var currentScale : CGFloat = 1.0
     
-    let maxLineOfSight = 6 //Can see 60' or 6 10x10 tiles
+    
     
     
     override func sceneDidLoad() {
@@ -54,14 +52,13 @@ class DungeonScene: SKScene {
         }
         
         self.backgroundLayer = backgroundLayer
-
+        
         
         createMapLayer()
         createBattleOverlay()
         
         self.camera = camera
         
-
         
         //self.camera!.setScale(3.5)
         
@@ -69,10 +66,11 @@ class DungeonScene: SKScene {
         
         Global.adventure.party.initAvatars(onLayer: self)
         
-        mapController = MapController(dungeon: Global.adventure.dungeon)
+        mapController = MapController(dungeon: Global.adventure.dungeon, tileMap: self.mapLayer)
+        mapController!.placeParty()
         //createPlayers()
         
-        goToTile(mapController!.getPlayerEntrance())
+        //goToTile(mapController!.getPlayerEntrance())
         
         //createDebugLayer()
         
@@ -80,178 +78,39 @@ class DungeonScene: SKScene {
         let m = Encounter(at: MapPoint(row: 3, col: 13))
         m.initMobSprites(dungeon: self)
         
-        let battle = BattleController(encounter: m, party: Global.adventure.party)
+        let battle = BattleController(encounter: m, map: Global.adventure.dungeon.currentLevel())
         Global.adventure.currentBattle = battle
-        
-        fogOfWar()
-        
-    }
 
+
+    }
+    
     
     
     func createMapLayer() {
         
         let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
         
-        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth, rows: Global.adventure.dungeon.mapHeight, tileSize: size)
+        self.mapLayer = SKTileMapNode(tileSet: Global.mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth, rows: Global.adventure.dungeon.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)
-
+        
     }
     
     func createBattleOverlay() {
         
         let size = CGSize(width: 64, height: 64)
         
-        self.battleOverlayLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth * 2, rows: Global.adventure.dungeon.mapHeight * 2, tileSize: size)
+        self.battleOverlayLayer = SKTileMapNode(tileSet: Global.mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth * 2, rows: Global.adventure.dungeon.mapHeight * 2, tileSize: size)
         backgroundLayer.addChild(battleOverlayLayer)
         
-        mapTileSet.createBattleOverlayTile()
+        Global.mapTileSet.createBattleOverlayTile()
         
-        if let groupIx = mapTileSet.tileDict["BATTLE_OVERLAY"] {
+        if let groupIx = Global.mapTileSet.tileDict["BATTLE_OVERLAY"] {
             //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
             battleOverlayLayer.fill(with: mapLayer.tileSet.tileGroups[groupIx])
         }
         
+    }
 
-    }
-    
-    func fogOfWar() {
-        //input new position
-        
-        for a in 0...59 { //6deg increments
-            let ang = 6 * Double(a)
-            let x = sin(ang  * (.pi / 180))
-            let y = cos(ang * (.pi / 180))
-            var fromPt = Global.adventure.party.at
-            var lastXx = 0
-            var lastYy = 0
-            
-            for i in 1...maxLineOfSight {
-                let xx = Int(round(x * Double(i)))
-                let yy = Int(round(y * Double(i)))
-                if (xx != 0 || yy != 0) {
-                    
-                    let moveVector = MapPoint(row: yy - lastYy, col: xx - lastXx)
-                    
-                    lastXx = xx
-                    lastYy = yy
-                    
-                    let toPt = fromPt + moveVector
-                    
-                    if (mapController!.canSee(from: fromPt, to: toPt)) {
-                        //Yes there are multiple renders of the same thing. Is this slower? I should benchmark
-                        renderTile(toPt)
-                        fromPt = toPt
-                    } else {
-                        break
-                    }
-                }
-            }
-        }
-    }
-    
-//    func createDebugLayer() {
-//
-//        debugLayerOn = true
-//        mapTileSet.createDebugTiles()
-//
-//        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
-//
-//        debugLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: adventure!.dungeon.mapWidth, rows: mapController.mapHeight, tileSize: size)
-//        backgroundLayer.addChild(debugLayer)
-//
-//        for row in 0..<mapController.mapHeight {
-//            for col in 0..<mapController.mapWidth {
-//
-//                let tileBlock = (mapController.getBlock(MapPoint(row: row, col: col)))
-//                if (tileBlock.tileCode == TileCode.floor) {
-//
-//                    renderTile(layer: debugLayer, code: "DEBUG_ROOM", col: col, row: row)
-//                }
-//
-//                //Secret will override:
-//                if (tileBlock.wallString.contains("S")) {
-//                    renderTile(layer: debugLayer, code: "Sxxx", col: col, row: row)
-//                }
-//            }
-//        }
-//    }
-//
-//    func testRebuildMap() {
-//
-//        mapController.rebuild()
-//
-//
-//        mapLayer.removeFromParent()
-//
-//        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
-//
-//        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
-//        backgroundLayer.addChild(mapLayer)
-//
-//        renderMap()
-//
-//        if (debugLayerOn) {
-//            debugLayer.removeFromParent()
-//            createDebugLayer()
-//        }
-//    }
-//
-    
-    func renderMap () {
-        
-        for row in 0..<mapController!.mapHeight {
-            for col in 0..<mapController!.mapWidth {
-                
-                //let tileBlock = (map.mapBlocks[row][col])
-                
-                //renderTile(tile: tileBlock, col: col, row: row)
-                renderTile(MapPoint(row: row, col: col))
-                
-            }
-        }
-    }
-    
-    func renderTile(layer: SKTileMapNode, code: String, col: Int, row: Int) {
-        //replace
-        if let groupIx = mapTileSet.tileDict[code] {
-            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
-            layer.setTileGroup(mapLayer.tileSet.tileGroups[groupIx], forColumn: col, row: row)
-        } else {
-            if (code != "0000") {
-                print ("Can't find tile: \(code) at rc: \(row), \(col)")
-            }
-        }
-        
-    }
-    
-    func renderTile(tile: MapBlock, col: Int, row: Int) {
-        
-        //replace 
-        if let groupIx = mapTileSet.tileDict[tile.wallString] {
-            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
-            mapLayer.setTileGroup(mapLayer.tileSet.tileGroups[groupIx], forColumn: col, row: row)
-        } else {
-            if (tile.wallString != "0000") {
-                print ("Can't find tile: \(tile.wallString) at rc: \(row), \(col)")
-            }
-        }
-    }
-    
-    func renderTile(_ mp: MapPoint) {
-        
-        let mb = mapController!.getBlock(mp)
-        if let groupIx = mapTileSet.tileDict[mb.wallString] {
-            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
-            mapLayer.setTileGroup(mapLayer.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
-        } else {
-            if (mb.wallString != "0000") {
-                print ("Can't find tile: \(mb.wallString) at rc: \(mp.row), \(mp.col)")
-            }
-        }
-    }
-    
-    
     
     func touchDown(atPoint pos : CGPoint) {
         //        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
@@ -271,30 +130,17 @@ class DungeonScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         
-        if (Global.isMoving) {
-            return
-        }
-        
-        if (Global.adventure.inBattle == true) {
-            //
-            //translate pos to battle grid spot
-            let bclick = Global.adventure.dungeon.currentLevel().cgPointToBattlePt(pos)
-            //print("Click: \(pos) to \(bclick)")
-            //Need to check if we CAN move there too.
+        if (Global.adventure.inBattle == false) {
+            
             if let bc = Global.adventure.currentBattle {
-                bc.moveCurrent(to: bclick)
+                bc.clickAt(clickPt: pos)
             }
         } else {
             let partyAt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
             
-//            let pp = Global.adventure.dungeon.currentLevel().cgPointToMap(pos)
-//            let bp = Global.adventure.dungeon.currentLevel().cgPointToBattleMap(pos)
-//            let bc = Global.adventure.dungeon.currentLevel().cgPointToBattlePt(pos)
-//            print ("Click: \(pos), Clicked grid: \(pp) or battle grid: \(bp), battleClick = \(bc)")
-//            print("Party is at: r: \(Global.adventure.party.at.row), c: \(Global.adventure.party.at.col)")
             let norm = normalize(pos - partyAt)
             
-            moveDir(dirPt: norm)
+            mapController!.moveDir(dirPt: norm)
         }
     }
     
@@ -340,58 +186,14 @@ class DungeonScene: SKScene {
             entity.update(deltaTime: dt)
         }
         
-        let movePt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
+        //let movePt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
         //let moveMap = Global.adventure.party.mapPt()
-        
-        camera!.position = (movePt + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
-        
-        self.lastUpdateTime = currentTime
-    }
-    
-    
-    func moveDir(dirPt: CGPoint) {
-        
-        //Round the vector to get nice even numbers:
-        let dx: Int = Int(dirPt.x.rounded())
-        let dy: Int = Int(dirPt.y.rounded())
-        
-        move(from: Global.adventure.party.at, dir: getDirFromVector(MapPoint(row: dy, col: dx)))
-        
-    }
-    
-    
-    func move(from: MapPoint, dir: Direction) {
-        
-        //first check to see if we can move
-        let (canMove, newSpot) = mapController!.move(from: from, dir: dir)
-        
-        //Then rerender map?
-        if (canMove) {
-            
-            //Do the move
-            let movePt = backgroundLayer.centerOfTile(atColumn: newSpot.col, row: newSpot.row)
-            print ("moveToTile: \(newSpot.col), \(newSpot.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
-            
-            //Global.adventure.party.renderParty(atPt: movePt, atTile: MapPoint(row: newSpot.row, col: newSpot.col))
+        if let p = Global.adventure.party.player[0].sprite {
             
             
-            //test
-            
-            Global.adventure.party.moveParty(toPt: movePt, toTile: MapPoint(row: newSpot.row, col: newSpot.col))
-            //just in case:
-            renderTile(newSpot)
-
-            fogOfWar()
+            camera!.position = (p.position + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
         }
-    }
-    
-    func goToTile(_ tile: MapPoint) {
-        let movePt = backgroundLayer.centerOfTile(atColumn: tile.col, row: tile.row)
-        print ("goToTile: \(tile.col), \(tile.row): \(movePt), offset: \(cameraOffset / Double(currentScale))")
-        
-        Global.adventure.party.setAt(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
-
-        renderTile(tile)
+        self.lastUpdateTime = currentTime
     }
     
     
@@ -414,6 +216,82 @@ class DungeonScene: SKScene {
         
         print ("Scaling to \(scale) , \(currentScale)")
     }
-    
+
+        
+        //    func createDebugLayer() {
+        //
+        //        debugLayerOn = true
+        //        mapTileSet.createDebugTiles()
+        //
+        //        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+        //
+        //        debugLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: adventure!.dungeon.mapWidth, rows: mapController.mapHeight, tileSize: size)
+        //        backgroundLayer.addChild(debugLayer)
+        //
+        //        for row in 0..<mapController.mapHeight {
+        //            for col in 0..<mapController.mapWidth {
+        //
+        //                let tileBlock = (mapController.getBlock(MapPoint(row: row, col: col)))
+        //                if (tileBlock.tileCode == TileCode.floor) {
+        //
+        //                    renderTile(layer: debugLayer, code: "DEBUG_ROOM", col: col, row: row)
+        //                }
+        //
+        //                //Secret will override:
+        //                if (tileBlock.wallString.contains("S")) {
+        //                    renderTile(layer: debugLayer, code: "Sxxx", col: col, row: row)
+        //                }
+        //            }
+        //        }
+        //    }
+        //
+        //    func testRebuildMap() {
+        //
+        //        mapController.rebuild()
+        //
+        //
+        //        mapLayer.removeFromParent()
+        //
+        //        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+        //
+        //        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
+        //        backgroundLayer.addChild(mapLayer)
+        //
+        //        renderMap()
+        //
+        //        if (debugLayerOn) {
+        //            debugLayer.removeFromParent()
+        //            createDebugLayer()
+        //        }
+        //    }
+        //
+        
+        //    func renderMap () {
+        //
+        //        for row in 0..<mapController!.mapHeight {
+        //            for col in 0..<mapController!.mapWidth {
+        //
+        //                //let tileBlock = (map.mapBlocks[row][col])
+        //
+        //                //renderTile(tile: tileBlock, col: col, row: row)
+        //                renderTile(MapPoint(row: row, col: col))
+        //
+        //            }
+        //        }
+        //    }
+        
+
+    //    func renderTile(_ mp: MapPoint) {
+    //
+    //        let mb = mapController!.getBlock(mp)
+    //        if let groupIx = Global.mapTileSet.tileDict[mb.wallString] {
+    //            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
+    //            mapLayer.setTileGroup(mapLayer.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
+    //        } else {
+    //            if (mb.wallString != "0000") {
+    //                print ("Can't find tile: \(mb.wallString) at rc: \(mp.row), \(mp.col)")
+    //            }
+    //        }
+    //    }
     
 }
