@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct BattleListView: View {
     
@@ -40,7 +41,8 @@ struct BattleListView: View {
 }
 
 struct BattleListView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        BattleListView(battle: BattleController(encounter: Encounter(at: MapPoint(row: 0,col: 0)), map: Map(width: 30, height: 30)))
+        BattleListView(battle: BattleController(encounter: Encounter(at: MapPoint(row: 0,col: 0)), map: Map(width: 30, height: 30), tileMap: SKTileMapNode(tileSet: Global.mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth, rows: Global.adventure.dungeon.mapHeight, tileSize: CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight))))
     }
 }

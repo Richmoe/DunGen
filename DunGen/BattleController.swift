@@ -32,25 +32,32 @@ class BattleController : ObservableObject {
     @Published var current = 0
     @Published var round = 1
     
+    var tileMap: SKTileMapNode
+    var highlightSprite : SKShapeNode?
     
-    init (encounter: Encounter, map: Map) {
+    
+    init (encounter: Encounter, map: Map, tileMap: SKTileMapNode) {
         self.encounter = encounter
         self.party = Global.adventure.party
         self.map = map
+        self.tileMap = tileMap
         
         generateInitiative()
         
-        placeMobs()
-    }
-    
-    func placeMobs() {
-        
-        //
-        
-        
+        createSelectionSprite()
         
     }
     
+    func createSelectionSprite() {
+        let h  = SKShapeNode(circleOfRadius: 25)
+        h.position = CGPoint(x: 0, y: 0)
+        h.strokeColor = SKColor.black
+        h.fillColor = SKColor.orange
+        highlightSprite = h
+        tileMap.addChild(h)
+    }
+    
+
     //wherein I figure out what to do with where I clicked:
     func clickAt(clickPt: CGPoint) {
         
@@ -69,7 +76,7 @@ class BattleController : ObservableObject {
     func moveCurrent(to: CGPoint) {
 
         
-        let (_, m) = initiative[0]
+        let (_, m) = initiative[current]
         
         print ("moveCurrent to \(to), at: \(m.at())")
         
@@ -105,6 +112,12 @@ class BattleController : ObservableObject {
         
         //Sort descending
         initiative = temp.sorted { $0.0 > $1.0}
+    }
+    
+    func currentAt() -> CGPoint {
+        
+        let (_, m) = initiative[current]
+        return m.at()
     }
     
     func nextTurn() {

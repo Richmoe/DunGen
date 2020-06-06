@@ -78,10 +78,8 @@ class DungeonScene: SKScene {
         let m = Encounter(at: MapPoint(row: 3, col: 13))
         m.initMobSprites(dungeon: self)
         
-        let battle = BattleController(encounter: m, map: Global.adventure.dungeon.currentLevel())
+        let battle = BattleController(encounter: m, map: Global.adventure.dungeon.currentLevel(), tileMap: self.mapLayer)
         Global.adventure.currentBattle = battle
-
-
     }
     
     
@@ -92,7 +90,6 @@ class DungeonScene: SKScene {
         
         self.mapLayer = SKTileMapNode(tileSet: Global.mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth, rows: Global.adventure.dungeon.mapHeight, tileSize: size)
         backgroundLayer.addChild(mapLayer)
-        
     }
     
     func createBattleOverlay() {
@@ -108,9 +105,8 @@ class DungeonScene: SKScene {
             //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
             battleOverlayLayer.fill(with: mapLayer.tileSet.tileGroups[groupIx])
         }
-        
     }
-
+    
     
     func touchDown(atPoint pos : CGPoint) {
         //        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
@@ -130,7 +126,7 @@ class DungeonScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         
-        if (Global.adventure.inBattle == false) {
+        if (Global.adventure.inBattle == true) {
             
             if let bc = Global.adventure.currentBattle {
                 bc.clickAt(clickPt: pos)
@@ -190,9 +186,16 @@ class DungeonScene: SKScene {
         //let moveMap = Global.adventure.party.mapPt()
         if let p = Global.adventure.party.player[0].sprite {
             
-            
             camera!.position = (p.position + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
         }
+        
+        
+        if let b = Global.adventure.currentBattle {
+            if let h = b.highlightSprite {
+                h.position = b.currentAt()
+            }
+        }
+        
         self.lastUpdateTime = currentTime
     }
     
@@ -216,71 +219,71 @@ class DungeonScene: SKScene {
         
         print ("Scaling to \(scale) , \(currentScale)")
     }
-
-        
-        //    func createDebugLayer() {
-        //
-        //        debugLayerOn = true
-        //        mapTileSet.createDebugTiles()
-        //
-        //        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
-        //
-        //        debugLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: adventure!.dungeon.mapWidth, rows: mapController.mapHeight, tileSize: size)
-        //        backgroundLayer.addChild(debugLayer)
-        //
-        //        for row in 0..<mapController.mapHeight {
-        //            for col in 0..<mapController.mapWidth {
-        //
-        //                let tileBlock = (mapController.getBlock(MapPoint(row: row, col: col)))
-        //                if (tileBlock.tileCode == TileCode.floor) {
-        //
-        //                    renderTile(layer: debugLayer, code: "DEBUG_ROOM", col: col, row: row)
-        //                }
-        //
-        //                //Secret will override:
-        //                if (tileBlock.wallString.contains("S")) {
-        //                    renderTile(layer: debugLayer, code: "Sxxx", col: col, row: row)
-        //                }
-        //            }
-        //        }
-        //    }
-        //
-        //    func testRebuildMap() {
-        //
-        //        mapController.rebuild()
-        //
-        //
-        //        mapLayer.removeFromParent()
-        //
-        //        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
-        //
-        //        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
-        //        backgroundLayer.addChild(mapLayer)
-        //
-        //        renderMap()
-        //
-        //        if (debugLayerOn) {
-        //            debugLayer.removeFromParent()
-        //            createDebugLayer()
-        //        }
-        //    }
-        //
-        
-        //    func renderMap () {
-        //
-        //        for row in 0..<mapController!.mapHeight {
-        //            for col in 0..<mapController!.mapWidth {
-        //
-        //                //let tileBlock = (map.mapBlocks[row][col])
-        //
-        //                //renderTile(tile: tileBlock, col: col, row: row)
-        //                renderTile(MapPoint(row: row, col: col))
-        //
-        //            }
-        //        }
-        //    }
-        
-
+    
+    
+    //    func createDebugLayer() {
+    //
+    //        debugLayerOn = true
+    //        mapTileSet.createDebugTiles()
+    //
+    //        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+    //
+    //        debugLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: adventure!.dungeon.mapWidth, rows: mapController.mapHeight, tileSize: size)
+    //        backgroundLayer.addChild(debugLayer)
+    //
+    //        for row in 0..<mapController.mapHeight {
+    //            for col in 0..<mapController.mapWidth {
+    //
+    //                let tileBlock = (mapController.getBlock(MapPoint(row: row, col: col)))
+    //                if (tileBlock.tileCode == TileCode.floor) {
+    //
+    //                    renderTile(layer: debugLayer, code: "DEBUG_ROOM", col: col, row: row)
+    //                }
+    //
+    //                //Secret will override:
+    //                if (tileBlock.wallString.contains("S")) {
+    //                    renderTile(layer: debugLayer, code: "Sxxx", col: col, row: row)
+    //                }
+    //            }
+    //        }
+    //    }
+    //
+    //    func testRebuildMap() {
+    //
+    //        mapController.rebuild()
+    //
+    //
+    //        mapLayer.removeFromParent()
+    //
+    //        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+    //
+    //        self.mapLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: mapController.mapWidth, rows: mapController.mapHeight, tileSize: size)
+    //        backgroundLayer.addChild(mapLayer)
+    //
+    //        renderMap()
+    //
+    //        if (debugLayerOn) {
+    //            debugLayer.removeFromParent()
+    //            createDebugLayer()
+    //        }
+    //    }
+    //
+    
+    //    func renderMap () {
+    //
+    //        for row in 0..<mapController!.mapHeight {
+    //            for col in 0..<mapController!.mapWidth {
+    //
+    //                //let tileBlock = (map.mapBlocks[row][col])
+    //
+    //                //renderTile(tile: tileBlock, col: col, row: row)
+    //                renderTile(MapPoint(row: row, col: col))
+    //
+    //            }
+    //        }
+    //    }
+    
+    
     //    func renderTile(_ mp: MapPoint) {
     //
     //        let mb = mapController!.getBlock(mp)
