@@ -66,14 +66,16 @@ class Map {
         //Note that CGPoint = -.5*MaxHW to +.5*MaxHW
         let x = mapPoint.col * MapTileSet.tileWidth - (mapWidth * MapTileSet.tileWidth / 2)
         let y = mapPoint.row * MapTileSet.tileHeight - (mapHeight * MapTileSet.tileHeight / 2)
-        return CGPoint(x: x, y: y)
         
+        return CGPoint(x: x, y: y)
     }
     
     func MapPointCenterToCGPoint(_ mapPoint: MapPoint) -> CGPoint {
         return MapPointToCGPoint(mapPoint) + CGPoint(x: MapTileSet.tileWidth / 2, y: MapTileSet.tileHeight / 2)
     }
     
+    
+    //BattleMap
     func BattleMapPointToCGPoint(_ battleMapPoint: MapPoint) -> CGPoint {
         let x = battleMapPoint.col * MapTileSet.tileWidth / 2 - (mapWidth * MapTileSet.tileWidth / 2)
         let y = battleMapPoint.row * MapTileSet.tileWidth / 2 - (mapHeight * MapTileSet.tileHeight / 2)
@@ -89,7 +91,7 @@ class Map {
     
     
     //Convert CGPoint to map Point
-    func cgPointToMap(_ pt: CGPoint) -> MapPoint {
+    func CGPointToMapPoint(_ pt: CGPoint) -> MapPoint {
         //Note that CGPoint = -.5*MaxHW to +.5*MaxHW
         //normalize click:
         let nPt = pt + CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
@@ -97,46 +99,43 @@ class Map {
         let fmpc = (nPt.x / CGFloat(MapTileSet.tileWidth))
         let fmpr = (nPt.y / CGFloat(MapTileSet.tileHeight))
         
-        
         return MapPoint(row: Int(fmpr), col: Int(fmpc))
     }
     
     //Convert CGPoint to map Battle Spot
-    func cgPointToBattleMap(_ pt: CGPoint) -> MapPoint {
+    func CGPointToBattleMapPoint(_ pt: CGPoint) -> MapPoint {
         //Note that CGPoint = -.5*MaxHW to +.5*MaxHW
         //normalize click:
         let nPt = pt + CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
         
-        
         let fmpc = (nPt.x / CGFloat(MapTileSet.tileWidth / 2))
         let fmpr = (nPt.y / CGFloat(MapTileSet.tileHeight / 2))
-        
         
         return MapPoint(row: Int(fmpr), col: Int(fmpc))
     }
     
     //for rounding to center of battle tile?
-    func cgPointToBattlePt(_ pt: CGPoint) -> CGPoint {
-        //Normalize to 0
-        let nPt = pt + CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
-        
-        
-        //divide by battle grid size (1/2 tile)
-        var tempC = Int(nPt.x / CGFloat(MapTileSet.tileWidth / 2))
-        var tempR = Int(nPt.y / CGFloat(MapTileSet.tileHeight / 2))
-        
-        //then remultiply to get whole number
-        tempC = tempC * (Int(MapTileSet.tileWidth / 2))
-        tempR = tempR * (Int(MapTileSet.tileHeight / 2))
-        
-        //and reset to -.5 to +.5
-        let newPt = CGPoint(x: tempC, y: tempR) - CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
-        
-        //then add center of battle tile (tilesize / 4)
-        return newPt + CGPoint(x: Int(MapTileSet.tileWidth / 4), y: Int(MapTileSet.tileHeight / 4))
-        
-        
-    }
+//    func cgPointToBattlePt(_ pt: CGPoint) -> CGPoint {
+//        //Normalize to 0
+//        let nPt = pt + CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
+//
+//
+//        //divide by battle grid size (1/2 tile)
+//        var tempC = Int(nPt.x / CGFloat(MapTileSet.tileWidth / 2))
+//        var tempR = Int(nPt.y / CGFloat(MapTileSet.tileHeight / 2))
+//
+//        //then remultiply to get whole number
+//        tempC = tempC * (Int(MapTileSet.tileWidth / 2))
+//        tempR = tempR * (Int(MapTileSet.tileHeight / 2))
+//
+//        //and reset to -.5 to +.5
+//        let newPt = CGPoint(x: tempC, y: tempR) - CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
+//
+//        //then add center of battle tile (tilesize / 4)
+//        return newPt + CGPoint(x: Int(MapTileSet.tileWidth / 4), y: Int(MapTileSet.tileHeight / 4))
+//
+//
+//    }
     
     // MARK: - Move Queue
     

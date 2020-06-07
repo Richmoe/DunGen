@@ -57,7 +57,7 @@ class BattleController : ObservableObject {
         tileMap.addChild(h)
     }
     
-
+    
     //wherein I figure out what to do with where I clicked:
     func clickAt(_ clickPt: CGPoint) {
         
@@ -67,38 +67,83 @@ class BattleController : ObservableObject {
         }
         
         
+        //Check click on  mobs
+        if let mob = getMobAtPt(clickPt) {
+            print ("ClickedMob: \(mob.name)")
+            //
+            clickedMob(mob)
+            
+        } else {
+            
+            moveCurrent(clickPt)
+        }
         
-        moveCurrent(clickPt)
-//        //let direction = angleToCardinalDir(angleBetween(fromMap: curMapAt, toMap: clickSpot))
-//        //normalize move and apply that norm to max step which in battle is 64
-//        let norm = normalize(clickPt - currentAt())
-//        let newClick = (currentAt() + CGPoint(x: norm.x * 64, y: norm.y * 64))
-//        print("newClick: \(newClick) at tile: \(map.cgPointToMap(newClick))")
-//
-//        //Make sure we are not moving off screen:
-//        let mapClick = map.cgPointToMap(newClick)
-//        if (map.canEnter(toPt: mapClick, moveDir: Direction.north)) {
-//
-//            //translate pos to battle grid spot
-//            let bclick = map.cgPointToBattlePt(newClick)
-//
-//            //for now just move
-//
-//
-//            moveCurrent2(to: bclick)
-//        }
+        
+        //        //let direction = angleToCardinalDir(angleBetween(fromMap: curMapAt, toMap: clickSpot))
+        //        //normalize move and apply that norm to max step which in battle is 64
+        //        let norm = normalize(clickPt - currentAt())
+        //        let newClick = (currentAt() + CGPoint(x: norm.x * 64, y: norm.y * 64))
+        //        print("newClick: \(newClick) at tile: \(map.cgPointToMap(newClick))")
+        //
+        //        //Make sure we are not moving off screen:
+        //        let mapClick = map.cgPointToMap(newClick)
+        //        if (map.canEnter(toPt: mapClick, moveDir: Direction.north)) {
+        //
+        //            //translate pos to battle grid spot
+        //            let bclick = map.cgPointToBattlePt(newClick)
+        //
+        //            //for now just move
+        //
+        //
+        //            moveCurrent2(to: bclick)
+        //        }
+        
+    }
+    
+    func clickedMob(_ mob: Mob) {
+        
+        //Check if player or monster
+        if mob is Player {
+            print("clickd Player")
+        } else {
+            print("clicked Monster")
+        }
+        
+        //if player, change current
+        
+        // else mob so set that as target
+        
+        //
+    }
+    
+    func getMobAtPt(_ clickPt: CGPoint) -> Mob? {
+    
+        return getMobAtMap(map.CGPointToBattleMapPoint(clickPt))
 
+    }
+    
+    func getMobAtMap(_ mapPt: MapPoint) -> Mob? {
+        var clicked : Mob?
+        for (_, m) in initiative {
+            if (map.CGPointToBattleMapPoint(m.at()) == mapPt) {
+                clicked = m
+                break
+            }
+            
+        }
+        
+        return clicked
     }
     
     func moveCurrent(_ clickPt: CGPoint) {
         
-        let toBMap = map.cgPointToBattleMap(clickPt)
-        let toMap = map.cgPointToMap(clickPt)
+        let toBMap = map.CGPointToBattleMapPoint(clickPt)
+        let toMap = map.CGPointToMapPoint(clickPt)
         
         let (_, currentMob) = initiative[current]
         
-        let mobBMapAt = map.cgPointToBattleMap(currentAt())
-        let mobAt = map.cgPointToMap(currentAt())
+        let mobBMapAt = map.CGPointToBattleMapPoint(currentAt())
+        let mobAt = map.CGPointToMapPoint(currentAt())
         
         if (mobBMapAt == toBMap) {
             print ("Same!!!")
@@ -115,6 +160,11 @@ class BattleController : ObservableObject {
         let stepMove = mobBMapAt + moveVector
         let mapMove = mobAt + moveVector
         
+        if let mob = getMobAtMap(stepMove) {
+            print("can't move, colliding with mob: \(mob.name)")
+            return
+        }
+        
         if (mobAt == toMap || map.canEnter(toPt: mapMove, moveDir: direction)) {
             
             //Do the move
@@ -122,12 +172,10 @@ class BattleController : ObservableObject {
             
             currentMob.move(toPt: movePt)
         }
-        
-        
     }
     
     func moveCurrent2(to: CGPoint) {
-
+        
         
         let (_, m) = initiative[current]
         

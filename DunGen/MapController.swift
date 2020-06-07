@@ -32,7 +32,7 @@ class MapController {
         
         
         //Check the grid we clicked on. If self, ignore
-        let clickSpot = dungeon.currentLevel().cgPointToMap(clickPt)
+        let clickSpot = dungeon.currentLevel().CGPointToMapPoint(clickPt)
         
         moveTo(clickSpot)
 
