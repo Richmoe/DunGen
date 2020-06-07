@@ -55,7 +55,7 @@ class Encounter {
         for i in 0..<mob.count {
             
             
-            let mobAt = Global.adventure.dungeon.currentLevel().centerPtToCGPoint(at)
+            let mobAt = Global.adventure.dungeon.currentLevel().MapPointCenterToCGPoint(at)
 
             let a = mob[i].instantiateSprite(at: (mobAt + getOffset(i)))
 

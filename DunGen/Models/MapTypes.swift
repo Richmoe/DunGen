@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpriteKit
 
 
 
@@ -35,6 +36,9 @@ func * (left: MapPoint, right: Int) ->  MapPoint {
     return MapPoint(row: left.row * right, col: left.col * right)
 }
 
+func == (left: MapPoint, right: MapPoint) -> Bool {
+    return (left.row == right.row && left.col == right.col)
+}
 
 struct Passage {
     let type : PassageType
@@ -196,4 +200,44 @@ func getDirFromVector(_ vector: MapPoint) -> Direction {
     }
     
     return dir
+}
+
+
+
+func angleToCardinalDir(_ angle: CGFloat) -> Direction {
+    
+    if (angle < 45.0) {
+        return .north
+    } else if (angle < 135.0) {
+        return .east
+    } else if (angle < 225.0) {
+        return .south
+    } else if (angle < 315.0) {
+        return .west
+    } else {
+        return .north
+    }
+}
+
+
+
+//Returns FP angles from 0.0..<360.0, where 0 = N, 90 = E
+func angleBetween(fromPt: CGPoint, toPt: CGPoint) -> CGFloat {
+    
+    let radiansToDegrees = 180 / CGFloat.pi
+    
+    //let angle = atan2(toPt.x - fromPt.x, toPt.y - fromPt.y)
+    let angle = atan2(fromPt.x - toPt.x, fromPt.y - toPt.y)
+
+    return (angle * radiansToDegrees + 180.0)
+}
+
+func angleBetween(fromMap: MapPoint, toMap: MapPoint) -> CGFloat {
+    
+    let radiansToDegrees = 180 / CGFloat.pi
+    
+    //let angle = atan2(toPt.x - fromPt.x, toPt.y - fromPt.y)
+    let angle = atan2(CGFloat(fromMap.col - toMap.col), CGFloat(fromMap.row - toMap.row))
+
+    return (angle * radiansToDegrees + 180.0)
 }

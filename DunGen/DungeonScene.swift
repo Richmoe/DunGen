@@ -68,9 +68,7 @@ class DungeonScene: SKScene {
         
         mapController = MapController(dungeon: Global.adventure.dungeon, tileMap: self.mapLayer)
         mapController!.placeParty()
-        //createPlayers()
-        
-        //goToTile(mapController!.getPlayerEntrance())
+
         
         //createDebugLayer()
         
@@ -129,14 +127,14 @@ class DungeonScene: SKScene {
         if (Global.adventure.inBattle == true) {
             
             if let bc = Global.adventure.currentBattle {
-                bc.clickAt(clickPt: pos)
+                bc.clickAt(pos)
             }
         } else {
-            let partyAt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
             
-            let norm = normalize(pos - partyAt)
-            
-            mapController!.moveDir(dirPt: norm)
+            if let mc = mapController {
+                mc.clickAt(pos)
+            }
+
         }
     }
     
@@ -268,33 +266,5 @@ class DungeonScene: SKScene {
     //        }
     //    }
     //
-    
-    //    func renderMap () {
-    //
-    //        for row in 0..<mapController!.mapHeight {
-    //            for col in 0..<mapController!.mapWidth {
-    //
-    //                //let tileBlock = (map.mapBlocks[row][col])
-    //
-    //                //renderTile(tile: tileBlock, col: col, row: row)
-    //                renderTile(MapPoint(row: row, col: col))
-    //
-    //            }
-    //        }
-    //    }
-    
-    
-    //    func renderTile(_ mp: MapPoint) {
-    //
-    //        let mb = mapController!.getBlock(mp)
-    //        if let groupIx = Global.mapTileSet.tileDict[mb.wallString] {
-    //            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
-    //            mapLayer.setTileGroup(mapLayer.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
-    //        } else {
-    //            if (mb.wallString != "0000") {
-    //                print ("Can't find tile: \(mb.wallString) at rc: \(mp.row), \(mp.col)")
-    //            }
-    //        }
-    //    }
     
 }

@@ -26,8 +26,6 @@ class Mob : ObservableObject {
     
     var initiativeBonus = 0
     
-    var battleAt = MapPoint(row: 0, col: 0)
-    
     var sprite : SKSpriteNode?
     
     init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String)
@@ -63,7 +61,7 @@ class Mob : ObservableObject {
     }
     
     func move(toPt: CGPoint) {
-        let mv = SKAction.move(to: toPt, duration: 1.0 + (Double.random(in: -0.05...0.05)))
+        let mv = SKAction.move(to: toPt, duration: 0.5 + (Double.random(in: -0.05...0.05)))
         Global.isMoving = true
         if let s = sprite {
             s.run(mv) {

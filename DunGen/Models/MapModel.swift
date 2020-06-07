@@ -62,7 +62,7 @@ class Map {
     // MARK: Point conversions
     
     //Convert map point to CGPoint
-    func ptToCGPoint(_ mapPoint: MapPoint) -> CGPoint {
+    func MapPointToCGPoint(_ mapPoint: MapPoint) -> CGPoint {
         //Note that CGPoint = -.5*MaxHW to +.5*MaxHW
         let x = mapPoint.col * MapTileSet.tileWidth - (mapWidth * MapTileSet.tileWidth / 2)
         let y = mapPoint.row * MapTileSet.tileHeight - (mapHeight * MapTileSet.tileHeight / 2)
@@ -70,10 +70,23 @@ class Map {
         
     }
     
-    func centerPtToCGPoint(_ mapPoint: MapPoint) -> CGPoint {
-        return ptToCGPoint(mapPoint) + CGPoint(x: MapTileSet.tileWidth / 2, y: MapTileSet.tileHeight / 2)
-        
+    func MapPointCenterToCGPoint(_ mapPoint: MapPoint) -> CGPoint {
+        return MapPointToCGPoint(mapPoint) + CGPoint(x: MapTileSet.tileWidth / 2, y: MapTileSet.tileHeight / 2)
     }
+    
+    func BattleMapPointToCGPoint(_ battleMapPoint: MapPoint) -> CGPoint {
+        let x = battleMapPoint.col * MapTileSet.tileWidth / 2 - (mapWidth * MapTileSet.tileWidth / 2)
+        let y = battleMapPoint.row * MapTileSet.tileWidth / 2 - (mapHeight * MapTileSet.tileHeight / 2)
+        
+        return CGPoint(x: x, y: y)
+    }
+    
+    func BattleMapPointCenterToCGPoint(_ battleMapPoint: MapPoint) -> CGPoint {
+        return BattleMapPointToCGPoint(battleMapPoint) + CGPoint(x: MapTileSet.tileWidth / 4, y: MapTileSet.tileHeight / 4)
+    }
+    
+    
+    
     
     //Convert CGPoint to map Point
     func cgPointToMap(_ pt: CGPoint) -> MapPoint {
@@ -88,7 +101,7 @@ class Map {
         return MapPoint(row: Int(fmpr), col: Int(fmpc))
     }
     
-    //Convert CGPoint to map Battle Point
+    //Convert CGPoint to map Battle Spot
     func cgPointToBattleMap(_ pt: CGPoint) -> MapPoint {
         //Note that CGPoint = -.5*MaxHW to +.5*MaxHW
         //normalize click:
@@ -102,6 +115,7 @@ class Map {
         return MapPoint(row: Int(fmpr), col: Int(fmpc))
     }
     
+    //for rounding to center of battle tile?
     func cgPointToBattlePt(_ pt: CGPoint) -> CGPoint {
         //Normalize to 0
         let nPt = pt + CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
@@ -686,6 +700,27 @@ class Map {
     
     
     // MARK: - Helpers
+    func canEnter(toPt: MapPoint, moveDir: Direction) -> Bool {
+        
+        let toType = getBlock(toPt) //mapBlocks[toMP.row][toMP.col]
+        
+        print("Can enter: \(toType.tileCode)? ")
+        
+        if (toType.tileCode == TileCode.null) {
+            return false
+        } else {
+            //Check wall
+            let dirWall = toType.getWallCode(wallDir: moveDir.opposite())
+            if (dirWall == "W") {
+                return false
+            } else {
+                return true
+                
+            }
+        }
+    }
+    
+    
     
     func getBlock(_ pt: MapPoint) -> MapBlock {
         //TODO - range checking?

@@ -59,21 +59,74 @@ class BattleController : ObservableObject {
     
 
     //wherein I figure out what to do with where I clicked:
-    func clickAt(clickPt: CGPoint) {
+    func clickAt(_ clickPt: CGPoint) {
         
-        //translate pos to battle grid spot
-        let bclick = map.cgPointToBattlePt(clickPt)
-        
-        //for now just move
-        
+        //Todo: we should probably figure out intent on click but for now we just move
         if (Global.isMoving) {
             return
         }
-        moveCurrent(to: bclick)
+        
+        
+        
+        moveCurrent(clickPt)
+//        //let direction = angleToCardinalDir(angleBetween(fromMap: curMapAt, toMap: clickSpot))
+//        //normalize move and apply that norm to max step which in battle is 64
+//        let norm = normalize(clickPt - currentAt())
+//        let newClick = (currentAt() + CGPoint(x: norm.x * 64, y: norm.y * 64))
+//        print("newClick: \(newClick) at tile: \(map.cgPointToMap(newClick))")
+//
+//        //Make sure we are not moving off screen:
+//        let mapClick = map.cgPointToMap(newClick)
+//        if (map.canEnter(toPt: mapClick, moveDir: Direction.north)) {
+//
+//            //translate pos to battle grid spot
+//            let bclick = map.cgPointToBattlePt(newClick)
+//
+//            //for now just move
+//
+//
+//            moveCurrent2(to: bclick)
+//        }
+
+    }
+    
+    func moveCurrent(_ clickPt: CGPoint) {
+        
+        let toBMap = map.cgPointToBattleMap(clickPt)
+        let toMap = map.cgPointToMap(clickPt)
+        
+        let (_, currentMob) = initiative[current]
+        
+        let mobBMapAt = map.cgPointToBattleMap(currentAt())
+        let mobAt = map.cgPointToMap(currentAt())
+        
+        if (mobBMapAt == toBMap) {
+            print ("Same!!!")
+            return
+        }
+        
+        
+        print("MP \(mobAt) TO CG: \(map.MapPointToCGPoint(mobAt))")
+        print("Battle \(mobBMapAt) to CG: \(map.BattleMapPointToCGPoint(mobBMapAt))")
+        
+        let direction = angleToCardinalDir(angleBetween(fromMap: mobBMapAt, toMap: toBMap))
+        
+        let moveVector = getCardinalMoveVector(dir: direction)
+        let stepMove = mobBMapAt + moveVector
+        let mapMove = mobAt + moveVector
+        
+        if (mobAt == toMap || map.canEnter(toPt: mapMove, moveDir: direction)) {
+            
+            //Do the move
+            let movePt = map.BattleMapPointCenterToCGPoint(stepMove)
+            
+            currentMob.move(toPt: movePt)
+        }
+        
         
     }
     
-    func moveCurrent(to: CGPoint) {
+    func moveCurrent2(to: CGPoint) {
 
         
         let (_, m) = initiative[current]

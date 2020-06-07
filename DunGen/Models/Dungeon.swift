@@ -41,6 +41,10 @@ class Dungeon { //Environment?
     func currentLevel() -> Map {
         return level[current]
     }
+    
+    func canEnter(toPt: MapPoint, moveDir: Direction) -> Bool {
+        return currentLevel().canEnter(toPt: toPt, moveDir: moveDir)
+    }
 
     
 }
