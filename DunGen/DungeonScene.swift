@@ -192,6 +192,15 @@ class DungeonScene: SKScene {
             if let h = b.highlightSprite {
                 h.position = b.currentAt()
             }
+            if let s = b.targetSprite {
+                if let pt = b.currentTargetAt() {
+                    s.isHidden = false
+                    s.position = pt
+                } else {
+                    s.isHidden = true
+                }
+            }
+            
         }
         
         self.lastUpdateTime = currentTime

@@ -34,6 +34,7 @@ class BattleController : ObservableObject {
     
     var tileMap: SKTileMapNode
     var highlightSprite : SKShapeNode?
+    var targetSprite: SKSpriteNode?
     
     
     init (encounter: Encounter, map: Map, tileMap: SKTileMapNode) {
@@ -45,17 +46,29 @@ class BattleController : ObservableObject {
         generateInitiative()
         
         createSelectionSprite()
+        createTargetSprite()
         
     }
     
     func createSelectionSprite() {
         let h  = SKShapeNode(circleOfRadius: 25)
+        h.name = "current"
         h.position = CGPoint(x: 0, y: 0)
         h.strokeColor = SKColor.black
         h.fillColor = SKColor.orange
         highlightSprite = h
         tileMap.addChild(h)
     }
+    
+    func createTargetSprite() {
+        let s  = SKSpriteNode(imageNamed: "Sword2.png")
+        s.name = "target"
+        s.setScale(0.5)
+        s.position = CGPoint(x: 0, y: 0)
+        targetSprite = s
+        tileMap.addChild(s)
+    }
+    
     
     
     //wherein I figure out what to do with where I clicked:
@@ -77,27 +90,6 @@ class BattleController : ObservableObject {
             
             moveCurrent(clickPt)
         }
-        
-        
-        //        //let direction = angleToCardinalDir(angleBetween(fromMap: curMapAt, toMap: clickSpot))
-        //        //normalize move and apply that norm to max step which in battle is 64
-        //        let norm = normalize(clickPt - currentAt())
-        //        let newClick = (currentAt() + CGPoint(x: norm.x * 64, y: norm.y * 64))
-        //        print("newClick: \(newClick) at tile: \(map.cgPointToMap(newClick))")
-        //
-        //        //Make sure we are not moving off screen:
-        //        let mapClick = map.cgPointToMap(newClick)
-        //        if (map.canEnter(toPt: mapClick, moveDir: Direction.north)) {
-        //
-        //            //translate pos to battle grid spot
-        //            let bclick = map.cgPointToBattlePt(newClick)
-        //
-        //            //for now just move
-        //
-        //
-        //            moveCurrent2(to: bclick)
-        //        }
-        
     }
     
     func clickedMob(_ mob: Mob) {
@@ -105,15 +97,25 @@ class BattleController : ObservableObject {
         //Check if player or monster
         if mob is Player {
             print("clickd Player")
+            //get current IX:
+            for i in 0..<initiative.count {
+                let (_, player) = initiative[i]
+                if (player === mob) {
+                    current = i
+                    break
+                }
+            }
         } else {
             print("clicked Monster")
+            setCurrentsTarget(mob)
         }
+    }
+    
+    func setCurrentsTarget(_ mob: Mob) {
         
-        //if player, change current
+        let (_, m) = initiative[current]
+        m.currentTarget = mob
         
-        // else mob so set that as target
-        
-        //
     }
     
     func getMobAtPt(_ clickPt: CGPoint) -> Mob? {
@@ -129,7 +131,6 @@ class BattleController : ObservableObject {
                 clicked = m
                 break
             }
-            
         }
         
         return clicked
@@ -174,20 +175,6 @@ class BattleController : ObservableObject {
         }
     }
     
-    func moveCurrent2(to: CGPoint) {
-        
-        
-        let (_, m) = initiative[current]
-        
-        print ("moveCurrent to \(to), at: \(m.at())")
-        
-        
-        let norm = normalizeRounded(to - m.at())
-        print ("norm: \(norm)")
-        
-        m.move(toPt: m.at() + CGPoint(x: norm.x * 64, y: norm.y * 64))
-    }
-    
     func generateInitiative() {
         
         var temp : [(Int, Mob)] = []
@@ -219,6 +206,17 @@ class BattleController : ObservableObject {
         
         let (_, m) = initiative[current]
         return m.at()
+    }
+    
+    func currentTargetAt() -> CGPoint? {
+        
+        let (_, m) = initiative[current]
+        
+        if let target = m.currentTarget {
+            return target.at()
+        } else {
+            return nil
+        }
     }
     
     func nextTurn() {

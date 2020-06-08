@@ -28,6 +28,8 @@ class Mob : ObservableObject {
     
     var sprite : SKSpriteNode?
     
+    var currentTarget : Mob? //For battle
+    
     init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String)
     {
         self.uid = UUID()
