@@ -63,6 +63,9 @@ class Mob : ObservableObject {
     }
     
     func move(toPt: CGPoint) {
+        let ang = angleBetween(fromPt: at(), toPt: toPt)
+        rotateTo(angleToCardinalDir(ang))
+        
         let mv = SKAction.move(to: toPt, duration: 0.5 + (Double.random(in: -0.05...0.05)))
         Global.isMoving = true
         if let s = sprite {
@@ -85,6 +88,30 @@ class Mob : ObservableObject {
             return s.position
         } else {
             return CGPoint(x: 0, y: 0)
+        }
+    }
+    
+    func rotateTo(_ dir: Direction) {
+        
+        if let s = sprite {
+            switch dir {
+            case .north:
+                s.zRotation = 0
+            case .northwest:
+                s.zRotation = .pi / 4
+            case .west:
+                s.zRotation = 2 * .pi / 4
+            case .southwest:
+                s.zRotation = 3 * .pi / 4
+            case .south:
+                s.zRotation = .pi
+            case .southeast:
+                s.zRotation = 5 * .pi / 4
+            case .east:
+                s.zRotation = 6 * .pi / 4
+            case .northeast:
+                s.zRotation = 7 * .pi / 4
+            }
         }
     }
     
