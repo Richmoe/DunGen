@@ -20,7 +20,9 @@ struct MapView: UIViewRepresentable {
             scene.backgroundColor = .blue
 
             view.presentScene(scene)
+            Global.dungeonScene  = scene
         }
+        
         return view
     }
     

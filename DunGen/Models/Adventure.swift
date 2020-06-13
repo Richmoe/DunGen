@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Adventure  {
+class Adventure : ObservableObject {
     
     //Map
     var dungeon: Dungeon
@@ -21,7 +21,7 @@ class Adventure  {
     
     //Manage battles?
     var currentBattle: BattleController?
-    var inBattle = true
+    @Published var inBattle = false
     //End of Adventure calcs
     
     

@@ -28,6 +28,7 @@ class DungeonScene: SKScene {
     private var lastUpdateTime : TimeInterval = 0
     
     private var mapController : MapController?
+    private var battleController : BattleController?
     
     var debugLayerOn = false
     
@@ -55,7 +56,7 @@ class DungeonScene: SKScene {
         
         
         createMapLayer()
-        createBattleOverlay()
+
         
         self.camera = camera
         
@@ -69,17 +70,38 @@ class DungeonScene: SKScene {
         mapController = MapController(dungeon: Global.adventure.dungeon, tileMap: self.mapLayer)
         mapController!.placeParty()
 
-        
-        //createDebugLayer()
-        
-        //Temp
-        let m = Encounter(at: MapPoint(row: 3, col: 13))
-        m.initMobSprites(dungeon: self)
-        
-        let battle = BattleController(encounter: m, map: Global.adventure.dungeon.currentLevel(), tileMap: self.mapLayer)
-        Global.adventure.currentBattle = battle
     }
     
+    func initBattle(encounter: Encounter) {
+        
+        let battle = BattleController(encounter: encounter, map: Global.adventure.dungeon.currentLevel(), tileMap: self.mapLayer)
+        Global.adventure.currentBattle = battle
+        battleController = battle
+        
+        Global.adventure.inBattle = true
+        
+        
+                createBattleOverlay()
+    }
+    
+    func tempEncounter () -> Encounter {
+        
+        //Temp
+        let enc = Encounter(at: MapPoint(row: 3, col: 13))
+        enc.initMobSprites(dungeon: self)
+        
+        return enc
+    }
+    
+    
+    func endBattle() {
+        
+        Global.adventure.currentBattle = nil
+        battleController = nil
+        Global.adventure.inBattle = false
+        
+        self.battleOverlayLayer.isHidden = true
+    }
     
     
     func createMapLayer() {
@@ -204,6 +226,32 @@ class DungeonScene: SKScene {
         }
         
         self.lastUpdateTime = currentTime
+    }
+    
+    func clickButton(name: String) {
+        
+        print ("Clicked button \(name)")
+        
+        //
+        switch name {
+        case "BATTLE":
+            if (Global.adventure.inBattle) {
+                endBattle()
+            } else {
+                initBattle(encounter: tempEncounter())
+            }
+        case "ZOOM":
+            //toggle zoom here:
+            if (currentScale != 1.0) {
+                currentScale = 1.0
+                camera!.setScale(currentScale)
+            } else {
+                scaleToFit()
+            }
+        default:
+            print("No action")
+        }
+
     }
     
     

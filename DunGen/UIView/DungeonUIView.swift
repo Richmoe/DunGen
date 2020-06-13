@@ -7,26 +7,36 @@
 //
 
 import SwiftUI
-
+import SpriteKit
 
 struct DungeonUIView: View {
     
+    @ObservedObject var adventure: Adventure
     
+    @ViewBuilder
     var body: some View {
-
-        ZStack() {
-            Image("Char BG")
-            .resizable()
-                .aspectRatio(contentMode: .fill)
+        
+        if (adventure.inBattle == true) {
+            ZStack() {
+                Image("Char BG")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
                 
-            BattleListView(battle: Global.adventure.currentBattle!)
-                .padding(.leading, 160)
+                
+                BattleListView(battle: adventure.currentBattle!)
+                    .padding(.leading, 160)
+                
+                
+            }
+        } else {
+            EmptyView()
         }
+        
     }
 }
 
 struct DungeonUIView_Previews: PreviewProvider {
     static var previews: some View {
-        DungeonUIView()
+        DungeonUIView(adventure: Adventure())
     }
 }

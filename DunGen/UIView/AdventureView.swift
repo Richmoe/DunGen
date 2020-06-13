@@ -13,10 +13,27 @@ struct AdventureView: View {
 
     
     var body: some View {
-        HStack (spacing: -80){
-            MapView()
-            DungeonUIView()
-                .fixedSize(horizontal: true, vertical: false)
+        VStack {
+            HStack (spacing: -80){
+                MapView()
+                DungeonUIView(adventure: Global.adventure)
+                    .fixedSize(horizontal: true, vertical: false)
+            }
+            HStack {
+                Spacer()
+                Button("BATTLE") {
+                    if let d = Global.dungeonScene {
+                        d.clickButton(name: "BATTLE")
+                    }
+                }
+                Spacer()
+                Button("ZOOM") {
+                    if let d = Global.dungeonScene {
+                        d.clickButton(name: "ZOOM")
+                    }
+                }
+                Spacer()
+            }
         }
     }
 }
