@@ -21,6 +21,7 @@ class DungeonScene: SKScene {
     var battleOverlayLayer: SKTileMapNode!
     
     var debugLayer: SKTileMapNode!
+    var debugOverlayLayer: SKTileMapNode!
     
     
     var tileDict = [Int: Int]()
@@ -56,7 +57,7 @@ class DungeonScene: SKScene {
         
         
         createMapLayer()
-
+        
         
         self.camera = camera
         
@@ -69,7 +70,7 @@ class DungeonScene: SKScene {
         
         mapController = MapController(dungeon: Global.adventure.dungeon, tileMap: self.mapLayer)
         mapController!.placeParty()
-
+        
     }
     
     func initBattle(encounter: Encounter) {
@@ -81,7 +82,7 @@ class DungeonScene: SKScene {
         Global.adventure.inBattle = true
         
         
-                createBattleOverlay()
+        createBattleOverlay()
     }
     
     func tempEncounter () -> Encounter {
@@ -127,6 +128,27 @@ class DungeonScene: SKScene {
         }
     }
     
+    func createDebugLayer() {
+        
+        debugLayerOn = true
+        
+        Global.mapTileSet.createDebugTiles()
+        
+        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
+        
+        self.debugLayer = SKTileMapNode(tileSet: Global.mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth, rows: Global.adventure.dungeon.mapHeight, tileSize: size)
+        backgroundLayer.addChild(debugLayer)
+        
+        self.debugOverlayLayer = SKTileMapNode(tileSet: Global.mapTileSet.tileSet, columns: Global.adventure.dungeon.mapWidth, rows: Global.adventure.dungeon.mapHeight, tileSize: size)
+        backgroundLayer.addChild(debugOverlayLayer)
+        
+        if let m = mapController {
+            m.renderDebugMap(layer: debugLayer, overlay: debugOverlayLayer)
+        }
+        
+        
+    }
+    
     
     func touchDown(atPoint pos : CGPoint) {
         //        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
@@ -156,7 +178,7 @@ class DungeonScene: SKScene {
             if let mc = mapController {
                 mc.clickAt(pos)
             }
-
+            
         }
     }
     
@@ -248,10 +270,26 @@ class DungeonScene: SKScene {
             } else {
                 scaleToFit()
             }
+        case "DEBUGMAP":
+            //toggle map debug:
+            //debug layer?
+            print("DB")
+            if let d = debugLayer {
+                debugLayerOn = !debugLayerOn
+                
+                d.isHidden = !debugLayerOn
+                if let dOL = debugOverlayLayer {
+                    dOL.isHidden = !debugLayerOn
+                }
+                
+            } else {
+                createDebugLayer()
+            }
+            
         default:
             print("No action")
         }
-
+        
     }
     
     
@@ -276,32 +314,7 @@ class DungeonScene: SKScene {
     }
     
     
-    //    func createDebugLayer() {
-    //
-    //        debugLayerOn = true
-    //        mapTileSet.createDebugTiles()
-    //
-    //        let size = CGSize(width: MapTileSet.tileWidth, height: MapTileSet.tileHeight)
-    //
-    //        debugLayer = SKTileMapNode(tileSet: mapTileSet.tileSet, columns: adventure!.dungeon.mapWidth, rows: mapController.mapHeight, tileSize: size)
-    //        backgroundLayer.addChild(debugLayer)
-    //
-    //        for row in 0..<mapController.mapHeight {
-    //            for col in 0..<mapController.mapWidth {
-    //
-    //                let tileBlock = (mapController.getBlock(MapPoint(row: row, col: col)))
-    //                if (tileBlock.tileCode == TileCode.floor) {
-    //
-    //                    renderTile(layer: debugLayer, code: "DEBUG_ROOM", col: col, row: row)
-    //                }
-    //
-    //                //Secret will override:
-    //                if (tileBlock.wallString.contains("S")) {
-    //                    renderTile(layer: debugLayer, code: "Sxxx", col: col, row: row)
-    //                }
-    //            }
-    //        }
-    //    }
+    
     //
     //    func testRebuildMap() {
     //

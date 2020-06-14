@@ -35,7 +35,7 @@ class MapController {
         let clickSpot = dungeon.currentLevel().CGPointToMapPoint(clickPt)
         
         moveTo(clickSpot)
-
+        
     }
     
     func moveTo(_ toMap: MapPoint) {
@@ -77,17 +77,72 @@ class MapController {
         
         renderTile(tile)
     }
-
+    
     
     func renderTile(_ mp: MapPoint) {
+        //
+        //        let mb = dungeon.getBlock(mp)
+        //        if let groupIx = Global.mapTileSet.tileDict[mb.wallString] {
+        //            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
+        //            tileMap.setTileGroup(tileMap.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
+        //        } else {
+        //            if (mb.wallString != "0000") {
+        //                print ("Can't find tile: \(mb.wallString) at rc: \(mp.row), \(mp.col)")
+        //            }
+        //        }
+        renderTile(layer: tileMap, mp: mp)
+    }
+    
+    func renderTile(layer: SKTileMapNode, mp: MapPoint) {
         
         let mb = dungeon.getBlock(mp)
         if let groupIx = Global.mapTileSet.tileDict[mb.wallString] {
             //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
-            tileMap.setTileGroup(tileMap.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
+            layer.setTileGroup(layer.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
         } else {
             if (mb.wallString != "0000") {
                 print ("Can't find tile: \(mb.wallString) at rc: \(mp.row), \(mp.col)")
+            }
+        }
+    }
+    
+    func renderTile(layer: SKTileMapNode, code: String, mp: MapPoint) {
+        
+        if let groupIx = Global.mapTileSet.tileDict[code] {
+            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
+            layer.setTileGroup(layer.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
+        } else {
+            
+            print ("Can't find tile: \(code) at rc: \(mp.row), \(mp.col)")
+            
+        }
+    }
+    
+    func renderDebugMap(layer: SKTileMapNode, overlay: SKTileMapNode) {
+        
+        for row in 0..<Global.adventure.dungeon.mapHeight {
+            for col in 0..<Global.adventure.dungeon.mapWidth {
+
+                //map base
+                renderTile(layer: layer, mp: MapPoint(row: row, col: col))
+                
+                
+                //Debug overlay
+                let tileBlock = (dungeon.getBlock(MapPoint(row: row, col: col)))
+                
+                if (tileBlock.tileCode == TileCode.floor) {
+                    
+                    print ("Debug room")
+                    renderTile(layer: overlay, code: "DEBUG_ROOM", mp: MapPoint(row: row, col: col))
+
+                }
+                
+                //Secret wall override:
+                if (tileBlock.wallString.contains("S")) {
+                    renderTile(layer: overlay, code: "Sxxx", mp: MapPoint(row: row, col: col))
+
+                }
+
             }
         }
     }

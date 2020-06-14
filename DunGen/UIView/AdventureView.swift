@@ -10,8 +10,6 @@ import SwiftUI
 
 struct AdventureView: View {
     
-
-    
     var body: some View {
         VStack {
             HStack (spacing: -80){
@@ -33,6 +31,12 @@ struct AdventureView: View {
                     }
                 }
                 Spacer()
+                Button("DEBUGMAP") {
+                    if let d = Global.dungeonScene {
+                        d.clickButton(name: "DEBUGMAP")
+                    }
+                }
+                Spacer()
             }
         }
     }
@@ -40,7 +44,7 @@ struct AdventureView: View {
 
 struct AdventureView_Previews: PreviewProvider {
     
-
+    
     static var previews: some View {
         AdventureView()
     }
