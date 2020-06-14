@@ -38,10 +38,10 @@ class Map {
         print("THE SEED ___________ \(seedString) ___________")
         
         /* Interesting:
-         9EEZ
          
+         WPH7 has secret door
          */
-        seedString = "WPH7"
+        //seedString = "YMTM"
         
         mapWidth = width
         mapHeight = height
@@ -114,28 +114,6 @@ class Map {
         return MapPoint(row: Int(fmpr), col: Int(fmpc))
     }
     
-    //for rounding to center of battle tile?
-//    func cgPointToBattlePt(_ pt: CGPoint) -> CGPoint {
-//        //Normalize to 0
-//        let nPt = pt + CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
-//
-//
-//        //divide by battle grid size (1/2 tile)
-//        var tempC = Int(nPt.x / CGFloat(MapTileSet.tileWidth / 2))
-//        var tempR = Int(nPt.y / CGFloat(MapTileSet.tileHeight / 2))
-//
-//        //then remultiply to get whole number
-//        tempC = tempC * (Int(MapTileSet.tileWidth / 2))
-//        tempR = tempR * (Int(MapTileSet.tileHeight / 2))
-//
-//        //and reset to -.5 to +.5
-//        let newPt = CGPoint(x: tempC, y: tempR) - CGPoint(x: mapWidth * MapTileSet.tileWidth / 2, y: mapHeight * MapTileSet.tileHeight / 2)
-//
-//        //then add center of battle tile (tilesize / 4)
-//        return newPt + CGPoint(x: Int(MapTileSet.tileWidth / 4), y: Int(MapTileSet.tileHeight / 4))
-//
-//
-//    }
     
     // MARK: - Move Queue
     
@@ -279,8 +257,7 @@ class Map {
             
             prevPt = curPoint
             curPoint += moveVector
-            //print ("Move: \(move) Ent: \(curHeading) at: \(curPoint)")
-            
+
             
             //Check offScreen
             if (offScreen(point: curPoint)) {
@@ -649,7 +626,6 @@ class Map {
                             mapBlocks[r][c].addWall(wallDir: .north)
                         } else {
                             //pick one to be authority:
-                            //if (Int.random(in: 0...1) == 0) {
                             if (MapGenRand.sharedInstance.getRand(to: 2) == 2) {
                                 mapBlocks[r+1][c].addCode(codeDir: .south, code: codeThis)
                                 
@@ -672,7 +648,7 @@ class Map {
                         if (["DP", "PD"].contains(String([codeThis, codeThat]))) {
                             mapBlocks[r][c+1].addCode(codeDir: .west, code: "D")
                             mapBlocks[r][c].addCode(codeDir: .east, code: "D")
-                        } else                         if (["SP", "PS"].contains(String([codeThis, codeThat]))) {
+                        } else if (["SP", "PS"].contains(String([codeThis, codeThat]))) {
                             mapBlocks[r][c+1].addCode(codeDir: .west, code: "S")
                             mapBlocks[r][c].addCode(codeDir: .east, code: "S")
                         } else if (codeThis == "0" || mapBlocks[r][c].tileCode == TileCode.stairsUp || mapBlocks[r][c].tileCode == TileCode.stairsDown) {
@@ -681,7 +657,6 @@ class Map {
                             mapBlocks[r][c].addWall(wallDir: .east)
                         } else {
                             //pick one to be authority:
-                            //if (Int.random(in: 0...1) == 0) {
                             if (MapGenRand.sharedInstance.getRand(to: 2) == 2) {
                                 mapBlocks[r][c+1].addCode(codeDir: .west, code: codeThis)
                                 
@@ -693,10 +668,89 @@ class Map {
                         
                     }
                 }
+
             }
         }
-    }
+        
     
+        //trimAllDeadEnds() {
+        
+        
+        for r in (0..<mapBlocks.count) {
+            for c in 0..<mapBlocks[r].count  {
+
+                if (mapBlocks[r][c].tileCode != .stairsUp && mapBlocks[r][c].tileCode != .stairsDown) {
+                    //Now check for and walk back dead ends:
+                    //let block = mapBlocks[r][c].getBlock()
+                    let wallCount = mapBlocks[r][c].wallString.filter { $0 == "W" }.count // case-sensitive
+                    
+                    if (wallCount == 3) {
+                        
+                        if (MapGenRand.sharedInstance.getRand(to: 20) != 1) { //5% chance of keeping the deadend
+                            trimDeadEnd(at: MapPoint(row: r, col: c))
+                        } else {
+                            print("keeping deadend")
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+    func trimDeadEnd(at: MapPoint) {
+        //Call this at a dead end, walk backwards erasing the passage until we get to a non-hall block
+        
+        //I'm moving to the Dir direction, looking for walls to edges, and if so, blank it out
+        var curPt = at
+        var move : MapPoint
+        var curDir : Direction
+        //print ("Start")
+        while (!offScreen(point: curPt)) {
+            
+            
+            let block = getBlock(curPt)
+
+            
+            let wallCount = block.wallString.filter { $0 == "W" }.count // case-sensitive
+            //print ("Wallstring is \(block.wallString), count W = \(wallCount) at \(curPt)")
+            
+            if (wallCount == 3) {
+                let chars = Array(block.wallString)
+
+                
+                
+                //Check to see where the exit is:
+                if (chars[0] != "W") {
+                    move = getMoveVector(dir: .north)
+                    curDir = .north
+                } else if (chars[1] != "W") {
+                    move = getMoveVector(dir: .east)
+                    curDir = .east
+                } else if (chars[2] != "W") {
+                    move = getMoveVector(dir: .south)
+                    curDir = .south
+                } else { //if (chars[3] != "W") {
+                    move = getMoveVector(dir: .west)
+                    curDir = .west
+                }
+                
+                //wipe
+                mapBlocks[curPt.row][curPt.col] = MapBlock()
+                
+                //Move back down passage
+                curPt += move
+                
+                //Wall it off:
+                getBlock(curPt).addWall(wallDir: curDir.opposite())
+                
+                
+            } else {
+                return
+            }
+        }
+        
+    }
     
     // MARK: - Helpers
     func canEnter(toPt: MapPoint, moveDir: Direction) -> Bool {

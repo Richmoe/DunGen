@@ -131,8 +131,6 @@ class MapController {
                 let tileBlock = (dungeon.getBlock(MapPoint(row: row, col: col)))
                 
                 if (tileBlock.tileCode == TileCode.floor) {
-                    
-                    print ("Debug room")
                     renderTile(layer: overlay, code: "DEBUG_ROOM", mp: MapPoint(row: row, col: col))
 
                 }
