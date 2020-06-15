@@ -32,7 +32,8 @@ class Dungeon { //Environment?
         
         let m = Map(width: mapWidth, height: mapHeight)
         
-        m.generate()
+        let mg = MapGenerator(map: m)
+        //m.generate()
         
         self.level.append(m)
     }

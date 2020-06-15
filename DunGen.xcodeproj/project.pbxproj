@@ -32,7 +32,7 @@
 		977E0A56245CE36E00AC41B1 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A55245CE36E00AC41B1 /* PlayerModel.swift */; };
 		977E0A59245CE37100AC41B1 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A58245CE37100AC41B1 /* RoomModel.swift */; };
 		977E0A5D245F91A600AC41B1 /* PartyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A5C245F91A600AC41B1 /* PartyModel.swift */; };
-		978AAF9E2497102F003245A0 /* Map-extension-generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978AAF9D2497102F003245A0 /* Map-extension-generate.swift */; };
+		978AAFA024971CC5003245A0 /* MapGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978AAF9F24971CC5003245A0 /* MapGenerator.swift */; };
 		978D11C124785EED00355716 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11C024785EEC00355716 /* MapView.swift */; };
 		978D11C32478605700355716 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11C22478605700355716 /* AdventureView.swift */; };
 		978D11C52478613600355716 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11C42478613600355716 /* SceneDelegate.swift */; };
@@ -72,7 +72,7 @@
 		977E0A55245CE36E00AC41B1 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		977E0A58245CE37100AC41B1 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		977E0A5C245F91A600AC41B1 /* PartyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyModel.swift; sourceTree = "<group>"; };
-		978AAF9D2497102F003245A0 /* Map-extension-generate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Map-extension-generate.swift"; sourceTree = "<group>"; };
+		978AAF9F24971CC5003245A0 /* MapGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGenerator.swift; sourceTree = "<group>"; };
 		978D11C024785EEC00355716 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		978D11C22478605700355716 /* AdventureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
 		978D11C42478613600355716 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				975B75D8246F07BE00E09936 /* crToExp.csv */,
 				9739B523245A74B500C043B7 /* Info.plist */,
 				97BCDC67245D1A0D00D7C191 /* CGPoint+Extensions.swift */,
-				978AAF9D2497102F003245A0 /* Map-extension-generate.swift */,
+				978AAF9F24971CC5003245A0 /* MapGenerator.swift */,
 			);
 			path = DunGen;
 			sourceTree = "<group>";
@@ -263,6 +263,7 @@
 				9726D6E62466573400840A04 /* DungeonUIView.swift in Sources */,
 				975B75D5246E433A00E09936 /* EncounterModel.swift in Sources */,
 				9739B512245A74B300C043B7 /* AppDelegate.swift in Sources */,
+				978AAFA024971CC5003245A0 /* MapGenerator.swift in Sources */,
 				9726D6E2246454FE00840A04 /* MapController.swift in Sources */,
 				978D11CC24787EDA00355716 /* Global.swift in Sources */,
 				97BCDC64245C759700D7C191 /* MapGenRand.swift in Sources */,
@@ -272,7 +273,6 @@
 				97BCDC63245C759700D7C191 /* MapTileSet.swift in Sources */,
 				97BCDC68245D1A0D00D7C191 /* CGPoint+Extensions.swift in Sources */,
 				97BCDC66245C75A800D7C191 /* DungeonScene.swift in Sources */,
-				978AAF9E2497102F003245A0 /* Map-extension-generate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
