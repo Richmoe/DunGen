@@ -19,13 +19,31 @@ class Dungeon { //Environment?
     let mapHeight = 30
     
     init() {
+        var seedString = MapGenRand.getSeedString()
+        print("THE SEED ___________ \(seedString) ___________")
+        
+        /* Interesting:
+         
+         WPH7 has secret door
+         */
+        //seedString = "YMTM"
+        MapGenRand.sharedInstance.setSeed(seedString: seedString)
+        
         
         let m = Map(width: mapWidth, height: mapHeight)
+        
+        m.generate()
+        
         self.level.append(m)
     }
     
     func getPlayerEntrance() -> MapPoint {
-        return level[current].entranceLanding
+        
+        if let e = level[current].entranceLanding {
+            return e
+        }
+        
+        return MapPoint(row: -1, col: -1)
     }
     
     func rebuild() {

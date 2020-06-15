@@ -32,6 +32,7 @@
 		977E0A56245CE36E00AC41B1 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A55245CE36E00AC41B1 /* PlayerModel.swift */; };
 		977E0A59245CE37100AC41B1 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A58245CE37100AC41B1 /* RoomModel.swift */; };
 		977E0A5D245F91A600AC41B1 /* PartyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A5C245F91A600AC41B1 /* PartyModel.swift */; };
+		978AAF9E2497102F003245A0 /* Map-extension-generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978AAF9D2497102F003245A0 /* Map-extension-generate.swift */; };
 		978D11C124785EED00355716 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11C024785EEC00355716 /* MapView.swift */; };
 		978D11C32478605700355716 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11C22478605700355716 /* AdventureView.swift */; };
 		978D11C52478613600355716 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11C42478613600355716 /* SceneDelegate.swift */; };
@@ -71,6 +72,7 @@
 		977E0A55245CE36E00AC41B1 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		977E0A58245CE37100AC41B1 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		977E0A5C245F91A600AC41B1 /* PartyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyModel.swift; sourceTree = "<group>"; };
+		978AAF9D2497102F003245A0 /* Map-extension-generate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Map-extension-generate.swift"; sourceTree = "<group>"; };
 		978D11C024785EEC00355716 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		978D11C22478605700355716 /* AdventureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
 		978D11C42478613600355716 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				975B75D8246F07BE00E09936 /* crToExp.csv */,
 				9739B523245A74B500C043B7 /* Info.plist */,
 				97BCDC67245D1A0D00D7C191 /* CGPoint+Extensions.swift */,
+				978AAF9D2497102F003245A0 /* Map-extension-generate.swift */,
 			);
 			path = DunGen;
 			sourceTree = "<group>";
@@ -140,7 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				975B75D6246EE8F900E09936 /* Adventure.swift */,
+				975B75DC246F929900E09936 /* Dungeon.swift */,
 				977E0A4F245CE35800AC41B1 /* MapModel.swift */,
+				975B75CE246B772800E09936 /* MobFactory.swift */,
 				975B75D4246E433A00E09936 /* EncounterModel.swift */,
 				977E0A51245CE36B00AC41B1 /* MapBlockModel.swift */,
 				977E0A53245CE36D00AC41B1 /* MapTypes.swift */,
@@ -149,8 +154,6 @@
 				975B75CA2468931900E09936 /* MobModel.swift */,
 				975B75CC246894BC00E09936 /* MonsterModel.swift */,
 				977E0A5C245F91A600AC41B1 /* PartyModel.swift */,
-				975B75CE246B772800E09936 /* MobFactory.swift */,
-				975B75DC246F929900E09936 /* Dungeon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				97BCDC63245C759700D7C191 /* MapTileSet.swift in Sources */,
 				97BCDC68245D1A0D00D7C191 /* CGPoint+Extensions.swift in Sources */,
 				97BCDC66245C75A800D7C191 /* DungeonScene.swift in Sources */,
+				978AAF9E2497102F003245A0 /* Map-extension-generate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
