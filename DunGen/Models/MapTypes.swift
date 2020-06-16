@@ -16,6 +16,8 @@ struct MapPoint {
     let col: Int
 }
 
+let MAP_POINT_ERROR = MapPoint(row: -1, col: -1)
+
 func + (left: MapPoint, right: MapPoint) -> MapPoint {
     return MapPoint(row: left.row + right.row, col: left.col + right.col)
 }

@@ -134,7 +134,6 @@
 				975B75D8246F07BE00E09936 /* crToExp.csv */,
 				9739B523245A74B500C043B7 /* Info.plist */,
 				97BCDC67245D1A0D00D7C191 /* CGPoint+Extensions.swift */,
-				978AAF9F24971CC5003245A0 /* MapGenerator.swift */,
 			);
 			path = DunGen;
 			sourceTree = "<group>";
@@ -154,6 +153,7 @@
 				975B75CA2468931900E09936 /* MobModel.swift */,
 				975B75CC246894BC00E09936 /* MonsterModel.swift */,
 				977E0A5C245F91A600AC41B1 /* PartyModel.swift */,
+				978AAF9F24971CC5003245A0 /* MapGenerator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

@@ -121,9 +121,29 @@ class Map {
     
     
     func getBlock(_ pt: MapPoint) -> MapBlock {
-        //TODO - range checking?
+        if (!offScreen(point: pt)) {
+            return mapBlocks[pt.row][pt.col]
+        } else {
+            return MapBlock()
+        }
+    }
+    
+    func getBlock(row: Int, col: Int) -> MapBlock {
         
-        return mapBlocks[pt.row][pt.col]
+        if (!offScreen(point: MapPoint(row: row, col: col))) {
+            return mapBlocks[row][col]
+        } else {
+            return MapBlock()
+        }
+    }
+    
+    func setBlock(at: MapPoint, block: MapBlock) {
+        
+        if (offScreen(point: at)) {
+            print("Error!")
+        } else {
+            mapBlocks[at.row][at.col] = block
+        }
     }
     
 
