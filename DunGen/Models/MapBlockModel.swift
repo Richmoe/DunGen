@@ -13,6 +13,8 @@ class MapBlock {
     
     var wallString = "0000"
     var tileCode = TileCode.null
+    
+    var encounter: Encounter?
     //P - Passage
     //E - dead end
     //W
@@ -237,7 +239,6 @@ class MapBlock {
         }
         return c
     }
-    
     
 }
 

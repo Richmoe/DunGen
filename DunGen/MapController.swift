@@ -130,7 +130,7 @@ class MapController {
                 //Debug overlay
                 let tileBlock = (dungeon.getBlock(MapPoint(row: row, col: col)))
                 
-                if (tileBlock.tileCode == TileCode.floor) {
+                if tileBlock.encounter != nil {
                     renderTile(layer: overlay, code: "DEBUG_ROOM", mp: MapPoint(row: row, col: col))
 
                 }

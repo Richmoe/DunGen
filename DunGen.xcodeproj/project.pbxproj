@@ -37,6 +37,7 @@
 		978D11C32478605700355716 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11C22478605700355716 /* AdventureView.swift */; };
 		978D11C52478613600355716 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11C42478613600355716 /* SceneDelegate.swift */; };
 		978D11CC24787EDA00355716 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11CB24787EDA00355716 /* Global.swift */; };
+		979CFBA3249A512100F6E8F0 /* EncounterGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979CFBA2249A512100F6E8F0 /* EncounterGenerator.swift */; };
 		97BCDC63245C759700D7C191 /* MapTileSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC61245C759700D7C191 /* MapTileSet.swift */; };
 		97BCDC64245C759700D7C191 /* MapGenRand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC62245C759700D7C191 /* MapGenRand.swift */; };
 		97BCDC66245C75A800D7C191 /* DungeonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC65245C75A800D7C191 /* DungeonScene.swift */; };
@@ -77,6 +78,7 @@
 		978D11C22478605700355716 /* AdventureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
 		978D11C42478613600355716 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		978D11CB24787EDA00355716 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		979CFBA2249A512100F6E8F0 /* EncounterGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterGenerator.swift; sourceTree = "<group>"; };
 		97BCDC61245C759700D7C191 /* MapTileSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTileSet.swift; sourceTree = "<group>"; };
 		97BCDC62245C759700D7C191 /* MapGenRand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapGenRand.swift; sourceTree = "<group>"; };
 		97BCDC65245C75A800D7C191 /* DungeonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonScene.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				975B75CC246894BC00E09936 /* MonsterModel.swift */,
 				977E0A5C245F91A600AC41B1 /* PartyModel.swift */,
 				978AAF9F24971CC5003245A0 /* MapGenerator.swift */,
+				979CFBA2249A512100F6E8F0 /* EncounterGenerator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				975B75DD246F929900E09936 /* Dungeon.swift in Sources */,
 				97BCDC63245C759700D7C191 /* MapTileSet.swift in Sources */,
 				97BCDC68245D1A0D00D7C191 /* CGPoint+Extensions.swift in Sources */,
+				979CFBA3249A512100F6E8F0 /* EncounterGenerator.swift in Sources */,
 				97BCDC66245C75A800D7C191 /* DungeonScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

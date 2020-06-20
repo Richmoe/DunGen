@@ -20,6 +20,11 @@ class Room {
     
     var exitStack: [(MapPoint,Passage)] = []
     
+//    var hasEncounter = false
+//    var hasTrip = false
+//    var hasTreasure = false
+    var hasSpecial = false //flag for if the room has something special about it, encounter, etc
+    
     init (at: MapPoint, width: Int, height: Int) {
         
         //floor = [[1]]
