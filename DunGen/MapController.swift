@@ -25,7 +25,6 @@ class MapController {
     
     func clickAt(_ clickPt: CGPoint) {
         
-        //Todo: we should probably figure out intent on click but for now we just move
         if (Global.isMoving) {
             return
         }
@@ -34,8 +33,14 @@ class MapController {
         //Check the grid we clicked on. If self, ignore
         let clickSpot = dungeon.currentLevel().CGPointToMapPoint(clickPt)
         
-        moveTo(clickSpot)
+        //Figure out if anything is there:
+        let block = dungeon.currentLevel().getBlock(clickSpot)
         
+        if let e = block.encounter {
+            print("Encounter!?!")
+        } else {
+            moveTo(clickSpot)
+        }
     }
     
     func moveTo(_ toMap: MapPoint) {
@@ -79,17 +84,26 @@ class MapController {
     }
     
     
+    func revealSpot(_ mp: MapPoint) {
+        
+        //check to see if we've placed the tile already, or just ignore?
+        if tileMap.tileGroup(atColumn: mp.col, row: mp.row) == nil {
+            //print ("Reveal: \(mp)")
+            renderTile(mp)
+            //check to see if we have an encounter:
+            
+            let mb = dungeon.getBlock(mp)
+            if let e = mb.encounter {
+                //trigger encounter
+                print("Encounter!!!")
+                e.initMobSprites(node: tileMap)
+            }
+        }
+        
+    }
+    
     func renderTile(_ mp: MapPoint) {
-        //
-        //        let mb = dungeon.getBlock(mp)
-        //        if let groupIx = Global.mapTileSet.tileDict[mb.wallString] {
-        //            //print ("rendering tile \(tile.wallString): \(groupIx) at c/R: \(col), \(row)")
-        //            tileMap.setTileGroup(tileMap.tileSet.tileGroups[groupIx], forColumn: mp.col, row: mp.row)
-        //        } else {
-        //            if (mb.wallString != "0000") {
-        //                print ("Can't find tile: \(mb.wallString) at rc: \(mp.row), \(mp.col)")
-        //            }
-        //        }
+
         renderTile(layer: tileMap, mp: mp)
     }
     
@@ -171,7 +185,8 @@ class MapController {
                     
                     if (canSee(from: fromPt, to: toPt)) {
                         //Yes there are multiple renders of the same thing. Is this slower? I should benchmark
-                        renderTile(toPt)
+                        revealSpot(toPt)
+                        //renderTile(toPt)
                         fromPt = toPt
                     } else {
                         break

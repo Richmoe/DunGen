@@ -49,9 +49,9 @@ class Encounter {
         return mobSprite[0].position - getOffset(0)
     }
     
-    func initMobSprites(dungeon: DungeonScene) {
+    func initMobSprites(node: SKTileMapNode) {
         
-        self.dungeon = dungeon
+        //self.dungeon = dungeon
         for i in 0..<mob.count {
             
             
@@ -60,7 +60,7 @@ class Encounter {
             let a = mob[i].instantiateSprite(at: (mobAt + getOffset(i)))
 
             
-            dungeon.addChild(a)
+            node.addChild(a)
 
         }
     }

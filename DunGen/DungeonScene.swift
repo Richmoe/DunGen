@@ -36,13 +36,63 @@ class DungeonScene: SKScene {
     var cameraOffset = 200.0
     var currentScale : CGFloat = 1.0
     
+    /* Gesture recognizer
     
+    func loadTaphandler() {
+        let doubleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
+        doubleTapGestureRecognizer.numberOfTapsRequired = 2
+        self.view!.addGestureRecognizer(doubleTapGestureRecognizer)
+        
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        tapGestureRecognizer.require(toFail: doubleTapGestureRecognizer)
+        self.view!.addGestureRecognizer(tapGestureRecognizer)
+    }
+
+    @objc func handleTapGesture(sender: UITapGestureRecognizer) {
+//            let touchPoint = sender.location(in: tableView)
+//            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+//                print(indexPath)
+//            }
+        
+        let touchPoint = sender.location(in: self.view!)
+        let sceneLocation = convertPoint(fromView: touchPoint)
+        
+
+        if (Global.adventure.inBattle == true) {
+
+            if let bc = Global.adventure.currentBattle {
+                bc.clickAt(sceneLocation)
+            }
+        } else {
+
+            if let mc = mapController {
+                mc.clickAt(sceneLocation)
+            }
+
+        }
+        print ("Single tap at \(touchPoint) - scene: \(sceneLocation)")
+    }
+
+    @objc func handleDoubleTap(sender: UITapGestureRecognizer) {
+//        let touchPoint = sender.location(in: tableView)
+//        if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+//            print(indexPath)
+//        }
+        print ("double tap")
+    }
     
+    override func didMove(to view: SKView) {
+        print("didMove - running")
+                loadTaphandler()
+    }
+
+    end gesture recognizer */
     
     override func sceneDidLoad() {
         
-        
-        
+
         self.lastUpdateTime = 0
         guard let backgroundLayer = childNode(withName: "Background") as? SKTileMapNode else {
             fatalError("Background node not loaded")
@@ -71,6 +121,9 @@ class DungeonScene: SKScene {
         mapController = MapController(dungeon: Global.adventure.dungeon, tileMap: self.mapLayer)
         mapController!.placeParty()
         
+
+        
+        
     }
     
     func initBattle(encounter: Encounter) {
@@ -89,7 +142,7 @@ class DungeonScene: SKScene {
         
         //Temp
         let enc = Encounter(at: MapPoint(row: 3, col: 13))
-        enc.initMobSprites(dungeon: self)
+        //enc.initMobSprites(dungeon: self)
         
         return enc
     }
@@ -97,7 +150,14 @@ class DungeonScene: SKScene {
     
     func endBattle() {
         
+        
         Global.adventure.currentBattle = nil
+        if let b = self.battleController {
+            if let h = b.highlightSprite {
+                h.removeFromParent()
+                
+            }
+        }
         battleController = nil
         Global.adventure.inBattle = false
         
@@ -168,17 +228,18 @@ class DungeonScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         
+        print ("TouchUp pos: \(pos)")
         if (Global.adventure.inBattle == true) {
-            
+
             if let bc = Global.adventure.currentBattle {
                 bc.clickAt(pos)
             }
         } else {
-            
+
             if let mc = mapController {
                 mc.clickAt(pos)
             }
-            
+
         }
     }
     
@@ -196,8 +257,9 @@ class DungeonScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        print ("---")
         for t in touches {
-            //print (t)
+            print ("TapCount: \(t.tapCount)")
             self.touchUp(atPoint: t.location(in: self))
             
         }
