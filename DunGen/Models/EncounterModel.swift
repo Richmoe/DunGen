@@ -24,12 +24,8 @@ class Encounter {
     //Treasure
     
     
-    private var dungeon : DungeonScene?
     
     
-    
-    
-    var mobSprite = [SKSpriteNode]()
     
     let offset = 32
     
@@ -45,48 +41,30 @@ class Encounter {
         self.at = at
     }
     
-    func atPt() -> CGPoint {
-        return mobSprite[0].position - getOffset(0)
-    }
     
     func initMobSprites(node: SKTileMapNode) {
         
-        //self.dungeon = dungeon
         for i in 0..<mob.count {
             
             
             let mobAt = Global.adventure.dungeon.currentLevel().MapPointCenterToCGPoint(at)
-
+            
             let a = mob[i].instantiateSprite(at: (mobAt + getOffset(i)))
-
+            
             
             node.addChild(a)
-
+            
         }
     }
     
-    func setAt(atPt: CGPoint, atTile: MapPoint) {
-        at = atTile
+    func removeMapSprites() {
+        
         for i in 0..<mob.count {
-            let pt = atPt + getOffset(i)
-            mobSprite[i].position = pt
+            if let s = mob[i].sprite {
+                s.removeFromParent()
+            }
         }
-        
     }
-    
-    func moveMob(mobIx: Int, toPt: CGPoint, toTile: MapPoint) {
-        
-        at = toTile
-        
-        
-        let mv = SKAction.move(to: toPt + getOffset(mobIx), duration: 1.0 + (Double.random(in: -0.05...0.05)))
-        Global.isMoving = true
-        mobSprite[mobIx].run(mv) {
-            Global.isMoving = false
-        }
-        
-    }
-    
     
     
     func getOffset(_ ix: Int) -> CGPoint {
@@ -106,7 +84,6 @@ class Encounter {
         
         return off
     }
-    
 }
 
 

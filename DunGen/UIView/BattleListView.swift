@@ -33,6 +33,10 @@ struct BattleListView: View {
                     self.battle.nextRound()
                 }
                 Spacer()
+                Button("Cancel Encounter") {
+                    self.battle.cancelEncounter()
+                }
+                Spacer()
             }
        }
         

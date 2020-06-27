@@ -44,11 +44,13 @@ class MapController {
             
             if let t = targetSprite {
                 
-                targetAt(clickSpot)
                 let tempPos = dungeon.currentLevel().MapPointCenterToCGPoint(clickSpot)
                 if (tempPos == t.position) {
                     //print ("Second click - Battle Trigger!!!")
-                    
+                    if let d = Global.dungeonScene {
+                        d.initBattle(encounter: e)
+                        targetAt(MAP_POINT_NULL)
+                    }
                 } else {
                     //print ("First click on encounter")
                     targetAt(clickSpot)

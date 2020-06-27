@@ -69,7 +69,33 @@ class BattleController : ObservableObject {
         tileMap.addChild(s)
     }
     
+    func cancelEncounter() {
+        
+        
+        //TODO - is this right here???
+        //Clear the encounter from the map
+        let mapAt = encounter.at
+        
+        let mapBlock = map.getBlock(mapAt)
+        mapBlock.encounter = nil
+        
+        //clear the encounter sprites
+        encounter.removeMapSprites()
+        
+
+        //Swtich back UI
+        Global.dungeonScene!.endBattle()
+        
+
     
+    }
+    
+    func endEncounter() {
+        
+        //We will leave the encounter but make it a Dead state
+        //TODO: Add dead state
+        
+    }
     
     //wherein I figure out what to do with where I clicked:
     func clickAt(_ clickPt: CGPoint) {
