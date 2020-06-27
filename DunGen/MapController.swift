@@ -16,11 +16,14 @@ class MapController {
     
     var tileMap: SKTileMapNode
     
+    var targetSprite: SKSpriteNode?
+    
     init(dungeon: Dungeon, tileMap: SKTileMapNode) {
         
         self.dungeon = dungeon
         
         self.tileMap = tileMap
+        createTargetSprite()
     }
     
     func clickAt(_ clickPt: CGPoint) {
@@ -37,8 +40,23 @@ class MapController {
         let block = dungeon.currentLevel().getBlock(clickSpot)
         
         if let e = block.encounter {
-            print("Encounter!?!")
+            //print("Encounter!?!")
+            
+            if let t = targetSprite {
+                
+                targetAt(clickSpot)
+                let tempPos = dungeon.currentLevel().MapPointCenterToCGPoint(clickSpot)
+                if (tempPos == t.position) {
+                    //print ("Second click - Battle Trigger!!!")
+                    
+                } else {
+                    //print ("First click on encounter")
+                    targetAt(clickSpot)
+                }
+            }
+            
         } else {
+            targetAt(MAP_POINT_NULL)
             moveTo(clickSpot)
         }
     }
@@ -46,9 +64,10 @@ class MapController {
     func moveTo(_ toMap: MapPoint) {
         
         if (toMap == Global.adventure.party.at) {
-            print("SAME!!!")
+            //print("SAME!!!")
             return
         }
+        
         
         let direction = angleToCardinalDir(angleBetween(fromMap: Global.adventure.party.at, toMap: toMap))
         
@@ -74,6 +93,29 @@ class MapController {
         fogOfWar()
     }
     
+    
+    func createTargetSprite() {
+        let s  = SKSpriteNode(imageNamed: "Sword2.png")
+        s.name = "maptarget"
+        s.setScale(1.5)
+        s.position = CGPoint(x: 0, y: 0)
+        targetSprite = s
+        tileMap.addChild(s)
+    }
+    
+    func targetAt(_ pt: MapPoint) {
+        
+        if let t = targetSprite {
+            
+            if (pt == MAP_POINT_NULL) {
+                t.isHidden = true
+                t.position = CGPoint(x: 0, y: 0)
+            } else {
+                t.isHidden = false
+                t.position = dungeon.currentLevel().MapPointCenterToCGPoint(pt)
+            }
+        }
+    }
     
     func goToTile(_ tile: MapPoint) {
         let movePt = tileMap.centerOfTile(atColumn: tile.col, row: tile.row)
@@ -103,7 +145,7 @@ class MapController {
     }
     
     func renderTile(_ mp: MapPoint) {
-
+        
         renderTile(layer: tileMap, mp: mp)
     }
     
@@ -136,7 +178,7 @@ class MapController {
         
         for row in 0..<Global.adventure.dungeon.mapHeight {
             for col in 0..<Global.adventure.dungeon.mapWidth {
-
+                
                 //map base
                 renderTile(layer: layer, mp: MapPoint(row: row, col: col))
                 
@@ -146,15 +188,15 @@ class MapController {
                 
                 if tileBlock.encounter != nil {
                     renderTile(layer: overlay, code: "DEBUG_ROOM", mp: MapPoint(row: row, col: col))
-
+                    
                 }
                 
                 //Secret wall override:
                 if (tileBlock.wallString.contains("S")) {
                     renderTile(layer: overlay, code: "Sxxx", mp: MapPoint(row: row, col: col))
-
+                    
                 }
-
+                
             }
         }
     }
