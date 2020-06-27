@@ -110,8 +110,11 @@ class BattleController : ObservableObject {
         if let mob = getMobAtPt(clickPt) {
             print ("ClickedMob: \(mob.name)")
             //
-            clickedMob(mob)
-            
+            if (mob.tombstoned) {
+                moveCurrent(clickPt)
+            } else {
+                clickedMob(mob)
+            }
         } else {
             
             moveCurrent(clickPt)
@@ -133,6 +136,8 @@ class BattleController : ObservableObject {
             }
         } else {
             print("clicked Monster")
+            //temp
+            mob.tombstone()
             setCurrentsTarget(mob)
         }
     }
@@ -188,8 +193,10 @@ class BattleController : ObservableObject {
         let mapMove = mobAt + moveVector
         
         if let mob = getMobAtMap(stepMove) {
-            print("can't move, colliding with mob: \(mob.name)")
-            return
+            if (!mob.tombstoned) {
+                print("can't move, colliding with mob: \(mob.name)")
+                return
+            }
         }
         
         if (mobAt == toMap || map.canEnter(toPt: mapMove, moveDir: direction)) {

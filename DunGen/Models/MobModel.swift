@@ -30,6 +30,8 @@ class Mob : ObservableObject {
     
     var currentTarget : Mob? //For battle
     
+    var tombstoned = false
+    
     init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String)
     {
         self.uid = UUID()
@@ -113,6 +115,17 @@ class Mob : ObservableObject {
                 s.zRotation = 7 * .pi / 4
             }
         }
+    }
+    
+    func tombstone() {
+        
+        if let s = sprite {
+            
+            s.texture = SKTexture(imageNamed: "tombstone.png")
+            
+        }
+        tombstoned = true
+        
     }
     
 }
