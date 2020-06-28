@@ -60,6 +60,7 @@ class Mob : ObservableObject {
         s.name = name
         s.setScale(0.5)
         s.position = at
+        s.zPosition = Global.zPosMob
         sprite = s
         return s
     }

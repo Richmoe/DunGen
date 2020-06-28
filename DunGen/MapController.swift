@@ -101,6 +101,7 @@ class MapController {
         s.name = "maptarget"
         s.setScale(1.5)
         s.position = CGPoint(x: 0, y: 0)
+        s.zPosition = Global.zPosTarget
         targetSprite = s
         tileMap.addChild(s)
     }

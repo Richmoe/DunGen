@@ -32,8 +32,9 @@ struct BattleMobItem: View {
                         .opacity(self.battle.currentTargetIx == order ? 1 : 0)
                     Text(self.mob.name.prefix(1))
                         .padding(8)
-                        .background(colorArray[ order % colorArray.count ])
-                        .foregroundColor(Color.white)
+                        .background(Color(Global.selectionColor[order]))
+                        //.background(colorArray[ order % colorArray.count ])
+                        .foregroundColor(order % 2 == 0 ? Color.black : Color.white)
                         .clipShape(Circle())
                 }
                 

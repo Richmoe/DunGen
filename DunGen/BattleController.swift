@@ -57,7 +57,9 @@ class BattleController : ObservableObject {
         h.name = "current"
         h.position = CGPoint(x: 0, y: 0)
         h.strokeColor = SKColor.black
-        h.fillColor = SKColor.orange
+        h.fillColor = Global.selectionColor[0]
+        h.zPosition = Global.zPosSelection
+        h.alpha = 0.5
         highlightSprite = h
         tileMap.addChild(h)
     }
@@ -67,6 +69,7 @@ class BattleController : ObservableObject {
         s.name = "target"
         s.setScale(0.5)
         s.position = CGPoint(x: 0, y: 0)
+        s.zPosition = Global.zPosTarget
         targetSprite = s
         tileMap.addChild(s)
     }
@@ -291,6 +294,10 @@ class BattleController : ObservableObject {
     func setCurrent(ix: Int) {
         current = ix
         getCurrentsTargetIx()
+        if let h = highlightSprite {
+            
+            h.fillColor = Global.selectionColor[current]
+        }
     }
     
     func nextTurn() {
@@ -298,12 +305,13 @@ class BattleController : ObservableObject {
         
         current = current % initiativeMobs.count
         
-        getCurrentsTargetIx()
+        setCurrent(ix: current)
     }
     
     func nextRound() {
         round += 1
-        current = 0
-        getCurrentsTargetIx()
+        
+        setCurrent(ix: 0)
+
     }
 }
