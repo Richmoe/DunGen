@@ -27,7 +27,8 @@ class BattleController : ObservableObject {
     
     let map: Map
     
-    var initiative: [(Int, Mob)] = []
+    var initiativeRolls: [Int] = []
+    var initiativeMobs: [Mob] = []
     
     @Published var current = 0
     @Published var round = 1
@@ -83,12 +84,9 @@ class BattleController : ObservableObject {
         //clear the encounter sprites
         encounter.removeMapSprites()
         
-
+        
         //Swtich back UI
         Global.dungeonScene!.endBattle()
-        
-
-    
     }
     
     func endEncounter() {
@@ -125,27 +123,28 @@ class BattleController : ObservableObject {
     func clickedMob(_ mob: Mob) {
         
         //Check if player or monster
-        if mob is Player {
-            //print("clickd Player")
-            //get current IX:
-            for i in 0..<initiative.count {
-                let (_, player) = initiative[i]
-                if (player === mob) {
-                    current = i
-                    getCurrentsTargetIx()
-                    break
-                }
-            }
-        } else {
-            //print("clicked Monster")
+        //if mob is Player {
 
+//            //print("clickd Player")
+//            //get current IX:
+//            for i in 0..<initiativeMobs.count {
+//                let player = initiativeMobs[i]
+//                if (player === mob) {
+//                    current = i
+//                    getCurrentsTargetIx()
+//                    break
+//                }
+//            }
+//        } else {
+//            //print("clicked Monster")
+            
             setCurrentsTarget(mob)
-        }
+        //}
     }
     
     func setCurrentsTarget(_ mob: Mob) {
         
-        let (_, m) = initiative[current]
+        let m = initiativeMobs[current]
         m.currentTarget = mob
         
         getCurrentsTargetIx()
@@ -153,16 +152,16 @@ class BattleController : ObservableObject {
     
     func getCurrentsTargetIx() {
         
-        let (_, m) = initiative[current]
+        let m = initiativeMobs[current]
         let mob = m.currentTarget
         
         if (mob != nil) {
-        
+            
             //find mob in initiative list:
-            for i in 0..<initiative.count {
-                let (_, mm) = initiative[i]
+            for i in 0..<initiativeMobs.count {
+                let mm = initiativeMobs[i]
                 
-                //if (mm.uid == mob.uid) {
+                //if (mm.uid == mob!.uid) {
                 if (mm === mob) {
                     print ("Current target found, ix: \(i)")
                     currentTargetIx = i
@@ -175,21 +174,21 @@ class BattleController : ObservableObject {
             fatalError()
         } else {
             if let mm = mob {
-            print("no target for mob: \(mm.name)")
+                print("no target for mob: \(mm.name)")
             }
             currentTargetIx = -1
         }
     }
     
     func getMobAtPt(_ clickPt: CGPoint) -> Mob? {
-    
+        
         return getMobAtMap(map.CGPointToBattleMapPoint(clickPt))
-
+        
     }
     
     func getMobAtMap(_ mapPt: MapPoint) -> Mob? {
         var clicked : Mob?
-        for (_, m) in initiative {
+        for m in initiativeMobs {
             if (map.CGPointToBattleMapPoint(m.at()) == mapPt) {
                 clicked = m
                 break
@@ -204,7 +203,7 @@ class BattleController : ObservableObject {
         let toBMap = map.CGPointToBattleMapPoint(clickPt)
         let toMap = map.CGPointToMapPoint(clickPt)
         
-        let (_, currentMob) = initiative[current]
+        let currentMob = initiativeMobs[current]
         
         let mobBMapAt = map.CGPointToBattleMapPoint(currentAt())
         let mobAt = map.CGPointToMapPoint(currentAt())
@@ -264,18 +263,23 @@ class BattleController : ObservableObject {
         }
         
         //Sort descending
-        initiative = temp.sorted { $0.0 > $1.0}
+        temp = temp.sorted { $0.0 > $1.0}
+        
+        for t in temp {
+            initiativeRolls.append(t.0)
+            initiativeMobs.append(t.1)
+        }
     }
     
     func currentAt() -> CGPoint {
         
-        let (_, m) = initiative[current]
+        let m = initiativeMobs[current]
         return m.at()
     }
     
     func currentTargetAt() -> CGPoint? {
         
-        let (_, m) = initiative[current]
+        let m = initiativeMobs[current]
         
         if let target = m.currentTarget {
             return target.at()
@@ -284,10 +288,15 @@ class BattleController : ObservableObject {
         }
     }
     
+    func setCurrent(ix: Int) {
+        current = ix
+        getCurrentsTargetIx()
+    }
+    
     func nextTurn() {
         current += 1
         
-        current = current % initiative.count
+        current = current % initiativeMobs.count
         
         getCurrentsTargetIx()
     }

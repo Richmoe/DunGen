@@ -16,12 +16,16 @@ struct BattleListView: View {
     var body: some View {
         VStack (spacing: 5) {
             Text("Round: \(battle.round)")
-            ForEach(0..<battle.initiative.count) { val in
-                //Text("\(val): \(self.battle.current), \(Bool(self.battle.current == val))")
-                BattleMobItem(mob: self.battle.initiative[val].1, order: val, isCurrent: self.battle.current == val, isTarget: self.battle.currentTargetIx == val)
+            ForEach(0..<battle.initiativeMobs.count) { ix in
+                BattleMobItem(mob: self.battle.initiativeMobs[ix], order: ix, battle: self.battle)
                 //Spacer()
             }
 //            .listRowBackground(Color.clear)
+//            //List is a problem so we won't use it:
+//            List(battle.initiativeMobs.indices, id: \.self) { ix in
+//                BattleMobItem(mob: self.battle.initiativeMobs[ix], order: ix, isCurrent: self.battle.current == ix, isTarget: self.battle.currentTargetIx == ix)
+//
+//            }
             
             VStack {
                 //Spacer()
