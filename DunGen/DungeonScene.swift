@@ -36,6 +36,8 @@ class DungeonScene: SKScene {
     var cameraOffset = 200.0
     var currentScale : CGFloat = 1.0
     
+     var cameraIsMoving = false
+    
     /* Gesture recognizer
     
     func loadTaphandler() {
@@ -288,15 +290,16 @@ class DungeonScene: SKScene {
         
         //let movePt = backgroundLayer.centerOfTile(atColumn: Global.adventure.party.at.col, row: Global.adventure.party.at.row)
         //let moveMap = Global.adventure.party.mapPt()
-        if let p = Global.adventure.party.player[0].sprite {
-            
-            camera!.position = (p.position + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
-        }
+
         
         
         if let b = Global.adventure.currentBattle {
             if let h = b.highlightSprite {
                 h.position = b.currentAt()
+                if (!cameraIsMoving && camera!.position != h.position) {
+                    cameraMove(toPt: h.position)
+                }
+                //camera!.position = h.position
             }
             if let s = b.targetSprite {
                 if let pt = b.currentTargetAt() {
@@ -307,6 +310,11 @@ class DungeonScene: SKScene {
                 }
             }
             
+        } else {
+            //Map Controller
+            if let p = Global.adventure.party.player[0].sprite {
+                camera!.position = (p.position + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
+            }
         }
         
         self.lastUpdateTime = currentTime
@@ -375,7 +383,17 @@ class DungeonScene: SKScene {
         print ("Scaling to \(scale) , \(currentScale)")
     }
     
-    
+    func cameraMove(toPt: CGPoint) {
+        
+        let mv = SKAction.move(to: toPt, duration: 0.5)
+        cameraIsMoving = true
+        if let c = camera {
+            c.run(mv) {
+                //is moving = false
+                self.cameraIsMoving = false
+            }
+        }
+    }
     
     //
     //    func testRebuildMap() {

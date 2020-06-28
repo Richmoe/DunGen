@@ -13,7 +13,7 @@ import SpriteKit
 class Mob : ObservableObject {
     
     
-    let uid:UUID?
+    let uid:UUID
     
     var name: String
 

@@ -31,7 +31,8 @@ struct AdventureView: View {
                 MapView()
 
                 DungeonUIView(adventure: Global.adventure)
-                    .fixedSize(horizontal: true, vertical: false)
+                    .frame(maxWidth: 375)
+                    //.fixedSize(horizontal: false, vertical: false)
             }
 
 

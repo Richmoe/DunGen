@@ -31,6 +31,7 @@ class BattleController : ObservableObject {
     
     @Published var current = 0
     @Published var round = 1
+    @Published var currentTargetIx = -1
     
     var tileMap: SKTileMapNode
     var highlightSprite : SKShapeNode?
@@ -125,19 +126,19 @@ class BattleController : ObservableObject {
         
         //Check if player or monster
         if mob is Player {
-            print("clickd Player")
+            //print("clickd Player")
             //get current IX:
             for i in 0..<initiative.count {
                 let (_, player) = initiative[i]
                 if (player === mob) {
                     current = i
+                    getCurrentsTargetIx()
                     break
                 }
             }
         } else {
-            print("clicked Monster")
-            //temp
-            mob.tombstone()
+            //print("clicked Monster")
+
             setCurrentsTarget(mob)
         }
     }
@@ -147,6 +148,37 @@ class BattleController : ObservableObject {
         let (_, m) = initiative[current]
         m.currentTarget = mob
         
+        getCurrentsTargetIx()
+    }
+    
+    func getCurrentsTargetIx() {
+        
+        let (_, m) = initiative[current]
+        let mob = m.currentTarget
+        
+        if (mob != nil) {
+        
+            //find mob in initiative list:
+            for i in 0..<initiative.count {
+                let (_, mm) = initiative[i]
+                
+                //if (mm.uid == mob.uid) {
+                if (mm === mob) {
+                    print ("Current target found, ix: \(i)")
+                    currentTargetIx = i
+                    return
+                }
+                
+            }
+            
+            //error
+            fatalError()
+        } else {
+            if let mm = mob {
+            print("no target for mob: \(mm.name)")
+            }
+            currentTargetIx = -1
+        }
     }
     
     func getMobAtPt(_ clickPt: CGPoint) -> Mob? {
@@ -254,11 +286,15 @@ class BattleController : ObservableObject {
     
     func nextTurn() {
         current += 1
+        
         current = current % initiative.count
+        
+        getCurrentsTargetIx()
     }
     
     func nextRound() {
         round += 1
         current = 0
+        getCurrentsTargetIx()
     }
 }

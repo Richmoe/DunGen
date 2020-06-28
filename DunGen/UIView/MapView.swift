@@ -17,7 +17,7 @@ struct MapView: UIViewRepresentable {
         view.allowsTransparency = true
         
         if let scene = DungeonScene(fileNamed: "DungeonScene") {
-            scene.backgroundColor = .blue
+            scene.backgroundColor = .darkGray
 
             view.presentScene(scene)
             Global.dungeonScene  = scene

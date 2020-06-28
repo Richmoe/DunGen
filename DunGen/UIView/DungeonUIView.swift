@@ -24,7 +24,8 @@ struct DungeonUIView: View {
                 
                 
                 BattleListView(battle: adventure.currentBattle!)
-                    .padding(.leading, 160)
+                    .padding(.leading, 60)
+                    .frame(alignment: .top)
                 
                 
             }

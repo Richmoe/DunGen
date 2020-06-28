@@ -14,31 +14,39 @@ struct BattleListView: View {
     @ObservedObject var battle: BattleController
     
     var body: some View {
-        VStack (spacing: 10) {
+        VStack (spacing: 5) {
             Text("Round: \(battle.round)")
             ForEach(0..<battle.initiative.count) { val in
                 //Text("\(val): \(self.battle.current), \(Bool(self.battle.current == val))")
-                BattleMobItem(mob: self.battle.initiative[val].1, order: val, isCurrent: self.battle.current == val)
+                BattleMobItem(mob: self.battle.initiative[val].1, order: val, isCurrent: self.battle.current == val, isTarget: self.battle.currentTargetIx == val)
                 //Spacer()
             }
 //            .listRowBackground(Color.clear)
             
-            HStack {
-                Spacer()
+            VStack {
+                //Spacer()
                 Button("Next") {
                     self.battle.nextTurn()
                 }
-                Spacer()
+                .padding(10)
+                //Spacer()
                 Button("End Round") {
                     self.battle.nextRound()
                 }
-                Spacer()
+                .padding(10)
+                //Spacer()
                 Button("Cancel Encounter") {
                     self.battle.cancelEncounter()
                 }
-                Spacer()
+                .padding(10)
+                //Spacer()
             }
-       }
+        }
+                    //.background(Color.red)
+
+
+
+    
         
         
     }

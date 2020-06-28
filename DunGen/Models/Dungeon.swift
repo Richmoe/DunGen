@@ -23,10 +23,10 @@ class Dungeon { //Environment?
         print("THE SEED ___________ \(seedString) ___________")
         
         /* Interesting:
-         
+         UCAY - mob behind door
          WPH7 has secret door
          */
-        //seedString = "YMTM"
+        seedString = "CCNT"
         MapGenRand.sharedInstance.setSeed(seedString: seedString)
         
         
