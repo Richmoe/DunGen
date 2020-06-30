@@ -140,8 +140,10 @@ class BattleController : ObservableObject {
 //            }
 //        } else {
 //            //print("clicked Monster")
+        if (initiativeMobs[current].tombstoned != true) {
             
             setCurrentsTarget(mob)
+        }
         //}
     }
     
@@ -203,10 +205,15 @@ class BattleController : ObservableObject {
     
     func moveCurrent(_ clickPt: CGPoint) {
         
+        let currentMob = initiativeMobs[current]
+        if (currentMob.tombstoned) {
+            return
+        }
+        
         let toBMap = map.CGPointToBattleMapPoint(clickPt)
         let toMap = map.CGPointToMapPoint(clickPt)
         
-        let currentMob = initiativeMobs[current]
+
         
         let mobBMapAt = map.CGPointToBattleMapPoint(currentAt())
         let mobAt = map.CGPointToMapPoint(currentAt())
@@ -301,17 +308,23 @@ class BattleController : ObservableObject {
     }
     
     func nextTurn() {
-        current += 1
-        
-        current = current % initiativeMobs.count
-        
-        setCurrent(ix: current)
+        //Note: add a counter to prevent infinite loop in case someone is being cute:
+        var maxRepeat = initiativeMobs.count
+        repeat {
+            current += 1
+            
+            current = current % initiativeMobs.count
+            maxRepeat -= 1
+            setCurrent(ix: current)
+        }  while initiativeMobs[current].tombstoned && maxRepeat > 0
     }
     
     func nextRound() {
         round += 1
+        current = -1 //set to negative one as nextTurn adds one to correctly start at 0, but will skip if 0 is dead.
+        nextTurn()
         
-        setCurrent(ix: 0)
+        //setCurrent(ix: 0)
 
     }
 }

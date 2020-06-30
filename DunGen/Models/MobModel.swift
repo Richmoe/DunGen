@@ -46,12 +46,18 @@ class Mob : ObservableObject {
     
     func decreaseHP() {
         hitPoints -= 1
-        hitPoints = max(hitPoints, 0)
+        hitPoints = max(hitPoints, -20)
+        if (hitPoints <= 0 && !tombstoned) {
+            tombstone(true)
+        }
     }
     
     func increaseHP() {
         hitPoints += 1
         hitPoints = min(hitPoints, maxHitPoints)
+        if (hitPoints > 0 && tombstoned) {
+            tombstone(false)
+        }
     }
     
     func instantiateSprite(at: CGPoint) -> SKSpriteNode {
@@ -118,14 +124,19 @@ class Mob : ObservableObject {
         }
     }
     
-    func tombstone() {
+    func tombstone(_ isDead: Bool) {
+        //when we kill a mob
         
         if let s = sprite {
             
-            s.texture = SKTexture(imageNamed: "tombstone.png")
-            
+            if (isDead) {
+                s.texture = SKTexture(imageNamed: "tombstone.png")
+                currentTarget = nil
+            } else {
+                s.texture = SKTexture(imageNamed: image)
+            }
         }
-        tombstoned = true
+        tombstoned = isDead
         
     }
     

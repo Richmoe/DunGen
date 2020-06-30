@@ -71,7 +71,7 @@ struct BattleMobItem: View {
         }
         .padding(8)
         .border(Color.pink, width: (self.battle.current == order ?  2 : 0))
-        .background((self.mob.hitPoints == 0 ? Color.gray : Color.clear))
+        .background((self.mob.hitPoints <= 0 ? Color.gray : Color.clear))
     }
 }
 
