@@ -42,25 +42,54 @@ class MapController {
         if let e = block.encounter {
             //print("Encounter!?!")
             
-            if let t = targetSprite {
-                
-                let tempPos = dungeon.currentLevel().MapPointCenterToCGPoint(clickSpot)
-                if (tempPos == t.position) {
-                    //print ("Second click - Battle Trigger!!!")
-                    if let d = Global.dungeonScene {
-                        d.initBattle(encounter: e)
-                        targetAt(MAP_POINT_NULL)
-                    }
-                } else {
-                    //print ("First click on encounter")
-                    targetAt(clickSpot)
-                }
-            }
+            if (e.stateActive == true) {
+//                //check to see if we clicked a tombstone?
+//                print ("Clicked encounter, not active")
+//
+//                let sprites = tileMap.nodes(at: clickPt)
+//
+//                print ("Sprites: \(sprites)")
+//                return
+//            }
             
-        } else {
+                if let t = targetSprite {
+                    
+                    let tempPos = dungeon.currentLevel().MapPointCenterToCGPoint(clickSpot)
+                    if (tempPos == t.position) {
+                        //print ("Second click - Battle Trigger!!!")
+                        if let d = Global.dungeonScene {
+                            d.initBattle(encounter: e)
+                            targetAt(MAP_POINT_NULL)
+                        }
+                    } else {
+                        //print ("First click on encounter")
+                        targetAt(clickSpot)
+                    }
+                }
+                return
+            }
+        }
+        
+        //Perhaps we add to a queue of encounters when we trigger it?
+        
+        //In mapbattle, when we click on a sprite, we walk all encounters to see which mob it is?
+        // This seems highly odd but I'm going for it. Likely need to refactor
+        
+        //Actually we need a similar logic for chests, traps, etc. what did we actually click on?
+        //Maybe killing a mob drops a tombstone in the block. A block can have multiple "things" - trap, tombstone, treasure chest
+        
+        //If the clickspot is adjacent to the player, then we check to see if they clicked on something, otherwise we move towards that spot. e.g. if the tombstone is 2 squares away we don't care we clikced on the tombstone, we just move towards it. Only check to see if we clicked on a tombstone if its next to us.
+        
+        let sprites = tileMap.nodes(at: clickPt)
+        if (sprites != nil) {
+            
+            
+        }
+            
+        
             targetAt(MAP_POINT_NULL)
             moveTo(clickSpot)
-        }
+
     }
     
     func moveTo(_ toMap: MapPoint) {

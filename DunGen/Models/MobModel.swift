@@ -131,6 +131,7 @@ class Mob : ObservableObject {
             
             if (isDead) {
                 s.texture = SKTexture(imageNamed: "tombstone.png")
+                s.zRotation = 0
                 currentTarget = nil
             } else {
                 s.texture = SKTexture(imageNamed: image)

@@ -34,7 +34,7 @@ struct BattleListView: View {
                 }
                 .padding(10)
                 //Spacer()
-                Button("End Round") {
+                Button(self.battle.battleOver == 0 ? "End Round" : "End Battle") {
                     self.battle.nextRound()
                 }
                 .padding(10)

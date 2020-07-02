@@ -21,7 +21,20 @@ class Encounter {
     // Map location
     @Published var at = MapPoint(row: 0, col: 0)
     
+//    let STATE_ACTIVE = 0
+//    let STATE_CLEARED = 1
+    var stateActive = true
+    
     //Treasure
+//    var treasurePlatinum = 0
+//    var treasureGold = 0
+//    var treasureElectrum = 0
+//    var treasureSilver = 0
+//    var treasureCopper = 0
+//
+//    var treasureOther: String = ""
+    
+    
     
     
     

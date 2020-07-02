@@ -33,10 +33,13 @@ class BattleController : ObservableObject {
     @Published var current = 0
     @Published var round = 1
     @Published var currentTargetIx = -1
+    @Published var battleOver = 0 //Set this to 1 if we killed all mobs or -1 for all players
     
     var tileMap: SKTileMapNode
     var highlightSprite : SKShapeNode?
     var targetSprite: SKSpriteNode?
+    
+
     
     
     init (encounter: Encounter, map: Map, tileMap: SKTileMapNode) {
@@ -97,6 +100,11 @@ class BattleController : ObservableObject {
         //We will leave the encounter but make it a Dead state
         //TODO: Add dead state
         
+        //now what?
+        encounter.stateActive = false
+        
+        
+        Global.dungeonScene!.endBattle()
     }
     
     //wherein I figure out what to do with where I clicked:
@@ -305,6 +313,9 @@ class BattleController : ObservableObject {
             
             h.fillColor = Global.selectionColor[current]
         }
+        
+        //also check end of battle so we can update the button:
+        checkEndOfBattle()
     }
     
     func nextTurn() {
@@ -317,14 +328,54 @@ class BattleController : ObservableObject {
             maxRepeat -= 1
             setCurrent(ix: current)
         }  while initiativeMobs[current].tombstoned && maxRepeat > 0
+        
+
     }
     
     func nextRound() {
-        round += 1
-        current = -1 //set to negative one as nextTurn adds one to correctly start at 0, but will skip if 0 is dead.
-        nextTurn()
         
-        //setCurrent(ix: 0)
+        checkEndOfBattle()
+        
+        if (battleOver == 0) {
+            round += 1
+            current = -1 //set to negative one as nextTurn adds one to correctly start at 0, but will skip if 0 is dead.
+            nextTurn()
+            
+            //setCurrent(ix: 0)
+        } else {
+            endEncounter()
+        }
 
     }
+    
+    func checkEndOfBattle() {
+        var deadMobs = 0
+        var deadPlayers = 0
+        for m in initiativeMobs {
+            if (m.tombstoned) {
+                if m is Monster {
+                    //print ("Dead Monster")
+                    deadMobs += 1
+                } else {
+                    //print ("Ded Plyr")
+                    deadPlayers += 1
+                }
+            }
+        }
+        
+        
+        if (encounter.mob.count == deadMobs) {
+            //print("All Mobs DEAD!")
+            battleOver = 1
+        }
+        
+        //Don't make this mutually exclusive in case someone's trying to break things. Err on wiping out party:
+        if (party.player.count == deadPlayers) {
+            //print("All players dead!!?!")
+            battleOver = -1
+        }
+        
+        
+    }
+    
 }
