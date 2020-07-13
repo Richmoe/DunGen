@@ -101,7 +101,8 @@ class BattleController : ObservableObject {
         //TODO: Add dead state
         
         //now what?
-        encounter.stateActive = false
+
+        encounter.endEncounter()
         
         
         Global.dungeonScene!.endBattle()

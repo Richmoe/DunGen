@@ -18,6 +18,7 @@ class Global : ObservableObject {
     static var dungeonScene : DungeonScene?
     
     static let zPosMob = CGFloat(30.0)
+    static let zPosDrop = CGFloat(25.0)
     static let zPosTarget = CGFloat(20.0)
     static let zPosSelection = CGFloat(10.0)
     

@@ -18,6 +18,8 @@ class MapController {
     
     var targetSprite: SKSpriteNode?
     
+    var dropQueue = [Drop]()
+    
     init(dungeon: Dungeon, tileMap: SKTileMapNode) {
         
         self.dungeon = dungeon
@@ -25,6 +27,21 @@ class MapController {
         self.tileMap = tileMap
         createTargetSprite()
     }
+    
+    func addDrop(drop: Drop, at: CGPoint) {
+        
+        
+        //add to drop queue
+        dropQueue.append(drop)
+        
+        
+        // Add to map:
+        if let s = drop.sprite {
+            tileMap.addChild(s)
+        }
+        
+    }
+    
     
     func clickAt(_ clickPt: CGPoint) {
         
@@ -43,15 +60,15 @@ class MapController {
             //print("Encounter!?!")
             
             if (e.stateActive == true) {
-//                //check to see if we clicked a tombstone?
-//                print ("Clicked encounter, not active")
-//
-//                let sprites = tileMap.nodes(at: clickPt)
-//
-//                print ("Sprites: \(sprites)")
-//                return
-//            }
-            
+                //                //check to see if we clicked a tombstone?
+                //                print ("Clicked encounter, not active")
+                //
+                //                let sprites = tileMap.nodes(at: clickPt)
+                //
+                //                print ("Sprites: \(sprites)")
+                //                return
+                //            }
+                
                 if let t = targetSprite {
                     
                     let tempPos = dungeon.currentLevel().MapPointCenterToCGPoint(clickSpot)
@@ -59,11 +76,11 @@ class MapController {
                         //print ("Second click - Battle Trigger!!!")
                         if let d = Global.dungeonScene {
                             d.initBattle(encounter: e)
-                            targetAt(MAP_POINT_NULL)
+                            targetSpriteAt(MAP_POINT_NULL)
                         }
                     } else {
                         //print ("First click on encounter")
-                        targetAt(clickSpot)
+                        targetSpriteAt(clickSpot)
                     }
                 }
                 return
@@ -80,16 +97,34 @@ class MapController {
         
         //If the clickspot is adjacent to the player, then we check to see if they clicked on something, otherwise we move towards that spot. e.g. if the tombstone is 2 squares away we don't care we clikced on the tombstone, we just move towards it. Only check to see if we clicked on a tombstone if its next to us.
         
-        let sprites = tileMap.nodes(at: clickPt)
-        if (sprites != nil) {
+        let deltaClick = clickSpot - Global.adventure.party.at
+        
+        if (abs(deltaClick.col) == 1 || abs(deltaClick.row) == 1) {
             
+            
+            let sprites = tileMap.nodes(at: clickPt)
+            if (sprites.count > 0) {
+                
+                print ("We clicked a sprite!!! \(sprites[0].name)")
+                //find if it's a drop
+                for i in 0..<dropQueue.count {
+                    if (sprites[0] == dropQueue[i].sprite) {
+                        print ("Clicked a drop!!")
+                        dropQueue[i].getLoot()
+                        dropQueue[i].sprite?.removeFromParent()
+                        dropQueue.remove(at: i)
+                        return
+                    }
+                }
+                
+            }
             
         }
-            
         
-            targetAt(MAP_POINT_NULL)
-            moveTo(clickSpot)
-
+        
+        targetSpriteAt(MAP_POINT_NULL)
+        moveTo(clickSpot)
+        
     }
     
     func moveTo(_ toMap: MapPoint) {
@@ -135,7 +170,7 @@ class MapController {
         tileMap.addChild(s)
     }
     
-    func targetAt(_ pt: MapPoint) {
+    func targetSpriteAt(_ pt: MapPoint) {
         
         if let t = targetSprite {
             

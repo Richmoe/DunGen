@@ -34,6 +34,9 @@ class Encounter {
 //
 //    var treasureOther: String = ""
     
+    //Loot is maybe a new struct?
+    //array of Loot?
+    var loot = [Loot]()
     
     
     
@@ -49,7 +52,9 @@ class Encounter {
         for _ in 1...4 {
             m =  MobFactory.sharedInstance.makeMonster(name: "goblin")
             mob.append(m)
-            
+            let l = Loot()
+                l.random()
+            loot.append(l)
         }
         self.at = at
     }
@@ -77,6 +82,29 @@ class Encounter {
                 s.removeFromParent()
             }
         }
+    }
+    
+    func endEncounter() {
+        
+        stateActive = false
+        //transfer mobs to drops
+        
+        for i in 0..<mob.count {
+            if (mob[i].tombstoned) {
+                //convert to drop
+                let d = Drop(type: 1, name: "Dead Goblin", loot: loot[i])
+                d.instantiateSprite(at: mob[i].at())
+                if let ds = Global.dungeonScene {
+                    if let mc = ds.mapController {
+                        mc.addDrop(drop: d, at: mob[i].at())
+                    }
+                }
+            }
+    
+        }
+            
+        removeMapSprites()
+        
     }
     
     

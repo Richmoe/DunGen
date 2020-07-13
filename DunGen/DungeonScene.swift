@@ -28,7 +28,7 @@ class DungeonScene: SKScene {
     
     private var lastUpdateTime : TimeInterval = 0
     
-    private var mapController : MapController?
+    var mapController : MapController?
     private var battleController : BattleController?
     
     var debugLayerOn = false
