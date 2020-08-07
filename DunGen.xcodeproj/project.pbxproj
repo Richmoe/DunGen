@@ -64,7 +64,7 @@
 		975B75D2246CAEE800E09936 /* Monsters.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Monsters.csv; sourceTree = "<group>"; };
 		975B75D4246E433A00E09936 /* EncounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterModel.swift; sourceTree = "<group>"; };
 		975B75D6246EE8F900E09936 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventure.swift; sourceTree = "<group>"; };
-		975B75D8246F07BE00E09936 /* crToExp.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crToExp.csv; sourceTree = "<group>"; };
+		975B75D8246F07BE00E09936 /* crToExp.csv */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; lineEnding = 0; path = crToExp.csv; sourceTree = "<group>"; wrapsLines = 0; };
 		975B75DA246F248E00E09936 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		975B75DC246F929900E09936 /* Dungeon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dungeon.swift; sourceTree = "<group>"; };
 		975B75DE2470551B00E09936 /* BattleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleController.swift; sourceTree = "<group>"; };

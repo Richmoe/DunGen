@@ -48,8 +48,12 @@ class MobFactory {
             if (mob.count < iCR) {
                 break
             }
+            
+            if let cr = Float(mob[iCR]) {
+                monsterList.append(Monster(name: mob[iName], armorClass: Int(mob[iAC])!, hitPoints: 0, initiativeBonus: Int(mob[iInitiative])!, image: "Avatar4", hitDice: mob[iHitDice], challengeRating: cr)) //Float(mob[iCR])))
+            }
             //init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String, hitDice: String, challengeRating: Double)
-            monsterList.append(Monster(name: mob[iName], armorClass: Int(mob[iAC])!, hitPoints: 0, initiativeBonus: Int(mob[iInitiative])!, image: "Avatar4", hitDice: mob[iHitDice], challengeRating: Double(iCR)))
+            
         }
     }
     

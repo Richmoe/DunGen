@@ -22,13 +22,24 @@ class Adventure : ObservableObject {
     //Manage battles?
     var currentBattle: BattleController?
     @Published var inBattle = false
+    
     //End of Adventure calcs
+    
+    //walk encounter to calc exp?
+    var killedMobs = [String: Int]() //dictionary - Mob name/type, count
+    
+    private var totalExperience: Int = 0
+    
+    private var crToExpTable = Dictionary<Int, Int>()
     
     
     init() {
         party = Party()
         
         dungeon = Dungeon()
+        
+        loadCrToExpTable()
+        
     }
     
     func createPlayers() {
@@ -47,4 +58,51 @@ class Adventure : ObservableObject {
         
     }
     
+    func calcEncounter(encounter: Encounter) {
+        
+        for m in encounter.mob {
+            
+            if let k = killedMobs[m.name] {
+                killedMobs[m.name] = k + 1
+            } else {
+                killedMobs[m.name] = 1
+            }
+            
+        }
+    }
+    
+    func getExpFromCr(cr: Float) -> Int {
+        
+        //Convert the CR to int*100
+        
+        let crx100 = Int(cr * 100)
+        
+        if let exp = crToExpTable[crx100] {
+            return exp
+        } else {
+            return 0
+        }
+    }
+    
+    func loadCrToExpTable() {
+        let parsedCSV: [[String]] = Helper.loadFromCSV(fileName: "crToExp.csv")
+        
+        let iCRx100 = 0
+        //let iCRstr = 1
+        let iExp = 2
+        crToExpTable[99] = 990
+        for val in parsedCSV[1...] {
+            if (val.count < iExp) {
+                break
+            }
+            
+            if  let ik = Int(val[iCRx100]) {
+                
+                if let iv = Int(val[iExp]) {
+                    crToExpTable[ik] = iv
+                }
+
+            }
+        }
+    }
 }

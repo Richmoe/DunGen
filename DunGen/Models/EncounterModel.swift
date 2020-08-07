@@ -87,11 +87,17 @@ class Encounter {
     func endEncounter() {
         
         stateActive = false
+        
+        //register with Adventure
+        Global.adventure.calcEncounter(encounter: self)
+        
         //transfer mobs to drops
         
         for i in 0..<mob.count {
             if (mob[i].tombstoned) {
                 //convert to drop
+                print("Exp from mob: \(Global.adventure.getExpFromCr(cr: mob[i].challengeRating))")
+                
                 let d = Drop(type: 1, name: "Dead Goblin", loot: loot[i])
                 d.instantiateSprite(at: mob[i].at())
                 if let ds = Global.dungeonScene {
