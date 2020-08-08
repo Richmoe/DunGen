@@ -38,7 +38,7 @@ class Encounter {
     //array of Loot?
     var loot = [Loot]()
     
-    
+
     
     
     
@@ -90,14 +90,17 @@ class Encounter {
         
         //register with Adventure
         Global.adventure.calcEncounter(encounter: self)
+        var exp = 0
+        var killCount = 0
         
-        //transfer mobs to drops
+        //transfer mobs to drops and calc exp per
         
         for i in 0..<mob.count {
             if (mob[i].tombstoned) {
-                //convert to drop
-                print("Exp from mob: \(Global.adventure.getExpFromCr(cr: mob[i].challengeRating))")
+                killCount += 1
+                exp += Global.adventure.getExpFromCr(cr: mob[i].challengeRating)
                 
+                //convert to drop
                 let d = Drop(type: 1, name: "Dead Goblin", loot: loot[i])
                 d.instantiateSprite(at: mob[i].at())
                 if let ds = Global.dungeonScene {
@@ -108,11 +111,33 @@ class Encounter {
             }
     
         }
-            
+        
+        //Calc exp modifier by # of mobs killed
+        let mod = getExpMod(killed: killCount)
+        let totalExp = Int(round(mod * Float(exp)))
+        print ("Total Exp: \(totalExp)")
         removeMapSprites()
         
     }
     
+    func getExpMod(killed: Int) -> Float {
+        //Diff multiplier
+        if (killed <= 0) {
+            return 0.0
+        } else if (killed == 1) {
+            return 1.0
+        } else if (killed == 2) {
+            return 1.5
+        } else if (killed <= 6) {
+            return 2.0
+        } else if (killed <= 10) {
+            return 2.5
+        } else if (killed <= 14) {
+            return 3.0
+        } else { //15+
+            return 4.0
+        }
+    }
     
     func getOffset(_ ix: Int) -> CGPoint {
         var off: CGPoint
