@@ -13,8 +13,6 @@ class Encounter {
     
     //Encounter is a generated list of monsters, their location, and their treasure
     
-    
-    
     //list of mobs
     @Published var mob = [Monster]()
     
@@ -39,11 +37,7 @@ class Encounter {
     var loot = [Loot]()
     
 
-    
-    
-    
-    
-    let offset = 32
+    let mobGridOffset = 32
     
     
     init(at: MapPoint) {
@@ -52,8 +46,10 @@ class Encounter {
         for _ in 1...4 {
             m =  MobFactory.sharedInstance.makeMonster(name: "goblin")
             mob.append(m)
+            
+            //TEMP
             let l = Loot()
-                l.random()
+            l.random()
             loot.append(l)
         }
         self.at = at
@@ -67,10 +63,9 @@ class Encounter {
             
             let mobAt = Global.adventure.dungeon.currentLevel().MapPointCenterToCGPoint(at)
             
-            let a = mob[i].instantiateSprite(at: (mobAt + getOffset(i)))
-            
-            
-            node.addChild(a)
+            let mobSprite = mob[i].instantiateSprite(at: (mobAt + getOffset(i)))
+ 
+            node.addChild(mobSprite)
             
         }
     }
@@ -90,15 +85,12 @@ class Encounter {
         
         //register with Adventure
         Global.adventure.calcEncounter(encounter: self)
-        var exp = 0
-        var killCount = 0
         
-        //transfer mobs to drops and calc exp per
+        //transfer mobs to drops
         
         for i in 0..<mob.count {
             if (mob[i].tombstoned) {
-                killCount += 1
-                exp += Global.adventure.getExpFromCr(cr: mob[i].challengeRating)
+
                 
                 //convert to drop
                 let d = Drop(type: 1, name: "Dead Goblin", loot: loot[i])
@@ -111,45 +103,23 @@ class Encounter {
             }
     
         }
-        
-        //Calc exp modifier by # of mobs killed
-        let mod = getExpMod(killed: killCount)
-        let totalExp = Int(round(mod * Float(exp)))
-        print ("Total Exp: \(totalExp)")
+
         removeMapSprites()
-        
     }
     
-    func getExpMod(killed: Int) -> Float {
-        //Diff multiplier
-        if (killed <= 0) {
-            return 0.0
-        } else if (killed == 1) {
-            return 1.0
-        } else if (killed == 2) {
-            return 1.5
-        } else if (killed <= 6) {
-            return 2.0
-        } else if (killed <= 10) {
-            return 2.5
-        } else if (killed <= 14) {
-            return 3.0
-        } else { //15+
-            return 4.0
-        }
-    }
+    
     
     func getOffset(_ ix: Int) -> CGPoint {
         var off: CGPoint
         switch ix {
         case 0:
-            off = CGPoint(x: -offset, y: -offset)
+            off = CGPoint(x: -mobGridOffset, y: -mobGridOffset)
         case 1:
-            off = CGPoint(x: +offset, y: -offset)
+            off = CGPoint(x: +mobGridOffset, y: -mobGridOffset)
         case 2:
-            off = CGPoint(x: -offset, y: +offset)
+            off = CGPoint(x: -mobGridOffset, y: +mobGridOffset)
         case 3:
-            off = CGPoint(x: +offset, y: +offset)
+            off = CGPoint(x: +mobGridOffset, y: +mobGridOffset)
         default:
             off = CGPoint(x: 0, y: 0)
         }

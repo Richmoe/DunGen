@@ -15,6 +15,7 @@ class Adventure : ObservableObject {
     
     //Party
     var party : Party
+    
     //Difficulty
     
     //Set up Encounters
@@ -23,9 +24,7 @@ class Adventure : ObservableObject {
     var currentBattle: BattleController?
     @Published var inBattle = false
     
-    //End of Adventure calcs
     
-    //walk encounter to calc exp?
     var killedMobs = [String: Int]() //dictionary - Mob name/type, count
     
     private var totalExperience: Int = 0
@@ -60,14 +59,47 @@ class Adventure : ObservableObject {
     
     func calcEncounter(encounter: Encounter) {
         
+        
+        var exp = 0
+        var killCount = 0
+        
         for m in encounter.mob {
             
-            if let k = killedMobs[m.name] {
-                killedMobs[m.name] = k + 1
-            } else {
-                killedMobs[m.name] = 1
+            if (m.tombstoned == true) {
+                if let k = killedMobs[m.name] {
+                    killedMobs[m.name] = k + 1
+                } else {
+                    killedMobs[m.name] = 1
+                }
+                killCount += 1
+                exp += getExpFromCr(cr: m.challengeRating)
             }
-            
+        }
+        
+        //Calc exp modifier by # of mobs killed
+        let mod = getExpMod(killed: killCount)
+        let totalExp = Int(round(mod * Float(exp)))
+        print ("Total Exp: \(totalExp)")
+        
+        totalExperience += totalExp
+    }
+    
+    func getExpMod(killed: Int) -> Float {
+        //Diff multiplier
+        if (killed <= 0) {
+            return 0.0
+        } else if (killed == 1) {
+            return 1.0
+        } else if (killed == 2) {
+            return 1.5
+        } else if (killed <= 6) {
+            return 2.0
+        } else if (killed <= 10) {
+            return 2.5
+        } else if (killed <= 14) {
+            return 3.0
+        } else { //15+
+            return 4.0
         }
     }
     
