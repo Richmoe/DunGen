@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct AdventureView: View {
+    
+        @ObservedObject var adventure: Adventure
         @State var modalDisplayed = false
     @State private var showActionSheet = false
     
@@ -22,15 +24,24 @@ struct AdventureView: View {
                     title: Text("Actions"),
                     message: Text("Available actions"),
                     buttons: [
-                        .default(Text("Battle")),
-                        .default(Text("Run away!")),
+                        .default(Text("Debug Map")) {
+                            if let d = Global.dungeonScene {
+                                d.clickButton(name: "DEBUGMAP")
+                            }
+                        },
+                        .default(Text("Zoom")) {
+                            if let d = Global.dungeonScene {
+                                d.clickButton(name: "ZOOM")
+                            }
+                        },
+                        .cancel()
                     ]
                 )
             }
             HStack (spacing: -80){
                 MapView()
 
-                DungeonUIView(adventure: Global.adventure)
+                DungeonUIView(adventure: adventure)
                     .frame(maxWidth: 375)
                     //.fixedSize(horizontal: false, vertical: false)
             }
@@ -38,31 +49,21 @@ struct AdventureView: View {
 
             HStack {
                 Spacer()
-                Button("BATTLE") {
-                    if let d = Global.dungeonScene {
-                        d.clickButton(name: "BATTLE")
-                    }
+                Button("Experience: \(adventure.totalExperience)") {
+
                 }
                 Spacer()
-                Button("ZOOM") {
-                    if let d = Global.dungeonScene {
-                        d.clickButton(name: "ZOOM")
-                    }
+                Button("Treasure") {
+
                 }
                 Spacer()
-                Button("DEBUGMAP") {
-                    if let d = Global.dungeonScene {
-                        d.clickButton(name: "DEBUGMAP")
-                    }
-                }
-                Spacer()
+
                 
-                Button("Show Action") {
+                Button("Debug") {
                     self.showActionSheet = true
                 }
-                
-                
-                //Spacer()
+                Spacer()
+
             }
 
         }
@@ -75,7 +76,7 @@ struct AdventureView_Previews: PreviewProvider {
     
     
     static var previews: some View {
-        AdventureView()
+        AdventureView(adventure: Global.adventure)
     }
 }
 

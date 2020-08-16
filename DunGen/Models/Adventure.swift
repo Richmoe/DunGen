@@ -27,7 +27,7 @@ class Adventure : ObservableObject {
     
     var killedMobs = [String: Int]() //dictionary - Mob name/type, count
     
-    private var totalExperience: Int = 0
+    @Published var totalExperience: Int = 0
     
     private var crToExpTable = Dictionary<Int, Int>()
     
