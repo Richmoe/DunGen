@@ -57,6 +57,7 @@ class Adventure : ObservableObject {
         
     }
     
+
     func calcEncounter(encounter: Encounter) {
         
         

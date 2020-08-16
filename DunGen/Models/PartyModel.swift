@@ -19,15 +19,75 @@ class Party : ObservableObject {
     
     let offset = 32
     
+    
+    var totalExpThresholdEasy = 0
+    let expModMed = 2.0
+    let expModHard = 3.0
+    let expModDeadly = 4.5
+    
+    
+    let thresholdEasyTable = [0,50,100,150,250,500,600,700,900,1100,1200,1600,2000,2200,2500,2800,3200,4000,4200,4800,5600]
+    
 
     func addPlayer(_ p : Player) {
         player.append(p)
+        
+        calcPartyDifficulty()
     }
     
     func removePlayer(_ p: Player) {
         //TODO
+        
+        calcPartyDifficulty()
+    }
+    
+    func getCharXpThreshold(_ p: Player) -> Int {
+        
+        var l = p.level
+        if (l > 20) {
+            l = 20
+        }
+        
+        return thresholdEasyTable[l]
     }
 
+    
+    func calcPartyDifficulty() {
+        
+        //This will calc the exp cap for difficulty levels
+        //Note that the DND tables are not formulaic but close enough to let the following work: med = 2*ez, hard = 3*ez, deadly = 4.5*ez
+        totalExpThresholdEasy = 0
+        
+        for p in player {
+            totalExpThresholdEasy += getCharXpThreshold(p)
+        }
+        
+        print("Party Difficulty: \(totalExpThresholdEasy)")
+    
+    }
+    
+    
+    func getPartyDifficulty(type: String) -> Int {
+        
+        //just using string "Easy, Medium, Hard, Deadly"
+        //But only use first char:
+        
+        let t = type.lowercased().prefix(1)
+        switch t {
+        case "e":
+            return totalExpThresholdEasy
+            
+        case "m":
+            return Int(Double(totalExpThresholdEasy) * expModMed)
+        case "h":
+            return Int(Double(totalExpThresholdEasy) * expModHard)
+        case "d":
+            return Int(Double(totalExpThresholdEasy) * expModDeadly)
+        default:
+            //error out
+            return 0
+        }
+    }
     
     func initAvatars(onLayer: SKScene) {
         for p in player {
