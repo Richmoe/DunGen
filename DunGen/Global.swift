@@ -11,6 +11,7 @@ import SpriteKit
 
 
 class Global : ObservableObject {
+    static var party = Party()
     static var adventure = Adventure()
     static var mapTileSet = MapTileSet()
     static var isMoving = false //If sprite is moving, don't allow a click override

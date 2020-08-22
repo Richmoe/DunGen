@@ -97,7 +97,7 @@ class MapController {
         
         //If the clickspot is adjacent to the player, then we check to see if they clicked on something, otherwise we move towards that spot. e.g. if the tombstone is 2 squares away we don't care we clikced on the tombstone, we just move towards it. Only check to see if we clicked on a tombstone if its next to us.
         
-        let deltaClick = clickSpot - Global.adventure.party.at
+        let deltaClick = clickSpot - Global.party.at
         
         if (abs(deltaClick.col) == 1 || abs(deltaClick.row) == 1) {
             
@@ -129,23 +129,23 @@ class MapController {
     
     func moveTo(_ toMap: MapPoint) {
         
-        if (toMap == Global.adventure.party.at) {
+        if (toMap == Global.party.at) {
             //print("SAME!!!")
             return
         }
         
         
-        let direction = angleToCardinalDir(angleBetween(fromMap: Global.adventure.party.at, toMap: toMap))
+        let direction = angleToCardinalDir(angleBetween(fromMap: Global.party.at, toMap: toMap))
         
         let moveVector = getCardinalMoveVector(dir: direction)
-        let stepMove = Global.adventure.party.at + moveVector
+        let stepMove = Global.party.at + moveVector
         
         if (dungeon.canEnter(toPt: stepMove, moveDir: direction)) {
             
             //Do the move
             let movePt = dungeon.currentLevel().MapPointCenterToCGPoint(stepMove)
             
-            Global.adventure.party.moveParty(toPt: movePt, toTile: MapPoint(row: stepMove.row, col: stepMove.col))
+            Global.party.moveParty(toPt: movePt, toTile: MapPoint(row: stepMove.row, col: stepMove.col))
             //just in case:
             renderTile(stepMove)
             
@@ -187,7 +187,7 @@ class MapController {
     func goToTile(_ tile: MapPoint) {
         let movePt = tileMap.centerOfTile(atColumn: tile.col, row: tile.row)
         
-        Global.adventure.party.setAt(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
+        Global.party.setAt(atPt: movePt, atTile: MapPoint(row: tile.row, col: tile.col))
         
         renderTile(tile)
     }
@@ -276,7 +276,7 @@ class MapController {
             let ang = 6 * Double(a)
             let x = sin(ang  * (.pi / 180))
             let y = cos(ang * (.pi / 180))
-            var fromPt = Global.adventure.party.at
+            var fromPt = Global.party.at
             var lastXx = 0
             var lastYy = 0
             

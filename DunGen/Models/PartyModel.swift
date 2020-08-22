@@ -29,6 +29,25 @@ class Party : ObservableObject {
     let thresholdEasyTable = [0,50,100,150,250,500,600,700,900,1100,1200,1600,2000,2200,2500,2800,3200,4000,4200,4800,5600]
     
 
+    func createParty() {
+        
+        //temp
+
+            
+            var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar1")
+            self.addPlayer(p1)
+            
+            p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar2")
+            self.addPlayer(p1)
+            
+            p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar3")
+            self.addPlayer(p1)
+            
+            p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar4")
+            self.addPlayer(p1)
+
+    }
+    
     func addPlayer(_ p : Player) {
         player.append(p)
         

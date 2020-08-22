@@ -116,9 +116,12 @@ class DungeonScene: SKScene {
         
         //self.camera!.setScale(3.5)
         
-        Global.adventure.createPlayers()
+        print("----------------------creating players---------------")
+        Global.party.createParty()
         
-        Global.adventure.party.initAvatars(onLayer: self)
+        Global.party.initAvatars(onLayer: self)
+        
+        Global.adventure.dungeon.buildDungeon()
         
         mapController = MapController(dungeon: Global.adventure.dungeon, tileMap: self.mapLayer)
         mapController!.placeParty()
@@ -312,7 +315,7 @@ class DungeonScene: SKScene {
             
         } else {
             //Map Controller
-            if let p = Global.adventure.party.player[0].sprite {
+            if let p = Global.party.player[0].sprite {
                 camera!.position = (p.position + CGPoint(x: 0.0, y: cameraOffset / Double(currentScale)))
             }
         }

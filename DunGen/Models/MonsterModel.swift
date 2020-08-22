@@ -11,11 +11,11 @@ import Foundation
 
 class Monster: Mob {
     
-    var challengeRating  : Float = 0.0
+    var challengeRating  : Double = 0.0
     var hitDice = "1d6"
     var attackDice = "1d6"
     
-    init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String, hitDice: String, challengeRating: Float)
+    init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String, hitDice: String, challengeRating: Double)
     {
         self.challengeRating = challengeRating
         self.hitDice = hitDice

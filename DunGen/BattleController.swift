@@ -44,7 +44,7 @@ class BattleController : ObservableObject {
     
     init (encounter: Encounter, map: Map, tileMap: SKTileMapNode) {
         self.encounter = encounter
-        self.party = Global.adventure.party
+        self.party = Global.party
         self.map = map
         self.tileMap = tileMap
         

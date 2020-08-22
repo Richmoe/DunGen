@@ -13,8 +13,6 @@ class Adventure : ObservableObject {
     //Map
     var dungeon: Dungeon
     
-    //Party
-    var party : Party
     
     //Difficulty
     
@@ -33,7 +31,7 @@ class Adventure : ObservableObject {
     
     
     init() {
-        party = Party()
+
         
         dungeon = Dungeon()
         
@@ -41,21 +39,7 @@ class Adventure : ObservableObject {
         
     }
     
-    func createPlayers() {
-        
-        var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar1")
-        party.addPlayer(p1)
-        
-        p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar2")
-        party.addPlayer(p1)
-        
-        p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar3")
-        party.addPlayer(p1)
-        
-        p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar4")
-        party.addPlayer(p1)
-        
-    }
+
     
 
     func calcEncounter(encounter: Encounter) {
@@ -79,13 +63,13 @@ class Adventure : ObservableObject {
         
         //Calc exp modifier by # of mobs killed
         let mod = getExpMod(killed: killCount)
-        let totalExp = Int(round(mod * Float(exp)))
+        let totalExp = Int(round(mod * Double(exp)))
         print ("Total Exp: \(totalExp)")
         
         totalExperience += totalExp
     }
     
-    func getExpMod(killed: Int) -> Float {
+    func getExpMod(killed: Int) -> Double {
         //Diff multiplier
         if (killed <= 0) {
             return 0.0
@@ -104,7 +88,7 @@ class Adventure : ObservableObject {
         }
     }
     
-    func getExpFromCr(cr: Float) -> Int {
+    func getExpFromCr(cr: Double) -> Int {
         
         //Convert the CR to int*100
         
@@ -117,13 +101,29 @@ class Adventure : ObservableObject {
         }
     }
     
+    func getCrFromExp(exp: Int) -> Double {
+        
+        var cr = 0.0
+        var expTable = 0
+        
+        for (key, value) in crToExpTable {
+            //print("\(key), \(value)")
+            if (value > expTable && value <= exp) {
+                cr = Double(key) / 100.0
+                expTable = value
+            }
+        }
+        
+        
+        return cr
+    }
+    
     func loadCrToExpTable() {
         let parsedCSV: [[String]] = Helper.loadFromCSV(fileName: "crToExp.csv")
         
         let iCRx100 = 0
         //let iCRstr = 1
         let iExp = 2
-        crToExpTable[99] = 990
         for val in parsedCSV[1...] {
             if (val.count < iExp) {
                 break

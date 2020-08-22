@@ -19,6 +19,10 @@ class Dungeon { //Environment?
     let mapHeight = 30
     
     init() {
+        
+    }
+    
+    func buildDungeon() {
         var seedString = MapGenRand.getSeedString()
         print("THE SEED ___________ \(seedString) ___________")
         

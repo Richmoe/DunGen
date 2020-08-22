@@ -59,6 +59,27 @@ class EncounterGenerator {
         let e = Encounter(at: encounterAt)
         
         //populate the encounter object
+        //Get encounter level:
+        
+        let randNum = MapGenRand.sharedInstance.getRand(to: 100)
+        var diff : String
+        if (randNum < 75) {
+            diff = "Easy"
+        } else {
+            if (randNum < 95) {
+                diff = "Medium"
+            } else {
+                if (randNum < 99) {
+                    diff = "Hard"
+                } else {
+                    diff = "Deadly!"
+                }
+            }
+        }
+        
+        var targetExp = Global.party.getPartyDifficulty(type: diff)
+        getMobsForDifficulty(targetExp: targetExp)
+
         
         
         //store it at the block
@@ -69,5 +90,25 @@ class EncounterGenerator {
         
     }
     
+    func getMobsForDifficulty(targetExp: Int) {
+        
+        //Either we get 1 mob at diff, 1+ at diff-1, likely 2+ at diff-2, etc.
+        //Get total CR for Exp:
+        
+        let x = Global.adventure.getCrFromExp(exp: targetExp)
+        
+        
+        for xx in [100, 225, 400, 1000, 1350, 3899, 4000] {
+            
+            print ("CER for \(xx): \(Global.adventure.getCrFromExp(exp: xx))")
+        }
+        
+        
+        
+
+
+        
+        
+    }
     
 }
