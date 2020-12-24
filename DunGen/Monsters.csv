@@ -1,523 +1,523 @@
-Name,Type,ALIGNMENT,Size,CR,AC,HP,HitDice,Spellcasting?,Attack 1 damage,Attack 2 Damage,Initiative,Hit Bonus,Page,CR (Decimal),Arctic,Coast,Desert,Forest,Grassland,Hill,Mountain,Swamp,Underdark,Underwater,Urban,Book,,
-Bandit,Humanoid,NOT LAWFUL,Medium,1/8,12,11,2d8+2,NO,1d6+1,1d8+1,1,3,343,0.13,YES,YES,YES,YES,NO,YES,NO,NO,NO,NO,YES,Monster Manual,,
-Blood Hawk,Beast,U,Small,1/8,12,7,2d6,NO,1d4+2,N/A,2,,319,0.13,YES,YES,NO,YES,YES,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Camel,Beast,U,Large,1/8,9,15,2d10+4,NO,1d4,N/A,-1,,320,0.13,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Cultist,Humanoid,NOT GOOD,Medium,1/8,12,9,2d8,NO,1d6+1,N/A,1,,345,0.13,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Flumph,Aberration,LG,Small,1/8,12,7,2d6,NO,2d4+2,N/A,0,4,135,0.13,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Flying Snake,Beast,U,Tiny,1/8,14,5,2d4,NO,3d4+1,N/A,4,,322,0.13,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Giant Crab,Beast,U,Medium,1/8,15,13,3d8,NO,1d6+1,N/A,2,,324,0.13,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Giant Rat,Beast,U,Small,1/8,12,7,2d6,NO,1d4+2,N/A,2,,327,0.13,NO,NO,NO,YES,NO,NO,NO,YES,YES,NO,YES,Monster Manual,,
-Giant Weasel,Beast,U,Medium,1/8,13,9,2d8,NO,1d4+3,N/A,3,,329,0.13,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Guard,Humanoid,ANY,Medium,1/8,16,11,2d8+2,NO,1d6+1,N/A,1,,347,0.13,NO,YES,YES,YES,YES,YES,YES,NO,NO,NO,YES,Monster Manual,,
-Kobold,Humanoid,LE,Small,1/8,12,5,2d6-2,NO,1d4+2,1d4+2,2,4,195,0.13,YES,YES,YES,YES,NO,YES,YES,YES,YES,NO,YES,Monster Manual,,
-Manes,Fiend,CE,Small,1/8,9,9,2d6 + 2,NO,2d4,N/A,0,2,60,0.13,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Mastiff,Beast,U,Medium,1/8,12,5,1d8+1,NO,1d6+1,N/A,2,,332,0.13,NO,NO,NO,YES,NO,YES,NO,NO,NO,NO,YES,Monster Manual,,
-Merfolk,Humanoid,N,Medium,1/8,11,11,2d8+2,NO,1d8,N/A,1,,218,0.13,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Monodrone,Construct,LN,Medium,1/8,15,5,1d8 + 1,NO,1d4+1,1d6+1,0,3,224,0.13,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Mule,Beast,U,Medium,1/8,10,11,2d8+2,NO,1d4+2,N/A,0,,333,0.13,NO,NO,YES,NO,NO,YES,NO,NO,NO,NO,YES,Monster Manual,,
-Noble,Humanoid,ANY,Medium,1/8,15,9,2d8,NO,1d8+1,N/A,1,,348,0.13,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Poisonous Snake,Beast,U,Tiny,1/8,13,2,1d4,NO,1,N/A,0,,334,0.13,NO,YES,YES,YES,YES,YES,NO,YES,NO,NO,NO,Monster Manual,,
-Pony,Beast,U,Medium,1/8,10,11,2d8+2,NO,2d4+2,N/A,0,,335,0.13,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Slaad Tadpole,Aberration,CN,Tiny,1/8,12,10,0,NO,1d4+2,N/A,0,,276,0.13,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Stirge,Beast,U,Tiny,1/8,14,2,1d4,NO,1d4+3,N/A,0,,284,0.13,NO,YES,YES,NO,YES,YES,YES,YES,YES,NO,YES,Monster Manual,,
-Tribal Warrior,Humanoid,ANY,Medium,1/8,12,11,2d8+2,NO,1d8+1,N/A,2,,350,0.13,YES,YES,YES,YES,YES,YES,YES,YES,YES,NO,NO,Monster Manual,,
-Twig Blight,Plant,NE,Small,1/8,13,4,1d6+1,NO,1d4+1,N/A,1,3,32,0.13,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Boggle,Fey,CN,Small, 1/8,14,18,0,NO,1d6-1,N/A,0,,128,0.13,NO,NO,NO,YES,NO,YES,NO,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Dolphin,Beast,U,Medium, 1/8,12,11,5d10 + 10,NO,1d6+2,N/A,2,,208,0.13,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Volo's Guide to Monsters,,
-Neogi Hatchling,Aberration,LE,Tiny, 1/8,11,7,9d8 + 18,NO,1d4+1,N/A,-1,,179,0.13,NO,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Xvart,Humanoid,CE,Small, 1/8,13,7,13d10 + 39,NO,1d6+2,1d4+2,0,,200,0.13,NO,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Aarakocra,Humanoid,NG,Medium,1/4,12,13,3d8,NO,1d4+2,1d6+2,2,4,12,0.25,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual,,
-Acolyte,Humanoid,ANY,Medium,1/4,10,9,2d8,YES,1d4,N/A,0,2,342,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Axe Beak,Beast,U,Large,1/4,11,19,3d10+3,NO,1d8+2,N/A,1,,317,0.25,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Blink Dog,Fey,LG,Medium,1/4,13,22,4d8+4,NO,1d6+1,N/A,3,,318,0.25,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Boar,Beast,U,Medium,1/4,11,11,2d8+2,NO,1d6+1,N/A,0,,319,0.25,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Bullywug,Humanoid,NE,Medium,1/4,15,11,2d8 + 2,NO,1d4+1,1d8+1,0,3,35,0.25,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Constrictor Snake,Beast,U,large,1/4,12,13,2d10+2,NO,1d6+2,1d8+2,2,,320,0.25,NO,NO,YES,YES,NO,NO,NO,YES,NO,YES,NO,Monster Manual,,
-Draft Horse,Beast,U,Large,1/4,10,19,3d10+3,NO,2d4+4,N/A,0,,321,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Dretch,Fiend,CE,small,1/4,11,18,4d6+4,NO,1d6,2d4,0,2,57,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Drow,Humanoid,NE,Medium,1/4,15,13,3d8,NO,1d6+2,1d6+2,0,,128,0.25,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Duodrone,Construct,LN,Medium,1/4,15,11,0,NO,1d4,1d6+1,0,,225,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Elk,Beast,U,Large,1/4,10,13,2d10+2,NO,1d6+3,2d4+3,0,,322,0.25,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Flying Sword,Construct,U,Small,1/4,17,17,5d6,NO,1d8+1,N/A,2,3,20,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Giant Badger,Beast,U,Medium,1/4,10,13,2d8+4,NO,1d6+1,2d4+1,0,,323,0.25,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Giant Bat,Beast,U,Large,1/4,13,22,4d10,NO,1d6+2,N/A,3,,323,0.25,NO,NO,NO,YES,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Giant Centipede,Beast,U,small,1/4,13,4,1d6+1,NO,1d4+2,N/A,2,,323,0.25,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual,,
-Giant Frog,Beast,U,Medium,1/4,11,18,4d8,NO,1d6+1,N/A,1,,325,0.25,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Giant Lizard,Beast,U,Large,1/4,12,19,3d10+3,NO,1d8+2,N/A,1,,326,0.25,NO,YES,YES,YES,NO,NO,NO,YES,YES,NO,NO,Monster Manual,,
-Giant Owl,Beast,U,Large,1/4,12,19,3d10+3,NO,2d6+1,N/A,2,,327,0.25,YES,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Giant Poisonous Snake,Beast,U,Medium,1/4,14,11,2d8+2,NO,1d4+4,N/A,4,,327,0.25,NO,NO,YES,YES,YES,NO,NO,YES,YES,NO,YES,Monster Manual,,
-Giant Wolf Spider,Beast,U,Medium,1/4,13,11,2d8+2,NO,1d6+1,N/A,3,,330,0.25,NO,YES,YES,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Goblin,Humanoid,NE,Small,1/4,15,7,2d6,NO,1d6+2,1d6+2,2,4,166,0.25,NO,NO,NO,YES,YES,YES,NO,NO,YES,NO,NO,Monster Manual,,
-Grimlock,Humanoid,NE,Medium,1/4,11,11,2d8+2,NO,2d4+3,N/A,1,,175,0.25,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Kenku,Humanoid,CN,Medium,1/4,13,13,1d6,NO,1d6+3,1d6+3,0,,194,0.25,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Kuo-Toa,Humanoid,NE,Medium,1/4,13,18,0,NO,1d4+1,1d8+1,0,,199,0.25,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Mud Mephit,Elemental,NE,Small,1/4,11,27,6d6 + 6,NO,1d6+1,N/A,0,3,216,0.25,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Needle Blight,Plant,NE,Medium,1/4,12,11,2d8 + 2,NO,2d4+1,2d6+1,0,3,32,0.25,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Panther,Beast,U,Medium,1/4,12,13,3d8,NO,1d6+2,1d4+2,2,,333,0.25,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Pixie,Fey,NG,Tiny,1/4,15,1,1d4 - 1,YES,N/A,N/A,5,0,253,0.25,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Pseudodragon,Dragon,NG,Tiny,1/4,13,7,2d4+2,NO,1d4+2,1d4+2,0,,254,0.25,NO,YES,YES,YES,NO,YES,YES,NO,NO,NO,YES,Monster Manual,,
-Pteranodon,Beast,U,Medium,1/4,13,13,3d8,NO,2d4+1,N/A,2,3,80,0.25,NO,YES,NO,NO,YES,NO,YES,NO,NO,NO,NO,Monster Manual,,
-Riding Horse,Beast,U,Large,1/4,10,13,2d10+2,NO,2d4+3,N/A,0,,336,0.25,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Skeleton,Undead,LE,Medium,1/4,13,13,2d8+4,NO,1d6+2,1d6+2,2,4,272,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Smoke Mephit,Elemental,NE,Small,1/4,12,22,0,YES,1d4+2,N/A,0,,217,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Sprite,Fey,NG,Tiny,1/4,15,2,1d4,NO,1,N/A,2,,283,0.25,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Steam Mephit,Elemental,NE,Small,1/4,10,21,6d6,YES,2d4,N/A,2,,217,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Swarm of Bats,Beast,U,Medium,1/4,12,22,5d8,NO,VARIES,N/A,0,,337,0.25,NO,NO,NO,NO,NO,YES,YES,NO,YES,NO,YES,Monster Manual,,
-Swarm of Rats,Beast,U,Medium,1/4,10,24,7d8-7,NO,VARIES,N/A,0,,339,0.25,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,YES,Monster Manual,,
-Swarm of Ravens,Beast,U,Medium,1/4,12,24,7d8-7,NO,VARIES,N/A,0,,339,0.25,NO,NO,NO,YES,NO,YES,NO,YES,NO,NO,YES,Monster Manual,,
-Troglodyte,Humanoid,CE,Medium,1/4,11,13,2d8 + 4,NO,1d4+2,1d4+2,0,4,290,0.25,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Violet Fungus,Plant,U,Medium,1/4,5,18,4d8,NO,1d8,N/A,0,,138,0.25,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Winged Kobold,Humanoid,LE,Small,1/4,13,7,3d6 - 3,NO,1d4+3,1d6+3,3,5,195,0.25,YES,YES,YES,YES,NO,YES,YES,YES,YES,NO,YES,Monster Manual,,
-Wolf,Beast,U,Medium,1/4,13,11,2d8+2,NO,2d4+4,N/A,0,,341,0.25,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Zombie,Undead,NE,Medium,1/4,8,22,3d8+9,NO,1d6+1,N/A,-2,3,316,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Apprentice Wizard,Humanoid,ANY,Medium, 1/4,10,9,0,YES,1d4,N/A,0,,209,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Cow,Beast,U,Large, 1/4,10,15,0,NO,1d6+4,N/A,0,,207,0.25,NO,NO,NO,NO,YES,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Dimetrodon,Beast,U,Medium, 1/4,12,19,1d8,NO,2d6+2,N/A,3,,139,0.25,NO,YES,NO,NO,NO,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters,,
-Gnoll Witherling,Undead,CE,Medium, 1/4,12,11,0,NO,1d4+2,1d4+2,0,,155,0.25,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Grung,Humanoid,LE,Small, 1/4,12,11,7d10 + 21,NO,1d4+2,N/A,2,,156,0.25,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Hadrosaurus,Beast,U,Large, 1/4,11,19,7d10 + 21,NO,1d10+2,N/A,2,,140,0.25,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters,,
-Kobold Inventor,Humanoid,LE,Small, 1/4,12,13,0,NO,1d4+2,1d4+2,0,,166,0.25,NO,NO,NO,YES,NO,YES,YES,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Ox (Cow),Beast,U,Large, 1/4,10,15,7d10 + 21,NO,1d6+4,N/A,1,,207,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Rothe (Cow),Beast,U,Large, 1/4,10,15,0,NO,1d6+4,N/A,0,,207,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Stench kow (Cow),Beast,U,Large, 1/4,10,15,1d4 - 1,NO,1d6+4,N/A,2,,207,0.25,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Vegepygmy,Plant,N,Small, 1/4,13,9,13d12 + 52,NO,1d6+2,1d4+2,0,,196,0.25,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters,,
-Velociraptor,Beast,U,Tiny, 1/4,13,10,13d12 + 52,NO,1d6+2,1d4+2,0,,140,0.25,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Ape,Beast,U,Medium,1/2,12,19,3d8+6,NO,1d6+3,1d6+3,2,,317,0.50,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Black Bear,Beast,U,Medium,1/2,11,19,3d8+6,NO,1d6+2,2d4+2,0,,318,0.50,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Cockatrice,Monstrosity,U,Small,1/2,11,27,6d6+6,NO,1d4+1,N/A,1,3,42,0.50,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Crocodile,Beast,U,Large,1/2,12,19,3d10+3,NO,1d10+2,N/A,0,,320,0.50,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,YES,Monster Manual,,
-Darkmantle,Monstrosity,U,Small,1/2,11,22,5d6+5,NO,1d6+3,N/A,1,5,46,0.50,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Dust Mephit,Elemental,NE,Small,1/2,12,17,5d6,NO,1d4+2,N/A,2,,215,0.50,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Gas Spore,Plant,U,Large,1/2,5,1,1d10 - 4,NO,1,N/A,-5,0,138,0.50,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Giant Goat,Beast,U,Large,1/2,11,19,3d10+3,NO,2d4+3,N/A,0,,326,0.50,NO,NO,NO,NO,YES,NO,YES,NO,NO,NO,NO,Monster Manual,,
-Giant Sea Horse,Beast,U,Large,1/2,13,16,3d10,NO,1d6+1,N/A,2,,328,0.50,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Giant Wasp,Beast,U,Medium,1/2,12,13,3d8,NO,1d6+2,N/A,2,,329,0.50,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Gnoll,Humanoid,CE,Medium,1/2,15,22,5d8,NO,1d4+2,1d8+2,1,4,163,0.50,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Gnome Deep Svirfneblin,Humanoid,NG,Small,1/2,15,16,3d6+6,YES,1d8+3,N/A,2,,164,0.50,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Gray Ooze,Ooze,U,Medium,1/2,8,22,3d8+9,NO,3d6+1,N/A,-2,,243,0.50,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Hobgoblin,Humanoid,LE,Medium,1/2,18,11,2d8+2,NO,1d10+1,1d8+1,1,3,186,0.50,NO,NO,YES,YES,YES,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Ice Mephit,Elemental,NE,Small,1/2,11,21,6d6,YES,2d4+1,2d4,1,,215,0.50,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Jackalwere,Humanoid,CE,Medium,1/2,12,18,1d6,NO,1d4+2,1d6+2,0,,193,0.50,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Lizardfolk,Humanoid,N,Medium,1/2,15,22,4d8+4,NO,1d6+2,1d6+2,0,,204,0.50,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Magma Mephit,Elemental,NE,Small,1/2,11,22,5d6+5,YES,2d4+1,N/A,1,,216,0.50,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Magmin,Elemental,CN,Small,1/2,14,9,2d6+2,NO,2d6,N/A,2,,212,0.50,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Myconid Adult,Plant,LN,Medium,1/2,12,22,9d8 + 18,NO,4d4,N/A,0,,232,0.50,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Orc,Humanoid,CE,Medium,1/2,13,15,2d8+6,NO,1d12+3,1d6+3,1,5,246,0.50,YES,NO,NO,YES,YES,YES,YES,YES,YES,NO,NO,Monster Manual,,
-Piercer,Monstrosity,U,Medium,1/2,15,22,5d10 + 5,NO,VARIES,N/A,0,,252,0.50,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Reef Shark,Beast,U,Medium,1/2,12,22,4d8+4,NO,1d8+2,N/A,0,,336,0.50,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Rust Monster,Monstrosity,U,Medium,1/2,14,27,5d8+5,NO,1d8+1,N/A,0,,262,0.50,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Sahuagin,Humanoid,LE,Medium,1/2,12,22,4d8+4,NO,1d4+1,1d4+1,2,,263,0.50,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Satyr,Fey,CN,Medium,1/2,14,31,7d8,NO,2d4+1,1d6+3,0,,267,0.50,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Scout,Humanoid,ANY,Medium,1/2,13,16,3d8+3,NO,1d6+2,1d8+2,0,,349,0.50,YES,YES,YES,YES,YES,NO,YES,YES,YES,NO,NO,Monster Manual,,
-Shadow,Undead,CE,Medium,1/2,12,16,3d8+3,NO,2d6+2,N/A,1,,269,0.50,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual,,
-Swarm of Insects,Beast,U,Medium,1/2,12,22,5d8,NO,VARIES,N/A,0,,338,0.50,NO,NO,YES,YES,YES,NO,NO,YES,YES,NO,YES,Monster Manual,,
-Thug,Humanoid,NOT GOOD,Medium,1/2,11,32,5d8+10,NO,1d6+2,1d10,0,,350,0.50,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Tridrone,Construct,LN,Medium,1/2,15,16,3d8 + 3,NO,1d4+1,1d6+1,1,3,225,0.50,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Vine Blight,Plant,NE,Medium,1/2,12,26,4d8+8,NO,2d6+2,N/A,-1,4,32,0.50,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Warhorse,Beast,U,Large,1/2,11,19,3d10+3,NO,2d6+4,N/A,0,,340,0.50,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Warhorse Skeleton,Undead,LE,Large,1/2,13,22,3d10+6,NO,2d6+4,N/A,0,,273,0.50,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Worg,Monstrosity,NE,Large,1/2,13,26,4d10+4,NO,2d6+3,N/A,0,,341,0.50,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Chitine,Monstrosity,CE,Small, 1/2,14,18,12d10 + 48,NO,1d4+2,N/A,0,,131,0.50,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Darkling,Fey,CN,Small, 1/2,14,13,12d12 + 60,NO,1d4+3,N/A,0,,134,0.50,NO,NO,NO,YES,NO,NO,NO,YES,YES,NO,YES,Volo's Guide to Monsters,,
-Firenewt Warrior,Humanoid,NE,Medium, 1/2,16,22,13d12 + 78,NO,1d6+1,2d8,-1,,142,0.50,NO,NO,YES,NO,NO,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Gazer,Aberration,NE,Tiny, 1/2,13,13,7d8 + 21,NO,1,N/A,0,,126,0.50,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Gnoll Hunter,Humanoid,CE,Medium, 1/2,13,22,0,NO,1d4+2,1d8+2,0,,154,0.50,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Orc Nurtured One of Yurtrus,Humanoid,CE,Medium, 1/2,9,30,0,NO,1d4+2,N/A,0,,184,0.50,NO,NO,NO,YES,YES,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Swarm of Rot Grubs,Beast,U,Medium, 1/2,8,22,0,NO,1d6,N/A,0,,208,0.50,NO,NO,NO,NO,NO,NO,NO,YES,YES,NO,NO,Volo's Guide to Monsters,,
-Animated Armor,Construct,U,Medium,1,18,33,6d8+6,NO,1d6+2,N/A,0,4,19,1.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Brown Bear,Beast,U,Large,1,11,34,4d10+12,NO,1d8+4,2d6+4,0,,319,1.00,YES,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Bugbear,Humanoid,CE,Medium,1,16,27,5d8+5,NO,2d8+2,2d6+2,2,4,33,1.00,NO,NO,NO,YES,YES,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Death Dog,Monstrosity,NE,Medium,1,12,39,6d8+12,NO,1d6+2,N/A,2,,321,1.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Dire Wolf,Beast,U,Large,1,14,37,5d10+10,NO,2d6+3,N/A,2,,321,1.00,NO,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Dryad,Fey,N,Medium,1,11,22,5d8,YES,1d8+4,N/A,1,,121,1.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Duergar,Humanoid,LE,Medium,1,16,26,4d8+8,NO,1d8+2,1d6+2,0,,122,1.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Faerie Dragon,Dragon,CG,Tiny,1,15,14,0,YES,1,N/A,0,,133,1.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Fire Snake,Elemental,NE,Medium,1,14,22,13d12 + 78,NO,1d6+1d4+1,1d6+1d4+1,0,,265,1.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Ghoul,Undead,CE,Medium,1,12,22,5d8,NO,2d6+2,2d4+2,2,2,148,1.00,NO,NO,NO,NO,NO,NO,NO,YES,YES,NO,YES,Monster Manual,,
-Giant Eagle,Beast,U,Large,1,13,26,4d10+4,NO,1d6+3,2d6+3,3,,324,1.00,NO,YES,NO,NO,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Giant Hyena,Beast,U,Large,1,12,45,6d10+12,NO,2d6+3,N/A,2,,326,1.00,NO,NO,YES,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Giant Octopus,Beast,U,Large,1,11,52,8d10+8,NO,2d6+3,N/A,1,,326,1.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Giant Spider,Beast,U,Large,1,14,26,4d10+4,NO,1d8+3,N/A,3,,328,1.00,NO,NO,YES,YES,NO,NO,NO,YES,YES,NO,YES,Monster Manual,,
-Giant Toad,Beast,U,Large,1,11,39,6d10+6,NO,2d10+2,N/A,1,,329,1.00,NO,YES,NO,YES,NO,NO,NO,YES,YES,NO,NO,Monster Manual,,
-Giant Vulture,Beast,NE,Large,1,10,22,3d10+6,NO,2d4+4,2d6+2,0,,329,1.00,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Goblin Boss,Humanoid,NE,Small,1,17,21,6d6,NO,1d6+2,1d6+2,0,4,166,1.00,NO,NO,NO,YES,YES,YES,NO,NO,YES,NO,NO,Monster Manual,,
-Half Ogre,Giant,C,Large,1,12,30,4d10 + 8,NO,2d10+3,2d6+3,0,5,238,1.00,YES,NO,YES,YES,NO,YES,YES,NO,YES,NO,YES,Monster Manual,,
-Harpy,Monstrosity,CE,Medium,1,11,38,7d8+7,NO,2d4+1,1d4+1,1,,181,1.00,NO,YES,NO,YES,NO,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Hippogriff,Monstrosity,U,Large,1,11,19,3d10+3,NO,1d10+3,2d6+3,1,,184,1.00,NO,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Imp,Fiend,LE,Tiny,1,13,10,3d4+3,NO,1d4+3,N/A,3,5,76,1.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Kuo-Toa Whip,Humanoid,NE,Medium,1,11,65,0,YES,1d4+2,1d6+2,0,,200,1.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Lion,Beast,U,Large,1,12,26,4d10+4,NO,1d8+3,1d6+3,2,,331,1.00,NO,NO,YES,NO,YES,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Quadrone,Construct,LN,Medium,1,16,22,0,NO,1d4+1,1d6+1,0,,226,1.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Quaggoth Spore Servant,Plant,U,Medium,1,13,45,0,NO,1d6+3,N/A,0,,230,1.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Quasit,Fiend,CE,Tiny,1,13,7,3d4,NO,1d4+3,N/A,3,4,63,1.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Scarecrow,Construct,CE,Medium,1,11,36,0,NO,2d4+1,N/A,0,,268,1.00,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Specter,Undead,CE,Medium,1,12,22,5d8,NO,1d6,N/A,2,,279,1.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual,,
-Spy,Humanoid,ANY,Medium,1,12,27,6d8,NO,1d6+2,1d6+2,2,,349,1.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Swarm of Quippers,Beast,U,Medium,1,13,28,8d8-8,NO,VARIES,N/A,3,,338,1.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Thri-Kreen,Humanoid,CN,Medium,1,15,33,0,NO,1d6+1,2d4+1,0,,288,1.00,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Tiger,Beast,U,Large,1,12,37,5d10+10,NO,1d10+3,1d8+3,2,,339,1.00,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wyrmling Brass Dragon,Dragon,CG,Medium,1,16,16,0,NO,1d10+2,4d6,0,,106,1.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wyrmling Copper Dragon,Dragon,CG,Medium,1,16,22,0,NO,1d10+2,4d8,0,,112,1.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Yuan-Ti Pureblood,Monstrosity,NE,Medium,1,11,40,16d10 + 48,YES,1d6+1,1d6+1,1,,310,1.00,NO,NO,YES,YES,NO,NO,NO,YES,NO,NO,YES,Monster Manual,,
-Deinonychus,Beast,U,Medium,1,13,26,1d8,NO,1d8+2,1d8+2,3,,139,1.00,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Firenewt Warlock of Imix,Humanoid,NE,Medium,1,10,33,13d12 + 78,YES,1d8+1,N/A,-1,,143,1.00,NO,NO,NO,NO,NO,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Giant Strider,Monstrosity,NE,Large,1,14,22,4d10 + 4,NO,1d8+4,4d6,3,,143,1.00,NO,NO,NO,NO,NO,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Gnoll Flesh Gnawer,Humanoid,CE,Medium,1,14,22,0,NO,1d4+2,1d6+2,0,,154,1.00,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Grung Wildling,Humanoid,LE,Small,1,13,27,7d10 + 21,YES,1d4+3,1d6+3,2,,157,1.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Kobold Dragon Dragonshield,Humanoid,LE,Small,1,15,44,0,NO,1d6+1,N/A,0,,165,1.00,NO,NO,NO,YES,NO,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Kobold Scale Sorcerer,Humanoid,LE,Small,1,15,27,0,YES,1d4+2,N/A,0,,167,1.00,NO,NO,NO,YES,NO,YES,YES,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Maw Demon,Fiend,CE,Medium,1,13,33,0,NO,1d8+2,N/A,0,,137,1.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Nilbog,Humanoid,CE,Small,1,13,7,9d8 + 18,YES,1d6+2,1d6+2,-1,,182,1.00,NO,NO,NO,YES,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Quickling,Fey,CE,Tiny,1,16,10,0,NO,1d4+6,N/A,0,,187,1.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Sea Spawn,Humanoid,NE,Medium,1,11,32,1d4 - 1,NO,1d4+2,N/A,1,,189,1.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Volo's Guide to Monsters,,
-Thorny,Plant,N,Medium,1,14,27,0,NO,2d6+1,N/A,0,,197,1.00,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters,,
-Vargouille,Fiend,CE,Tiny,1,12,13,13d12 + 52,NO,4d6+2,N/A,0,,195,1.00,NO,NO,YES,NO,NO,NO,NO,YES,YES,NO,NO,Volo's Guide to Monsters,,
-Xvart Warlock of Raxivort,Humanoid,CE,Small,1,12,22,13d10 + 39,YES,1d6+2,N/A,0,,200,1.00,NO,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Allosaurus,Beast,U,Large,2,13,51,6d10 + 18,NO,2d10+4,1d8+4,1,,79,2.00,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Ankheg,Monstrosity,U,Large,2,14,39,6d10+6,NO,3d6+3,3d6,0,5,21,2.00,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Awakened Tree,Plant,U,Huge,2,13,59,7d12+14,NO,3d6+4,N/A,-2,,317,2.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Azer,Elemental,LN,Medium,2,17,39,6d8+12,NO,1d8+3,N/A,1,5,22,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Bandit Captain,Humanoid,NOT LAWFUL,Medium,2,15,65,10d8+20,NO,1d6+3,1d4+3,3,5,344,2.00,YES,YES,YES,YES,NO,YES,NO,NO,NO,NO,YES,Monster Manual,,
-Berserker,Humanoid,C,Medium,2,13,67,9d8+27,NO,1d12+3,N/A,1,5,344,2.00,YES,YES,YES,YES,NO,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Carrion Crawler,Monstrosity,U,Large,2,13,51,6d10 + 18,NO,1d4+2,2d4+2,0,8,37,2.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Centaur,Monstrosity,NG,Large,2,12,45,6d10+12,NO,1d10+4,2d6+4,2,6,38,2.00,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Cult Fanatic,Humanoid,NOT GOOD,Medium,2,13,33,6d8+6,YES,1d4+2,N/A,2,,345,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Druid,Humanoid,ANY,Medium,2,11,27,5d8+5,YES,1d8,N/A,1,,346,2.00,YES,YES,YES,YES,YES,YES,YES,YES,YES,NO,NO,Monster Manual,,
-Ettercap,Monstrosity,NE,Medium,2,13,44,8d8+8,NO,2d8+2,2d4+2,2,,131,2.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Gargoyle,Elemental,CE,Medium,2,15,52,7d8+21,NO,1d6+2,1d6+2,0,4,140,2.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual,,
-Gelatinous Cube,Ooze,U,Large,2,6,84,8d10+40,NO,3d6,N/A,-4,,242,2.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Ghast,Undead,CE,Medium,2,13,36,8d8,NO,2d8+3,2d6+3,3,3,148,2.00,NO,NO,NO,NO,NO,NO,NO,YES,YES,NO,YES,Monster Manual,,
-Giant Boar,Beast,U,Large,2,12,42,5d10+5,NO,10d6+3,N/A,0,,323,2.00,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Giant Constrictor Snake,Beast,U,Huge,2,12,60,8d12+8,NO,2d6+4,2d8+4,2,,324,2.00,NO,NO,YES,YES,NO,NO,NO,YES,YES,YES,NO,Monster Manual,,
-Giant Elk,Beast,U,Huge,2,14,42,5d12+10,NO,2d6+4,4d8+4,3,,325,2.00,NO,NO,NO,YES,YES,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Gibbering Mouther,Aberration,N,Medium,2,9,67,9d8+27,NO,5d6,N/A,-1,,157,2.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Githzerai Monk,Humanoid,LN,Medium,2,14,38,0,YES,3d8+2,N/A,0,,161,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Gnoll Pack Lord,Humanoid,CE,Medium,2,15,49,9d8+9,NO,1d4+3,1d10+3,0,5,163,2.00,NO,NO,YES,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Grick,Monstrosity,N,Medium,2,14,27,6d8,NO,2d6+2,1d6+2,2,,173,2.00,NO,NO,NO,YES,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Griffon,Monstrosity,U,Large,2,12,59,7d10+21,NO,1d8+4,2d6+4,2,,174,2.00,YES,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Hunter Shark,Beast,U,Large,2,12,45,6d10+12,NO,2d8+4,N/A,1,,330,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Intellect Devourer,Aberration,LE,Tiny,2,12,21,1d8 + 1,NO,2d4+2,N/A,0,,191,2.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Lizardfolk Shaman,Humanoid,N,Medium,2,13,27,0,YES,1d6+2,1d4+2,0,,205,2.00,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Merrow,Monstrosity,CE,Large,2,13,45,6d10+12,NO,1d8+4,2d4+4,0,,219,2.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Mimic,Monstrosity,N,Medium,2,12,58,9d8+18,NO,1d8+3,2d8+3,1,,220,2.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual,,
-Minotaur Skeleton,Undead,LE,Large,2,12,67,9d10+18,NO,2d12+4,2d8+4,0,,273,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Myconid Sovereign,Plant,LN,Large,2,13,60,9d8 + 18,NO,6d4+1,N/A,0,,232,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Nothic,Aberration,NE,Medium,2,15,45,6d8 + 18,NO,1d6+3,N/A,0,,236,2.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Ochre Jelly,Ooze,U,Large,2,8,45,6d10+12,NO,3d6+2,N/A,-2,,243,2.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Ogre,Giant,CE,Large,2,11,59,7d10+21,NO,2d8+4,2d6+4,-1,,237,2.00,YES,YES,YES,YES,YES,NO,YES,YES,YES,NO,NO,Monster Manual,,
-Ogre Zombie,Undead,NE,Large,2,8,85,9d10+36,NO,2d8+6,N/A,-2,,316,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Orc Eye of Gruumsh,Humanoid,CE,Medium,2,16,45,6d8 + 18,YES,2d8+3,N/A,0,5,247,2.00,YES,NO,NO,YES,YES,YES,YES,YES,YES,NO,NO,Monster Manual,,
-Orog,Humanoid,CE,Medium,2,18,42,5d8 + 20,NO,1d12+4,1d6+4,0,6,247,2.00,YES,NO,NO,YES,YES,YES,YES,NO,YES,NO,NO,Monster Manual,,
-Pegasus,Celestial,CG,Large,2,12,59,7d10+21,NO,2d6+4,N/A,2,,250,2.00,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Pentadrone,Construct,LN,Large,2,16,32,7d10 + 21,NO,1d6+2,N/A,0,,226,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Peryton,Monstrosity,CE,Medium,2,13,33,7d10 + 21,NO,1d8+3,2d4+3,0,,251,2.00,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Plesiosaurus,Beast,U,Large,2,13,68,8d10+24,NO,3d6+4,N/A,2,,80,2.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Polar Bear,Beast,U,Large,2,12,42,5d10+15,NO,1d8+5,2d6+5,0,,334,2.00,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Priest,Humanoid,ANY,Medium,2,13,27,5d8+5,YES,1d6,N/A,0,,348,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Quaggoth,Humanoid,CN,Medium,2,13,45,0,NO,1d6+3,N/A,0,,256,2.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Rhinoceros,Beast,U,Large,2,11,45,6d10+12,NO,2d8+5,N/A,-1,,336,2.00,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Rug of Smothering,Construct,U,Large,2,12,33,6d10,NO,2d6+3,N/A,2,5,20,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Saber-Toothed Tiger,Beast,U,Large,2,12,52,7d10+14,NO,1d10+5,2d6+5,2,,336,2.00,YES,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual,,
-Sahuagin Priestess,Humanoid,LE,Medium,2,12,33,7d10 + 14,YES,1d4+1,1d4+1,2,,264,2.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Sea Hag,Fey,CE,Medium,2,14,52,7d8+21,NO,2d6+3,N/A,0,,179,2.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Spined Devil,Fiend,LE,Small,2,15,110,5d6+5,NO,1d6+3,2d6+3,2,2,78,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Swarm of Poisonous Snakes,Beast,U,Medium,2,14,36,8d8,NO,VARIES,N/A,4,,338,2.00,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Wererat,Humanoid,LE,Medium,2,12,35,6d8+6,NO,1d4+2,1d6+2,3,,209,2.00,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Will-O'-Wisp,Undead,CE,Tiny,2,19,22,9D4,NO,2d8,N/A,2,,301,2.00,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,YES,Monster Manual,,
-Wyrmling Black Dragon,Dragon,CE,Medium,2,17,33,0,NO,1d10+1d4+2,5d8,0,,88,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wyrmling Bronze Dragon,Dragon,LG,Medium,2,17,32,0,NO,1d10+3,3d10,0,,109,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wyrmling Green Dragon,Dragon,LE,Medium,2,17,38,0,NO,1d10+1d6+2,6d6,0,,95,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wyrmling Silver Dragon,Dragon,LG,Medium,2,17,45,0,NO,1d10+4,4d8,1,,118,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wyrmling White Dragon,Dragon,CE,Medium,2,16,32,5d8+10,NO,1d10+1d4+2,5d8,1,,102,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Auroch,Beast,U,Large,2,11,38,0,NO,2d8+5,N/A,0,,207,2.00,NO,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Bard,Humanoid,ANY,Medium,2,15,44,13d8,YES,1d6+2,1d6+2,2,,211,2.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Darling Elder,Fey,CN,Medium,2,15,27,12d12 + 60,NO,1d6+3,N/A,0,,,2.00,NO,NO,NO,YES,NO,NO,NO,YES,YES,NO,YES,Volo's Guide to Monsters,,
-Grung Elite Warrior,Humanoid,LE,Small,2,13,49,7d10 + 21,NO,1d4+3,1d6+3,2,,157,2.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Guard Drake,Dragon,U,Medium,2,14,52,7d10 + 21,NO,1d8+3,1d6+3,2,,158,2.00,YES,NO,YES,YES,NO,NO,YES,YES,YES,NO,YES,Volo's Guide to Monsters,,
-Hobgoblin Iron Shadow,Humanoid,LE,Medium,2,15,32,0,YES,1d4+3,1d4+3,0,,162,2.00,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Meenlock,Fey,NE,Small,2,15,31,17d8 + 51,NO,2d4+2,N/A,2,,170,2.00,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,YES,Volo's Guide to Monsters,,
-Orc Claw of Luthic,Humanoid,CE,Medium,2,14,45,0,YES,1d8+2,N/A,0,,183,2.00,NO,NO,NO,NO,NO,NO,YES,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Orc Hand of Yurtrus,Humanoid,CE,Medium,2,12,30,0,YES,2d8,N/A,0,,184,2.00,NO,NO,NO,YES,YES,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Quetzalcoatlus,Beast,U,Huge,2,13,30,0,NO,3d6+2,N/A,0,,140,2.00,NO,YES,NO,NO,NO,YES,YES,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Shadow Mastiff,Monstrosity,NE,Medium,2,12,33,1d4 - 1,NO,2d6+3,N/A,1,,190,2.00,NO,NO,NO,YES,NO,YES,NO,YES,NO,NO,NO,Volo's Guide to Monsters,,
-Vegepygmy Chief,Plant,N,Small,2,14,33,13d12 + 52,NO,1d6+2,1d8+2,0,,197,2.00,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters,,
-Yuan-ti Broodguard,Humanoid,NE,Medium,2,14,45,16d10 + 48,NO,1d8+2,1d6+2,1,,203,2.00,NO,NO,YES,YES,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Ankylosaurus,Beast,U,Huge,3,15,68,8d12 + 16,NO,4d6+4,N/A,0,,79,3.00,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Basilisk,Monstrosity,U,Medium,3,15,52,8d8+16,NO,4d6+3,N/A,-1,5,24,3.00,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual,,
-Bearded Devil,Fiend,LE,Medium,3,13,52,8d8+16,NO,1d8+2,1d10+3,2,5,70,3.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Bugbear Chief,Humanoid,CE,Medium,3,17,65,10d8 + 20,NO,2d8+3,2d6+3,0,5,33,3.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Displacer Beast,Monstrosity,LE,Large,3,13,85,10d10 + 30,NO,2d6+4,N/A,0,6,81,3.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Doppelganger,Monstrosity,N,Medium,3,14,52,8d8+16,NO,1d6+4,N/A,4,6,82,3.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual,,
-Giant Scorpion,Beast,U,Large,3,15,52,7d10+14,NO,1d8+2,1d10+2,1,,327,3.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Githyanki Warrior,Humanoid,LE,Medium,3,17,46,0,YES,4d6+2,N/A,0,,160,3.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Green Hag,Fey,NE,Medium,3,17,82,11d8+33,YES,2d8+4,N/A,1,,177,3.00,NO,NO,NO,YES,NO,YES,NO,YES,NO,NO,NO,Monster Manual,,
-Grell,Aberration,NE,Medium,3,12,55,0,NO,1d10+2,2d4+2,0,,172,3.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Hell Hound,Fiend,LE,Medium,3,15,45,7d8+14,NO,1d8+2d6+3,6d6,1,,182,3.00,NO,NO,NO,NO,NO,NO,YES,NO,YES,NO,NO,Monster Manual,,
-Hobgoblin Captain,Humanoid,LE,Medium,3,17,39,6d8+12,NO,2d6+2,1d6+2,0,4,186,3.00,NO,NO,YES,YES,YES,YES,NO,NO,YES,NO,NO,Monster Manual,,
-Hook Horror,Monstrosity,N,Large,3,15,75,0,NO,2d6+4,N/A,0,,189,3.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Killer Whale,Beast,U,Huge,3,12,90,12d12+12,NO,5d6+4,N/A,0,,331,3.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Knight,Humanoid,ANY,Medium,3,18,52,8d8+16,NO,2d6+3,1d10,0,,347,3.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Manticore,Monstrosity,LE,Large,3,14,68,8d10+24,NO,1d8+3,1d6+3,3,,213,3.00,YES,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Minotaur,Monstrosity,CE,Large,3,14,76,9d10+27,NO,2d12+4,2d8+4,0,,223,3.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Mummy,Undead,LE,Medium,3,11,58,9d8+18,NO,5d6+3,N/A,-1,,228,3.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Nightmare,Fiend,NE,Large,3,13,68,8d10+24,NO,2d8+2d6+4,N/A,2,,235,3.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Owlbear,Monstrosity,U,Large,3,13,59,7d10+21,NO,1d10+5,2d8+5,1,,249,3.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Phase Spider,Monstrosity,U,Large,3,13,32,5d10+5,NO,1d10+2,N/A,2,,334,3.00,NO,NO,YES,YES,YES,YES,NO,NO,YES,NO,YES,Monster Manual,,
-Spectator,Aberration,LN,Medium,3,14,39,6d8 + 12,NO,1d6-1,N/A,2,1,30,3.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Veteran,Humanoid,ANY,Medium,3,17,58,9d8+18,NO,1d10+3,1d6+3,0,,350,3.00,YES,YES,NO,YES,YES,YES,YES,NO,YES,NO,YES,Monster Manual,,
-Water Weird,Elemental,N,Large,3,13,58,12d10 + 48,NO,2d6+3,N/A,2,,299,3.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual,,
-Werewolf,Humanoid,CE,Medium,3,11,58,9d8+18,NO,1d8+2,2d4+2,1,,211,3.00,NO,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Wight,Undead,NE,Medium,3,14,45,6d8+18,NO,1d6+2,1d10+2,2,,300,3.00,NO,NO,YES,NO,NO,NO,NO,YES,YES,NO,YES,Monster Manual,,
-Winter Wolf,Monstrosity,NE,Large,3,13,75,10d10+20,NO,2d6+4,4d8,1,,340,3.00,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wyrmling Blue Dragon,Dragon,LE,Medium,3,17,52,0,NO,1d10+1d6+3,4d10,0,,91,3.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wyrmling Gold Dragon,Dragon,LG,Medium,3,17,60,0,NO,1d10+4,4d10,0,,115,3.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Yeti,Monstrosity,CE,Large,3,12,51,6d10 + 18,NO,2d6+4,N/A,1,,305,3.00,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Yuan-Ti Malison,Monstrosity,NE,Medium,3,12,66,16d10 + 48,YES,VARIES,N/A,1,,309,3.00,NO,NO,YES,YES,NO,NO,NO,YES,NO,NO,YES,Monster Manual,,
-Archer,Humanoid,ANY,Medium,3,16,75,0,NO,1d6+4,1d8+4,0,,210,3.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Cave Fisher,Monstrosity,U,Medium,3,16,58,1d4,NO,2d6+3,N/A,2,,130,3.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Choldrith,Monstrosity,CE,Medium,3,15,66,12d10 + 48,YES,1d4+3,N/A,0,,132,3.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Deep Scion,Humanoid,NE,Medium,3,11,67,6d8 + 12,NO,1d8+4,1d4+4,2,,135,3.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Volo's Guide to Monsters,,
-Flail Snail,Elemental,U,Large,3,16,52,13d12 + 78,NO,1d6+3,N/A,-1,,144,3.00,NO,NO,NO,YES,NO,NO,NO,YES,YES,NO,NO,Volo's Guide to Monsters,,
-Illusionist,Humanoid,ANY,Medium,3,12,38,1d8 + 1,NO,1d6-1,N/A,1,,214,3.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Leucrotta,Monstrosity,CE,Large,3,14,67,0,NO,1d8+4,2d6+4,0,,169,3.00,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Martial Arts Adept,Humanoid,ANY,Medium,3,16,60,8d10 + 24,NO,1d8+3,1d4+3,3,,216,3.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Neogi,Aberration,LE,Small,3,15,33,9d8 + 18,NO,1d6+3,2d4+3,-1,,180,3.00,NO,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Orc Red Fang of Shargaas,Humanoid,CE,Medium,3,15,52,0,NO,3d6+3,3d4+3,0,,185,3.00,NO,NO,NO,YES,NO,YES,YES,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Redcap,Fey,CE,Small,3,13,45,1d4 - 1,NO,2d4+4,3d10+4,2,,188,3.00,NO,NO,NO,YES,NO,YES,NO,YES,NO,NO,NO,Volo's Guide to Monsters,,
-Slithering Tracker,Ooze,CE,Medium,3,14,32,0,NO,1d10+3,3d10,0,,191,3.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Swashbuckler,Humanoid,NOT LAWFUL,Medium,3,17,66,0,NO,1d4+4,1d8+4,0,,217,3.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Trapper,Monstrosity,U,Large,3,13,85,5d10 + 10,NO,4d6+3,N/A,2,,194,3.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Banshee,Undead,CE,Medium,4,12,58,13d8,NO,3d6+2,N/A,2,4,23,4.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Black Pudding,Ooze,U,Large,4,7,85,10d10+30,NO,4d8+1d6+3,N/A,-3,,241,4.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Bone Naga,Undead,LE,Large,4,15,58,0,YES,5d6+3,N/A,0,,233,4.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Chuul,Aberration,CE,Large,4,16,93,11d10+33,NO,2d6+4,N/A,0,6,40,4.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Couatl,Celestial,LG,Medium,4,19,97,13d8+39,YES,1d6+5,2d6+3,5,8,43,4.00,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Elephant,Beast,U,Huge,4,12,76,8d12+24,NO,3d8+5,3d10+5,-1,,322,4.00,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Ettin,Giant,CE,large,4,12,85,10d10+30,NO,2d8+5,2d8+5,-1,,132,4.00,NO,NO,NO,NO,NO,YES,YES,NO,YES,NO,NO,Monster Manual,,
-Flameskull,Undead,NE,Tiny,4,13,40,9d4 + 18,YES,3d6,N/A,0,,134,4.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Ghost,Undead,ANY,Medium,4,11,45,10d8,NO,4d6+3,N/A,1,5,147,4.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual,,
-Gnoll Fang of Yeenoghu,Humanoid,CE,Medium,4,14,65,10d8+20,NO,1d6+3,1d8+3,0,5,163,4.00,NO,NO,YES,NO,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Helmed Horror,Construct,N,Medium,4,20,60,7d8 + 14,NO,1d10+4,N/A,0,,183,4.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Lamia,Monstrosity,CE,Large,4,13,97,13d10+26,YES,2d10+3,1d4+3,1,,201,4.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Lizard King/Queen,Humanoid,CE,Medium,4,15,78,1d4,NO,1d6+3,1d4+3,0,,205,4.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Orc War Chief,Humanoid,CE,Medium,4,16,93,11d8 + 44,NO,1d12+1d8+4,2d8+4,0,6,246,4.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Shadow Demon,Fiend,CE,Medium,4,13,66,12d8 + 12,NO,2d6+3,N/A,3,5,64,4.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Succubus/Incubus,Fiend,NE,Medium,4,15,66,17d10 + 85,NO,1d6+3,N/A,-1,,285,4.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Wereboar,Humanoid,NE,Medium,4,10,78,12d8+24,NO,2d6+3,2d6+3,3,,209,4.00,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Weretiger,Humanoid,N,Medium,4,12,120,16d8+48,NO,1d10+3,1d8+3,3,,210,4.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wyrmling Red Dragon,Dragon,CE,Medium,4,17,75,0,NO,1d10+1d6+4,7d6,2,,98,4.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Babau,Fiend,CE,Medium,4,16,82,0,YES,1d8+4,1d8+4,0,,136,4.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Barghest,Fiend,NE,Large,4,17,90,13d8,YES,2d8+4,1d8+4,2,,123,4.00,NO,NO,NO,YES,YES,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Girallon,Monstrosity,U,Large,4,13,59,0,NO,1d6+4,1d6+4,0,,152,4.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Hobgoblin Devastator,Humanoid,LE,Medium,4    ,13,45,0,YES,1d6+1,N/A,0,,161,4.00,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Neogi Master,Aberration,LE,Medium,4,15,71,9d8 + 18,YES,1d6+3,2d4+3,-1,,180,4.00,NO,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Orc Blade of Ilneval,Humanoid,CE,Medium,4,18,60,0,NO,2d8+3,1d6+3,0,,183,4.00,NO,NO,NO,YES,YES,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Stegosaurus,Beast,U,Huge,4,13,76,1d4 - 1,NO,6d6+5,N/A,2,,140,4.00,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Warlock of the Archfey,Humanoid,ANY,Medium,4,11,49,0,YES,1d4+2,N/A,0,,219,4.00,YES,NO,NO,YES,NO,NO,YES,YES,NO,NO,YES,Volo's Guide to Monsters,,
-Yeth Hound,Fey,NE,Large,4,14,51,13d10 + 39,NO,2d6+4,N/A,0,,201,4.00,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Yuan-ti Mind Whisperer,Monstrosity,NE,Medium,4,14,71,16d10 + 48,YES,1d4+3,1d6+3,1,,204,4.00,NO,NO,YES,YES,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Yuan-ti Nightmare Speaker,Monstrosity,NE,Medium,4,14,71,16d10 + 48,YES,2d6+3,1d6+3,1,,205,4.00,NO,NO,YES,YES,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Air Elemental,Elemental,N,Large,5,15,90,12d10+24,NO,2d8+5,3d8+2,5,,124,5.00,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual,,
-Barbed Devil,Fiend,LE,Medium,5,15,110,13d8+52,NO,1d6+3,2d6+3,3,6,70,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Barlgura,Fiend,CE,Large,5,15,68,13d8,YES,2d6+4,1d10+4,0,7,56,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Beholder Zombie,Undead,NE,Large,5,15,93,1d4 - 1,NO,4d6,N/A,0,,316,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Bulette,Monstrosity,U,Large,5,17,94,9d10+45,NO,4d12+4,N/A,0,7,34,5.00,NO,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Cambion,Fiend,E,Medium,5,19,82,11d8 + 33,YES,1d8+1d6+4,3d6,4,7,36,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Drow Elite Warrior,Humanoid,NE,Medium,5,18,71,0,NO,4d6+4,1d6+4,0,,128,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Earth Elemental,Elemental,N,Large,5,17,126,12d10+60,NO,2d8+5,N/A,-1,,124,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Fire Elemental,Elemental,N,large,5,13,102,12d10+36,NO,2d6+3,N/A,3,,125,5.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Flesh Golem,Construct,N,Medium,5,9,93,11d8+44,NO,2d8+4,N/A,-1,,169,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Giant Crocodile,Beast,U,Huge,5,14,85,9d12+27,NO,3d10+5,2d8+5,-1,,324,5.00,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Giant Shark,Beast,U,Huge,5,13,126,11d12+55,NO,3d10+6,N/A,0,,328,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Gladiator,Humanoid,ANY,Medium,5,16,112,15d8+45,NO,2d8+4,2d4+4,2,,346,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Gorgon,Construct,U,Large,5,19,114,12d10+48,NO,2d12+5,2d10+5,0,,171,5.00,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Half-Red Dragon Veteran,Humanoid,ANY,Medium,5,18,65,10d8 + 20,NO,1d10+3,1d6+3,0,3,180,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Hill Giant,Giant,CE,Huge,5,13,105,10d12+40,NO,3d8+5,3d10+5,-1,,155,5.00,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Mezzoloth,Fiend,NE,Medium,5,18,75,0,YES,2d4+4,1d6+4,0,,313,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Night Hag,Fiend,NE,Medium,5,17,112,15d8+45,YES,2d8+4,N/A,2,,178,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Otyugh,Aberration,N,Large,5,14,114,12d10+48,NO,2d8+3,2d8+3,0,,248,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Red Slaad,Aberration,CN,Large,5,14,93,11d10 + 33,NO,2d4+3,1d8+3,1,6,276,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Revenant,Undead,N,Medium,5,13,136,0,NO,2d6+4,N/A,0,,259,5.00,YES,NO,YES,YES,NO,YES,NO,YES,NO,NO,YES,Monster Manual,,
-Roper,Monstrosity,NE,Large,5,20,93,11d10+33,NO,4d8+4,N/A,0,,261,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Sahuagin Baron,Humanoid,LE,Large,5,16,76,7d10 + 14,NO,2d4+4,2d6+4,2,,264,5.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Salamander,Elemental,NE,Large,5,15,90,12d10+24,NO,2d8+1d6+4,4d6+4,2,,266,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Shambling Mound,Plant,U,Large,5,15,136,16d10+48,NO,2d8+4,N/A,1,,270,5.00,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Triceratops,Beast,U,Huge,5,13,95,10d12+30,NO,4d8+6,3d10+6,-1,,80,5.00,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Troll,Giant,CE,Large,5,15,84,8d10+40,NO,1d6+4,2d6+4,1,,291,5.00,YES,NO,NO,YES,NO,YES,YES,YES,YES,NO,NO,Monster Manual,,
-Umber Hulk,Monstrosity,CE,Large,5,18,93,13d12 + 52,NO,1d8+5,2d8+5,0,,292,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Unicorn,Celestial,LG,Large,5,12,67,9d10+18,YES,2d6+4,1d8+4,0,,294,5.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Vampire Spawn,Undead,NE,Medium,5,15,82,11d8+33,NO,2d4+3,3d6+3,0,,298,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual,,
-Water Elemental,Elemental,N,Large,5,14,114,12d10+48,NO,2d8+4,N/A,2,,125,5.00,NO,YES,NO,NO,NO,NO,NO,YES,NO,YES,NO,Monster Manual,,
-Werebear,Humanoid,NG,Medium,5,10,135,18d8+54,NO,2d10+4,N/A,3,,208,5.00,YES,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wraith,Undead,NE,Medium,5,13,67,9d8+27,NO,4d8+3,N/A,0,,302,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Xorn,Elemental,N,Medium,5,19,73,7d8+42,NO,1d6+3,3d6+3,0,,304,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Young Remorhaz,Monstrosity,U,Large,5,14,93,16d10 + 48,NO,3d10+2d6+4,N/A,1,,258,5.00,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Banderhobb,Monstrosity,NE,Large,5,15,84,1d4 + 1,NO,5d6+5,3d6,0,,122,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Brontosaurus,Beast,U,Gargantuan,5,15,121,0,NO,5d8+5,6d8+5,0,,139,5.00,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Catoblepas,Monstrosity,U,Large,5,14,84,1d4,NO,5d6+4,8d8,2,,129,5.00,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters,,
-Enchanter,Humanoid,ANY,Medium,5,12,40,0,YES,1d6-1,N/A,0,,213,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Kraken Priest,Humanoid,ANY EVIL,Medium,5,10,75,0,YES,5d10,N/A,0,,215,5.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Volo's Guide to Monsters,,
-Master Thief,Humanoid,ANY,Medium,5,16,84,8d10 + 24,NO,1d6+4,1d8+4,3,,216,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Mindwitness,Aberration,LE,Large,5,15,75,0,NO,4d6+2,4d8+2,0,,176,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Spawn of Kyuss,Undead,CE,Medium,5,10,76,0,NO,3d6+3,N/A,0,,192,5.00,NO,NO,YES,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Swarm of Cranium Rats,Beast,LE,Medium,5,12,36,0,YES,4d6,N/A,0,,133,5.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Tanarukk,Fiend,CE,Medium,5,14,95,0,NO,1d8+4,2d6+4,0,,186,5.00,NO,NO,NO,NO,NO,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Tlincalli,Monstrosity,NE,Large,5,15,85,5d10 + 10,NO,1d10+3,1d6+3,2,,193,5.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Transmuter,Humanoid,ANY,Medium,5,12,40,5d10 + 10,YES,1d6-1,N/A,2,,218,5.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Wood Woad,Plant,LN,Medium,5,18,75,0,NO,4d4+4,N/A,0,,198,5.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Yuan-ti Pit Master,Monstrosity,NE,Medium,5,14,88,16d10 + 48,YES,1d4+3,N/A,1,,206,5.00,NO,NO,YES,YES,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Chasme,Fiend,CE,Large,6,15,84,6d10 + 12,NO,11d6+2,N/A,0,5,57,6.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Chimera,Monstrosity,CE,Large,6,14,114,12d10+48,NO,2d6+4,1d12+4,0,7,39,6.00,NO,NO,NO,NO,YES,YES,YES,NO,YES,NO,NO,Monster Manual,,
-Cyclops,Giant,CN,Huge,6,14,138,12d12 + 60,NO,3d8+6,4d10+6,0,9,45,6.00,NO,YES,YES,NO,YES,YES,YES,NO,YES,NO,NO,Monster Manual,,
-Drider,Monstrosity,CE,Large,6,19,123,13d10+52,YES,2d8+1d4,1d10+3,3,,120,6.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Galeb Duhr,Elemental,N,Medium,6,16,85,12d12 + 60,NO,2d6+5,N/A,0,,139,6.00,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Githzerai Zerth,Humanoid,LN,Medium,6,17,84,0,YES,2d6+3d8+4,N/A,0,,161,6.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Hobgoblin Warlord,Humanoid,LE,Medium,6,20,97,13d8+39,NO,1d10+3,1d4+3,0,9,187,6.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Invisible Stalker,Elemental,N,Medium,6,14,104,16d8+32,NO,2d6+3,N/A,4,,192,6.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Kuo-Toa Archpriest,Humanoid,NE,Medium,6,13,97,0,YES,5d6+3,1d4+2,0,,200,6.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Mage,Humanoid,ANY,Medium,6,12,40,9d8,YES,1d4+2,N/A,2,,347,6.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Mammoth,Beast,U,Huge,6,13,126,11d12+55,NO,4d8+7,4d10+7,-1,,332,6.00,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Medusa,Monstrosity,LE,Medium,6,15,127,17d8+51,NO,1d4+4d6+2,1d6+2,2,,214,6.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Vrock,Fiend,CE,Large,6,15,104,11d10+44,NO,2d6+3,2d10+3,2,6,64,6.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Wyvern,Dragon,U,Large,6,13,110,13d10+39,NO,2d6+4,2d8+4,0,,303,6.00,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Young Brass Dragon,Dragon,CG,Large,6,17,110,13d10+39,NO,2d10+4,2d6+4,0,,105,6.00,NO,YES,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Young White Dragon,Dragon,CE,Large,6,17,135,14d10+56,NO,2d10+1d8+4,2d6+4,1,,101,6.00,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Annis Hag,Fey,CE,Large,6,17,75,8d12 + 16,YES,3d6+5,3d6+5,0,,159,6.00,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Bodak,Undead,CE,Medium,6,15,58,0,NO,1d4+2,4d10,0,,127,6.00,NO,NO,NO,NO,NO,NO,NO,YES,YES,NO,YES,Volo's Guide to Monsters,,
-Conjurer,Humanoid,ANY,Medium,6,12,40,0,YES,1d4+2,N/A,0,,212,6.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Gauth,Aberration,LE,Medium,6,15,67,7d8 + 21,NO,2d8,N/A,0,,125,6.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Mouth of Grolantor,Giant,CE,Huge,6,14,105,9d10 + 27,NO,3d6+5,3d8+5,0,,149,6.00,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Warlock of the Great Old One,Humanoid,ANY,Medium,6,12,91,0,YES,1d4+2,N/A,0,,220,6.00,YES,NO,NO,NO,NO,YES,YES,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Blue Slaad,Aberration,CN,Large,7,15,123,0,NO,2d6+5,2d6+5,0,,276,7.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Drow Mage,Humanoid,NE,Medium,7,12,45,0,YES,1d8+1d6-1,N/A,0,,129,7.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Giant Ape,Beast,U,Huge,7,12,157,15d12+60,NO,3d10+6,7d6+6,2,,323,7.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Grick Alpha,Monstrosity,N,Medium,7,18,75,6d8,NO,2d6+4,4d8+4,0,,173,7.00,NO,NO,NO,YES,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Mind Flayer,Aberration,LE,Medium,7,15,71,0,YES,2d10+4,10d10,0,,222,7.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Oni,Giant,LE,Large,7,16,110,13d10+39,YES,1d8+4,2d10+4,0,,239,7.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Shield Guardian,Construct,U,Large,7,17,142,15d10+60,NO,2d6+4,N/A,1,,271,7.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Stone Giant,Giant,N,Huge,7,17,126,11d12+55,NO,3d8+6,4d10+6,0,,156,7.00,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Young Black Dragon,Dragon,CE,Large,7,18,127,0,NO,2d10+1d8+4,2d6+4,0,,88,7.00,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Young Copper Dragon,Dragon,CG,Large,7,17,119,14d10+42,NO,2d10+4,2d6+4,0,,111,7.00,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Yuan-Ti Abomination,Monstrosity,NE,Large,7,15,127,16d10 + 48,YES,4d6+4,2d6+4,1,,308,7.00,NO,NO,YES,YES,NO,NO,NO,YES,NO,NO,YES,Monster Manual,,
-Bheur Hag,Fey,CE,Medium,7,17,91,1d4 - 1,NO,2d8+1,N/A,2,,160,7.00,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Draegloth,Fiend,U,Large,7,15,123,8d8 + 16,YES,2d10+5,2d10+5,4,,141,7.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Korred,Fey,CN,Small,7,17,102,0,YES,1d8+6,2d8+6,0,,168,7.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Warlock of the Fiend,Humanoid,ANY,Medium,7,12,78,0,YES,4d6,N/A,0,,219,7.00,YES,NO,YES,NO,NO,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Assassin,Humanoid,NOT GOOD,Medium,8,15,78,12d8+24,NO,1d6+3,1d8+3,3,,343,8.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Chain Devil,Fiend,LE,Medium,8,16,85,10d8+40,NO,2d6+4,N/A,2,8,72,8.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Cloaker,Aberration,CN,Large,8,14,78,12d10+12,NO,2d6+3,1d8+3,2,6,41,8.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Drow Priestess of Lolth,Humanoid,NE,Medium,8,16,71,0,NO,6d6+2,N/A,0,,129,8.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Fomorian,Giant,CE,Huge,8,14,149,0,NO,3d8+6,6d8,0,,136,8.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Frost Giant,Giant,NE,Huge,8,15,138,12d12+60,NO,3d12+6,4d10+6,-1,,155,8.00,YES,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual,,
-Githyanki Knight,Humanoid,LE,Medium,8,18,91,0,YES,5d6+6,N/A,0,,160,8.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Green Slaad,Aberration,CN,Large,8,16,127,0,YES,2d6+4,1d6+4,0,,277,8.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Hezrou,Fiend,CE,Large,8,16,136,13d10+65,NO,2d10+4,2d6+4,3,7,60,8.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Hydra,Monstrosity,U,Huge,8,15,172,15d12+75,NO,1d10+5,N/A,1,,190,8.00,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Spirit Naga,Monstrosity,CE,Large,8,15,75,10d10+20,YES,1d6+4,N/A,2,,234,8.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Tyrannosaurus Rex,Beast,U,Huge,8,13,136,13d12+52,NO,4d12+7,3d8+7,0,,80,8.00,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Young Bronze Dragon,Dragon,LG,Large,8,18,142,15d10+60,NO,2d10+5,2d6+5,0,,108,8.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Young Green Dragon,Dragon,LE,Large,8,18,136,16d10+48,NO,2d10+2d6+4,2d6+4,0,,94,8.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Blackguard,Humanoid,NOT GOOD,Medium,8,18,153,0,YES,1d10+4,1d6+2,0,,211,8.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters,,
-Diviner,Humanoid,ANY,Medium,8,12,67,5d10 + 10,YES,1d6-1,N/A,2,,213,8.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Shoosuva,Fiend,CE,Large,8,14,110,1d4 - 1,NO,4d10+4,2d8+4,1,,137,8.00,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Abominable Yeti,Monstrosity,CE,Huge,9,15,137,11d12 + 66,NO,4d6+7,6d6,0,11,306,9.00,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Bone Devil,Fiend,LE,Large,9,19,142,15d10+60,NO,1d8+4,2d8+4,3,8,71,9.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Clay Golem,Construct,U,Large,9,14,133,14d10+56,NO,2d10+5,N/A,-1,,168,9.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Cloud Giant,Giant,N,Huge,9,14,200,16d12+96,YES,3d8+8,4d10+8,0,,154,9.00,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual,,
-Fire Giant,Giant,LE,Huge,9,18,162,13d12+78,NO,6d6+7,4d10+7,-1,,154,9.00,NO,NO,NO,NO,NO,NO,YES,NO,YES,NO,NO,Monster Manual,,
-Glabrezu,Fiend,CE,Large,9,17,157,15d10+75,YES,2d10+5,2d4+2,2,9,58,9.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Gray Slaad,Aberration,CN,Medium,9,18,127,0,YES,1d6+3,1d10+3,0,,277,9.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Nycaloth,Fiend,NE,Large,9,18,123,6d8 + 18,YES,2d6+5,2d12+5,0,,314,9.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Treant,Plant,CG,Huge,9,16,138,12d12+60,NO,3d6+6,4d10+6,2,,289,9.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Young Blue Dragon,Dragon,LE,Large,9,18,152,16d10+64,NO,3d10+5,2d6+5,0,,91,9.00,NO,YES,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Young Silver Dragon,Dragon,LG,Large,9,18,168,16d10+80,NO,2d10+6,2d6+6,1,,118,9.00,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,YES,Monster Manual,,
-Champion,Humanoid,ANY,Medium,9,18,143,6d10 + 12,NO,2d6+5,1d8+2,2,,212,9.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Evoker,Humanoid,ANY,Medium,9,12,66,0,YES,1d6-1,N/A,0,,214,9.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Flind,Humanoid,CE,Medium,9,16,127,11d8 + 44,NO,1d10+5,1d10+5,-1,,153,9.00,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Necromancer,Humanoid,ANY,Medium,9,12,66,9d8 + 18,YES,2d4,N/A,-1,,217,9.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Ulitharid,Aberration,LE,Large,9,15,127,13d12 + 52,YES,4d10+5,10d10,0,,175,9.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-War Priest,Humanoid,ANY,Medium,9,18,117,1d8 + 1,YES,2d6+3,N/A,0,,218,9.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Aboleth,Aberration,LE,Large,10,17,135,18d10+36,NO,2d6+5,3d6+5,-1,9,13,10.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Death Slaad,Aberration,CE,Medium,10,18,170,6d8 + 12,YES,1d8+2d6+5,1d10+2d6+5,0,,278,10.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Deva,Celestial,LG,Medium,10,17,136,16d8+64,YES,4d8+1d6+4,N/A,4,8,16,10.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Guardian Naga,Monstrosity,LG,Large,10,18,127,15d10+45,YES,1d8+4,N/A,4,,234,10.00,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Stone Golem,Construct,U,Large,10,17,178,17d10+85,NO,3d8+6,N/A,-1,,170,10.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Yochlol,Fiend,CE,Medium,10,15,136,16d8 + 64,YES,7d6+2,N/A,2,6,65,10.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Young Gold Dragon,Dragon,LG,Large,10,18,178,17d10+85,NO,2d10+6,2d6+6,0,,115,10.00,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Young Red Dragon,Dragon,CE,Large,10,18,178,17d10+85,NO,2d10+1d6+6,2d6+6,2,,98,10.00,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Alhoon,Undead,ANY EVIL,Medium,10,15,120,12d10 + 24,YES,3d6,4d8+4,5,,172,10.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Death Kiss,Aberration,NE,Large,10,16,161,6d8 + 12,NO,3d6+4,4d10,2,,124,10.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Froghemoth,Monstrosity,U,Huge,10,14,184,1d4 - 1,NO,3d8+6,3d10+6,1,,145,10.00,NO,NO,NO,NO,NO,NO,NO,YES,YES,NO,NO,Volo's Guide to Monsters,,
-Stone Giant Dreamwalker,Giant,CN,Huge,10,18,161,0,NO,3d8+6,4d10+6,0,,150,10.00,NO,YES,NO,NO,NO,YES,YES,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Behir,Monstrosity,NE,Huge,11,17,168,16d12+64,NO,3d10+6,4d10+12,3,10,25,11.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Dao,Elemental,NE,Large,11,18,187,12d12 + 60,YES,2d8+6,4d6+6,0,,143,11.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Djinni,Elemental,CG,Large,11,17,161,14d10+84,YES,2d6+5,N/A,2,,144,11.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Efreeti,Elemental,LE,Large,11,17,200,16d10+112,YES,2d6+6,5d6,1,,145,11.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Gynosphinx,Monstrosity,LN,Large,11,17,136,16d10+48,YES,2d8+4,N/A,2,,282,11.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Horned Devil,Fiend,LE,Large,11,18,178,17d10+85,NO,2d8+6,1d8+6,3,10,74,11.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Marid,Elemental,CN,Large,11,17,229,8d10 + 24,YES,2d8+6,6d6,0,,146,11.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Remorhaz,Monstrosity,U,Huge,11,17,195,17d12+85,NO,6d10+3d6+7,N/A,0,,258,11.00,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Roc,Monstrosity,U,Gargantuan,11,15,248,16d20+80,NO,4d8+9,4d6+9,0,,260,11.00,YES,YES,YES,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Cloud Giant Smiling One,Giant,CN,Huge,11,15,262,12d10 + 48,YES,3d8+8,4d10+8,0,,146,11.00,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Morkoth,Aberration,CE,Medium,11,17,130,9d10 + 27,YES,2d6+2,3d8+2,0,,178,11.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Volo's Guide to Monsters,,
-Arcanaloth,Fiend,NE,Medium,12,17,104,16d8 + 32,YES,2d4+3,N/A,1,7,313,12.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Archmage,Humanoid,ANY,Medium,12,12,99,18d8+18,YES,1d4+2,N/A,2,,342,12.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Erinyes,Fiend,LE,Medium,12,18,153,18d8+72,NO,3d8+1d10+4,4d8+3,3,8,73,12.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Archdruid,Humanoid,ANY,Medium,12,19,132,0,YES,1d6+2,N/A,0,,210,12.00,NO,NO,NO,YES,NO,NO,YES,YES,NO,YES,NO,Volo's Guide to Monsters,,
-Frost Giant Everlasting One,Giant,CE,Huge,12,15,189,12d12 + 60,NO,3d12+7,4d10+7,-1,,148,12.00,YES,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Ki-Rin,Celestial,LG,Huge,12,20,152,12d12 + 12,YES,2d4+5,2d8+5,0,,163,12.00,NO,YES,YES,NO,YES,NO,YES,NO,NO,NO,NO,Volo's Guide to Monsters,,
-Warlord,Humanoid,ANY,Medium,12,18,229,0,NO,2d6+5,1d6+3,0,,220,12.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters,,
-Yuan-ti Anathema,Monstrosity,NE,Huge,12,16,189,16d10 + 48,YES,2d6+6,3d6+6,1,,,12.00,NO,NO,YES,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Adult Brass Dragon,Dragon,CG,Huge,13,18,172,15d12+75,NO,2d10+6,2d6+6,0,,105,13.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Adult White Dragon,Dragon,CE,Huge,13,18,200,16d12+96,NO,2d10+1d8+6,2d6+6,0,,101,13.00,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Beholder,Aberration,LE,Large,13,18,180,19d10 + 76,NO,4d6,N/A,0,5,28,13.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Nalfeshnee,Fiend,LE,Large,13,18,184,16d10+96,NO,5d10+5,3d6+5,0,10,62,13.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Rakshasa,Fiend,LE,Medium,13,16,110,13d8+52,YES,2d6+2,N/A,3,,257,13.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Shadow Dragon,Dragon,CE,VARIES,13,18,178,17d10 + 85,NO,2d10+1d6+6,2d6+6,0,10,85,13.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Storm Giant,Giant,CG,Huge,13,16,230,20d12+100,YES,6d6+9,4d12+9,-1,,156,13.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Ultroloth,Fiend,NE,Medium,13,19,153,13d12 + 52,YES,1d10+3,N/A,0,,314,13.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Vampire,Undead,LE,Medium,13,16,144,17d8+68,NO,4d6+4,N/A,0,,297,13.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
-Devourer,Fiend,CE,Large,13,16,178,1d8,NO,8d6+5,8d10,3,,138,13.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Neothelid,Aberration,CE,Gargantuan,13,16,325,9d8 + 18,YES,3d8+8,10d6,-1,,181,13.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Adult Black Dragon,Dragon,CE,Huge,14,19,195,0,NO,2d10+1d8+6,2d6+6,2,,88,14.00,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Adult Copper Dragon,Dragon,CG,Huge,14,18,184,16d12+80,NO,2d10+6,2d6+6,1,,111,14.00,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Death Tyrant,Undead,LE,Large,14,19,187,25d10 + 50,NO,4d6,N/A,0,5,29,14.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Ice Devil,Fiend,LE,Large,14,18,180,19d10+76,NO,5d6+5,2d4+3d6+5,2,10,75,14.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Elder Brain,Aberration,LE,Large,14,10,210,12d10 + 60,YES,4d8+2,5d10+5,-1,,174,14.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Fire Giant Dreadnought,Giant,LE,Huge,14,21,187,13d12 + 78,NO,4d6+8,4d10+8,-1,,147,14.00,NO,NO,NO,NO,NO,NO,YES,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Adult Bronze Dragon,Dragon,LG,Huge,15,19,212,17d12+102,NO,2d10+7,2d6+7,0,,108,15.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Adult Green Dragon,Dragon,LE,Huge,15,19,207,18d12+90,NO,2d10+2d6+6,2d6+6,1,,94,15.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Mummy Lord,Undead,LE,Medium,15,17,97,13d8+39,YES,9d6+4,N/A,0,,229,15.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Purple Worm,Monstrosity,U,Gargantuan,15,18,247,15d20+90,NO,3d8+9,15d6+9,0,,255,15.00,NO,NO,YES,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual,,
-Adult Blue Dragon,Dragon,LE,Huge,16,19,225,18d12+108,NO,3d10+7,2d6+7,0,,91,16.00,NO,YES,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Adult Silver Dragon,Dragon,LG,Huge,16,19,243,18d12+126,NO,2d10+8,2d6+8,0,,117,16.00,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,YES,Monster Manual,,
-Iron Golem,Construct,U,Large,16,20,210,20d10+100,NO,3d8+7,3d10+7,-1,,170,16.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Marilith,Fiend,CE,Large,16,18,189,18d10+90,NO,2d8+4,2d10+4,5,9,61,16.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Planetar,Celestial,LG,Large,16,19,200,16d10+112,YES,4d6+5d8+7,N/A,5,12,17,16.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Storm Giant Quintessent,Giant,CG,Huge,16,12,230,17d10 + 85,NO,9d6+9,3d6+9,-1,,151,16.00,YES,YES,YES,NO,NO,NO,YES,NO,NO,YES,NO,Volo's Guide to Monsters,,
-Adult Gold Dragon,Dragon,LG,Huge,17,19,256,19d12+133,NO,2d10+8,2d6+8,2,,114,17.00,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Adult Red Dragon,Dragon,CE,Huge,17,19,256,19d12+133,NO,2d10+2d6+8,2d6+8,2,,98,17.00,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Androsphinx,Monstrosity,LN,Large,17,17,199,19d10+95,YES,2d10+6,N/A,0,,281,17.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Death Knight,Undead,CE,Medium,17,20,180,19d8 + 95,YES,1d10+4d8+5,N/A,0,11,47,17.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Dracolich,Undead,LE,VARIES,17,19,225,18d12 + 108,NO,3d10+7,2d6+7,0,13,84,17.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Dragon Turtle,Dragon,N,Gargantuan,17,20,341,22d20+110,NO,3d12+7,2d8+7,0,13,119,17.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Goristro,Fiend,CE,Huge,17,19,310,23d12 + 161,NO,3d8+7,3d10+7,0,13,59,17.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Demilich,Undead,NE,Tiny,18,20,80,32d4,NO,6d6,N/A,0,0,48,18.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Balor,Fiend,CE,Huge,19,19,262,21d12+126,NO,3d8+8,2d6+8,2,14,55,19.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Ancient Brass Dragon,Dragon,CG,Gargantuan,20,20,297,17d20+119,NO,2d10+8,2d6+8,0,,104,20.00,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Ancient White Dragon,Dragon,CE,Gargantuan,20,20,333,18d20+144,NO,2d10+2d8+8,2d6+8,0,,100,20.00,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Pit Fiend,Fiend,LE,Large,20,19,300,24d10+168,YES,4d6+8,2d8+8,2,14,77,20.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Ancient Black Dragon,Dragon,CE,Gargantuan,21,22,367,21d20 + 147,NO,2d10+2d8+8,2d6+8,2,,87,21.00,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual,,
-Ancient Copper Dragon,Dragon,CG,Gargantuan,21,21,350,20d20+140,NO,2d10+8,2d6+8,1,,110,21.00,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,Monster Manual,,
-Lich,Undead,E,Medium,21,17,135,18d8+54,YES,3d6,N/A,3,,202,21.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Solar,Celestial,LG,Large,21,21,243,18d10+144,YES,4d6+6d8+8,8d8+6,6,15,18,21.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Ancient Bronze Dragon,Dragon,LG,Gargantuan,22,22,444,24d20+192,NO,2d10+9,2d6+9,0,,107,22.00,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Ancient Green Dragon,Dragon,LE,Gargantuan,22,21,385,22d20+154,NO,2d10+3d6+8,4d6+8,1,,93,22.00,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Mind Flayer Lich,Undead,ANY EVIL,Medium,22,17,135,0,YES,3d10+5,10d10,0,,172,22.00,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters,,
-Ancient Blue Dragon,Dragon,LE,Gargantuan,23,22,481,26d20+208,NO,4d10+9,2d6+9,0,,90,23.00,NO,YES,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Ancient Silver Dragon,Dragon,LG,Gargantuan,23,22,487,25d20+225,NO,2d10+10,2d6+10,0,,116,23.00,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,YES,Monster Manual,,
-Empyrean,Celestial,CG OR NE,Huge,23,22,313,0,YES,6d6+10,7d6,0,,130,23.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Kraken,Monstrosity,CE,Gargantuan,23,18,472,27d20+189,NO,3d8+10,3d6+10,0,17,197,23.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual,,
-Ancient Gold Dragon,Dragon,LG,Gargantuan,24,22,546,28d20+252,NO,2d10+10,2d6+10,2,,113,24.00,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual,,
-Ancient Red Dragon,Dragon,CE,Gargantuan,24,22,546,28d20+252,NO,2d10+4d6+10,2d6+10,0,,97,24.00,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual,,
-Tarrasque,Monstrosity,U,Gargantuan,30,25,676,33d20+330,NO,4d8+10,4d10+10,0,,286,30.00,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual,,
+Name,Type,ALIGNMENT,Size,CR,AC,HP,HitDice,Spellcasting?,Attack 1 damage,Attack 2 Damage,Initiative,Hit Bonus,Page,CR (Decimal),Rarety,Motif,Arctic,Coast,Desert,Forest,Grassland,Hill,Mountain,Swamp,Underdark,Underwater,Urban,Book
+Aarakocra,Humanoid,NG,Medium,1/4,12,13,3d8,NO,1d4+2,1d6+2,2,4,12,0.25,0,NA,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual
+Aboleth,Aberration,LE,Large,10,17,135,18d10+36,NO,2d6+5,3d6+5,-1,9,13,10,0,,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Abominable Yeti,Monstrosity,CE,Huge,9,15,137,11d12 + 66,NO,4d6+7,6d6,0,11,306,9,0,NA,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Acolyte,Humanoid,ANY,Medium,1/4,10,9,2d8,YES,1d4,N/A,0,2,342,0.25,3,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Adult Black Dragon,Dragon,CE,Huge,14,19,195,0,NO,2d10+1d8+6,2d6+6,2,,88,14,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Adult Blue Dragon,Dragon,LE,Huge,16,19,225,18d12+108,NO,3d10+7,2d6+7,0,,91,16,0,NA,NO,YES,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Adult Brass Dragon,Dragon,CG,Huge,13,18,172,15d12+75,NO,2d10+6,2d6+6,0,,105,13,0,NA,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Adult Bronze Dragon,Dragon,LG,Huge,15,19,212,17d12+102,NO,2d10+7,2d6+7,0,,108,15,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Adult Copper Dragon,Dragon,CG,Huge,14,18,184,16d12+80,NO,2d10+6,2d6+6,1,,111,14,0,NA,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,Monster Manual
+Adult Gold Dragon,Dragon,LG,Huge,17,19,256,19d12+133,NO,2d10+8,2d6+8,2,,114,17,0,NA,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Adult Green Dragon,Dragon,LE,Huge,15,19,207,18d12+90,NO,2d10+2d6+6,2d6+6,1,,94,15,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Adult Red Dragon,Dragon,CE,Huge,17,19,256,19d12+133,NO,2d10+2d6+8,2d6+8,2,,98,17,0,NA,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual
+Adult Silver Dragon,Dragon,LG,Huge,16,19,243,18d12+126,NO,2d10+8,2d6+8,0,,117,16,0,NA,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,YES,Monster Manual
+Adult White Dragon,Dragon,CE,Huge,13,18,200,16d12+96,NO,2d10+1d8+6,2d6+6,0,,101,13,0,NA,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Air Elemental,Elemental,N,Large,5,15,90,12d10+24,NO,2d8+5,3d8+2,5,,124,5,1,Basic,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual
+Alhoon,Undead,ANY EVIL,Medium,10,15,120,12d10 + 24,YES,3d6,4d8+4,5,,172,10,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Allosaurus,Beast,U,Large,2,13,51,6d10 + 18,NO,2d10+4,1d8+4,1,,79,2,0,NA,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Ancient Black Dragon,Dragon,CE,Gargantuan,21,22,367,21d20 + 147,NO,2d10+2d8+8,2d6+8,2,,87,21,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Ancient Blue Dragon,Dragon,LE,Gargantuan,23,22,481,26d20+208,NO,4d10+9,2d6+9,0,,90,23,0,NA,NO,YES,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Ancient Brass Dragon,Dragon,CG,Gargantuan,20,20,297,17d20+119,NO,2d10+8,2d6+8,0,,104,20,0,NA,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Ancient Bronze Dragon,Dragon,LG,Gargantuan,22,22,444,24d20+192,NO,2d10+9,2d6+9,0,,107,22,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Ancient Copper Dragon,Dragon,CG,Gargantuan,21,21,350,20d20+140,NO,2d10+8,2d6+8,1,,110,21,0,NA,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,Monster Manual
+Ancient Gold Dragon,Dragon,LG,Gargantuan,24,22,546,28d20+252,NO,2d10+10,2d6+10,2,,113,24,0,NA,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Ancient Green Dragon,Dragon,LE,Gargantuan,22,21,385,22d20+154,NO,2d10+3d6+8,4d6+8,1,,93,22,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Ancient Red Dragon,Dragon,CE,Gargantuan,24,22,546,28d20+252,NO,2d10+4d6+10,2d6+10,0,,97,24,0,NA,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual
+Ancient Silver Dragon,Dragon,LG,Gargantuan,23,22,487,25d20+225,NO,2d10+10,2d6+10,0,,116,23,0,NA,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,YES,Monster Manual
+Ancient White Dragon,Dragon,CE,Gargantuan,20,20,333,18d20+144,NO,2d10+2d8+8,2d6+8,0,,100,20,0,NA,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Androsphinx,Monstrosity,LN,Large,17,17,199,19d10+95,YES,2d10+6,N/A,0,,281,17,5,Magic,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Animated Armor,Construct,U,Medium,1,18,33,6d8+6,NO,1d6+2,N/A,0,4,19,1,3,Magic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Ankheg,Monstrosity,U,Large,2,14,39,6d10+6,NO,3d6+3,3d6,0,5,21,2,5,Cavern,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Ankylosaurus,Beast,U,Huge,3,15,68,8d12 + 16,NO,4d6+4,N/A,0,,79,3,0,NA,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Annis Hag,Fey,CE,Large,6,17,75,8d12 + 16,YES,3d6+5,3d6+5,0,,159,6,0,NA,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Volo's Guide to Monsters
+Ape,Beast,U,Medium,1/2,12,19,3d8+6,NO,1d6+3,1d6+3,2,,317,0.5,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Apprentice Wizard,Humanoid,ANY,Medium,1/4,10,9,0,YES,1d4,N/A,0,,209,0.25,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Arcanaloth,Fiend,NE,Medium,12,17,104,16d8 + 32,YES,2d4+3,N/A,1,7,313,12,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Archdruid,Humanoid,ANY,Medium,12,19,132,0,YES,1d6+2,N/A,0,,210,12,0,NA,NO,NO,NO,YES,NO,NO,YES,YES,NO,YES,NO,Volo's Guide to Monsters
+Archer,Humanoid,ANY,Medium,3,16,75,0,NO,1d6+4,1d8+4,0,,210,3,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Archmage,Humanoid,ANY,Medium,12,12,99,18d8+18,YES,1d4+2,N/A,2,,342,12,3,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Assassin,Humanoid,NOT GOOD,Medium,8,15,78,12d8+24,NO,1d6+3,1d8+3,3,,343,8,3,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Auroch,Beast,U,Large,2,11,38,0,NO,2d8+5,N/A,0,,207,2,0,NA,NO,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,Volo's Guide to Monsters
+Awakened Tree,Plant,U,Huge,2,13,59,7d12+14,NO,3d6+4,N/A,-2,,317,2,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Axe Beak,Beast,U,Large,1/4,11,19,3d10+3,NO,1d8+2,N/A,1,,317,0.25,6,Cavern,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Azer,Elemental,LN,Medium,2,17,39,6d8+12,NO,1d8+3,N/A,1,5,22,2,5,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Babau,Fiend,CE,Medium,4,16,82,0,YES,1d8+4,1d8+4,0,,136,4,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters
+Balor,Fiend,CE,Huge,19,19,262,21d12+126,NO,3d8+8,2d6+8,2,14,55,19,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Banderhobb,Monstrosity,NE,Large,5,15,84,1d4 + 1,NO,5d6+5,3d6,0,,122,5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Bandit,Humanoid,NOT LAWFUL,Medium,1/8,12,11,2d8+2,NO,1d6+1,1d8+1,1,3,343,0.13,3,Basic,YES,YES,YES,YES,NO,YES,NO,NO,NO,NO,YES,Monster Manual
+Bandit Captain,Humanoid,NOT LAWFUL,Medium,2,15,65,10d8+20,NO,1d6+3,1d4+3,3,5,344,2,1,Basic,YES,YES,YES,YES,NO,YES,NO,NO,NO,NO,YES,Monster Manual
+Banshee,Undead,CE,Medium,4,12,58,13d8,NO,3d6+2,N/A,2,4,23,4,1,Crypt,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Barbed Devil,Fiend,LE,Medium,5,15,110,13d8+52,NO,1d6+3,2d6+3,3,6,70,5,3,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Bard,Humanoid,ANY,Medium,2,15,44,13d8,YES,1d6+2,1d6+2,2,,211,2,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Barghest,Fiend,NE,Large,4,17,90,13d8,YES,2d8+4,1d8+4,2,,123,4,0,NA,NO,NO,NO,YES,YES,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters
+Barlgura,Fiend,CE,Large,5,15,68,13d8,YES,2d6+4,1d10+4,0,7,56,5,7,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Basilisk,Monstrosity,U,Medium,3,15,52,8d8+16,NO,4d6+3,N/A,-1,5,24,3,7,Dungeon,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual
+Bearded Devil,Fiend,LE,Medium,3,13,52,8d8+16,NO,1d8+2,1d10+3,2,5,70,3,6,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Behir,Monstrosity,NE,Huge,11,17,168,16d12+64,NO,3d10+6,4d10+12,3,10,25,11,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Beholder,Aberration,LE,Large,13,18,180,19d10 + 76,NO,4d6,N/A,0,5,28,13,7,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Beholder Zombie,Undead,NE,Large,5,15,93,1d4 - 1,NO,4d6,N/A,0,,316,5,8,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Berserker,Humanoid,C,Medium,2,13,67,9d8+27,NO,1d12+3,N/A,1,5,344,2,2,Basic,YES,YES,YES,YES,NO,YES,YES,NO,NO,NO,NO,Monster Manual
+Bheur Hag,Fey,CE,Medium,7,17,91,1d4 - 1,NO,2d8+1,N/A,2,,160,7,0,NA,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Black Bear,Beast,U,Medium,1/2,11,19,3d8+6,NO,1d6+2,2d4+2,0,,318,0.5,2,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Black Pudding,Ooze,U,Large,4,7,85,10d10+30,NO,4d8+1d6+3,N/A,-3,,241,4,1,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Blackguard,Humanoid,NOT GOOD,Medium,8,18,153,0,YES,1d10+4,1d6+2,0,,211,8,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters
+Blink Dog,Fey,LG,Medium,1/4,13,22,4d8+4,NO,1d6+1,N/A,3,,318,0.25,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Blood Hawk,Beast,U,Small,1/8,12,7,2d6,NO,1d4+2,N/A,2,,319,0.13,6,Cavern,YES,YES,NO,YES,YES,YES,YES,NO,NO,NO,NO,Monster Manual
+Blue Slaad,Aberration,CN,Large,7,15,123,0,NO,2d6+5,2d6+5,0,,276,7,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Boar,Beast,U,Medium,1/4,11,11,2d8+2,NO,1d6+1,N/A,0,,319,0.25,0,NA,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Bodak,Undead,CE,Medium,6,15,58,0,NO,1d4+2,4d10,0,,127,6,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,YES,NO,YES,Volo's Guide to Monsters
+Boggle,Fey,CN,Small,1/8,14,18,0,NO,1d6-1,N/A,0,,128,0.13,0,NA,NO,NO,NO,YES,NO,YES,NO,NO,YES,NO,YES,Volo's Guide to Monsters
+Bone Devil,Fiend,LE,Large,9,19,142,15d10+60,NO,1d8+4,2d8+4,3,8,71,9,5,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Bone Naga,Undead,LE,Large,4,15,58,0,YES,5d6+3,N/A,0,,233,4,1,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Brontosaurus,Beast,U,Gargantuan,5,15,121,0,NO,5d8+5,6d8+5,0,,139,5,0,NA,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Brown Bear,Beast,U,Large,1,11,34,4d10+12,NO,1d8+4,2d6+4,0,,319,1,2,Cavern,YES,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Bugbear,Humanoid,CE,Medium,1,16,27,5d8+5,NO,2d8+2,2d6+2,2,4,33,1,1,Basic,NO,NO,NO,YES,YES,NO,NO,NO,YES,NO,NO,Monster Manual
+Bugbear Chief,Humanoid,CE,Medium,3,17,65,10d8 + 20,NO,2d8+3,2d6+3,0,5,33,3,5,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Bulette,Monstrosity,U,Large,5,17,94,9d10+45,NO,4d12+4,N/A,0,7,34,5,9,Dungeon,NO,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,Monster Manual
+Bullywug,Humanoid,NE,Medium,1/4,15,11,2d8 + 2,NO,1d4+1,1d8+1,0,3,35,0.25,2,Cavern,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Cambion,Fiend,E,Medium,5,19,82,11d8 + 33,YES,1d8+1d6+4,3d6,4,7,36,5,8,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Camel,Beast,U,Large,1/8,9,15,2d10+4,NO,1d4,N/A,-1,,320,0.13,0,NA,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Carrion Crawler,Monstrosity,U,Large,2,13,51,6d10 + 18,NO,1d4+2,2d4+2,0,8,37,2,4,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Catoblepas,Monstrosity,U,Large,5,14,84,1d4,NO,5d6+4,8d8,2,,129,5,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters
+Cave Fisher,Monstrosity,U,Medium,3,16,58,1d4,NO,2d6+3,N/A,2,,130,3,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Centaur,Monstrosity,NG,Large,2,12,45,6d10+12,NO,1d10+4,2d6+4,2,6,38,2,0,NA,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Chain Devil,Fiend,LE,Medium,8,16,85,10d8+40,NO,2d6+4,N/A,2,8,72,8,6,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Champion,Humanoid,ANY,Medium,9,18,143,6d10 + 12,NO,2d6+5,1d8+2,2,,212,9,0,NA,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Chasme,Fiend,CE,Large,6,15,84,6d10 + 12,NO,11d6+2,N/A,0,5,57,6,3,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Chimera,Monstrosity,CE,Large,6,14,114,12d10+48,NO,2d6+4,1d12+4,0,7,39,6,8,Exotic,NO,NO,NO,NO,YES,YES,YES,NO,YES,NO,NO,Monster Manual
+Chitine,Monstrosity,CE,Small,1/2,14,18,12d10 + 48,NO,1d4+2,N/A,0,,131,0.5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Choldrith,Monstrosity,CE,Medium,3,15,66,12d10 + 48,YES,1d4+3,N/A,0,,132,3,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Chuul,Aberration,CE,Large,4,16,93,11d10+33,NO,2d6+4,N/A,0,6,40,4,0,,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Clay Golem,Construct,U,Large,9,14,133,14d10+56,NO,2d10+5,N/A,-1,,168,9,5,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Cloaker,Aberration,CN,Large,8,14,78,12d10+12,NO,2d6+3,1d8+3,2,6,41,8,3,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Cloud Giant,Giant,N,Huge,9,14,200,16d12+96,YES,3d8+8,4d10+8,0,,154,9,0,NA,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual
+Cloud Giant Smiling One,Giant,CN,Huge,11,15,262,12d10 + 48,YES,3d8+8,4d10+8,0,,146,11,0,NA,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Volo's Guide to Monsters
+Cockatrice,Monstrosity,U,Small,1/2,11,27,6d6+6,NO,1d4+1,N/A,1,3,42,0.5,3,Cavern,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Conjurer,Humanoid,ANY,Medium,6,12,40,0,YES,1d4+2,N/A,0,,212,6,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Constrictor Snake,Beast,U,large,1/4,12,13,2d10+2,NO,1d6+2,1d8+2,2,,320,0.25,0,NA,NO,NO,YES,YES,NO,NO,NO,YES,NO,YES,NO,Monster Manual
+Couatl,Celestial,LG,Medium,4,19,97,13d8+39,YES,1d6+5,2d6+3,5,8,43,4,0,NA,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,YES,Monster Manual
+Cow,Beast,U,Large,1/4,10,15,0,NO,1d6+4,N/A,0,,207,0.25,0,NA,NO,NO,NO,NO,YES,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters
+Crocodile,Beast,U,Large,1/2,12,19,3d10+3,NO,1d10+2,N/A,0,,320,0.5,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,YES,Monster Manual
+Cult Fanatic,Humanoid,NOT GOOD,Medium,2,13,33,6d8+6,YES,1d4+2,N/A,2,,345,2,5,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Cultist,Humanoid,NOT GOOD,Medium,1/8,12,9,2d8,NO,1d6+1,N/A,1,,345,0.13,3,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Cyclops,Giant,CN,Huge,6,14,138,12d12 + 60,NO,3d8+6,4d10+6,0,9,45,6,0,NA,NO,YES,YES,NO,YES,YES,YES,NO,YES,NO,NO,Monster Manual
+Dao,Elemental,NE,Large,11,18,187,12d12 + 60,YES,2d8+6,4d6+6,0,,143,11,8,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Darkling,Fey,CN,Small,1/2,14,13,12d12 + 60,NO,1d4+3,N/A,0,,134,0.5,0,NA,NO,NO,NO,YES,NO,NO,NO,YES,YES,NO,YES,Volo's Guide to Monsters
+Darkmantle,Monstrosity,U,Small,1/2,11,22,5d6+5,NO,1d6+3,N/A,1,5,46,0.5,8,Magic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Darling Elder,Fey,CN,Medium,2,15,27,12d12 + 60,NO,1d6+3,N/A,0,,,2,0,NA,NO,NO,NO,YES,NO,NO,NO,YES,YES,NO,YES,Volo's Guide to Monsters
+Death Dog,Monstrosity,NE,Medium,1,12,39,6d8+12,NO,1d6+2,N/A,2,,321,1,3,Basic,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Death Kiss,Aberration,NE,Large,10,16,161,6d8 + 12,NO,3d6+4,4d10,2,,124,10,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Death Knight,Undead,CE,Medium,17,20,180,19d8 + 95,YES,1d10+4d8+5,N/A,0,11,47,17,3,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Death Slaad,Aberration,CE,Medium,10,18,170,6d8 + 12,YES,1d8+2d6+5,1d10+2d6+5,0,,278,10,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Death Tyrant,Undead,LE,Large,14,19,187,25d10 + 50,NO,4d6,N/A,0,5,29,14,7,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Deep Scion,Humanoid,NE,Medium,3,11,67,6d8 + 12,NO,1d8+4,1d4+4,2,,135,3,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Volo's Guide to Monsters
+Deinonychus,Beast,U,Medium,1,13,26,1d8,NO,1d8+2,1d8+2,3,,139,1,0,NA,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Demilich,Undead,NE,Tiny,18,20,80,32d4,NO,6d6,N/A,0,0,48,18,1,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Deva,Celestial,LG,Medium,10,17,136,16d8+64,YES,4d8+1d6+4,N/A,4,8,16,10,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Devourer,Fiend,CE,Large,13,16,178,1d8,NO,8d6+5,8d10,3,,138,13,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Dimetrodon,Beast,U,Medium,1/4,12,19,1d8,NO,2d6+2,N/A,3,,139,0.25,0,NA,NO,YES,NO,NO,NO,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters
+Dire Wolf,Beast,U,Large,1,14,37,5d10+10,NO,2d6+3,N/A,2,,321,1,3,Basic,NO,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,Monster Manual
+Displacer Beast,Monstrosity,LE,Large,3,13,85,10d10 + 30,NO,2d6+4,N/A,0,6,81,3,5,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Diviner,Humanoid,ANY,Medium,8,12,67,5d10 + 10,YES,1d6-1,N/A,2,,213,8,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Djinni,Elemental,CG,Large,11,17,161,14d10+84,YES,2d6+5,N/A,2,,144,11,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Dolphin,Beast,U,Medium,1/8,12,11,5d10 + 10,NO,1d6+2,N/A,2,,208,0.13,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Volo's Guide to Monsters
+Doppelganger,Monstrosity,N,Medium,3,14,52,8d8+16,NO,1d6+4,N/A,4,6,82,3,5,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual
+Dracolich,Undead,LE,VARIES,17,19,225,18d12 + 108,NO,3d10+7,2d6+7,0,13,84,17,9,Crypt,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Draegloth,Fiend,U,Large,7,15,123,8d8 + 16,YES,2d10+5,2d10+5,4,,141,7,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Draft Horse,Beast,U,Large,1/4,10,19,3d10+3,NO,2d4+4,N/A,0,,321,0.25,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Dragon Turtle,Dragon,N,Gargantuan,17,20,341,22d20+110,NO,3d12+7,2d8+7,0,13,119,17,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Dretch,Fiend,CE,Small,1/4,11,18,4d6+4,NO,1d6,2d4,0,2,57,0.25,5,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Drider,Monstrosity,CE,Large,6,19,123,13d10+52,YES,2d8+1d4,1d10+3,3,,120,6,5,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Drow,Humanoid,NE,Medium,1/4,15,13,3d8,NO,1d6+2,1d6+2,0,,128,0.25,4,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Drow Elite Warrior,Humanoid,NE,Medium,5,18,71,0,NO,4d6+4,1d6+4,0,,128,5,6,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Drow Mage,Humanoid,NE,Medium,7,12,45,0,YES,1d8+1d6-1,N/A,0,,129,7,6,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Drow Priestess of Lolth,Humanoid,NE,Medium,8,16,71,0,NO,6d6+2,N/A,0,,129,8,6,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Druid,Humanoid,ANY,Medium,2,11,27,5d8+5,YES,1d8,N/A,1,,346,2,5,Basic,YES,YES,YES,YES,YES,YES,YES,YES,YES,NO,NO,Monster Manual
+Dryad,Fey,N,Medium,1,11,22,5d8,YES,1d8+4,N/A,1,,121,1,5,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Duergar,Humanoid,LE,Medium,1,16,26,4d8+8,NO,1d8+2,1d6+2,0,,122,1,7,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Duodrone,Construct,LN,Medium,1/4,15,11,0,NO,1d4,1d6+1,0,,225,0.25,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Dust Mephit,Elemental,NE,Small,1/2,12,17,5d6,NO,1d4+2,N/A,2,,215,0.5,8,Exotic,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Earth Elemental,Elemental,N,Large,5,17,126,12d10+60,NO,2d8+5,N/A,-1,,124,5,1,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Efreeti,Elemental,LE,Large,11,17,200,16d10+112,YES,2d6+6,5d6,1,,145,11,8,Exotic,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Elder Brain,Aberration,LE,Large,14,10,210,12d10 + 60,YES,4d8+2,5d10+5,-1,,174,14,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Elephant,Beast,U,Huge,4,12,76,8d12+24,NO,3d8+5,3d10+5,-1,,322,4,0,NA,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Elk,Beast,U,Large,1/4,10,13,2d10+2,NO,1d6+3,2d4+3,0,,322,0.25,0,NA,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Empyrean,Celestial,CG OR NE,Huge,23,22,313,0,YES,6d6+10,7d6,0,,130,23,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Enchanter,Humanoid,ANY,Medium,5,12,40,0,YES,1d6-1,N/A,0,,213,5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Erinyes,Fiend,LE,Medium,12,18,153,18d8+72,NO,3d8+1d10+4,4d8+3,3,8,73,12,6,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Ettercap,Monstrosity,NE,Medium,2,13,44,8d8+8,NO,2d8+2,2d4+2,2,,131,2,2,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Ettin,Giant,CE,large,4,12,85,10d10+30,NO,2d8+5,2d8+5,-1,,132,4,1,Cavern,NO,NO,NO,NO,NO,YES,YES,NO,YES,NO,NO,Monster Manual
+Evoker,Humanoid,ANY,Medium,9,12,66,0,YES,1d6-1,N/A,0,,214,9,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Faerie Dragon,Dragon,CG,Tiny,1,15,14,0,YES,1,N/A,0,,133,1,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Fire Elemental,Elemental,N,large,5,13,102,12d10+36,NO,2d6+3,N/A,3,,125,5,1,Basic,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Fire Giant,Giant,LE,Huge,9,18,162,13d12+78,NO,6d6+7,4d10+7,-1,,154,9,0,NA,NO,NO,NO,NO,NO,NO,YES,NO,YES,NO,NO,Monster Manual
+Fire Giant Dreadnought,Giant,LE,Huge,14,21,187,13d12 + 78,NO,4d6+8,4d10+8,-1,,147,14,0,NA,NO,NO,NO,NO,NO,NO,YES,NO,YES,NO,NO,Volo's Guide to Monsters
+Fire Snake,Elemental,NE,Medium,1,14,22,13d12 + 78,NO,1d6+1d4+1,1d6+1d4+1,0,,265,1,4,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Firenewt Warlock of Imix,Humanoid,NE,Medium,1,10,33,13d12 + 78,YES,1d8+1,N/A,-1,,143,1,0,NA,NO,NO,NO,NO,NO,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters
+Firenewt Warrior,Humanoid,NE,Medium,1/2,16,22,13d12 + 78,NO,1d6+1,2d8,-1,,142,0.5,0,NA,NO,NO,YES,NO,NO,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters
+Flail Snail,Elemental,U,Large,3,16,52,13d12 + 78,NO,1d6+3,N/A,-1,,144,3,0,NA,NO,NO,NO,YES,NO,NO,NO,YES,YES,NO,NO,Volo's Guide to Monsters
+Flameskull,Undead,NE,Tiny,4,13,40,9d4 + 18,YES,3d6,N/A,0,,134,4,6,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Flesh Golem,Construct,N,Medium,5,9,93,11d8+44,NO,2d8+4,N/A,-1,,169,5,4,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Flind,Humanoid,CE,Medium,9,16,127,11d8 + 44,NO,1d10+5,1d10+5,-1,,153,9,0,NA,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Flumph,Aberration,LG,Small,1/8,12,7,2d6,NO,2d4+2,N/A,0,4,135,0.13,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Flying Snake,Beast,U,Tiny,1/8,14,5,2d4,NO,3d4+1,N/A,4,,322,0.13,4,Basic,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,YES,Monster Manual
+Flying Sword,Construct,U,Small,1/4,17,17,5d6,NO,1d8+1,N/A,2,3,20,0.25,7,Magic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Fomorian,Giant,CE,Huge,8,14,149,0,NO,3d8+6,6d8,0,,136,8,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Froghemoth,Monstrosity,U,Huge,10,14,184,1d4 - 1,NO,3d8+6,3d10+6,1,,145,10,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,YES,NO,NO,Volo's Guide to Monsters
+Frost Giant,Giant,NE,Huge,8,15,138,12d12+60,NO,3d12+6,4d10+6,-1,,155,8,0,NA,YES,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual
+Frost Giant Everlasting One,Giant,CE,Huge,12,15,189,12d12 + 60,NO,3d12+7,4d10+7,-1,,148,12,0,NA,YES,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Galeb Duhr,Elemental,N,Medium,6,16,85,12d12 + 60,NO,2d6+5,N/A,0,,139,6,8,Cavern,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual
+Gargoyle,Elemental,CE,Medium,2,15,52,7d8+21,NO,1d6+2,1d6+2,0,4,140,2,2,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual
+Gas Spore,Plant,U,Large,1/2,5,1,1d10 - 4,NO,1,N/A,-5,0,138,0.5,6,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Gauth,Aberration,LE,Medium,6,15,67,7d8 + 21,NO,2d8,N/A,0,,125,6,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Gazer,Aberration,NE,Tiny,1/2,13,13,7d8 + 21,NO,1,N/A,0,,126,0.5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Gelatinous Cube,Ooze,U,Large,2,6,84,8d10+40,NO,3d6,N/A,-4,,242,2,2,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Ghast,Undead,CE,Medium,2,13,36,8d8,NO,2d8+3,2d6+3,3,3,148,2,1,Crypt,NO,NO,NO,NO,NO,NO,NO,YES,YES,NO,YES,Monster Manual
+Ghost,Undead,ANY,Medium,4,11,45,10d8,NO,4d6+3,N/A,1,5,147,4,3,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual
+Ghoul,Undead,CE,Medium,1,12,22,5d8,NO,2d6+2,2d4+2,2,2,148,1,1,Crypt,NO,NO,NO,NO,NO,NO,NO,YES,YES,NO,YES,Monster Manual
+Giant Ape,Beast,U,Huge,7,12,157,15d12+60,NO,3d10+6,7d6+6,2,,323,7,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Giant Badger,Beast,U,Medium,1/4,10,13,2d8+4,NO,1d6+1,2d4+1,0,,323,0.25,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Giant Bat,Beast,U,Large,1/4,13,22,4d10,NO,1d6+2,N/A,3,,323,0.25,4,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Giant Boar,Beast,U,Large,2,12,42,5d10+5,NO,10d6+3,N/A,0,,323,2,3,Cavern,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Giant Centipede,Beast,U,small,1/4,13,4,1d6+1,NO,1d4+2,N/A,2,,323,0.25,2,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual
+Giant Constrictor Snake,Beast,U,Huge,2,12,60,8d12+8,NO,2d6+4,2d8+4,2,,324,2,0,NA,NO,NO,YES,YES,NO,NO,NO,YES,YES,YES,NO,Monster Manual
+Giant Crab,Beast,U,Medium,1/8,15,13,3d8,NO,1d6+1,N/A,2,,324,0.13,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Giant Crocodile,Beast,U,Huge,5,14,85,9d12+27,NO,3d10+5,2d8+5,-1,,324,5,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Giant Eagle,Beast,U,Large,1,13,26,4d10+4,NO,1d6+3,2d6+3,3,,324,1,0,NA,NO,YES,NO,NO,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Giant Elk,Beast,U,Huge,2,14,42,5d12+10,NO,2d6+4,4d8+4,3,,325,2,0,NA,NO,NO,NO,YES,YES,YES,YES,NO,NO,NO,NO,Monster Manual
+Giant Frog,Beast,U,Medium,1/4,11,18,4d8,NO,1d6+1,N/A,1,,325,0.25,0,NA,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Giant Goat,Beast,U,Large,1/2,11,19,3d10+3,NO,2d4+3,N/A,0,,326,0.5,0,NA,NO,NO,NO,NO,YES,NO,YES,NO,NO,NO,NO,Monster Manual
+Giant Hyena,Beast,U,Large,1,12,45,6d10+12,NO,2d6+3,N/A,2,,326,1,0,NA,NO,NO,YES,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Giant Lizard,Beast,U,Large,1/4,12,19,3d10+3,NO,1d8+2,N/A,1,,326,0.25,0,NA,NO,YES,YES,YES,NO,NO,NO,YES,YES,NO,NO,Monster Manual
+Giant Octopus,Beast,U,Large,1,11,52,8d10+8,NO,2d6+3,N/A,1,,326,1,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Giant Owl,Beast,U,Large,1/4,12,19,3d10+3,NO,2d6+1,N/A,2,,327,0.25,0,NA,YES,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,Monster Manual
+Giant Poisonous Snake,Beast,U,Medium,1/4,14,11,2d8+2,NO,1d4+4,N/A,4,,327,0.25,2,Basic,NO,NO,YES,YES,YES,NO,NO,YES,YES,NO,YES,Monster Manual
+Giant Rat,Beast,U,Small,1/8,12,7,2d6,NO,1d4+2,N/A,2,,327,0.13,1,Basic,NO,NO,NO,YES,NO,NO,NO,YES,YES,NO,YES,Monster Manual
+Giant Scorpion,Beast,U,Large,3,15,52,7d10+14,NO,1d8+2,1d10+2,1,,327,3,3,Cavern,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Giant Sea Horse,Beast,U,Large,1/2,13,16,3d10,NO,1d6+1,N/A,2,,328,0.5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Giant Shark,Beast,U,Huge,5,13,126,11d12+55,NO,3d10+6,N/A,0,,328,5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Giant Spider,Beast,U,Large,1,14,26,4d10+4,NO,1d8+3,N/A,3,,328,1,2,Basic,NO,NO,YES,YES,NO,NO,NO,YES,YES,NO,YES,Monster Manual
+Giant Strider,Monstrosity,NE,Large,1,14,22,4d10 + 4,NO,1d8+4,4d6,3,,143,1,0,NA,NO,NO,NO,NO,NO,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters
+Giant Toad,Beast,U,Large,1,11,39,6d10+6,NO,2d10+2,N/A,1,,329,1,0,NA,NO,YES,NO,YES,NO,NO,NO,YES,YES,NO,NO,Monster Manual
+Giant Vulture,Beast,NE,Large,1,10,22,3d10+6,NO,2d4+4,2d6+2,0,,329,1,0,NA,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Giant Wasp,Beast,U,Medium,1/2,12,13,3d8,NO,1d6+2,N/A,2,,329,0.5,3,Cavern,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,YES,Monster Manual
+Giant Weasel,Beast,U,Medium,1/8,13,9,2d8,NO,1d4+3,N/A,3,,329,0.13,6,Cavern,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Giant Wolf Spider,Beast,U,Medium,1/4,13,11,2d8+2,NO,1d6+1,N/A,3,,330,0.25,3,Basic,NO,YES,YES,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Gibbering Mouther,Aberration,N,Medium,2,9,67,9d8+27,NO,5d6,N/A,-1,,157,2,6,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Girallon,Monstrosity,U,Large,4,13,59,0,NO,1d6+4,1d6+4,0,,152,4,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Githyanki Knight,Humanoid,LE,Medium,8,18,91,0,YES,5d6+6,N/A,0,,160,8,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Githyanki Warrior,Humanoid,LE,Medium,3,17,46,0,YES,4d6+2,N/A,0,,160,3,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Githzerai Monk,Humanoid,LN,Medium,2,14,38,0,YES,3d8+2,N/A,0,,161,2,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Githzerai Zerth,Humanoid,LN,Medium,6,17,84,0,YES,2d6+3d8+4,N/A,0,,161,6,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Glabrezu,Fiend,CE,Large,9,17,157,15d10+75,YES,2d10+5,2d4+2,2,9,58,9,3,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Gladiator,Humanoid,ANY,Medium,5,16,112,15d8+45,NO,2d8+4,2d4+4,2,,346,5,5,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Gnoll,Humanoid,CE,Medium,1/2,15,22,5d8,NO,1d4+2,1d8+2,1,4,163,0.5,1,Basic,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Gnoll Fang of Yeenoghu,Humanoid,CE,Medium,4,14,65,10d8+20,NO,1d6+3,1d8+3,0,5,163,4,6,Basic,NO,NO,YES,NO,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Gnoll Flesh Gnawer,Humanoid,CE,Medium,1,14,22,0,NO,1d4+2,1d6+2,0,,154,1,0,NA,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Gnoll Hunter,Humanoid,CE,Medium,1/2,13,22,0,NO,1d4+2,1d8+2,0,,154,0.5,0,NA,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Gnoll Pack Lord,Humanoid,CE,Medium,2,15,49,9d8+9,NO,1d4+3,1d10+3,0,5,163,2,4,Basic,NO,NO,YES,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Gnoll Witherling,Undead,CE,Medium,1/4,12,11,0,NO,1d4+2,1d4+2,0,,155,0.25,0,NA,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Gnome Deep Svirfneblin,Humanoid,NG,Small,1/2,15,16,3d6+6,YES,1d8+3,N/A,2,,164,0.5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Goblin,Humanoid,NE,Small,1/4,15,7,2d6,NO,1d6+2,1d6+2,2,4,166,0.25,1,Basic,NO,NO,NO,YES,YES,YES,NO,NO,YES,NO,NO,Monster Manual
+Goblin Boss,Humanoid,NE,Small,1,17,21,6d6,NO,1d6+2,1d6+2,0,4,166,1,1,Basic,NO,NO,NO,YES,YES,YES,NO,NO,YES,NO,NO,Monster Manual
+Gorgon,Construct,U,Large,5,19,114,12d10+48,NO,2d12+5,2d10+5,0,,171,5,8,Dungeon,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Goristro,Fiend,CE,Huge,17,19,310,23d12 + 161,NO,3d8+7,3d10+7,0,13,59,17,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Gray Ooze,Ooze,U,Medium,1/2,8,22,3d8+9,NO,3d6+1,N/A,-2,,243,0.5,3,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Gray Slaad,Aberration,CN,Medium,9,18,127,0,YES,1d6+3,1d10+3,0,,277,9,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Green Hag,Fey,NE,Medium,3,17,82,11d8+33,YES,2d8+4,N/A,1,,177,3,0,,NO,NO,NO,YES,NO,YES,NO,YES,NO,NO,NO,Monster Manual
+Green Slaad,Aberration,CN,Large,8,16,127,0,YES,2d6+4,1d6+4,0,,277,8,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Grell,Aberration,NE,Medium,3,12,55,0,NO,1d10+2,2d4+2,0,,172,3,8,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Grick,Monstrosity,N,Medium,2,14,27,6d8,NO,2d6+2,1d6+2,2,,173,2,7,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Grick Alpha,Monstrosity,N,Medium,7,18,75,6d8,NO,2d6+4,4d8+4,0,,173,7,9,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Griffon,Monstrosity,U,Large,2,12,59,7d10+21,NO,1d8+4,2d6+4,2,,174,2,4,Cavern,YES,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,Monster Manual
+Grimlock,Humanoid,NE,Medium,1/4,11,11,2d8+2,NO,2d4+3,N/A,1,,175,0.25,6,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Grung,Humanoid,LE,Small,1/4,12,11,7d10 + 21,NO,1d4+2,N/A,2,,156,0.25,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Grung Elite Warrior,Humanoid,LE,Small,2,13,49,7d10 + 21,NO,1d4+3,1d6+3,2,,157,2,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Grung Wildling,Humanoid,LE,Small,1,13,27,7d10 + 21,YES,1d4+3,1d6+3,2,,157,1,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Guard,Humanoid,ANY,Medium,1/8,16,11,2d8+2,NO,1d6+1,N/A,1,,347,0.13,3,Basic,NO,YES,YES,YES,YES,YES,YES,NO,NO,NO,YES,Monster Manual
+Guard Drake,Dragon,U,Medium,2,14,52,7d10 + 21,NO,1d8+3,1d6+3,2,,158,2,0,NA,YES,NO,YES,YES,NO,NO,YES,YES,YES,NO,YES,Volo's Guide to Monsters
+Guardian Naga,Monstrosity,LG,Large,10,18,127,15d10+45,YES,1d8+4,N/A,4,,234,10,0,NA,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Gynosphinx,Monstrosity,LN,Large,11,17,136,16d10+48,YES,2d8+4,N/A,2,,282,11,5,Magic,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Hadrosaurus,Beast,U,Large,1/4,11,19,7d10 + 21,NO,1d10+2,N/A,2,,140,0.25,0,NA,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters
+Half Ogre,Giant,C,Large,1,12,30,4d10 + 8,NO,2d10+3,2d6+3,0,5,238,1,2,Basic,YES,NO,YES,YES,NO,YES,YES,NO,YES,NO,YES,Monster Manual
+Half-Red Dragon Veteran,Humanoid,ANY,Medium,5,18,65,10d8 + 20,NO,1d10+3,1d6+3,0,3,180,5,8,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Harpy,Monstrosity,CE,Medium,1,11,38,7d8+7,NO,2d4+1,1d4+1,1,,181,1,1,Basic,NO,YES,NO,YES,NO,YES,YES,NO,NO,NO,NO,Monster Manual
+Hell Hound,Fiend,LE,Medium,3,15,45,7d8+14,NO,1d8+2d6+3,6d6,1,,182,3,1,Exotic,NO,NO,NO,NO,NO,NO,YES,NO,YES,NO,NO,Monster Manual
+Helmed Horror,Construct,N,Medium,4,20,60,7d8 + 14,NO,1d10+4,N/A,0,,183,4,5,Magic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Hezrou,Fiend,CE,Large,8,16,136,13d10+65,NO,2d10+4,2d6+4,3,7,60,8,6,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Hill Giant,Giant,CE,Huge,5,13,105,10d12+40,NO,3d8+5,3d10+5,-1,,155,5,0,NA,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,Monster Manual
+Hippogriff,Monstrosity,U,Large,1,11,19,3d10+3,NO,1d10+3,2d6+3,1,,184,1,5,Magic,NO,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,Monster Manual
+Hobgoblin,Humanoid,LE,Medium,1/2,18,11,2d8+2,NO,1d10+1,1d8+1,1,3,186,0.5,1,Basic,NO,NO,YES,YES,YES,NO,NO,NO,YES,NO,NO,Monster Manual
+Hobgoblin Captain,Humanoid,LE,Medium,3,17,39,6d8+12,NO,2d6+2,1d6+2,0,4,186,3,1,Basic,NO,NO,YES,YES,YES,YES,NO,NO,YES,NO,NO,Monster Manual
+Hobgoblin Devastator,Humanoid,LE,Medium,4,13,45,0,YES,1d6+1,N/A,0,,161,4,0,NA,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Hobgoblin Iron Shadow,Humanoid,LE,Medium,2,15,32,0,YES,1d4+3,1d4+3,0,,162,2,0,NA,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Hobgoblin Warlord,Humanoid,LE,Medium,6,20,97,13d8+39,NO,1d10+3,1d4+3,0,9,187,6,3,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Hook Horror,Monstrosity,N,Large,3,15,75,0,NO,2d6+4,N/A,0,,189,3,8,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Horned Devil,Fiend,LE,Large,11,18,178,17d10+85,NO,2d8+6,1d8+6,3,10,74,11,1,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Hunter Shark,Beast,U,Large,2,12,45,6d10+12,NO,2d8+4,N/A,1,,330,2,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Hydra,Monstrosity,U,Huge,8,15,172,15d12+75,NO,1d10+5,N/A,1,,190,8,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Ice Devil,Fiend,LE,Large,14,18,180,19d10+76,NO,5d6+5,2d4+3d6+5,2,10,75,14,6,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Ice Mephit,Elemental,NE,Small,1/2,11,21,6d6,YES,2d4+1,2d4,1,,215,0.5,9,Exotic,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Illusionist,Humanoid,ANY,Medium,3,12,38,1d8 + 1,NO,1d6-1,N/A,1,,214,3,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Imp,Fiend,LE,Tiny,1,13,10,3d4+3,NO,1d4+3,N/A,3,5,76,1,2,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Intellect Devourer,Aberration,LE,Tiny,2,12,21,1d8 + 1,NO,2d4+2,N/A,0,,191,2,0,,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Invisible Stalker,Elemental,N,Medium,6,14,104,16d8+32,NO,2d6+3,N/A,4,,192,6,8,Magic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Iron Golem,Construct,U,Large,16,20,210,20d10+100,NO,3d8+7,3d10+7,-1,,170,16,1,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Jackalwere,Humanoid,CE,Medium,1/2,12,18,1d6,NO,1d4+2,1d6+2,0,,193,0.5,4,Magic,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Kenku,Humanoid,CN,Medium,1/4,13,13,1d6,NO,1d6+3,1d6+3,0,,194,0.25,8,Basic,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Ki-Rin,Celestial,LG,Huge,12,20,152,12d12 + 12,YES,2d4+5,2d8+5,0,,163,12,0,NA,NO,YES,YES,NO,YES,NO,YES,NO,NO,NO,NO,Volo's Guide to Monsters
+Killer Whale,Beast,U,Huge,3,12,90,12d12+12,NO,5d6+4,N/A,0,,331,3,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Knight,Humanoid,ANY,Medium,3,18,52,8d8+16,NO,2d6+3,1d10,0,,347,3,3,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Kobold,Humanoid,LE,Small,1/8,12,5,2d6-2,NO,1d4+2,1d4+2,2,4,195,0.13,1,Basic,YES,YES,YES,YES,NO,YES,YES,YES,YES,NO,YES,Monster Manual
+Kobold Dragon Dragonshield,Humanoid,LE,Small,1,15,44,0,NO,1d6+1,N/A,0,,165,1,0,NA,NO,NO,NO,YES,NO,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters
+Kobold Inventor,Humanoid,LE,Small,1/4,12,13,0,NO,1d4+2,1d4+2,0,,166,0.25,0,NA,NO,NO,NO,YES,NO,YES,YES,NO,YES,NO,YES,Volo's Guide to Monsters
+Kobold Scale Sorcerer,Humanoid,LE,Small,1,15,27,0,YES,1d4+2,N/A,0,,167,1,0,NA,NO,NO,NO,YES,NO,YES,YES,NO,YES,NO,YES,Volo's Guide to Monsters
+Korred,Fey,CN,Small,7,17,102,0,YES,1d8+6,2d8+6,0,,168,7,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Kraken,Monstrosity,CE,Gargantuan,23,18,472,27d20+189,NO,3d8+10,3d6+10,0,17,197,23,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Kraken Priest,Humanoid,ANY EVIL,Medium,5,10,75,0,YES,5d10,N/A,0,,215,5,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Volo's Guide to Monsters
+Kuo-Toa,Humanoid,NE,Medium,1/4,13,18,0,NO,1d4+1,1d8+1,0,,199,0.25,6,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Kuo-Toa Archpriest,Humanoid,NE,Medium,6,13,97,0,YES,5d6+3,1d4+2,0,,200,6,8,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Kuo-Toa Whip,Humanoid,NE,Medium,1,11,65,0,YES,1d4+2,1d6+2,0,,200,1,6,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Lamia,Monstrosity,CE,Large,4,13,97,13d10+26,YES,2d10+3,1d4+3,1,,201,4,8,Dungeon,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Leucrotta,Monstrosity,CE,Large,3,14,67,0,NO,1d8+4,2d6+4,0,,169,3,0,NA,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Lich,Undead,E,Medium,21,17,135,18d8+54,YES,3d6,N/A,3,,202,21,1,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Lion,Beast,U,Large,1,12,26,4d10+4,NO,1d8+3,1d6+3,2,,331,1,2,Cavern,NO,NO,YES,NO,YES,YES,YES,NO,NO,NO,NO,Monster Manual
+Lizard King/Queen,Humanoid,CE,Medium,4,15,78,1d4,NO,1d6+3,1d4+3,0,,205,4,8,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Lizardfolk,Humanoid,N,Medium,1/2,15,22,4d8+4,NO,1d6+2,1d6+2,0,,204,0.5,2,Basic,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Lizardfolk Shaman,Humanoid,N,Medium,2,13,27,0,YES,1d6+2,1d4+2,0,,205,2,3,Basic,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Mage,Humanoid,ANY,Medium,6,12,40,9d8,YES,1d4+2,N/A,2,,347,6,3,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Magma Mephit,Elemental,NE,Small,1/2,11,22,5d6+5,YES,2d4+1,N/A,1,,216,0.5,9,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Magmin,Elemental,CN,Small,1/2,14,9,2d6+2,NO,2d6,N/A,2,,212,0.5,8,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Mammoth,Beast,U,Huge,6,13,126,11d12+55,NO,4d8+7,4d10+7,-1,,332,6,0,NA,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Manes,Fiend,CE,Small,1/8,9,9,2d6 + 2,NO,2d4,N/A,0,2,60,0.13,7,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Manticore,Monstrosity,LE,Large,3,14,68,8d10+24,NO,1d8+3,1d6+3,3,,213,3,3,Magic,YES,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,Monster Manual
+Marid,Elemental,CN,Large,11,17,229,8d10 + 24,YES,2d8+6,6d6,0,,146,11,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Marilith,Fiend,CE,Large,16,18,189,18d10+90,NO,2d8+4,2d10+4,5,9,61,16,4,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Martial Arts Adept,Humanoid,ANY,Medium,3,16,60,8d10 + 24,NO,1d8+3,1d4+3,3,,216,3,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Master Thief,Humanoid,ANY,Medium,5,16,84,8d10 + 24,NO,1d6+4,1d8+4,3,,216,5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Mastiff,Beast,U,Medium,1/8,12,5,1d8+1,NO,1d6+1,N/A,2,,332,0.13,3,Basic,NO,NO,NO,YES,NO,YES,NO,NO,NO,NO,YES,Monster Manual
+Maw Demon,Fiend,CE,Medium,1,13,33,0,NO,1d8+2,N/A,0,,137,1,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Medusa,Monstrosity,LE,Medium,6,15,127,17d8+51,NO,1d4+4d6+2,1d6+2,2,,214,6,1,Dungeon,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Meenlock,Fey,NE,Small,2,15,31,17d8 + 51,NO,2d4+2,N/A,2,,170,2,0,NA,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,YES,Volo's Guide to Monsters
+Merfolk,Humanoid,N,Medium,1/8,11,11,2d8+2,NO,1d8,N/A,1,,218,0.13,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Merrow,Monstrosity,CE,Large,2,13,45,6d10+12,NO,1d8+4,2d4+4,0,,219,2,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Mezzoloth,Fiend,NE,Medium,5,18,75,0,YES,2d4+4,1d6+4,0,,313,5,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Mimic,Monstrosity,N,Medium,2,12,58,9d8+18,NO,1d8+3,2d8+3,1,,220,2,2,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual
+Mind Flayer,Aberration,LE,Medium,7,15,71,0,YES,2d10+4,10d10,0,,222,7,4,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Mind Flayer Lich,Undead,ANY EVIL,Medium,22,17,135,0,YES,3d10+5,10d10,0,,172,22,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Mindwitness,Aberration,LE,Large,5,15,75,0,NO,4d6+2,4d8+2,0,,176,5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Minotaur,Monstrosity,CE,Large,3,14,76,9d10+27,NO,2d12+4,2d8+4,0,,223,3,3,Magic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Minotaur Skeleton,Undead,LE,Large,2,12,67,9d10+18,NO,2d12+4,2d8+4,0,,273,2,6,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Monodrone,Construct,LN,Medium,1/8,15,5,1d8 + 1,NO,1d4+1,1d6+1,0,3,224,0.13,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Morkoth,Aberration,CE,Medium,11,17,130,9d10 + 27,YES,2d6+2,3d8+2,0,,178,11,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Volo's Guide to Monsters
+Mouth of Grolantor,Giant,CE,Huge,6,14,105,9d10 + 27,NO,3d6+5,3d8+5,0,,149,6,0,NA,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Mud Mephit,Elemental,NE,Small,1/4,11,27,6d6 + 6,NO,1d6+1,N/A,0,3,216,0.25,3,Exotic,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Mule,Beast,U,Medium,1/8,10,11,2d8+2,NO,1d4+2,N/A,0,,333,0.13,0,NA,NO,NO,YES,NO,NO,YES,NO,NO,NO,NO,YES,Monster Manual
+Mummy,Undead,LE,Medium,3,11,58,9d8+18,NO,5d6+3,N/A,-1,,228,3,1,Crypt,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Mummy Lord,Undead,LE,Medium,15,17,97,13d8+39,YES,9d6+4,N/A,0,,229,15,1,Crypt,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Myconid Adult,Plant,LN,Medium,1/2,12,22,9d8 + 18,NO,4d4,N/A,0,,232,0.5,8,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Myconid Sovereign,Plant,LN,Large,2,13,60,9d8 + 18,NO,6d4+1,N/A,0,,232,2,8,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Nalfeshnee,Fiend,LE,Large,13,18,184,16d10+96,NO,5d10+5,3d6+5,0,10,62,13,5,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Necromancer,Humanoid,ANY,Medium,9,12,66,9d8 + 18,YES,2d4,N/A,-1,,217,9,0,NA,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Needle Blight,Plant,NE,Medium,1/4,12,11,2d8 + 2,NO,2d4+1,2d6+1,0,3,32,0.25,7,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Neogi,Aberration,LE,Small,3,15,33,9d8 + 18,NO,1d6+3,2d4+3,-1,,180,3,0,NA,NO,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Neogi Hatchling,Aberration,LE,Tiny,1/8,11,7,9d8 + 18,NO,1d4+1,N/A,-1,,179,0.13,0,NA,NO,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Neogi Master,Aberration,LE,Medium,4,15,71,9d8 + 18,YES,1d6+3,2d4+3,-1,,180,4,0,NA,NO,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Neothelid,Aberration,CE,Gargantuan,13,16,325,9d8 + 18,YES,3d8+8,10d6,-1,,181,13,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Night Hag,Fiend,NE,Medium,5,17,112,15d8+45,YES,2d8+4,N/A,2,,178,5,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Nightmare,Fiend,NE,Large,3,13,68,8d10+24,NO,2d8+2d6+4,N/A,2,,235,3,6,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Nilbog,Humanoid,CE,Small,1,13,7,9d8 + 18,YES,1d6+2,1d6+2,-1,,182,1,0,NA,NO,NO,NO,YES,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Noble,Humanoid,ANY,Medium,1/8,15,9,2d8,NO,1d8+1,N/A,1,,348,0.13,5,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Nothic,Aberration,NE,Medium,2,15,45,6d8 + 18,NO,1d6+3,N/A,0,,236,2,8,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Nycaloth,Fiend,NE,Large,9,18,123,6d8 + 18,YES,2d6+5,2d12+5,0,,314,9,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Ochre Jelly,Ooze,U,Large,2,8,45,6d10+12,NO,3d6+2,N/A,-2,,243,2,3,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Ogre,Giant,CE,Large,2,11,59,7d10+21,NO,2d8+4,2d6+4,-1,,237,2,1,Basic,YES,YES,YES,YES,YES,NO,YES,YES,YES,NO,NO,Monster Manual
+Ogre Zombie,Undead,NE,Large,2,8,85,9d10+36,NO,2d8+6,N/A,-2,,316,2,4,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Oni,Giant,LE,Large,7,16,110,13d10+39,YES,1d8+4,2d10+4,0,,239,7,7,Basic,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Orc,Humanoid,CE,Medium,1/2,13,15,2d8+6,NO,1d12+3,1d6+3,1,5,246,0.5,1,Basic,YES,NO,NO,YES,YES,YES,YES,YES,YES,NO,NO,Monster Manual
+Orc Blade of Ilneval,Humanoid,CE,Medium,4,18,60,0,NO,2d8+3,1d6+3,0,,183,4,0,NA,NO,NO,NO,YES,YES,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters
+Orc Claw of Luthic,Humanoid,CE,Medium,2,14,45,0,YES,1d8+2,N/A,0,,183,2,0,NA,NO,NO,NO,NO,NO,NO,YES,NO,YES,NO,NO,Volo's Guide to Monsters
+Orc Eye of Gruumsh,Humanoid,CE,Medium,2,16,45,6d8 + 18,YES,2d8+3,N/A,0,5,247,2,5,Basic,YES,NO,NO,YES,YES,YES,YES,YES,YES,NO,NO,Monster Manual
+Orc Hand of Yurtrus,Humanoid,CE,Medium,2,12,30,0,YES,2d8,N/A,0,,184,2,0,NA,NO,NO,NO,YES,YES,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters
+Orc Nurtured One of Yurtrus,Humanoid,CE,Medium,1/2,9,30,0,NO,1d4+2,N/A,0,,184,0.5,0,NA,NO,NO,NO,YES,YES,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Orc Red Fang of Shargaas,Humanoid,CE,Medium,3,15,52,0,NO,3d6+3,3d4+3,0,,185,3,0,NA,NO,NO,NO,YES,NO,YES,YES,NO,YES,NO,YES,Volo's Guide to Monsters
+Orc War Chief,Humanoid,CE,Medium,4,16,93,11d8 + 44,NO,1d12+1d8+4,2d8+4,0,6,246,4,1,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Orog,Humanoid,CE,Medium,2,18,42,5d8 + 20,NO,1d12+4,1d6+4,0,6,247,2,7,Basic,YES,NO,NO,YES,YES,YES,YES,NO,YES,NO,NO,Monster Manual
+Otyugh,Aberration,N,Large,5,14,114,12d10+48,NO,2d8+3,2d8+3,0,,248,5,8,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Owlbear,Monstrosity,U,Large,3,13,59,7d10+21,NO,1d10+5,2d8+5,1,,249,3,1,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Ox (Cow),Beast,U,Large,1/4,10,15,7d10 + 21,NO,1d6+4,N/A,1,,207,0.25,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Panther,Beast,U,Medium,1/4,12,13,3d8,NO,1d6+2,1d4+2,2,,333,0.25,0,NA,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Pegasus,Celestial,CG,Large,2,12,59,7d10+21,NO,2d6+4,N/A,2,,250,2,0,NA,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Pentadrone,Construct,LN,Large,2,16,32,7d10 + 21,NO,1d6+2,N/A,0,,226,2,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Peryton,Monstrosity,CE,Medium,2,13,33,7d10 + 21,NO,1d8+3,2d4+3,0,,251,2,0,,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual
+Phase Spider,Monstrosity,U,Large,3,13,32,5d10+5,NO,1d10+2,N/A,2,,334,3,3,Basic,NO,NO,YES,YES,YES,YES,NO,NO,YES,NO,YES,Monster Manual
+Piercer,Monstrosity,U,Medium,1/2,15,22,5d10 + 5,NO,VARIES,N/A,0,,252,0.5,3,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Pit Fiend,Fiend,LE,Large,20,19,300,24d10+168,YES,4d6+8,2d8+8,2,14,77,20,1,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Pixie,Fey,NG,Tiny,1/4,15,1,1d4 - 1,YES,N/A,N/A,5,0,253,0.25,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Planetar,Celestial,LG,Large,16,19,200,16d10+112,YES,4d6+5d8+7,N/A,5,12,17,16,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Plesiosaurus,Beast,U,Large,2,13,68,8d10+24,NO,3d6+4,N/A,2,,80,2,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Poisonous Snake,Beast,U,Tiny,1/8,13,2,1d4,NO,1,N/A,0,,334,0.13,2,Basic,NO,YES,YES,YES,YES,YES,NO,YES,NO,NO,NO,Monster Manual
+Polar Bear,Beast,U,Large,2,12,42,5d10+15,NO,1d8+5,2d6+5,0,,334,2,0,NA,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Pony,Beast,U,Medium,1/8,10,11,2d8+2,NO,2d4+2,N/A,0,,335,0.13,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Priest,Humanoid,ANY,Medium,2,13,27,5d8+5,YES,1d6,N/A,0,,348,2,3,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Pseudodragon,Dragon,NG,Tiny,1/4,13,7,2d4+2,NO,1d4+2,1d4+2,0,,254,0.25,0,NA,NO,YES,YES,YES,NO,YES,YES,NO,NO,NO,YES,Monster Manual
+Pteranodon,Beast,U,Medium,1/4,13,13,3d8,NO,2d4+1,N/A,2,3,80,0.25,0,NA,NO,YES,NO,NO,YES,NO,YES,NO,NO,NO,NO,Monster Manual
+Purple Worm,Monstrosity,U,Gargantuan,15,18,247,15d20+90,NO,3d8+9,15d6+9,0,,255,15,0,NA,NO,NO,YES,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Quadrone,Construct,LN,Medium,1,16,22,0,NO,1d4+1,1d6+1,0,,226,1,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Quaggoth,Humanoid,CN,Medium,2,13,45,0,NO,1d6+3,N/A,0,,256,2,8,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Quaggoth Spore Servant,Plant,U,Medium,1,13,45,0,NO,1d6+3,N/A,0,,230,1,9,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Quasit,Fiend,CE,Tiny,1,13,7,3d4,NO,1d4+3,N/A,3,4,63,1,4,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Quetzalcoatlus,Beast,U,Huge,2,13,30,0,NO,3d6+2,N/A,0,,140,2,0,NA,NO,YES,NO,NO,NO,YES,YES,NO,NO,NO,NO,Volo's Guide to Monsters
+Quickling,Fey,CE,Tiny,1,16,10,0,NO,1d4+6,N/A,0,,187,1,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Rakshasa,Fiend,LE,Medium,13,16,110,13d8+52,YES,2d6+2,N/A,3,,257,13,5,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Red Slaad,Aberration,CN,Large,5,14,93,11d10 + 33,NO,2d4+3,1d8+3,1,6,276,5,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Redcap,Fey,CE,Small,3,13,45,1d4 - 1,NO,2d4+4,3d10+4,2,,188,3,0,NA,NO,NO,NO,YES,NO,YES,NO,YES,NO,NO,NO,Volo's Guide to Monsters
+Reef Shark,Beast,U,Medium,1/2,12,22,4d8+4,NO,1d8+2,N/A,0,,336,0.5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Remorhaz,Monstrosity,U,Huge,11,17,195,17d12+85,NO,6d10+3d6+7,N/A,0,,258,11,0,NA,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Revenant,Undead,N,Medium,5,13,136,0,NO,2d6+4,N/A,0,,259,5,5,Crypt,YES,NO,YES,YES,NO,YES,NO,YES,NO,NO,YES,Monster Manual
+Rhinoceros,Beast,U,Large,2,11,45,6d10+12,NO,2d8+5,N/A,-1,,336,2,0,NA,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Riding Horse,Beast,U,Large,1/4,10,13,2d10+2,NO,2d4+3,N/A,0,,336,0.25,0,NA,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,YES,Monster Manual
+Roc,Monstrosity,U,Gargantuan,11,15,248,16d20+80,NO,4d8+9,4d6+9,0,,260,11,0,NA,YES,YES,YES,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual
+Roper,Monstrosity,NE,Large,5,20,93,11d10+33,NO,4d8+4,N/A,0,,261,5,6,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Rothe (Cow),Beast,U,Large,1/4,10,15,0,NO,1d6+4,N/A,0,,207,0.25,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Rug of Smothering,Construct,U,Large,2,12,33,6d10,NO,2d6+3,N/A,2,5,20,2,8,Magic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Rust Monster,Monstrosity,U,Medium,1/2,14,27,5d8+5,NO,1d8+1,N/A,0,,262,0.5,6,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Saber-Toothed Tiger,Beast,U,Large,2,12,52,7d10+14,NO,1d10+5,2d6+5,2,,336,2,0,NA,YES,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,Monster Manual
+Sahuagin,Humanoid,LE,Medium,1/2,12,22,4d8+4,NO,1d4+1,1d4+1,2,,263,0.5,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Sahuagin Baron,Humanoid,LE,Large,5,16,76,7d10 + 14,NO,2d4+4,2d6+4,2,,264,5,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Sahuagin Priestess,Humanoid,LE,Medium,2,12,33,7d10 + 14,YES,1d4+1,1d4+1,2,,264,2,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Salamander,Elemental,NE,Large,5,15,90,12d10+24,NO,2d8+1d6+4,4d6+4,2,,266,5,4,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Satyr,Fey,CN,Medium,1/2,14,31,7d8,NO,2d4+1,1d6+3,0,,267,0.5,3,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Scarecrow,Construct,CE,Medium,1,11,36,0,NO,2d4+1,N/A,0,,268,1,6,Cavern,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Scout,Humanoid,ANY,Medium,1/2,13,16,3d8+3,NO,1d6+2,1d8+2,0,,349,0.5,5,Basic,YES,YES,YES,YES,YES,NO,YES,YES,YES,NO,NO,Monster Manual
+Sea Hag,Fey,CE,Medium,2,14,52,7d8+21,NO,2d6+3,N/A,0,,179,2,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Sea Spawn,Humanoid,NE,Medium,1,11,32,1d4 - 1,NO,1d4+2,N/A,1,,189,1,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Volo's Guide to Monsters
+Shadow,Undead,CE,Medium,1/2,12,16,3d8+3,NO,2d6+2,N/A,1,,269,0.5,2,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual
+Shadow Demon,Fiend,CE,Medium,4,13,66,12d8 + 12,NO,2d6+3,N/A,3,5,64,4,4,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Shadow Dragon,Dragon,CE,VARIES,13,18,178,17d10 + 85,NO,2d10+1d6+6,2d6+6,0,10,85,13,9,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Shadow Mastiff,Monstrosity,NE,Medium,2,12,33,1d4 - 1,NO,2d6+3,N/A,1,,190,2,0,NA,NO,NO,NO,YES,NO,YES,NO,YES,NO,NO,NO,Volo's Guide to Monsters
+Shambling Mound,Plant,U,Large,5,15,136,16d10+48,NO,2d8+4,N/A,1,,270,5,5,Cavern,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Shield Guardian,Construct,U,Large,7,17,142,15d10+60,NO,2d6+4,N/A,1,,271,7,3,Magic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Shoosuva,Fiend,CE,Large,8,14,110,1d4 - 1,NO,4d10+4,2d8+4,1,,137,8,0,NA,YES,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Skeleton,Undead,LE,Medium,1/4,13,13,2d8+4,NO,1d6+2,1d6+2,2,4,272,0.25,1,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Slaad Tadpole,Aberration,CN,Tiny,1/8,12,10,0,NO,1d4+2,N/A,0,,276,0.13,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Slithering Tracker,Ooze,CE,Medium,3,14,32,0,NO,1d10+3,3d10,0,,191,3,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters
+Smoke Mephit,Elemental,NE,Small,1/4,12,22,0,YES,1d4+2,N/A,0,,217,0.25,6,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Solar,Celestial,LG,Large,21,21,243,18d10+144,YES,4d6+6d8+8,8d8+6,6,15,18,21,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Spawn of Kyuss,Undead,CE,Medium,5,10,76,0,NO,3d6+3,N/A,0,,192,5,0,NA,NO,NO,YES,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Spectator,Aberration,LN,Medium,3,14,39,6d8 + 12,NO,1d6-1,N/A,2,1,30,3,7,Magic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Specter,Undead,CE,Medium,1,12,22,5d8,NO,1d6,N/A,2,,279,1,2,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual
+Spined Devil,Fiend,LE,Small,2,15,110,5d6+5,NO,1d6+3,2d6+3,2,2,78,2,5,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Spirit Naga,Monstrosity,CE,Large,8,15,75,10d10+20,YES,1d6+4,N/A,2,,234,8,4,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Sprite,Fey,NG,Tiny,1/4,15,2,1d4,NO,1,N/A,2,,283,0.25,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Spy,Humanoid,ANY,Medium,1,12,27,6d8,NO,1d6+2,1d6+2,2,,349,1,5,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Steam Mephit,Elemental,NE,Small,1/4,10,21,6d6,YES,2d4,N/A,2,,217,0.25,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Stegosaurus,Beast,U,Huge,4,13,76,1d4 - 1,NO,6d6+5,N/A,2,,140,4,0,NA,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Stench kow (Cow),Beast,U,Large,1/4,10,15,1d4 - 1,NO,1d6+4,N/A,2,,207,0.25,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Stirge,Beast,U,Tiny,1/8,14,2,1d4,NO,1d4+3,N/A,0,,284,0.13,1,Basic,NO,YES,YES,NO,YES,YES,YES,YES,YES,NO,YES,Monster Manual
+Stone Giant,Giant,N,Huge,7,17,126,11d12+55,NO,3d8+6,4d10+6,0,,156,7,0,NA,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual
+Stone Giant Dreamwalker,Giant,CN,Huge,10,18,161,0,NO,3d8+6,4d10+6,0,,150,10,0,NA,NO,YES,NO,NO,NO,YES,YES,NO,NO,NO,NO,Volo's Guide to Monsters
+Stone Golem,Construct,U,Large,10,17,178,17d10+85,NO,3d8+6,N/A,-1,,170,10,1,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Storm Giant,Giant,CG,Huge,13,16,230,20d12+100,YES,6d6+9,4d12+9,-1,,156,13,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Storm Giant Quintessent,Giant,CG,Huge,16,12,230,17d10 + 85,NO,9d6+9,3d6+9,-1,,151,16,0,NA,YES,YES,YES,NO,NO,NO,YES,NO,NO,YES,NO,Volo's Guide to Monsters
+Succubus/Incubus,Fiend,NE,Medium,4,15,66,17d10 + 85,NO,1d6+3,N/A,-1,,285,4,5,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Swarm of Bats,Beast,U,Medium,1/4,12,22,5d8,NO,VARIES,N/A,0,,337,0.25,0,NA,NO,NO,NO,NO,NO,YES,YES,NO,YES,NO,YES,Monster Manual
+Swarm of Cranium Rats,Beast,LE,Medium,5,12,36,0,YES,4d6,N/A,0,,133,5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters
+Swarm of Insects,Beast,U,Medium,1/2,12,22,5d8,NO,VARIES,N/A,0,,338,0.5,0,NA,NO,NO,YES,YES,YES,NO,NO,YES,YES,NO,YES,Monster Manual
+Swarm of Poisonous Snakes,Beast,U,Medium,2,14,36,8d8,NO,VARIES,N/A,4,,338,2,0,NA,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Swarm of Quippers,Beast,U,Medium,1,13,28,8d8-8,NO,VARIES,N/A,3,,338,1,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,Monster Manual
+Swarm of Rats,Beast,U,Medium,1/4,10,24,7d8-7,NO,VARIES,N/A,0,,339,0.25,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,YES,Monster Manual
+Swarm of Ravens,Beast,U,Medium,1/4,12,24,7d8-7,NO,VARIES,N/A,0,,339,0.25,0,NA,NO,NO,NO,YES,NO,YES,NO,YES,NO,NO,YES,Monster Manual
+Swarm of Rot Grubs,Beast,U,Medium,1/2,8,22,0,NO,1d6,N/A,0,,208,0.5,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,YES,NO,NO,Volo's Guide to Monsters
+Swashbuckler,Humanoid,NOT LAWFUL,Medium,3,17,66,0,NO,1d4+4,1d8+4,0,,217,3,0,NA,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Tanarukk,Fiend,CE,Medium,5,14,95,0,NO,1d8+4,2d6+4,0,,186,5,0,NA,NO,NO,NO,NO,NO,YES,YES,NO,YES,NO,NO,Volo's Guide to Monsters
+Tarrasque,Monstrosity,U,Gargantuan,30,25,676,33d20+330,NO,4d8+10,4d10+10,0,,286,30,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Thorny,Plant,N,Medium,1,14,27,0,NO,2d6+1,N/A,0,,197,1,0,NA,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters
+Thri-Kreen,Humanoid,CN,Medium,1,15,33,0,NO,1d6+1,2d4+1,0,,288,1,7,Cavern,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Thug,Humanoid,NOT GOOD,Medium,1/2,11,32,5d8+10,NO,1d6+2,1d10,0,,350,0.5,1,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Tiger,Beast,U,Large,1,12,37,5d10+10,NO,1d10+3,1d8+3,2,,339,1,4,Cavern,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Tlincalli,Monstrosity,NE,Large,5,15,85,5d10 + 10,NO,1d10+3,1d6+3,2,,193,5,0,NA,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Transmuter,Humanoid,ANY,Medium,5,12,40,5d10 + 10,YES,1d6-1,N/A,2,,218,5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Trapper,Monstrosity,U,Large,3,13,85,5d10 + 10,NO,4d6+3,N/A,2,,194,3,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Treant,Plant,CG,Huge,9,16,138,12d12+60,NO,3d6+6,4d10+6,2,,289,9,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Tribal Warrior,Humanoid,ANY,Medium,1/8,12,11,2d8+2,NO,1d8+1,N/A,2,,350,0.13,5,Basic,YES,YES,YES,YES,YES,YES,YES,YES,YES,NO,NO,Monster Manual
+Triceratops,Beast,U,Huge,5,13,95,10d12+30,NO,4d8+6,3d10+6,-1,,80,5,0,NA,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Tridrone,Construct,LN,Medium,1/2,15,16,3d8 + 3,NO,1d4+1,1d6+1,1,3,225,0.5,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Troglodyte,Humanoid,CE,Medium,1/4,11,13,2d8 + 4,NO,1d4+2,1d4+2,0,4,290,0.25,2,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Troll,Giant,CE,Large,5,15,84,8d10+40,NO,1d6+4,2d6+4,1,,291,5,1,Basic,YES,NO,NO,YES,NO,YES,YES,YES,YES,NO,NO,Monster Manual
+Twig Blight,Plant,NE,Small,1/8,13,4,1d6+1,NO,1d4+1,N/A,1,3,32,0.13,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Tyrannosaurus Rex,Beast,U,Huge,8,13,136,13d12+52,NO,4d12+7,3d8+7,0,,80,8,0,NA,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Ulitharid,Aberration,LE,Large,9,15,127,13d12 + 52,YES,4d10+5,10d10,0,,175,9,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Ultroloth,Fiend,NE,Medium,13,19,153,13d12 + 52,YES,1d10+3,N/A,0,,314,13,0,,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Umber Hulk,Monstrosity,CE,Large,5,18,93,13d12 + 52,NO,1d8+5,2d8+5,0,,292,5,5,Cavern,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Unicorn,Celestial,LG,Large,5,12,67,9d10+18,YES,2d6+4,1d8+4,0,,294,5,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Vampire,Undead,LE,Medium,13,16,144,17d8+68,NO,4d6+4,N/A,0,,297,13,1,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Vampire Spawn,Undead,NE,Medium,5,15,82,11d8+33,NO,2d4+3,3d6+3,0,,298,5,5,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual
+Vargouille,Fiend,CE,Tiny,1,12,13,13d12 + 52,NO,4d6+2,N/A,0,,195,1,0,NA,NO,NO,YES,NO,NO,NO,NO,YES,YES,NO,NO,Volo's Guide to Monsters
+Vegepygmy,Plant,N,Small,1/4,13,9,13d12 + 52,NO,1d6+2,1d4+2,0,,196,0.25,0,NA,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters
+Vegepygmy Chief,Plant,N,Small,2,14,33,13d12 + 52,NO,1d6+2,1d8+2,0,,197,2,0,NA,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Volo's Guide to Monsters
+Velociraptor,Beast,U,Tiny,1/4,13,10,13d12 + 52,NO,1d6+2,1d4+2,0,,140,0.25,0,NA,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Veteran,Humanoid,ANY,Medium,3,17,58,9d8+18,NO,1d10+3,1d6+3,0,,350,3,3,Basic,YES,YES,NO,YES,YES,YES,YES,NO,YES,NO,YES,Monster Manual
+Vine Blight,Plant,NE,Medium,1/2,12,26,4d8+8,NO,2d6+2,N/A,-1,4,32,0.5,7,Cavern,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Violet Fungus,Plant,U,Medium,1/4,5,18,4d8,NO,1d8,N/A,0,,138,0.25,5,Basic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Vrock,Fiend,CE,Large,6,15,104,11d10+44,NO,2d6+3,2d10+3,2,6,64,6,5,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+War Priest,Humanoid,ANY,Medium,9,18,117,1d8 + 1,YES,2d6+3,N/A,0,,218,9,0,NA,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Warhorse,Beast,U,Large,1/2,11,19,3d10+3,NO,2d6+4,N/A,0,,340,0.5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual
+Warhorse Skeleton,Undead,LE,Large,1/2,13,22,3d10+6,NO,2d6+4,N/A,0,,273,0.5,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Warlock of the Archfey,Humanoid,ANY,Medium,4,11,49,0,YES,1d4+2,N/A,0,,219,4,0,NA,YES,NO,NO,YES,NO,NO,YES,YES,NO,NO,YES,Volo's Guide to Monsters
+Warlock of the Fiend,Humanoid,ANY,Medium,7,12,78,0,YES,4d6,N/A,0,,219,7,0,NA,YES,NO,YES,NO,NO,NO,NO,NO,YES,NO,YES,Volo's Guide to Monsters
+Warlock of the Great Old One,Humanoid,ANY,Medium,6,12,91,0,YES,1d4+2,N/A,0,,220,6,0,NA,YES,NO,NO,NO,NO,YES,YES,NO,YES,NO,YES,Volo's Guide to Monsters
+Warlord,Humanoid,ANY,Medium,12,18,229,0,NO,2d6+5,1d6+3,0,,220,12,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Volo's Guide to Monsters
+Water Elemental,Elemental,N,Large,5,14,114,12d10+48,NO,2d8+4,N/A,2,,125,5,0,NA,NO,YES,NO,NO,NO,NO,NO,YES,NO,YES,NO,Monster Manual
+Water Weird,Elemental,N,Large,3,13,58,12d10 + 48,NO,2d6+3,N/A,2,,299,3,0,,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,YES,Monster Manual
+Werebear,Humanoid,NG,Medium,5,10,135,18d8+54,NO,2d10+4,N/A,3,,208,5,0,NA,YES,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wereboar,Humanoid,NE,Medium,4,10,78,12d8+24,NO,2d6+3,2d6+3,3,,209,4,6,Basic,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Wererat,Humanoid,LE,Medium,2,12,35,6d8+6,NO,1d4+2,1d6+2,3,,209,2,3,Basic,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,YES,Monster Manual
+Weretiger,Humanoid,N,Medium,4,12,120,16d8+48,NO,1d10+3,1d8+3,3,,210,4,7,Basic,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Werewolf,Humanoid,CE,Medium,3,11,58,9d8+18,NO,1d8+2,2d4+2,1,,211,3,2,Basic,NO,NO,NO,YES,NO,YES,NO,NO,NO,NO,NO,Monster Manual
+Wight,Undead,NE,Medium,3,14,45,6d8+18,NO,1d6+2,1d10+2,2,,300,3,1,Crypt,NO,NO,YES,NO,NO,NO,NO,YES,YES,NO,YES,Monster Manual
+Will-O'-Wisp,Undead,CE,Tiny,2,19,22,9D4,NO,2d8,N/A,2,,301,2,4,Crypt,NO,NO,NO,YES,NO,NO,NO,YES,NO,NO,YES,Monster Manual
+Winged Kobold,Humanoid,LE,Small,1/4,13,7,3d6 - 3,NO,1d4+3,1d6+3,3,5,195,0.25,7,Basic,YES,YES,YES,YES,NO,YES,YES,YES,YES,NO,YES,Monster Manual
+Winter Wolf,Monstrosity,NE,Large,3,13,75,10d10+20,NO,2d6+4,4d8,1,,340,3,4,Cavern,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wolf,Beast,U,Medium,1/4,13,11,2d8+2,NO,2d4+4,N/A,0,,341,0.25,2,Basic,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Monster Manual
+Wood Woad,Plant,LN,Medium,5,18,75,0,NO,4d4+4,N/A,0,,198,5,0,NA,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Worg,Monstrosity,NE,Large,1/2,13,26,4d10+4,NO,2d6+3,N/A,0,,341,0.5,3,Basic,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Wraith,Undead,NE,Medium,5,13,67,9d8+27,NO,4d8+3,N/A,0,,302,5,1,Crypt,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Wyrmling Black Dragon,Dragon,CE,Medium,2,17,33,0,NO,1d10+1d4+2,5d8,0,,88,2,4,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wyrmling Blue Dragon,Dragon,LE,Medium,3,17,52,0,NO,1d10+1d6+3,4d10,0,,91,3,2,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wyrmling Brass Dragon,Dragon,CG,Medium,1,16,16,0,NO,1d10+2,4d6,0,,106,1,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wyrmling Bronze Dragon,Dragon,LG,Medium,2,17,32,0,NO,1d10+3,3d10,0,,109,2,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wyrmling Copper Dragon,Dragon,CG,Medium,1,16,22,0,NO,1d10+2,4d8,0,,112,1,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wyrmling Gold Dragon,Dragon,LG,Medium,3,17,60,0,NO,1d10+4,4d10,0,,115,3,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wyrmling Green Dragon,Dragon,LE,Medium,2,17,38,0,NO,1d10+1d6+2,6d6,0,,95,2,4,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wyrmling Red Dragon,Dragon,CE,Medium,4,17,75,0,NO,1d10+1d6+4,7d6,2,,98,4,2,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wyrmling Silver Dragon,Dragon,LG,Medium,2,17,45,0,NO,1d10+4,4d8,1,,118,2,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wyrmling White Dragon,Dragon,CE,Medium,2,16,32,5d8+10,NO,1d10+1d4+2,5d8,1,,102,2,4,Dungeon,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Wyvern,Dragon,U,Large,6,13,110,13d10+39,NO,2d6+4,2d8+4,0,,303,6,1,Basic,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual
+Xorn,Elemental,N,Medium,5,19,73,7d8+42,NO,1d6+3,3d6+3,0,,304,5,6,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,Monster Manual
+Xvart,Humanoid,CE,Small,1/8,13,7,13d10 + 39,NO,1d6+2,1d4+2,0,,200,0.13,0,NA,NO,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Xvart Warlock of Raxivort,Humanoid,CE,Small,1,12,22,13d10 + 39,YES,1d6+2,N/A,0,,200,1,0,NA,NO,NO,NO,NO,NO,YES,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Yeth Hound,Fey,NE,Large,4,14,51,13d10 + 39,NO,2d6+4,N/A,0,,201,4,0,NA,NO,NO,NO,YES,YES,YES,NO,NO,NO,NO,NO,Volo's Guide to Monsters
+Yeti,Monstrosity,CE,Large,3,12,51,6d10 + 18,NO,2d6+4,N/A,1,,305,3,6,Cavern,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Yochlol,Fiend,CE,Medium,10,15,136,16d8 + 64,YES,7d6+2,N/A,2,6,65,10,6,Exotic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Young Black Dragon,Dragon,CE,Large,7,18,127,0,NO,2d10+1d8+4,2d6+4,0,,88,7,1,Dungeon,NO,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,Monster Manual
+Young Blue Dragon,Dragon,LE,Large,9,18,152,16d10+64,NO,3d10+5,2d6+5,0,,91,9,1,Dungeon,NO,YES,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Young Brass Dragon,Dragon,CG,Large,6,17,110,13d10+39,NO,2d10+4,2d6+4,0,,105,6,0,NA,NO,YES,YES,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Young Bronze Dragon,Dragon,LG,Large,8,18,142,15d10+60,NO,2d10+5,2d6+5,0,,108,8,0,NA,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Young Copper Dragon,Dragon,CG,Large,7,17,119,14d10+42,NO,2d10+4,2d6+4,0,,111,7,0,NA,NO,NO,NO,NO,NO,YES,NO,NO,NO,NO,NO,Monster Manual
+Young Gold Dragon,Dragon,LG,Large,10,18,178,17d10+85,NO,2d10+6,2d6+6,0,,115,10,0,NA,NO,NO,NO,YES,YES,NO,NO,NO,NO,NO,NO,Monster Manual
+Young Green Dragon,Dragon,LE,Large,8,18,136,16d10+48,NO,2d10+2d6+4,2d6+4,0,,94,8,1,Dungeon,NO,NO,NO,YES,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Young Red Dragon,Dragon,CE,Large,10,18,178,17d10+85,NO,2d10+1d6+6,2d6+6,2,,98,10,1,Dungeon,NO,NO,NO,NO,NO,YES,YES,NO,NO,NO,NO,Monster Manual
+Young Remorhaz,Monstrosity,U,Large,5,14,93,16d10 + 48,NO,3d10+2d6+4,N/A,1,,258,5,0,,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Young Silver Dragon,Dragon,LG,Large,9,18,168,16d10+80,NO,2d10+6,2d6+6,1,,118,9,0,NA,NO,NO,NO,NO,NO,NO,YES,NO,NO,NO,YES,Monster Manual
+Young White Dragon,Dragon,CE,Large,6,17,135,14d10+56,NO,2d10+1d8+4,2d6+4,1,,101,6,2,Dungeon,YES,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,Monster Manual
+Yuan-Ti Abomination,Monstrosity,NE,Large,7,15,127,16d10 + 48,YES,4d6+4,2d6+4,1,,308,7,6,Basic,NO,NO,YES,YES,NO,NO,NO,YES,NO,NO,YES,Monster Manual
+Yuan-ti Anathema,Monstrosity,NE,Huge,12,16,189,16d10 + 48,YES,2d6+6,3d6+6,1,,,12,0,NA,NO,NO,YES,NO,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Yuan-ti Broodguard,Humanoid,NE,Medium,2,14,45,16d10 + 48,NO,1d8+2,1d6+2,1,,203,2,0,NA,NO,NO,YES,YES,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Yuan-Ti Malison,Monstrosity,NE,Medium,3,12,66,16d10 + 48,YES,VARIES,N/A,1,,309,3,6,Basic,NO,NO,YES,YES,NO,NO,NO,YES,NO,NO,YES,Monster Manual
+Yuan-ti Mind Whisperer,Monstrosity,NE,Medium,4,14,71,16d10 + 48,YES,1d4+3,1d6+3,1,,204,4,0,NA,NO,NO,YES,YES,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Yuan-ti Nightmare Speaker,Monstrosity,NE,Medium,4,14,71,16d10 + 48,YES,2d6+3,1d6+3,1,,205,4,0,NA,NO,NO,YES,YES,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Yuan-ti Pit Master,Monstrosity,NE,Medium,5,14,88,16d10 + 48,YES,1d4+3,N/A,1,,206,5,0,NA,NO,NO,YES,YES,NO,NO,NO,NO,YES,NO,NO,Volo's Guide to Monsters
+Yuan-Ti Pureblood,Monstrosity,NE,Medium,1,11,40,16d10 + 48,YES,1d6+1,1d6+1,1,,310,1,4,Basic,NO,NO,YES,YES,NO,NO,NO,YES,NO,NO,YES,Monster Manual
+Zombie,Undead,NE,Medium,1/4,8,22,3d8+9,NO,1d6+1,N/A,-2,3,316,0.25,1,Basic,NO,NO,NO,NO,NO,NO,NO,NO,NO,NO,YES,Monster Manual

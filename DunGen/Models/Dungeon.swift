@@ -23,7 +23,7 @@ class Dungeon { //Environment?
     }
     
     func buildDungeon() {
-        var seedString = MapGenRand.getSeedString()
+        var seedString = DGRand.getSeedString()
         print("THE SEED ___________ \(seedString) ___________")
         
         /* Interesting:
@@ -31,7 +31,7 @@ class Dungeon { //Environment?
          WPH7 has secret door
          */
         seedString = "CCNT"
-        MapGenRand.sharedInstance.setSeed(seedString: seedString)
+        DGRand.sharedInstance.setSeed(seedString: seedString)
         
         
         let m = Map(width: mapWidth, height: mapHeight)

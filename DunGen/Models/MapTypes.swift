@@ -93,7 +93,7 @@ enum Direction : Int {
     
     func randNESW() -> Direction {
         let dirs = [Direction.north, Direction.east, Direction.south, Direction.west]
-        let r = MapGenRand.sharedInstance.getRand(to: 4)
+        let r = DGRand.sharedInstance.getRand(to: 4)
         return dirs[(r - 1)]
     }
 }

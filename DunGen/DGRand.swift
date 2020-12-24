@@ -18,6 +18,14 @@ class DGRand {
     let rs = GKMersenneTwisterRandomSource()
     var rd : GKRandomDistribution
     
+    static func getRand(_ to: Int) -> Int {
+        return sharedInstance.getRand(to: to)
+    }
+    
+    static func getRandRand(_ to: Int) -> Int {
+        return sharedInstance.getRandRand(to: to)
+    }
+    
     
     
     private init () {

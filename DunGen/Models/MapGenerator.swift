@@ -102,7 +102,7 @@ class MapGenerator {
         
         //let test = [4, 2, 2, 2, 4, 4, 2, 4, 4, 10, 2]
         repeat {
-            roll = MapGenRand.sharedInstance.getRand(to: 40)
+            roll = DGRand.sharedInstance.getRand(to: 40)
             
             switch roll {
             case 1...4:
@@ -123,7 +123,7 @@ class MapGenerator {
                 //bias dead-ends later in the map. Don't want one right at the beginning.
                 print ("In deaded - depth \(depth)")
                 if (depth > 10) {
-                    if (MapGenRand.sharedInstance.getRand(to: 10) == 1) {
+                    if (DGRand.sharedInstance.getRand(to: 10) == 1) {
                         passageMoves = [TileCode.passage, TileCode.secretEnd]
                     } else {
                         passageMoves = [TileCode.passage, TileCode.deadend]
@@ -266,7 +266,7 @@ class MapGenerator {
         mapSpot += MapPoint(row: 1, col: 0)
         
         //let r = Int.random(in: 1...10)
-        let roll = MapGenRand.sharedInstance.getRand(to: 10)
+        let roll = DGRand.sharedInstance.getRand(to: 10)
         print ("room type: \(roll)")
         var passageTypes = [PassageType.hallway, PassageType.hallway, PassageType.hallway]
         switch roll {
@@ -334,7 +334,7 @@ class MapGenerator {
         
         if (roll <= 8) {
             
-            let pType = (MapGenRand.sharedInstance.shuffle(array: passageTypes))
+            let pType = (DGRand.sharedInstance.shuffle(array: passageTypes))
             
             var at = MapPoint(row: Int(room.height / 2), col: room.width - 1)
             var exit = Passage(type: pType[0] as! PassageType, direction: .east)
@@ -540,7 +540,7 @@ class MapGenerator {
                             map.getBlock(row: r, col: c).addWall(wallDir: .north)
                         } else {
                             //pick one to be authority:
-                            if (MapGenRand.sharedInstance.getRand(to: 2) == 2) {
+                            if (DGRand.sharedInstance.getRand(to: 2) == 2) {
                                 map.getBlock(row: r+1, col: c).addCode(codeDir: .south, code: codeThis)
                                 
                             } else  {
@@ -571,7 +571,7 @@ class MapGenerator {
                             map.getBlock(row: r, col: c).addWall(wallDir: .east)
                         } else {
                             //pick one to be authority:
-                            if (MapGenRand.sharedInstance.getRand(to: 2) == 2) {
+                            if (DGRand.sharedInstance.getRand(to: 2) == 2) {
                                 map.getBlock(row: r, col: c+1).addCode(codeDir: .west, code: codeThis)
                                 
                             } else  {
@@ -600,7 +600,7 @@ class MapGenerator {
                     
                     if (wallCount == 3) {
                         
-                        if (MapGenRand.sharedInstance.getRand(to: 20) != 1) { //5% chance of keeping the deadend
+                        if (DGRand.sharedInstance.getRand(to: 20) != 1) { //5% chance of keeping the deadend
                             trimDeadEnd(at: MapPoint(row: r, col: c))
                         } else {
                             print("keeping deadend")

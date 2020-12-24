@@ -40,7 +40,7 @@ class Room {
     init (at: MapPoint) {
         self.at = at
         
-        let r = MapGenRand.sharedInstance.getRand(to: 30)
+        let r = DGRand.sharedInstance.getRand(to: 30)
         switch r {
         case 1...4:
             width = 2
@@ -113,7 +113,7 @@ class Room {
         //Todo: we need to be able to readjust if loc takes us into collision which means we need view into overall map in this classs
         
         let outDir : Direction
-        let r = MapGenRand.sharedInstance.getRand(to: 20)
+        let r = DGRand.sharedInstance.getRand(to: 20)
         switch r {
         case 1...7:
             //opposite
@@ -161,8 +161,8 @@ class Room {
             print("Default")
         }
         
-        let rA = MapGenRand.sharedInstance.shuffle(array: rowArray)
-        let cA = MapGenRand.sharedInstance.shuffle(array: colArray)
+        let rA = DGRand.sharedInstance.shuffle(array: rowArray)
+        let cA = DGRand.sharedInstance.shuffle(array: colArray)
         
         if (floorPlan[rA[0] as! Int][cA[0] as! Int] == 1) {
             
@@ -194,7 +194,7 @@ class Room {
             range = [5,12,16,20]
         }
         //let rand = Int.random(in: 1...range.last!)
-        let rand = MapGenRand.sharedInstance.getRand(to: range.last!)
+        let rand = DGRand.sharedInstance.getRand(to: range.last!)
         for i in 0...range.count {
             if rand <= range[i] {
                 return i

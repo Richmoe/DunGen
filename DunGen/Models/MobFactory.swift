@@ -65,4 +65,13 @@ class MobFactory {
             fatalError("Can't find mob: \(name)")
         }
     }
+    
+    func getMobBy(cr: Double) -> Monster {
+        
+        var filteredMobs = monsterList.filter { $0.challengeRating == cr }
+
+        let mobIX = DGRand.getRandRand(filteredMobs.count)
+        
+        return filteredMobs[mobIX - 1]
+    }
 }
