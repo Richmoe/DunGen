@@ -13,6 +13,9 @@ class MobFactory {
     
     static let sharedInstance = MobFactory()
     
+    //NOTE: there are no monsters at CR 19 in the table, so I'm going to special case requests for CR: 19 as a CR: 18 request
+    
+    
     
     //This is going to be a filtered monster list by Motif for now. This would mean any time I change motif, I'd need to rebuild MobFactory
     // So therefore I need to evaluate instantiation pipeline, e.g. for each new Adventure, rebuild the mob factory?
@@ -110,12 +113,54 @@ class MobFactory {
     
     func getMobBy(cr: Double) -> Monster {
         
+        
         let filteredMobsByMotif = monsterList.filter { $0.motif == 0 || $0.motif == Global.adventure.motif }
         
-        let filteredMobsByCR = filteredMobsByMotif.filter { $0.challengeRating == cr }
-
-        let mobIX = DGRand.getRandRand(filteredMobsByCR.count)
         
-        return filteredMobsByCR[mobIX - 1]
+        
+        //So I will try maxLoop times to find a monster at the given CR level. If I don't, then I'll step down one CR and try maxloop more times, to a max of stepdown CRs.
+        var stepDown = 6 //max number of CRs to step down if I don't find a match
+        var mob : Monster?
+        var curCR = cr
+        
+        //print ("getMobBy(cr: \(cr)")
+        repeat {
+
+            var maxLoop = 5 //max number of tries to get a mob match
+            let filteredMobsByCR = filteredMobsByMotif.filter { $0.challengeRating == curCR }
+
+            
+            while (maxLoop > 0 && filteredMobsByCR.count > 0) {
+                let mobIX = DGRand.getRandRand(filteredMobsByCR.count)
+                mob = filteredMobsByCR[mobIX - 1]
+                
+                //Do a rarity check - for now, just a simple 1-10 roll; if roll > rarity than it sticks:
+                // TODO: Need to do a better rarity check
+                
+                let rand = DGRand.getRandRand(10) - 1
+                if (rand >= mob!.rarity) {
+                    maxLoop = -1 //exit flag
+                    stepDown = -1
+                    
+                    //print ("Found mob: \(mob!.name) CR: \(mob!.challengeRating) with rarity: \(mob!.rarity)")
+                } else {
+                    maxLoop -= 1
+                }
+            }
+            
+            if (curCR >= 2.0) {
+                curCR -= 1.0
+            } else {
+                if (curCR > 0) {
+                    curCR /= 2.0
+                }
+            }
+            stepDown -= 1
+            
+
+        } while (stepDown > 0)
+        
+        
+        return mob!
     }
 }

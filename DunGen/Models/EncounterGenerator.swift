@@ -99,7 +99,7 @@ class EncounterGenerator {
         print ("GetMobsForDifficulty: targetExp: \(targetExp)")
         let targetCR = Global.adventure.getCrFromExp(exp: targetExp)
         
-        /* TODO - I'll do 3 patterns for now:
+        /* TODO: I'll do 3 patterns for now:
         1) 1 Monster at difficulty 10%
         2) Mult Monsters at CR-1   80%
          3) Monster group monsters at CR-2- 10% <<LATER?
@@ -109,7 +109,7 @@ class EncounterGenerator {
  */
         
         
-        /* TODO Rarety - 1-9 relative rarety; 0 = no luck
+        /* TODO: Rarety - 1-9 relative rarety; 0 = no luck
          also added Motif which is a String representing a TYPE of dungeon
          - Basic
          - Cavern
@@ -120,19 +120,22 @@ class EncounterGenerator {
          - NA (should be for rarety = 0)
          */
         
-        
-//        print("TEST_________________________")
-//
-//        print("CR: 1/8, -1: \(Global.adventure.crMath(cr: 0.13, mod: -1))")
-//        print("CR: 1, -1: \(Global.adventure.crMath(cr: 1.0, mod: -1))")
-//                print("CR: 1/8, 3: \(Global.adventure.crMath(cr: 0.13, mod: 3))")
-//        print("CR: 18, 3: \(Global.adventure.crMath(cr: 18.0, mod: 3))")
-//
-//        print ("/test")
+        /*
+        print("TEST_________________________")
+        let crTable = [0.13, 0.25, 0.5, 1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,12.0,13.0,14.0,15.0,16.0,17.0,18.0,19.0,20.0]
+        for _ in 0...20 {
+            let i = DGRand.getRandRand(23)
+            let _ = MobFactory.sharedInstance.getMobBy(cr: crTable[i - 1 ])
+            
+            
+        }
+        print("/Test")
+         */
+
         var encounterPattern = DGRand.getRandRand(10)
         encounterPattern = 3
         
-        var x = Global.adventure.crMath(cr: 1.0, mod: -1)
+        //var x = Global.adventure.crMath(cr: 1.0, mod: -1)
         
 
         if (encounterPattern <= 10) {
