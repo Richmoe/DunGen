@@ -16,6 +16,25 @@ class Adventure : ObservableObject {
     
     //Difficulty
     
+    
+    //Motif - enum for types of encounter
+    //TODO this isn't really used yet
+    /*
+    - Cavern
+    - Crypt
+    - Dungeon
+    - Exotic
+    - Magic
+     
+     */
+    let iMotifCavern = 1
+    let iMotifCrypt = 2
+    let iMotifDungeon = 3
+    let iMotifExotic = 4
+    let iMotifMagic = 5
+    
+    var motif : Int
+    
     //Set up Encounters
     
     //Manage battles?
@@ -34,9 +53,10 @@ class Adventure : ObservableObject {
 
         
         dungeon = Dungeon()
+        motif = iMotifDungeon
         
         loadCrToExpTable()
-        
+
     }
     
 

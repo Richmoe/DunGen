@@ -13,6 +13,9 @@ class MobFactory {
     
     static let sharedInstance = MobFactory()
     
+    
+    //This is going to be a filtered monster list by Motif for now. This would mean any time I change motif, I'd need to rebuild MobFactory
+    // So therefore I need to evaluate instantiation pipeline, e.g. for each new Adventure, rebuild the mob factory?
     var monsterList : [Monster] = [Monster]()
     
     private init() {
@@ -21,13 +24,21 @@ class MobFactory {
     
     func parseMonsterList() {
         
-        let parsedCSV: [[String]] = Helper.loadFromCSV(fileName: "Monsters.csv")
+        let parsedCSV: [[String]] = Helper.loadFromCSV(fileName: "DGMonsters.csv")
         
         //Create monsterList elements:
         //Skip row one for now, unless we want to use it to lookup. Seems like too much overhead though
         
         //for each row
         // Create new monster with the appropriate string offsets which we can define by constants?
+        //0 Name,Type,ALIGNMENT,Size,CR,
+        //5 AC,HP,HitDice,Spellcasting?,Attack 1 damage,
+        //10 Attack 2 Damage,Initiative,Hit Bonus,Page,CR (Decimal),
+        //15 Rarety,Motif,Arctic,Coast,Desert,
+        //20 Forest,Grassland,Hill,Mountain,Swamp,
+        //25 Underdark,Urban,Book
+        
+        
         let iName = 0
         //let Type
         //ALIGNMENT
@@ -43,6 +54,29 @@ class MobFactory {
         //Hit Bonus
         //Page
         let iCR = 14
+        let iRarity = 15 //Rarety - 1-9 relative rarety
+        let iMotif = 16
+        
+        
+        //This is a quick hack to convert strings in CSV to Int, which matches the consts in Adventure:motif; index =sames as adventure motif constants
+        let tempMotifStringArray =
+        ["Basic",
+        "Cavern",
+        "Crypt",
+        "Dungeon",
+        "Exotic",
+        "Magic"]
+        /*
+         is a String representing a TYPE of dungeon
+         - Basic
+         - Cavern
+         - Crypt
+         - Dungeon
+         - Exotic
+         - Magic
+
+         */
+        
         // How do we group? Maybe buckets or use array filtering?
         for mob in parsedCSV[1...] {
             if (mob.count < iCR) {
@@ -50,7 +84,15 @@ class MobFactory {
             }
             
             if let cr = Double(mob[iCR]) {
-                monsterList.append(Monster(name: mob[iName], armorClass: Int(mob[iAC])!, hitPoints: 0, initiativeBonus: Int(mob[iInitiative])!, image: "Avatar4", hitDice: mob[iHitDice], challengeRating: cr)) //Double(mob[iCR])))
+                
+                //TEMP
+                print("Monster: \(mob[iName]): Motif: \(mob[iMotif]) ")
+                
+                if let ix = tempMotifStringArray.firstIndex(of: mob[iMotif]) {
+                    monsterList.append(Monster(name: mob[iName], armorClass: Int(mob[iAC])!, hitPoints: 0, initiativeBonus: Int(mob[iInitiative])!, image: "Avatar4", hitDice: mob[iHitDice], challengeRating: cr, rarity: Int(mob[iRarity])!, motif: ix)) //Double(mob[iCR])))
+                } else {
+                    monsterList.append(Monster(name: mob[iName], armorClass: Int(mob[iAC])!, hitPoints: 0, initiativeBonus: Int(mob[iInitiative])!, image: "Avatar4", hitDice: mob[iHitDice], challengeRating: cr, rarity: Int(mob[iRarity])!, motif: 0)) //Double(mob[iCR])))
+                }
             }
             //init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String, hitDice: String, challengeRating: Double)
             
@@ -68,10 +110,12 @@ class MobFactory {
     
     func getMobBy(cr: Double) -> Monster {
         
-        var filteredMobs = monsterList.filter { $0.challengeRating == cr }
-
-        let mobIX = DGRand.getRandRand(filteredMobs.count)
+        let filteredMobsByMotif = monsterList.filter { $0.motif == 0 || $0.motif == Global.adventure.motif }
         
-        return filteredMobs[mobIX - 1]
+        let filteredMobsByCR = filteredMobsByMotif.filter { $0.challengeRating == cr }
+
+        let mobIX = DGRand.getRandRand(filteredMobsByCR.count)
+        
+        return filteredMobsByCR[mobIX - 1]
     }
 }

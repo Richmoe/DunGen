@@ -77,7 +77,7 @@ class EncounterGenerator {
             }
         }
         
-        var targetExp = Global.party.getPartyDifficulty(type: diff)
+        let targetExp = Global.party.getPartyDifficulty(type: diff)
         getMobsForDifficulty(targetExp: targetExp)
 
         
@@ -107,6 +107,18 @@ class EncounterGenerator {
          //and loop the above until I hit my targetExp
  
  */
+        
+        
+        /* TODO Rarety - 1-9 relative rarety; 0 = no luck
+         also added Motif which is a String representing a TYPE of dungeon
+         - Basic
+         - Cavern
+         - Crypt
+         - Dungeon
+         - Exotic
+         - Magic
+         - NA (should be for rarety = 0)
+         */
         
         
 //        print("TEST_________________________")

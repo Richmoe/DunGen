@@ -1,0 +1,256 @@
+Name,Type,ALIGNMENT,Size,CR,AC,HP,HitDice,Spellcasting?,Attack 1 damage,Attack 2 Damage,Initiative,Hit Bonus,Page,CR (Decimal),Rarety,Motif,Arctic,Coast,Desert,Forest,Grassland,Hill,Mountain,Swamp,Underdark,Urban,Book
+Acolyte,Humanoid,ANY,Medium,1/4,10,9,2d8,YES,1d4,N/A,0,2,342,0.25,3,Basic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Adult Black Dragon,Dragon,CE,Huge,14,19,195,0,NO,2d10+1d8+6,2d6+6,2,,88,14,9,Cavern,N,N,N,N,N,N,N,Y,N,N,Monster Manual
+Adult Blue Dragon,Dragon,LE,Huge,16,19,225,18d12+108,NO,3d10+7,2d6+7,0,,91,16,9,Cavern,N,Y,Y,N,N,N,N,N,N,N,Monster Manual
+Adult Green Dragon,Dragon,LE,Huge,15,19,207,18d12+90,NO,2d10+2d6+6,2d6+6,1,,94,15,9,Cavern,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Adult Red Dragon,Dragon,CE,Huge,17,19,256,19d12+133,NO,2d10+2d6+8,2d6+8,2,,98,17,9,Cavern,N,N,N,N,N,Y,Y,N,N,N,Monster Manual
+Adult White Dragon,Dragon,CE,Huge,13,18,200,16d12+96,NO,2d10+1d8+6,2d6+6,0,,101,13,9,Cavern,Y,N,N,N,N,N,N,N,N,N,Monster Manual
+Air Elemental,Elemental,N,Large,5,15,90,12d10+24,NO,2d8+5,3d8+2,5,,124,5,1,Basic,N,N,Y,N,N,N,Y,N,N,N,Monster Manual
+Ancient Blue Dragon,Dragon,LE,Gargantuan,23,22,481,26d20+208,NO,4d10+9,2d6+9,0,,90,23,9,Cavern,N,Y,Y,N,N,N,N,N,N,N,Monster Manual
+Ancient Green Dragon,Dragon,LE,Gargantuan,22,21,385,22d20+154,NO,2d10+3d6+8,4d6+8,1,,93,22,9,Cavern,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Ancient Red Dragon,Dragon,CE,Gargantuan,24,22,546,28d20+252,NO,2d10+4d6+10,2d6+10,0,,97,24,9,Cavern,N,N,N,N,N,Y,Y,N,N,N,Monster Manual
+Ancient White Dragon,Dragon,CE,Gargantuan,20,20,333,18d20+144,NO,2d10+2d8+8,2d6+8,0,,100,20,9,Cavern,Y,N,N,N,N,N,N,N,N,N,Monster Manual
+Androsphinx,Monstrosity,LN,Large,17,17,199,19d10+95,YES,2d10+6,N/A,0,,281,17,5,Magic,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Animated Armor,Construct,U,Medium,1,18,33,6d8+6,NO,1d6+2,N/A,0,4,19,1,3,Magic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Ankheg,Monstrosity,U,Large,2,14,39,6d10+6,NO,3d6+3,3d6,0,5,21,2,5,Cavern,N,N,N,Y,Y,N,N,N,N,N,Monster Manual
+Archmage,Humanoid,ANY,Medium,12,12,99,18d8+18,YES,1d4+2,N/A,2,,342,12,3,Basic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Assassin,Humanoid,NOT GOOD,Medium,8,15,78,12d8+24,NO,1d6+3,1d8+3,3,,343,8,3,Basic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Axe Beak,Beast,U,Large,1/4,11,19,3d10+3,NO,1d8+2,N/A,1,,317,0.25,6,Cavern,N,N,N,N,Y,Y,N,N,N,N,Monster Manual
+Azer,Elemental,LN,Medium,2,17,39,6d8+12,NO,1d8+3,N/A,1,5,22,2,5,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Bandit,Humanoid,NOT LAWFUL,Medium,1/8,12,11,2d8+2,NO,1d6+1,1d8+1,1,3,343,0.13,3,Basic,Y,Y,Y,Y,N,Y,N,N,N,Y,Monster Manual
+Bandit Captain,Humanoid,NOT LAWFUL,Medium,2,15,65,10d8+20,NO,1d6+3,1d4+3,3,5,344,2,1,Basic,Y,Y,Y,Y,N,Y,N,N,N,Y,Monster Manual
+Banshee,Undead,CE,Medium,4,12,58,13d8,NO,3d6+2,N/A,2,4,23,4,1,Crypt,N,Y,N,N,N,N,N,N,N,N,Monster Manual
+Barbed Devil,Fiend,LE,Medium,5,15,110,13d8+52,NO,1d6+3,2d6+3,3,6,70,5,3,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Barlgura,Fiend,CE,Large,5,15,68,13d8,YES,2d6+4,1d10+4,0,7,56,5,7,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Basilisk,Monstrosity,U,Medium,3,15,52,8d8+16,NO,4d6+3,N/A,-1,5,24,3,7,Dungeon,N,N,N,N,N,N,Y,N,N,N,Monster Manual
+Bearded Devil,Fiend,LE,Medium,3,13,52,8d8+16,NO,1d8+2,1d10+3,2,5,70,3,6,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Beholder,Aberration,LE,Large,13,18,180,19d10 + 76,NO,4d6,N/A,0,5,28,13,7,Dungeon,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Beholder Zombie,Undead,NE,Large,5,15,93,1d4 - 1,NO,4d6,N/A,0,,316,5,8,Basic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Berserker,Humanoid,C,Medium,2,13,67,9d8+27,NO,1d12+3,N/A,1,5,344,2,2,Basic,Y,Y,Y,Y,N,Y,Y,N,N,N,Monster Manual
+Black Bear,Beast,U,Medium,1/2,11,19,3d8+6,NO,1d6+2,2d4+2,0,,318,0.5,2,Cavern,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Black Pudding,Ooze,U,Large,4,7,85,10d10+30,NO,4d8+1d6+3,N/A,-3,,241,4,1,Dungeon,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Blood Hawk,Beast,U,Small,1/8,12,7,2d6,NO,1d4+2,N/A,2,,319,0.13,6,Cavern,Y,Y,N,Y,Y,Y,Y,N,N,N,Monster Manual
+Bone Devil,Fiend,LE,Large,9,19,142,15d10+60,NO,1d8+4,2d8+4,3,8,71,9,5,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Bone Naga,Undead,LE,Large,4,15,58,0,YES,5d6+3,N/A,0,,233,4,1,Crypt,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Brown Bear,Beast,U,Large,1,11,34,4d10+12,NO,1d8+4,2d6+4,0,,319,1,2,Cavern,Y,N,N,Y,N,N,N,N,N,N,Monster Manual
+Bugbear,Humanoid,CE,Medium,1,16,27,5d8+5,NO,2d8+2,2d6+2,2,4,33,1,1,Basic,N,N,N,Y,Y,N,N,N,Y,N,Monster Manual
+Bugbear Chief,Humanoid,CE,Medium,3,17,65,10d8 + 20,NO,2d8+3,2d6+3,0,5,33,3,5,Basic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Bulette,Monstrosity,U,Large,5,17,94,9d10+45,NO,4d12+4,N/A,0,7,34,5,9,Dungeon,N,N,N,N,Y,Y,Y,N,N,N,Monster Manual
+Bullywug,Humanoid,NE,Medium,1/4,15,11,2d8 + 2,NO,1d4+1,1d8+1,0,3,35,0.25,2,Cavern,N,N,N,N,N,N,N,Y,N,N,Monster Manual
+Cambion,Fiend,E,Medium,5,19,82,11d8 + 33,YES,1d8+1d6+4,3d6,4,7,36,5,8,Exotic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Carrion Crawler,Monstrosity,U,Large,2,13,51,6d10 + 18,NO,1d4+2,2d4+2,0,8,37,2,4,Basic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Chain Devil,Fiend,LE,Medium,8,16,85,10d8+40,NO,2d6+4,N/A,2,8,72,8,6,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Chasme,Fiend,CE,Large,6,15,84,6d10 + 12,NO,11d6+2,N/A,0,5,57,6,3,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Chimera,Monstrosity,CE,Large,6,14,114,12d10+48,NO,2d6+4,1d12+4,0,7,39,6,8,Exotic,N,N,N,N,Y,Y,Y,N,Y,N,Monster Manual
+Clay Golem,Construct,U,Large,9,14,133,14d10+56,NO,2d10+5,N/A,-1,,168,9,5,Dungeon,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Cloaker,Aberration,CN,Large,8,14,78,12d10+12,NO,2d6+3,1d8+3,2,6,41,8,3,Basic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Cloud Giant,Giant,N,Huge,9,14,200,16d12+96,YES,3d8+8,4d10+8,0,,154,9,9,Cavern,N,N,N,N,N,N,Y,N,N,N,Monster Manual
+Cockatrice,Monstrosity,U,Small,1/2,11,27,6d6+6,NO,1d4+1,N/A,1,3,42,0.5,3,Cavern,N,N,N,N,Y,N,N,N,N,N,Monster Manual
+Cult Fanatic,Humanoid,NOT GOOD,Medium,2,13,33,6d8+6,YES,1d4+2,N/A,2,,345,2,5,Crypt,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Cultist,Humanoid,NOT GOOD,Medium,1/8,12,9,2d8,NO,1d6+1,N/A,1,,345,0.13,3,Crypt,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Cyclops,Giant,CN,Huge,6,14,138,12d12 + 60,NO,3d8+6,4d10+6,0,9,45,6,9,Cavern,N,Y,Y,N,Y,Y,Y,N,Y,N,Monster Manual
+Dao,Elemental,NE,Large,11,18,187,12d12 + 60,YES,2d8+6,4d6+6,0,,143,11,8,Exotic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Darkmantle,Monstrosity,U,Small,1/2,11,22,5d6+5,NO,1d6+3,N/A,1,5,46,0.5,8,Magic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Death Dog,Monstrosity,NE,Medium,1,12,39,6d8+12,NO,1d6+2,N/A,2,,321,1,3,Basic,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Death Knight,Undead,CE,Medium,17,20,180,19d8 + 95,YES,1d10+4d8+5,N/A,0,11,47,17,3,Crypt,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Death Tyrant,Undead,LE,Large,14,19,187,25d10 + 50,NO,4d6,N/A,0,5,29,14,7,Crypt,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Demilich,Undead,NE,Tiny,18,20,80,32d4,NO,6d6,N/A,0,0,48,18,1,Crypt,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Dire Wolf,Beast,U,Large,1,14,37,5d10+10,NO,2d6+3,N/A,2,,321,1,3,Basic,N,N,N,Y,N,Y,N,N,N,N,Monster Manual
+Displacer Beast,Monstrosity,LE,Large,3,13,85,10d10 + 30,NO,2d6+4,N/A,0,6,81,3,5,Cavern,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Doppelganger,Monstrosity,N,Medium,3,14,52,8d8+16,NO,1d6+4,N/A,4,6,82,3,5,Dungeon,N,N,N,N,N,N,N,N,Y,Y,Monster Manual
+Dracolich,Undead,LE,VARIES,17,19,225,18d12 + 108,NO,3d10+7,2d6+7,0,13,84,17,9,Crypt,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Dretch,Fiend,CE,Small,1/4,11,18,4d6+4,NO,1d6,2d4,0,2,57,0.25,5,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Drider,Monstrosity,CE,Large,6,19,123,13d10+52,YES,2d8+1d4,1d10+3,3,,120,6,5,Exotic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Drow,Humanoid,NE,Medium,1/4,15,13,3d8,NO,1d6+2,1d6+2,0,,128,0.25,4,Basic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Drow Elite Warrior,Humanoid,NE,Medium,5,18,71,0,NO,4d6+4,1d6+4,0,,128,5,6,Basic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Drow Mage,Humanoid,NE,Medium,7,12,45,0,YES,1d8+1d6-1,N/A,0,,129,7,6,Basic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Drow Priestess of Lolth,Humanoid,NE,Medium,8,16,71,0,NO,6d6+2,N/A,0,,129,8,6,Basic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Druid,Humanoid,ANY,Medium,2,11,27,5d8+5,YES,1d8,N/A,1,,346,2,5,Basic,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,Monster Manual
+Dryad,Fey,N,Medium,1,11,22,5d8,YES,1d8+4,N/A,1,,121,1,5,Cavern,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Duergar,Humanoid,LE,Medium,1,16,26,4d8+8,NO,1d8+2,1d6+2,0,,122,1,7,Dungeon,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Dust Mephit,Elemental,NE,Small,1/2,12,17,5d6,NO,1d4+2,N/A,2,,215,0.5,8,Exotic,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Earth Elemental,Elemental,N,Large,5,17,126,12d10+60,NO,2d8+5,N/A,-1,,124,5,1,Basic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Efreeti,Elemental,LE,Large,11,17,200,16d10+112,YES,2d6+6,5d6,1,,145,11,8,Exotic,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Erinyes,Fiend,LE,Medium,12,18,153,18d8+72,NO,3d8+1d10+4,4d8+3,3,8,73,12,6,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Ettercap,Monstrosity,NE,Medium,2,13,44,8d8+8,NO,2d8+2,2d4+2,2,,131,2,2,Cavern,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Ettin,Giant,CE,large,4,12,85,10d10+30,NO,2d8+5,2d8+5,-1,,132,4,1,Cavern,N,N,N,N,N,Y,Y,N,Y,N,Monster Manual
+Fire Elemental,Elemental,N,large,5,13,102,12d10+36,NO,2d6+3,N/A,3,,125,5,1,Basic,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Fire Giant,Giant,LE,Huge,9,18,162,13d12+78,NO,6d6+7,4d10+7,-1,,154,9,9,Cavern,N,N,N,N,N,N,Y,N,Y,N,Monster Manual
+Fire Snake,Elemental,NE,Medium,1,14,22,13d12 + 78,NO,1d6+1d4+1,1d6+1d4+1,0,,265,1,4,Exotic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Flameskull,Undead,NE,Tiny,4,13,40,9d4 + 18,YES,3d6,N/A,0,,134,4,6,Crypt,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Flesh Golem,Construct,N,Medium,5,9,93,11d8+44,NO,2d8+4,N/A,-1,,169,5,4,Dungeon,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Flying Snake,Beast,U,Tiny,1/8,14,5,2d4,NO,3d4+1,N/A,4,,322,0.13,4,Basic,N,N,Y,Y,Y,N,N,N,N,Y,Monster Manual
+Flying Sword,Construct,U,Small,1/4,17,17,5d6,NO,1d8+1,N/A,2,3,20,0.25,7,Magic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Frost Giant,Giant,NE,Huge,8,15,138,12d12+60,NO,3d12+6,4d10+6,-1,,155,8,9,Cavern,Y,N,N,N,N,N,Y,N,N,N,Monster Manual
+Galeb Duhr,Elemental,N,Medium,6,16,85,12d12 + 60,NO,2d6+5,N/A,0,,139,6,8,Cavern,N,N,N,N,N,Y,Y,N,N,N,Monster Manual
+Gargoyle,Elemental,CE,Medium,2,15,52,7d8+21,NO,1d6+2,1d6+2,0,4,140,2,2,Dungeon,N,N,N,N,N,N,N,N,Y,Y,Monster Manual
+Gas Spore,Plant,U,Large,1/2,5,1,1d10 - 4,NO,1,N/A,-5,0,138,0.5,6,Basic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Gelatinous Cube,Ooze,U,Large,2,6,84,8d10+40,NO,3d6,N/A,-4,,242,2,2,Dungeon,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Ghast,Undead,CE,Medium,2,13,36,8d8,NO,2d8+3,2d6+3,3,3,148,2,1,Crypt,N,N,N,N,N,N,N,Y,Y,Y,Monster Manual
+Ghost,Undead,ANY,Medium,4,11,45,10d8,NO,4d6+3,N/A,1,5,147,4,3,Crypt,N,N,N,N,N,N,N,N,Y,Y,Monster Manual
+Ghoul,Undead,CE,Medium,1,12,22,5d8,NO,2d6+2,2d4+2,2,2,148,1,1,Crypt,N,N,N,N,N,N,N,Y,Y,Y,Monster Manual
+Giant Bat,Beast,U,Large,1/4,13,22,4d10,NO,1d6+2,N/A,3,,323,0.25,4,Cavern,N,N,N,Y,N,N,N,N,Y,N,Monster Manual
+Giant Boar,Beast,U,Large,2,12,42,5d10+5,NO,10d6+3,N/A,0,,323,2,3,Cavern,N,N,N,Y,Y,N,N,N,N,N,Monster Manual
+Giant Centipede,Beast,U,small,1/4,13,4,1d6+1,NO,1d4+2,N/A,2,,323,0.25,2,Basic,N,N,N,N,N,N,N,N,Y,Y,Monster Manual
+Giant Poisonous Snake,Beast,U,Medium,1/4,14,11,2d8+2,NO,1d4+4,N/A,4,,327,0.25,2,Basic,N,N,Y,Y,Y,N,N,Y,Y,Y,Monster Manual
+Giant Rat,Beast,U,Small,1/8,12,7,2d6,NO,1d4+2,N/A,2,,327,0.13,1,Basic,N,N,N,Y,N,N,N,Y,Y,Y,Monster Manual
+Giant Scorpion,Beast,U,Large,3,15,52,7d10+14,NO,1d8+2,1d10+2,1,,327,3,3,Cavern,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Giant Spider,Beast,U,Large,1,14,26,4d10+4,NO,1d8+3,N/A,3,,328,1,2,Basic,N,N,Y,Y,N,N,N,Y,Y,Y,Monster Manual
+Giant Wasp,Beast,U,Medium,1/2,12,13,3d8,NO,1d6+2,N/A,2,,329,0.5,3,Cavern,N,N,N,Y,Y,N,N,N,N,Y,Monster Manual
+Giant Weasel,Beast,U,Medium,1/8,13,9,2d8,NO,1d4+3,N/A,3,,329,0.13,6,Cavern,N,N,N,Y,Y,Y,N,N,N,N,Monster Manual
+Giant Wolf Spider,Beast,U,Medium,1/4,13,11,2d8+2,NO,1d6+1,N/A,3,,330,0.25,3,Basic,N,Y,Y,Y,Y,Y,N,N,N,N,Monster Manual
+Gibbering Mouther,Aberration,N,Medium,2,9,67,9d8+27,NO,5d6,N/A,-1,,157,2,6,Exotic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Glabrezu,Fiend,CE,Large,9,17,157,15d10+75,YES,2d10+5,2d4+2,2,9,58,9,3,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Gladiator,Humanoid,ANY,Medium,5,16,112,15d8+45,NO,2d8+4,2d4+4,2,,346,5,5,Basic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Gnoll,Humanoid,CE,Medium,1/2,15,22,5d8,NO,1d4+2,1d8+2,1,4,163,0.5,1,Basic,N,N,Y,Y,Y,N,N,N,N,N,Monster Manual
+Gnoll Fang of Yeenoghu,Humanoid,CE,Medium,4,14,65,10d8+20,NO,1d6+3,1d8+3,0,5,163,4,6,Basic,N,N,Y,N,Y,Y,N,N,N,N,Monster Manual
+Gnoll Pack Lord,Humanoid,CE,Medium,2,15,49,9d8+9,NO,1d4+3,1d10+3,0,5,163,2,4,Basic,N,N,Y,Y,Y,Y,N,N,N,N,Monster Manual
+Goblin,Humanoid,NE,Small,1/4,15,7,2d6,NO,1d6+2,1d6+2,2,4,166,0.25,1,Basic,N,N,N,Y,Y,Y,N,N,Y,N,Monster Manual
+Goblin Boss,Humanoid,NE,Small,1,17,21,6d6,NO,1d6+2,1d6+2,0,4,166,1,1,Basic,N,N,N,Y,Y,Y,N,N,Y,N,Monster Manual
+Gorgon,Construct,U,Large,5,19,114,12d10+48,NO,2d12+5,2d10+5,0,,171,5,8,Dungeon,N,N,N,Y,Y,Y,N,N,N,N,Monster Manual
+Gray Ooze,Ooze,U,Medium,1/2,8,22,3d8+9,NO,3d6+1,N/A,-2,,243,0.5,3,Dungeon,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Grell,Aberration,NE,Medium,3,12,55,0,NO,1d10+2,2d4+2,0,,172,3,8,Basic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Grick,Monstrosity,N,Medium,2,14,27,6d8,NO,2d6+2,1d6+2,2,,173,2,7,Cavern,N,N,N,Y,N,N,N,N,Y,N,Monster Manual
+Grick Alpha,Monstrosity,N,Medium,7,18,75,6d8,NO,2d6+4,4d8+4,0,,173,7,9,Cavern,N,N,N,Y,N,N,N,N,Y,N,Monster Manual
+Griffon,Monstrosity,U,Large,2,12,59,7d10+21,NO,1d8+4,2d6+4,2,,174,2,4,Cavern,Y,Y,N,N,Y,Y,Y,N,N,N,Monster Manual
+Grimlock,Humanoid,NE,Medium,1/4,11,11,2d8+2,NO,2d4+3,N/A,1,,175,0.25,6,Basic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Guard,Humanoid,ANY,Medium,1/8,16,11,2d8+2,NO,1d6+1,N/A,1,,347,0.13,3,Basic,N,Y,Y,Y,Y,Y,Y,N,N,Y,Monster Manual
+Gynosphinx,Monstrosity,LN,Large,11,17,136,16d10+48,YES,2d8+4,N/A,2,,282,11,5,Magic,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Half Ogre,Giant,C,Large,1,12,30,4d10 + 8,NO,2d10+3,2d6+3,0,5,238,1,2,Basic,Y,N,Y,Y,N,Y,Y,N,Y,Y,Monster Manual
+Half-Red Dragon Veteran,Humanoid,ANY,Medium,5,18,65,10d8 + 20,NO,1d10+3,1d6+3,0,3,180,5,8,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Harpy,Monstrosity,CE,Medium,1,11,38,7d8+7,NO,2d4+1,1d4+1,1,,181,1,1,Basic,N,Y,N,Y,N,Y,Y,N,N,N,Monster Manual
+Hell Hound,Fiend,LE,Medium,3,15,45,7d8+14,NO,1d8+2d6+3,6d6,1,,182,3,1,Exotic,N,N,N,N,N,N,Y,N,Y,N,Monster Manual
+Helmed Horror,Construct,N,Medium,4,20,60,7d8 + 14,NO,1d10+4,N/A,0,,183,4,5,Magic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Hezrou,Fiend,CE,Large,8,16,136,13d10+65,NO,2d10+4,2d6+4,3,7,60,8,6,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Hill Giant,Giant,CE,Huge,5,13,105,10d12+40,NO,3d8+5,3d10+5,-1,,155,5,9,Cavern,N,N,N,N,N,Y,N,N,N,N,Monster Manual
+Hippogriff,Monstrosity,U,Large,1,11,19,3d10+3,NO,1d10+3,2d6+3,1,,184,1,5,Magic,N,N,N,N,Y,Y,Y,N,N,N,Monster Manual
+Hobgoblin,Humanoid,LE,Medium,1/2,18,11,2d8+2,NO,1d10+1,1d8+1,1,3,186,0.5,1,Basic,N,N,Y,Y,Y,N,N,N,Y,N,Monster Manual
+Hobgoblin Captain,Humanoid,LE,Medium,3,17,39,6d8+12,NO,2d6+2,1d6+2,0,4,186,3,1,Basic,N,N,Y,Y,Y,Y,N,N,Y,N,Monster Manual
+Hobgoblin Warlord,Humanoid,LE,Medium,6,20,97,13d8+39,NO,1d10+3,1d4+3,0,9,187,6,3,Basic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Hook Horror,Monstrosity,N,Large,3,15,75,0,NO,2d6+4,N/A,0,,189,3,8,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Horned Devil,Fiend,LE,Large,11,18,178,17d10+85,NO,2d8+6,1d8+6,3,10,74,11,1,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Ice Devil,Fiend,LE,Large,14,18,180,19d10+76,NO,5d6+5,2d4+3d6+5,2,10,75,14,6,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Ice Mephit,Elemental,NE,Small,1/2,11,21,6d6,YES,2d4+1,2d4,1,,215,0.5,9,Exotic,Y,N,N,N,N,N,N,N,N,N,Monster Manual
+Imp,Fiend,LE,Tiny,1,13,10,3d4+3,NO,1d4+3,N/A,3,5,76,1,2,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Invisible Stalker,Elemental,N,Medium,6,14,104,16d8+32,NO,2d6+3,N/A,4,,192,6,8,Magic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Iron Golem,Construct,U,Large,16,20,210,20d10+100,NO,3d8+7,3d10+7,-1,,170,16,1,Dungeon,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Jackalwere,Humanoid,CE,Medium,1/2,12,18,1d6,NO,1d4+2,1d6+2,0,,193,0.5,4,Magic,N,N,Y,N,Y,N,N,N,N,N,Monster Manual
+Kenku,Humanoid,CN,Medium,1/4,13,13,1d6,NO,1d6+3,1d6+3,0,,194,0.25,8,Basic,N,N,N,Y,N,N,N,N,N,Y,Monster Manual
+Knight,Humanoid,ANY,Medium,3,18,52,8d8+16,NO,2d6+3,1d10,0,,347,3,3,Basic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Kobold,Humanoid,LE,Small,1/8,12,5,2d6-2,NO,1d4+2,1d4+2,2,4,195,0.13,1,Basic,Y,Y,Y,Y,N,Y,Y,Y,Y,Y,Monster Manual
+Kuo-Toa,Humanoid,NE,Medium,1/4,13,18,0,NO,1d4+1,1d8+1,0,,199,0.25,6,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Kuo-Toa Archpriest,Humanoid,NE,Medium,6,13,97,0,YES,5d6+3,1d4+2,0,,200,6,8,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Kuo-Toa Whip,Humanoid,NE,Medium,1,11,65,0,YES,1d4+2,1d6+2,0,,200,1,6,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Lamia,Monstrosity,CE,Large,4,13,97,13d10+26,YES,2d10+3,1d4+3,1,,201,4,8,Dungeon,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Lich,Undead,E,Medium,21,17,135,18d8+54,YES,3d6,N/A,3,,202,21,1,Crypt,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Lion,Beast,U,Large,1,12,26,4d10+4,NO,1d8+3,1d6+3,2,,331,1,2,Cavern,N,N,Y,N,Y,Y,Y,N,N,N,Monster Manual
+Lizard King/Queen,Humanoid,CE,Medium,4,15,78,1d4,NO,1d6+3,1d4+3,0,,205,4,8,Basic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Lizardfolk,Humanoid,N,Medium,1/2,15,22,4d8+4,NO,1d6+2,1d6+2,0,,204,0.5,2,Basic,N,N,N,Y,N,N,N,Y,N,N,Monster Manual
+Lizardfolk Shaman,Humanoid,N,Medium,2,13,27,0,YES,1d6+2,1d4+2,0,,205,2,3,Basic,N,N,N,Y,N,N,N,Y,N,N,Monster Manual
+Mage,Humanoid,ANY,Medium,6,12,40,9d8,YES,1d4+2,N/A,2,,347,6,3,Basic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Magma Mephit,Elemental,NE,Small,1/2,11,22,5d6+5,YES,2d4+1,N/A,1,,216,0.5,9,Exotic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Magmin,Elemental,CN,Small,1/2,14,9,2d6+2,NO,2d6,N/A,2,,212,0.5,8,Cavern,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Manes,Fiend,CE,Small,1/8,9,9,2d6 + 2,NO,2d4,N/A,0,2,60,0.13,7,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Manticore,Monstrosity,LE,Large,3,14,68,8d10+24,NO,1d8+3,1d6+3,3,,213,3,3,Magic,Y,Y,N,N,Y,Y,Y,N,N,N,Monster Manual
+Marilith,Fiend,CE,Large,16,18,189,18d10+90,NO,2d8+4,2d10+4,5,9,61,16,4,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Mastiff,Beast,U,Medium,1/8,12,5,1d8+1,NO,1d6+1,N/A,2,,332,0.13,3,Basic,N,N,N,Y,N,Y,N,N,N,Y,Monster Manual
+Medusa,Monstrosity,LE,Medium,6,15,127,17d8+51,NO,1d4+4d6+2,1d6+2,2,,214,6,1,Dungeon,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Mimic,Monstrosity,N,Medium,2,12,58,9d8+18,NO,1d8+3,2d8+3,1,,220,2,2,Basic,N,N,N,N,N,N,N,N,Y,Y,Monster Manual
+Mind Flayer,Aberration,LE,Medium,7,15,71,0,YES,2d10+4,10d10,0,,222,7,4,Exotic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Minotaur,Monstrosity,CE,Large,3,14,76,9d10+27,NO,2d12+4,2d8+4,0,,223,3,3,Magic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Minotaur Skeleton,Undead,LE,Large,2,12,67,9d10+18,NO,2d12+4,2d8+4,0,,273,2,6,Crypt,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Mud Mephit,Elemental,NE,Small,1/4,11,27,6d6 + 6,NO,1d6+1,N/A,0,3,216,0.25,3,Exotic,N,N,N,N,N,N,N,Y,N,N,Monster Manual
+Mummy,Undead,LE,Medium,3,11,58,9d8+18,NO,5d6+3,N/A,-1,,228,3,1,Crypt,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Mummy Lord,Undead,LE,Medium,15,17,97,13d8+39,YES,9d6+4,N/A,0,,229,15,1,Crypt,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Myconid Adult,Plant,LN,Medium,1/2,12,22,9d8 + 18,NO,4d4,N/A,0,,232,0.5,8,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Myconid Sovereign,Plant,LN,Large,2,13,60,9d8 + 18,NO,6d4+1,N/A,0,,232,2,8,Cavern,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Nalfeshnee,Fiend,LE,Large,13,18,184,16d10+96,NO,5d10+5,3d6+5,0,10,62,13,5,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Needle Blight,Plant,NE,Medium,1/4,12,11,2d8 + 2,NO,2d4+1,2d6+1,0,3,32,0.25,7,Cavern,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Nightmare,Fiend,NE,Large,3,13,68,8d10+24,NO,2d8+2d6+4,N/A,2,,235,3,6,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Noble,Humanoid,ANY,Medium,1/8,15,9,2d8,NO,1d8+1,N/A,1,,348,0.13,5,Basic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Nothic,Aberration,NE,Medium,2,15,45,6d8 + 18,NO,1d6+3,N/A,0,,236,2,8,Dungeon,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Ochre Jelly,Ooze,U,Large,2,8,45,6d10+12,NO,3d6+2,N/A,-2,,243,2,3,Dungeon,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Ogre,Giant,CE,Large,2,11,59,7d10+21,NO,2d8+4,2d6+4,-1,,237,2,1,Basic,Y,Y,Y,Y,Y,N,Y,Y,Y,N,Monster Manual
+Ogre Zombie,Undead,NE,Large,2,8,85,9d10+36,NO,2d8+6,N/A,-2,,316,2,4,Basic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Oni,Giant,LE,Large,7,16,110,13d10+39,YES,1d8+4,2d10+4,0,,239,7,7,Basic,N,N,N,Y,N,N,N,N,N,Y,Monster Manual
+Orc,Humanoid,CE,Medium,1/2,13,15,2d8+6,NO,1d12+3,1d6+3,1,5,246,0.5,1,Basic,Y,N,N,Y,Y,Y,Y,Y,Y,N,Monster Manual
+Orc Eye of Gruumsh,Humanoid,CE,Medium,2,16,45,6d8 + 18,YES,2d8+3,N/A,0,5,247,2,5,Basic,Y,N,N,Y,Y,Y,Y,Y,Y,N,Monster Manual
+Orc War Chief,Humanoid,CE,Medium,4,16,93,11d8 + 44,NO,1d12+1d8+4,2d8+4,0,6,246,4,1,Basic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Orog,Humanoid,CE,Medium,2,18,42,5d8 + 20,NO,1d12+4,1d6+4,0,6,247,2,7,Basic,Y,N,N,Y,Y,Y,Y,N,Y,N,Monster Manual
+Otyugh,Aberration,N,Large,5,14,114,12d10+48,NO,2d8+3,2d8+3,0,,248,5,8,Exotic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Owlbear,Monstrosity,U,Large,3,13,59,7d10+21,NO,1d10+5,2d8+5,1,,249,3,1,Cavern,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Phase Spider,Monstrosity,U,Large,3,13,32,5d10+5,NO,1d10+2,N/A,2,,334,3,3,Basic,N,N,Y,Y,Y,Y,N,N,Y,Y,Monster Manual
+Piercer,Monstrosity,U,Medium,1/2,15,22,5d10 + 5,NO,VARIES,N/A,0,,252,0.5,3,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Pit Fiend,Fiend,LE,Large,20,19,300,24d10+168,YES,4d6+8,2d8+8,2,14,77,20,1,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Poisonous Snake,Beast,U,Tiny,1/8,13,2,1d4,NO,1,N/A,0,,334,0.13,2,Basic,N,Y,Y,Y,Y,Y,N,Y,N,N,Monster Manual
+Priest,Humanoid,ANY,Medium,2,13,27,5d8+5,YES,1d6,N/A,0,,348,2,3,Basic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Quaggoth,Humanoid,CN,Medium,2,13,45,0,NO,1d6+3,N/A,0,,256,2,8,Exotic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Quaggoth Spore Servant,Plant,U,Medium,1,13,45,0,NO,1d6+3,N/A,0,,230,1,9,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Quasit,Fiend,CE,Tiny,1,13,7,3d4,NO,1d4+3,N/A,3,4,63,1,4,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Rakshasa,Fiend,LE,Medium,13,16,110,13d8+52,YES,2d6+2,N/A,3,,257,13,5,Dungeon,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Revenant,Undead,N,Medium,5,13,136,0,NO,2d6+4,N/A,0,,259,5,5,Crypt,Y,N,Y,Y,N,Y,N,Y,N,Y,Monster Manual
+Roper,Monstrosity,NE,Large,5,20,93,11d10+33,NO,4d8+4,N/A,0,,261,5,6,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Rug of Smothering,Construct,U,Large,2,12,33,6d10,NO,2d6+3,N/A,2,5,20,2,8,Magic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Rust Monster,Monstrosity,U,Medium,1/2,14,27,5d8+5,NO,1d8+1,N/A,0,,262,0.5,6,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Salamander,Elemental,NE,Large,5,15,90,12d10+24,NO,2d8+1d6+4,4d6+4,2,,266,5,4,Exotic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Satyr,Fey,CN,Medium,1/2,14,31,7d8,NO,2d4+1,1d6+3,0,,267,0.5,3,Cavern,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Scarecrow,Construct,CE,Medium,1,11,36,0,NO,2d4+1,N/A,0,,268,1,6,Cavern,N,N,N,N,Y,N,N,N,N,N,Monster Manual
+Scout,Humanoid,ANY,Medium,1/2,13,16,3d8+3,NO,1d6+2,1d8+2,0,,349,0.5,5,Basic,Y,Y,Y,Y,Y,N,Y,Y,Y,N,Monster Manual
+Shadow,Undead,CE,Medium,1/2,12,16,3d8+3,NO,2d6+2,N/A,1,,269,0.5,2,Crypt,N,N,N,N,N,N,N,N,Y,Y,Monster Manual
+Shadow Demon,Fiend,CE,Medium,4,13,66,12d8 + 12,NO,2d6+3,N/A,3,5,64,4,4,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Shadow Dragon,Dragon,CE,VARIES,13,18,178,17d10 + 85,NO,2d10+1d6+6,2d6+6,0,10,85,13,9,Crypt,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Shambling Mound,Plant,U,Large,5,15,136,16d10+48,NO,2d8+4,N/A,1,,270,5,5,Cavern,N,N,N,Y,N,N,N,Y,N,N,Monster Manual
+Shield Guardian,Construct,U,Large,7,17,142,15d10+60,NO,2d6+4,N/A,1,,271,7,3,Magic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Skeleton,Undead,LE,Medium,1/4,13,13,2d8+4,NO,1d6+2,1d6+2,2,4,272,0.25,1,Crypt,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Smoke Mephit,Elemental,NE,Small,1/4,12,22,0,YES,1d4+2,N/A,0,,217,0.25,6,Exotic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Spectator,Aberration,LN,Medium,3,14,39,6d8 + 12,NO,1d6-1,N/A,2,1,30,3,7,Magic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Specter,Undead,CE,Medium,1,12,22,5d8,NO,1d6,N/A,2,,279,1,2,Crypt,N,N,N,N,N,N,N,N,Y,Y,Monster Manual
+Spined Devil,Fiend,LE,Small,2,15,110,5d6+5,NO,1d6+3,2d6+3,2,2,78,2,5,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Spirit Naga,Monstrosity,CE,Large,8,15,75,10d10+20,YES,1d6+4,N/A,2,,234,8,4,Dungeon,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Spy,Humanoid,ANY,Medium,1,12,27,6d8,NO,1d6+2,1d6+2,2,,349,1,5,Basic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Stirge,Beast,U,Tiny,1/8,14,2,1d4,NO,1d4+3,N/A,0,,284,0.13,1,Basic,N,Y,Y,N,Y,Y,Y,Y,Y,Y,Monster Manual
+Stone Giant,Giant,N,Huge,7,17,126,11d12+55,NO,3d8+6,4d10+6,0,,156,7,9,Cavern,N,N,N,N,N,Y,Y,N,N,N,Monster Manual
+Stone Golem,Construct,U,Large,10,17,178,17d10+85,NO,3d8+6,N/A,-1,,170,10,1,Dungeon,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Succubus/Incubus,Fiend,NE,Medium,4,15,66,17d10 + 85,NO,1d6+3,N/A,-1,,285,4,5,Exotic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Thri-Kreen,Humanoid,CN,Medium,1,15,33,0,NO,1d6+1,2d4+1,0,,288,1,7,Cavern,N,N,Y,N,Y,N,N,N,N,N,Monster Manual
+Thug,Humanoid,NOT GOOD,Medium,1/2,11,32,5d8+10,NO,1d6+2,1d10,0,,350,0.5,1,Basic,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Tiger,Beast,U,Large,1,12,37,5d10+10,NO,1d10+3,1d8+3,2,,339,1,4,Cavern,N,N,N,Y,Y,N,N,N,N,N,Monster Manual
+Tribal Warrior,Humanoid,ANY,Medium,1/8,12,11,2d8+2,NO,1d8+1,N/A,2,,350,0.13,5,Basic,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,Monster Manual
+Troglodyte,Humanoid,CE,Medium,1/4,11,13,2d8 + 4,NO,1d4+2,1d4+2,0,4,290,0.25,2,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Troll,Giant,CE,Large,5,15,84,8d10+40,NO,1d6+4,2d6+4,1,,291,5,1,Basic,Y,N,N,Y,N,Y,Y,Y,Y,N,Monster Manual
+Umber Hulk,Monstrosity,CE,Large,5,18,93,13d12 + 52,NO,1d8+5,2d8+5,0,,292,5,5,Cavern,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Vampire,Undead,LE,Medium,13,16,144,17d8+68,NO,4d6+4,N/A,0,,297,13,1,Crypt,N,N,N,N,N,N,N,N,N,Y,Monster Manual
+Vampire Spawn,Undead,NE,Medium,5,15,82,11d8+33,NO,2d4+3,3d6+3,0,,298,5,5,Crypt,N,N,N,N,N,N,N,N,Y,Y,Monster Manual
+Veteran,Humanoid,ANY,Medium,3,17,58,9d8+18,NO,1d10+3,1d6+3,0,,350,3,3,Basic,Y,Y,N,Y,Y,Y,Y,N,Y,Y,Monster Manual
+Vine Blight,Plant,NE,Medium,1/2,12,26,4d8+8,NO,2d6+2,N/A,-1,4,32,0.5,7,Cavern,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Violet Fungus,Plant,U,Medium,1/4,5,18,4d8,NO,1d8,N/A,0,,138,0.25,5,Basic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Vrock,Fiend,CE,Large,6,15,104,11d10+44,NO,2d6+3,2d10+3,2,6,64,6,5,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Wereboar,Humanoid,NE,Medium,4,10,78,12d8+24,NO,2d6+3,2d6+3,3,,209,4,6,Basic,N,N,N,N,Y,Y,N,N,N,N,Monster Manual
+Wererat,Humanoid,LE,Medium,2,12,35,6d8+6,NO,1d4+2,1d6+2,3,,209,2,3,Basic,N,N,N,Y,Y,N,N,N,N,Y,Monster Manual
+Weretiger,Humanoid,N,Medium,4,12,120,16d8+48,NO,1d10+3,1d8+3,3,,210,4,7,Basic,N,N,Y,N,N,N,N,N,N,N,Monster Manual
+Werewolf,Humanoid,CE,Medium,3,11,58,9d8+18,NO,1d8+2,2d4+2,1,,211,3,2,Basic,N,N,N,Y,N,Y,N,N,N,N,Monster Manual
+Wight,Undead,NE,Medium,3,14,45,6d8+18,NO,1d6+2,1d10+2,2,,300,3,1,Crypt,N,N,Y,N,N,N,N,Y,Y,Y,Monster Manual
+Will-O'-Wisp,Undead,CE,Tiny,2,19,22,9D4,NO,2d8,N/A,2,,301,2,4,Crypt,N,N,N,Y,N,N,N,Y,N,Y,Monster Manual
+Winged Kobold,Humanoid,LE,Small,1/4,13,7,3d6 - 3,NO,1d4+3,1d6+3,3,5,195,0.25,7,Basic,Y,Y,Y,Y,N,Y,Y,Y,Y,Y,Monster Manual
+Winter Wolf,Monstrosity,NE,Large,3,13,75,10d10+20,NO,2d6+4,4d8,1,,340,3,4,Cavern,Y,N,N,N,N,N,N,N,N,N,Monster Manual
+Wolf,Beast,U,Medium,1/4,13,11,2d8+2,NO,2d4+4,N/A,0,,341,0.25,2,Basic,N,N,N,Y,Y,Y,N,N,N,N,Monster Manual
+Worg,Monstrosity,NE,Large,1/2,13,26,4d10+4,NO,2d6+3,N/A,0,,341,0.5,3,Basic,N,N,N,Y,Y,N,N,N,N,N,Monster Manual
+Wraith,Undead,NE,Medium,5,13,67,9d8+27,NO,4d8+3,N/A,0,,302,5,1,Crypt,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Wyrmling Black Dragon,Dragon,CE,Medium,2,17,33,0,NO,1d10+1d4+2,5d8,0,,88,2,4,Dungeon,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Wyrmling Blue Dragon,Dragon,LE,Medium,3,17,52,0,NO,1d10+1d6+3,4d10,0,,91,3,2,Dungeon,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Wyrmling Green Dragon,Dragon,LE,Medium,2,17,38,0,NO,1d10+1d6+2,6d6,0,,95,2,4,Dungeon,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Wyrmling Red Dragon,Dragon,CE,Medium,4,17,75,0,NO,1d10+1d6+4,7d6,2,,98,4,2,Dungeon,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Wyrmling White Dragon,Dragon,CE,Medium,2,16,32,5d8+10,NO,1d10+1d4+2,5d8,1,,102,2,4,Dungeon,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Wyvern,Dragon,U,Large,6,13,110,13d10+39,NO,2d6+4,2d8+4,0,,303,6,1,Basic,N,N,N,N,N,Y,Y,N,N,N,Monster Manual
+Xorn,Elemental,N,Medium,5,19,73,7d8+42,NO,1d6+3,3d6+3,0,,304,5,6,Exotic,N,N,N,N,N,N,N,N,Y,N,Monster Manual
+Yeti,Monstrosity,CE,Large,3,12,51,6d10 + 18,NO,2d6+4,N/A,1,,305,3,6,Cavern,Y,N,N,N,N,N,N,N,N,N,Monster Manual
+Yochlol,Fiend,CE,Medium,10,15,136,16d8 + 64,YES,7d6+2,N/A,2,6,65,10,6,Exotic,N,N,N,N,N,N,N,N,N,N,Monster Manual
+Young Black Dragon,Dragon,CE,Large,7,18,127,0,NO,2d10+1d8+4,2d6+4,0,,88,7,1,Dungeon,N,N,N,N,N,N,N,Y,N,N,Monster Manual
+Young Blue Dragon,Dragon,LE,Large,9,18,152,16d10+64,NO,3d10+5,2d6+5,0,,91,9,1,Dungeon,N,Y,Y,N,N,N,N,N,N,N,Monster Manual
+Young Green Dragon,Dragon,LE,Large,8,18,136,16d10+48,NO,2d10+2d6+4,2d6+4,0,,94,8,1,Dungeon,N,N,N,Y,N,N,N,N,N,N,Monster Manual
+Young Red Dragon,Dragon,CE,Large,10,18,178,17d10+85,NO,2d10+1d6+6,2d6+6,2,,98,10,1,Dungeon,N,N,N,N,N,Y,Y,N,N,N,Monster Manual
+Young White Dragon,Dragon,CE,Large,6,17,135,14d10+56,NO,2d10+1d8+4,2d6+4,1,,101,6,2,Dungeon,Y,N,N,N,N,N,N,N,N,N,Monster Manual
+Yuan-Ti Abomination,Monstrosity,NE,Large,7,15,127,16d10 + 48,YES,4d6+4,2d6+4,1,,308,7,6,Basic,N,N,Y,Y,N,N,N,Y,N,Y,Monster Manual
+Yuan-Ti Malison,Monstrosity,NE,Medium,3,12,66,16d10 + 48,YES,VARIES,N/A,1,,309,3,6,Basic,N,N,Y,Y,N,N,N,Y,N,Y,Monster Manual
+Yuan-Ti Pureblood,Monstrosity,NE,Medium,1,11,40,16d10 + 48,YES,1d6+1,1d6+1,1,,310,1,4,Basic,N,N,Y,Y,N,N,N,Y,N,Y,Monster Manual
+Zombie,Undead,NE,Medium,1/4,8,22,3d8+9,NO,1d6+1,N/A,-2,3,316,0.25,1,Basic,N,N,N,N,N,N,N,N,N,Y,Monster Manual

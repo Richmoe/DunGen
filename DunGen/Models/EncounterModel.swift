@@ -94,7 +94,7 @@ class Encounter {
                 
                 //convert to drop
                 let d = Drop(type: 1, name: "Dead Goblin", loot: loot[i])
-                d.instantiateSprite(at: mob[i].at())
+                let _ = d.instantiateSprite(at: mob[i].at())
                 if let ds = Global.dungeonScene {
                     if let mc = ds.mapController {
                         mc.addDrop(drop: d, at: mob[i].at())

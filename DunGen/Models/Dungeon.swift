@@ -36,9 +36,9 @@ class Dungeon { //Environment?
         
         let m = Map(width: mapWidth, height: mapHeight)
         
-        let mg = MapGenerator(map: m)
+        let _ = MapGenerator(map: m)
         
-        let eg = EncounterGenerator(map: m)
+        let _ = EncounterGenerator(map: m)
         
         //m.generate()
         

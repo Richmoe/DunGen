@@ -105,7 +105,7 @@ class MapController {
             let sprites = tileMap.nodes(at: clickPt)
             if (sprites.count > 0) {
                 
-                print ("We clicked a sprite!!! \(sprites[0].name)")
+                print ("We clicked a sprite!!! \(sprites[0].name ?? "null")")
                 //find if it's a drop
                 for i in 0..<dropQueue.count {
                     if (sprites[0] == dropQueue[i].sprite) {

@@ -14,17 +14,22 @@ class Monster: Mob {
     var challengeRating  : Double = 0.0
     var hitDice = "1d6"
     var attackDice = "1d6"
+    var rarity = 0
+    var motif = 0
     
-    init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String, hitDice: String, challengeRating: Double)
+    init(name: String, armorClass: Int, hitPoints: Int, initiativeBonus: Int, image: String, hitDice: String, challengeRating: Double, rarity: Int, motif: Int)
     {
         self.challengeRating = challengeRating
         self.hitDice = hitDice
+        self.rarity = rarity
+        self.motif = motif
+
         super.init(name: name, armorClass: armorClass, hitPoints: hitPoints, initiativeBonus: initiativeBonus, image: image)
     }
     
     func makeMob() -> Monster {
         
-        let newMob = Monster(name: name, armorClass: armorClass, hitPoints: hitPoints, initiativeBonus: initiativeBonus, image: image, hitDice: hitDice, challengeRating: challengeRating)
+        let newMob = Monster(name: name, armorClass: armorClass, hitPoints: hitPoints, initiativeBonus: initiativeBonus, image: image, hitDice: hitDice, challengeRating: challengeRating, rarity: rarity, motif: motif)
         
         newMob.setHPs()
         return newMob
