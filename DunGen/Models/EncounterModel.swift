@@ -42,6 +42,7 @@ class Encounter {
     
     init(at: MapPoint) {
         
+        /*
         var m : Monster
         for _ in 1...4 {
             m =  MobFactory.sharedInstance.makeMonster(name: "goblin")
@@ -52,7 +53,16 @@ class Encounter {
             l.random()
             loot.append(l)
         }
+ */
         self.at = at
+    }
+    
+    func addMonster (_ m: Monster) {
+        mob.append(m)
+        //TEMP
+        let l = Loot()
+        l.random()
+        loot.append(l)
     }
     
     

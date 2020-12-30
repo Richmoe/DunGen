@@ -24,11 +24,11 @@ class EncounterGenerator {
     func generateEncounters () {
         
         //calculate how many we want for the dungeon / divided by # of levels based on overall CR rating
-        let encounterCount = min(4, map.rooms.count - 1)
+        let encounterCount = max(4, DGRand.getRand(map.rooms.count - 1))
         //
         for _ in 1...encounterCount {
             
-            generateAnEncounter(cr: 0)
+            generateAnEncounter(cr: Global.adventure.challenge)
         }
     }
     
@@ -47,6 +47,9 @@ class EncounterGenerator {
             room = map.rooms[rNum]
             
         } while (room.hasSpecial == true)
+        
+        //Flag room as a special
+        room.hasSpecial = true
         
         //position within room:
         
@@ -78,11 +81,12 @@ class EncounterGenerator {
         }
         
         let targetExp = Global.party.getPartyDifficulty(type: diff)
-        getMobsForDifficulty(targetExp: targetExp)
+        getMobsForDifficulty(targetExp: targetExp, encounter: e)
 
         
         
         //store it at the block
+        print("Encounter \(e) at map block: \(encounterAt)")
         map.getBlock(encounterAt).encounter = e
         
         //TODO handle > 4 which means it spans multiple spots? Push that to the battle mode?
@@ -90,7 +94,7 @@ class EncounterGenerator {
         
     }
     
-    func getMobsForDifficulty(targetExp: Int) {
+    func getMobsForDifficulty(targetExp: Int, encounter: Encounter) {
         
         //Either we get 1 mob at diff, 1+ at diff-1, likely 2+ at diff-2, etc.
         //Get total CR for Exp:
@@ -109,7 +113,7 @@ class EncounterGenerator {
  */
         
         
-        /* TODO: Rarety - 1-9 relative rarety; 0 = no luck
+        /* TODO: Rarity - 1-9 relative rarety; 0 = no luck
          also added Motif which is a String representing a TYPE of dungeon
          - Basic
          - Cavern
@@ -132,8 +136,8 @@ class EncounterGenerator {
         print("/Test")
          */
 
-        var encounterPattern = DGRand.getRandRand(10)
-        encounterPattern = 3
+        var encounterPattern = DGRand.getRandRand(40)
+        //encounterPattern = 3
         
         //var x = Global.adventure.crMath(cr: 1.0, mod: -1)
         
@@ -142,7 +146,9 @@ class EncounterGenerator {
             print("Single Monster @ exp: \(targetCR)")
             let m = MobFactory.sharedInstance.getMobBy(cr: targetCR)
             print("Fighting a \(m.name)")
+            encounter.addMonster(MobFactory.sharedInstance.makeMonster(name: m.name))
         } else if (encounterPattern <= 40){
+            
             //Scenario 2 for now - multiple of the same kind
 
             //Doing target CR - 1 so:
@@ -150,22 +156,29 @@ class EncounterGenerator {
             print("Multiple Monsters @ exp: \(targetCR) : using CR: \(targCR_minus)")
             
             var curExp = 0
+            
+            var maxMobs = 4 // TODO: Fix this for more than 4
             let m = MobFactory.sharedInstance.getMobBy(cr: targCR_minus)
             repeat {
-                
+  
                 print ("Fighting a \(m.name)")
                 curExp += Global.adventure.getExpFromCr(cr: m.challengeRating)
-            } while curExp < targetExp
+                encounter.addMonster(MobFactory.sharedInstance.makeMonster(name: m.name))
+                maxMobs -= 1
+            } while (curExp < targetExp && maxMobs > 0)
             print ("total exp: \(curExp)")
 
         }
         
-        else if (encounterPattern <= 100){
+        else if (encounterPattern <= 1010){
+            
+            
+            // TODO: This case
             //Scenario 3 - chance of different kinds
 
             //Doing target CR - 1 so:
             let targCR_minus = Global.adventure.crMath(cr: targetCR, mod: -1 * DGRand.getRandRand(3))
-            print("Multiple Monsters @ exp: \(targetCR) : using CR: \(targCR_minus)")
+            print("Multiple mixed Monsters @ exp: \(targetCR) : using CR: \(targCR_minus)")
             
             var curExp = 0
             var m = MobFactory.sharedInstance.getMobBy(cr: targCR_minus)
@@ -176,6 +189,7 @@ class EncounterGenerator {
                 
                 print ("Fighting a \(m.name)")
                 curExp += Global.adventure.getExpFromCr(cr: m.challengeRating)
+                encounter.addMonster(MobFactory.sharedInstance.makeMonster(name: m.name))
             } while curExp < targetExp
             print ("total exp: \(curExp)")
 

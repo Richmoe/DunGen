@@ -15,6 +15,7 @@ class Adventure : ObservableObject {
     
     
     //Difficulty
+    var challenge: Int = 0
     
     
     //Motif - enum for types of encounter
@@ -51,9 +52,10 @@ class Adventure : ObservableObject {
     
     init() {
 
+        motif = iMotifDungeon
         
         dungeon = Dungeon()
-        motif = iMotifDungeon
+
         
         loadCrToExpTable()
 

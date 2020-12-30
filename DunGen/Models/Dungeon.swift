@@ -30,7 +30,9 @@ class Dungeon { //Environment?
          UCAY - mob behind door
          WPH7 has secret door
          */
-        seedString = "CCNT"
+        //seedString = "CCNT"
+        
+        //seedString = "BXCT"
         DGRand.sharedInstance.setSeed(seedString: seedString)
         
         

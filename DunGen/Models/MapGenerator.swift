@@ -326,6 +326,9 @@ class MapGenerator {
         }
         
         
+        //Set Special so we don't have a mob in starting room:
+        room.hasSpecial = true
+        
         let entrancePoint = MapPoint(row: 0, col: Int(room.width / 2))
         
         room.setExit(at: entrancePoint, exit: Passage(type: .stairsUp, direction: .south))
