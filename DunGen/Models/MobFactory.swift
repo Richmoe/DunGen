@@ -87,6 +87,7 @@ class MobFactory {
             }
             
             if let cr = Double(mob[iCR]) {
+
                 
                 if let ix = tempMotifStringArray.firstIndex(of: mob[iMotif]) {
                     monsterList.append(Monster(name: mob[iName], armorClass: Int(mob[iAC])!, hitPoints: 0, initiativeBonus: Int(mob[iInitiative])!, image: "Avatar4", hitDice: mob[iHitDice], challengeRating: cr, rarity: Int(mob[iRarity])!, motif: ix)) //Double(mob[iCR])))

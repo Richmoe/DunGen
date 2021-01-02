@@ -46,6 +46,7 @@
 		97BCDC66245C75A800D7C191 /* DungeonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC65245C75A800D7C191 /* DungeonScene.swift */; };
 		97BCDC68245D1A0D00D7C191 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC67245D1A0D00D7C191 /* CGPoint+Extensions.swift */; };
 		97BCDC6A245D1B7B00D7C191 /* DungeonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 97BCDC69245D1B7B00D7C191 /* DungeonScene.sks */; };
+		97D76C7725A0F9C90068508B /* RoomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D76C7625A0F9C90068508B /* RoomFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		97BCDC65245C75A800D7C191 /* DungeonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonScene.swift; sourceTree = "<group>"; };
 		97BCDC67245D1A0D00D7C191 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		97BCDC69245D1B7B00D7C191 /* DungeonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DungeonScene.sks; sourceTree = "<group>"; };
+		97D76C7625A0F9C90068508B /* RoomFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				977E0A51245CE36B00AC41B1 /* MapBlockModel.swift */,
 				977E0A53245CE36D00AC41B1 /* MapTypes.swift */,
 				977E0A55245CE36E00AC41B1 /* PlayerModel.swift */,
+				97D76C7625A0F9C90068508B /* RoomFactory.swift */,
 				977E0A58245CE37100AC41B1 /* RoomModel.swift */,
 				975B75CA2468931900E09936 /* MobModel.swift */,
 				975B75CC246894BC00E09936 /* MonsterModel.swift */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				977E0A56245CE36E00AC41B1 /* PlayerModel.swift in Sources */,
+				97D76C7725A0F9C90068508B /* RoomFactory.swift in Sources */,
 				977E0A52245CE36B00AC41B1 /* MapBlockModel.swift in Sources */,
 				977E0A54245CE36D00AC41B1 /* MapTypes.swift in Sources */,
 				977E0A5D245F91A600AC41B1 /* PartyModel.swift in Sources */,

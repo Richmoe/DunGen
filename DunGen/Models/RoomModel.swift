@@ -11,6 +11,7 @@ import Foundation
 
 class Room {
     
+    var id: Int = 0
     var width: Int = 0
     var height: Int = 0
     var at: MapPoint
@@ -25,59 +26,54 @@ class Room {
 //    var hasTreasure = false
     var hasSpecial = false //flag for if the room has something special about it, encounter, etc
     
-    init (at: MapPoint, width: Int, height: Int) {
-        
-        //floor = [[1]]
+    init (at: MapPoint, w: Int = 0, h: Int = 0) {
         
         self.at = at
-        self.width = width
-        self.height = height
-        self.floorPlan = Array(repeating: Array(repeating: 1, count: width ), count: height )
-        self.floorBlocks = Array(repeating: Array(repeating: MapBlock(tileCode: TileCode.floor, heading: .north), count: width), count: height)
-        createMapBlocks()
-    }
-    
-    init (at: MapPoint) {
-        self.at = at
         
-        let r = DGRand.sharedInstance.getRand(to: 30)
-        switch r {
-        case 1...4:
-            width = 2
-            height = 2
-        case 5...8:
-            width = 3
-            height = 3
-        case 9...12:
-            width = 4
-            height = 4
-        case 13...15:
-            width = 2
-            height = 3
-        case 16...18:
-            width = 3
-            height = 2
-        case 19...21:
-            width = 3
-            height = 4
-        case 22...24:
-            width = 4
-            height = 3
-        case 25,26:
-            width = 4
-            height = 5
-        case 27,28:
-            width = 5
-            height = 4
-        case 29:
-            width = 5
-            height = 8
-        case 30:
-            width = 8
-            height = 5
-        default:
-            width = 2
-            height = 2
+        width = w
+        height = h
+        
+        
+        if (w < 1 || h < 1) {
+            let r = DGRand.sharedInstance.getRand(to: 30)
+            switch r {
+            case 1...4:
+                width = 2
+                height = 2
+            case 5...8:
+                width = 3
+                height = 3
+            case 9...12:
+                width = 4
+                height = 4
+            case 13...15:
+                width = 2
+                height = 3
+            case 16...18:
+                width = 3
+                height = 2
+            case 19...21:
+                width = 3
+                height = 4
+            case 22...24:
+                width = 4
+                height = 3
+            case 25,26:
+                width = 4
+                height = 5
+            case 27,28:
+                width = 5
+                height = 4
+            case 29:
+                width = 5
+                height = 8
+            case 30:
+                width = 8
+                height = 5
+            default:
+                width = 2
+                height = 2
+            }
         }
         
         self.floorPlan = Array(repeating: Array(repeating: 1, count: width ), count: height )

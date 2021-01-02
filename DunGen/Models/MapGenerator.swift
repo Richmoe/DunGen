@@ -271,25 +271,25 @@ class MapGenerator {
         var passageTypes = [PassageType.hallway, PassageType.hallway, PassageType.hallway]
         switch roll {
         case 1:
-            room = Room(at: mapSpot, width: 3, height: 3)
+            room = RoomFactory.sharedInstance.makeRoom(at: mapSpot, width: 3, height: 3)
         case 2:
-            room = Room(at: mapSpot, width: 3, height: 3)
+            room = RoomFactory.sharedInstance.makeRoom(at: mapSpot, width: 3, height: 3)
             passageTypes = [PassageType.wooden, PassageType.wooden, PassageType.hallway]
         case 3:
-            room = Room(at: mapSpot, width: 5, height: 5)
+            room = RoomFactory.sharedInstance.makeRoom(at: mapSpot, width: 5, height: 5)
             passageTypes = [PassageType.wooden, PassageType.wooden, PassageType.wooden]
         case 4:
-            room = Room(at: mapSpot, width: 8, height: 2)
+            room = RoomFactory.sharedInstance.makeRoom(at: mapSpot, width: 8, height: 2)
         case 5:
-            room = Room(at: mapSpot, width: 2, height: 4)
+            room = RoomFactory.sharedInstance.makeRoom(at: mapSpot, width: 2, height: 4)
         case 6:
-            room = Room(at: mapSpot, width: 4, height: 4)
+            room = RoomFactory.sharedInstance.makeRoom(at: mapSpot, width: 4, height: 4)
         case 7:
-            room = Room(at: mapSpot, width: 4, height: 4)
+            room = RoomFactory.sharedInstance.makeRoom(at: mapSpot, width: 4, height: 4)
         case 8:
             
             //special???
-            room = Room(at: mapSpot, width: 5, height: 3)
+            room = RoomFactory.sharedInstance.makeRoom(at: mapSpot, width: 5, height: 3)
             
         case 9, 10:
             
@@ -322,7 +322,7 @@ class MapGenerator {
             
             return
         default: //error?:
-            room = Room(at: mapSpot, width: 4, height: 4)
+            room = RoomFactory.sharedInstance.makeRoom(at: mapSpot, width: 4, height: 4)
         }
         
         
