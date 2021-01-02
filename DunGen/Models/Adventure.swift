@@ -45,7 +45,7 @@ class Adventure : ObservableObject {
     
     var killedMobs = [String: Int]() //dictionary - Mob name/type, count
     
-    @Published var totalExperience: Int = 0
+    @Published var experienceAccumulator: Int = 0
     
     private var crToExpTable = Dictionary<Int, Int>()
     
@@ -88,7 +88,7 @@ class Adventure : ObservableObject {
         let totalExp = Int(round(mod * Double(exp)))
         print ("Total Exp: \(totalExp)")
         
-        totalExperience += totalExp
+        experienceAccumulator += totalExp
     }
     
     func getExpMod(killed: Int) -> Double {

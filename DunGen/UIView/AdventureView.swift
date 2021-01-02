@@ -16,28 +16,28 @@ struct AdventureView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                EmptyView()
-            }
-            .actionSheet(isPresented: $showActionSheet) {
-                ActionSheet(
-                    title: Text("Actions"),
-                    message: Text("Available actions"),
-                    buttons: [
-                        .default(Text("Debug Map")) {
-                            if let d = Global.dungeonScene {
-                                d.clickButton(name: "DEBUGMAP")
-                            }
-                        },
-                        .default(Text("Zoom")) {
-                            if let d = Global.dungeonScene {
-                                d.clickButton(name: "ZOOM")
-                            }
-                        },
-                        .cancel()
-                    ]
-                )
-            }
+//            HStack {
+//                EmptyView()
+//            }
+//            .actionSheet(isPresented: $showActionSheet) {
+//                ActionSheet(
+//                    title: Text("Actions"),
+//                    message: Text("Available actions"),
+//                    buttons: [
+//                        .default(Text("Debug Map")) {
+//                            if let d = Global.dungeonScene {
+//                                d.clickButton(name: "DEBUGMAP")
+//                            }
+//                        },
+//                        .default(Text("Zoom")) {
+//                            if let d = Global.dungeonScene {
+//                                d.clickButton(name: "ZOOM")
+//                            }
+//                        },
+//                        .cancel()
+//                    ]
+//                )
+//            }
             HStack (spacing: -80){
                 MapView()
 
@@ -49,7 +49,7 @@ struct AdventureView: View {
 
             HStack {
                 Spacer()
-                Button("Experience: \(adventure.totalExperience)") {
+                Button("Experience: \(adventure.experienceAccumulator)") {
 
                 }
                 Spacer()
@@ -65,7 +65,25 @@ struct AdventureView: View {
                 Spacer()
 
             }
-
+                        .actionSheet(isPresented: $showActionSheet) {
+                            ActionSheet(
+                                title: Text("Actions"),
+                                message: Text("Available actions"),
+                                buttons: [
+                                    .default(Text("Debug Map")) {
+                                        if let d = Global.dungeonScene {
+                                            d.clickButton(name: "DEBUGMAP")
+                                        }
+                                    },
+                                    .default(Text("Zoom")) {
+                                        if let d = Global.dungeonScene {
+                                            d.clickButton(name: "ZOOM")
+                                        }
+                                    },
+                                    .cancel()
+                                ]
+                            )
+                        }
         }
 
 
@@ -80,10 +98,10 @@ struct AdventureView_Previews: PreviewProvider {
     }
 }
 
-extension NSLayoutConstraint {
-
-    override public var description: String {
-        let id = identifier ?? ""
-        return "id: \(id), constant: xx" //you may print whatever you want here
-    }
-}
+//extension NSLayoutConstraint {
+//
+//    override public var description: String {
+//        let id = identifier ?? ""
+//        return "id: \(id), constant: xx" //you may print whatever you want here
+//    }
+//}
