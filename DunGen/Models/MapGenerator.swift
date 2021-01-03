@@ -383,7 +383,7 @@ class MapGenerator {
         var tries = 10
         while tries > 0 {
             
-            let room = Room(at: from + getMoveVector(dir: entrance.direction))   //Todo fix up we don't need the at here
+            let room = RoomFactory.sharedInstance.makeRoom(at: from + getMoveVector(dir: entrance.direction))   //Todo fix up we don't need the at here
             
             
             if (placeRoom(room: room, entrance: entrance)) {
@@ -469,6 +469,7 @@ class MapGenerator {
         }
         
         map.rooms.append(room)
+        room.id = map.rooms.count
     }
     
     

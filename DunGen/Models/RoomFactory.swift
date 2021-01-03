@@ -68,7 +68,6 @@ class RoomFactory {
         roomCount += 1
         
         let r = Room(at: at, w: width, h: height)
-        r.id = roomCount
         
         return r
         

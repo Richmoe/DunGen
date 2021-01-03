@@ -47,6 +47,7 @@
 		97BCDC68245D1A0D00D7C191 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDC67245D1A0D00D7C191 /* CGPoint+Extensions.swift */; };
 		97BCDC6A245D1B7B00D7C191 /* DungeonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 97BCDC69245D1B7B00D7C191 /* DungeonScene.sks */; };
 		97D76C7725A0F9C90068508B /* RoomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D76C7625A0F9C90068508B /* RoomFactory.swift */; };
+		97D76C7B25A149A00068508B /* DebugOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D76C7A25A149A00068508B /* DebugOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		97BCDC67245D1A0D00D7C191 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		97BCDC69245D1B7B00D7C191 /* DungeonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DungeonScene.sks; sourceTree = "<group>"; };
 		97D76C7625A0F9C90068508B /* RoomFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomFactory.swift; sourceTree = "<group>"; };
+		97D76C7A25A149A00068508B /* DebugOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugOverlay.swift; path = DunGen/DebugOverlay.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				9739B515245A74B300C043B7 /* Actions.sks */,
 				97BCDC65245C75A800D7C191 /* DungeonScene.swift */,
 				97BCDC69245D1B7B00D7C191 /* DungeonScene.sks */,
+				97D76C7A25A149A00068508B /* DebugOverlay.swift */,
 				9726D6E1246454FE00840A04 /* MapController.swift */,
 				975B75DE2470551B00E09936 /* BattleController.swift */,
 				978D11CB24787EDA00355716 /* Global.swift */,
@@ -282,6 +285,7 @@
 				9739B512245A74B300C043B7 /* AppDelegate.swift in Sources */,
 				978AAFA024971CC5003245A0 /* MapGenerator.swift in Sources */,
 				9726D6E2246454FE00840A04 /* MapController.swift in Sources */,
+				97D76C7B25A149A00068508B /* DebugOverlay.swift in Sources */,
 				978D11CC24787EDA00355716 /* Global.swift in Sources */,
 				97BCDC64245C759700D7C191 /* DGRand.swift in Sources */,
 				977E0A50245CE35800AC41B1 /* MapModel.swift in Sources */,

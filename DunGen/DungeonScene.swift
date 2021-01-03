@@ -23,6 +23,7 @@ class DungeonScene: SKScene {
     var debugLayer: SKTileMapNode!
     var debugOverlayLayer: SKTileMapNode!
     
+    var debugOverlayTextLayer: DebugOverlay!
     
     var tileDict = [Int: Int]()
     
@@ -37,6 +38,7 @@ class DungeonScene: SKScene {
     var currentScale : CGFloat = 1.0
     
      var cameraIsMoving = false
+
     
     /* Gesture recognizer
     
@@ -127,6 +129,7 @@ class DungeonScene: SKScene {
         mapController!.placeParty()
         
 
+
         
         
     }
@@ -212,6 +215,8 @@ class DungeonScene: SKScene {
         }
         
         
+        debugOverlayTextLayer = DebugOverlay(layer: debugOverlayLayer)
+        debugOverlayTextLayer.roomNumberOverlays()
     }
     
     
