@@ -198,7 +198,11 @@ class MapBlock {
         } else if (exit.type == .stairsDown) {
             code = "P"
         } else { //door
-            code = "D"
+            if (exit.secret) {
+                code = "W"
+            } else {
+                code = "D"
+            }
         }
         addCode(codeDir: exit.direction, code: code)
     }

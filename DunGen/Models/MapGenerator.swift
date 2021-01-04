@@ -511,6 +511,7 @@ class MapGenerator {
     //    }
     
     //MARK: Fixup
+    // This will walk through all map spots to make sure we close off dead ends and match doors to doors.
     
     func fixUpMap() {
         

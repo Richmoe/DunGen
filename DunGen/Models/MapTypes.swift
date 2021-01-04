@@ -44,8 +44,14 @@ func == (left: MapPoint, right: MapPoint) -> Bool {
 }
 
 struct Passage {
-    let type : PassageType
+    var type : PassageType
     let direction: Direction
+    var locked: Bool = false
+    var secret: Bool = false
+    
+    mutating func getRandomType() {
+        self.type = PassageType.hallway
+    }
 }
 
 
