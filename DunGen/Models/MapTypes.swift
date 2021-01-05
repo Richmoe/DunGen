@@ -43,17 +43,50 @@ func == (left: MapPoint, right: MapPoint) -> Bool {
     return (left.row == right.row && left.col == right.col)
 }
 
-struct Passage {
-    var type : PassageType
-    let direction: Direction
+class Passage {
+    var type : PassageType = PassageType.hallway
+    var direction: Direction = Direction.north
     var locked: Bool = false
     var secret: Bool = false
     
-    mutating func getRandomType() {
-        self.type = PassageType.hallway
+    
+    init() {
+        
     }
+    
+    init(type: PassageType, direction: Direction) {
+        self.type = type
+        self.direction = direction
+    }
+    
+
 }
 
+
+func GetRandomDoor() -> Passage {
+
+    let passage = Passage()
+    let r = DGRand.sharedInstance.getRand(to: 10)
+    switch r {
+    case 1...6:
+        passage.type = PassageType.wooden
+    case 7:
+        passage.type = PassageType.stone
+    case 8:
+        passage.type = PassageType.iron
+    case 9:
+        passage.type = PassageType.portcullis
+    default:
+        passage.type = PassageType.secret
+        passage.secret = true
+    }
+    
+    let special = DGRand.sharedInstance.getRand(to: 20)
+    if (special < 6) {
+        passage.locked = true
+    }
+    return passage
+}
 
 enum PassageType : Int {
     case hallway = 0
@@ -104,6 +137,8 @@ enum Direction : Int {
     }
 }
 
+
+//Think of TileCode like the render pattern code
 enum TileCode : Int {
     case null  = 0
     case floor

@@ -217,6 +217,8 @@ class DungeonScene: SKScene {
         
         debugOverlayTextLayer = DebugOverlay(layer: debugOverlayLayer)
         debugOverlayTextLayer.roomNumberOverlays()
+        
+        debugOverlayTextLayer.renderDoors()
     }
     
     

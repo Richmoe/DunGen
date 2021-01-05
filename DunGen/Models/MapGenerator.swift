@@ -511,29 +511,36 @@ class MapGenerator {
     //    }
     
     //MARK: Fixup
-    // This will walk through all map spots to make sure we close off dead ends and match doors to doors.
+    // This will walk through all map spots to make sure we close off dead ends, generate Passage types, and make sure both blocks contain new Passage
     
     func fixUpMap() {
         
         
         var codeThis : Character
         var codeThat : Character
+        var blockThis: MapBlock
+        var blockThat: MapBlock
         
         for r in (0..<map.mapBlocks.count) {
             for c in 0..<map.mapBlocks[r].count  {
                 
+                blockThis = map.getBlock(row: r, col: c)
+                blockThat = map.getBlock(row: r+1, col: c)
                 if (r < (map.mapHeight - 1)) {
                     
-                    codeThis = map.getBlock(row: r, col: c).getWallCode(wallDir: .north)
-                    codeThat = map.getBlock(row: r+1, col: c).getWallCode(wallDir: .south)
+  
+                    //Get North wall of this tile and south wall of tile above:
+                    codeThis = blockThis.getWallCode(wallDir: .north)
+                    codeThat = blockThat.getWallCode(wallDir: .south)
                     
-                    //if combo w/p,
                     
-                    //Check if N of this is equal to S of R+1
+                    //Check if N wall code of this is equal to S of R+1
+                    // Skip if code are equal or one code is wall and the other is blank (e.g. nothing there)
                     if (codeThis != codeThat && String([codeThis,codeThat]) != "0W" && String([codeThis,codeThat]) != "W0" && codeThis != "+" && codeThat != "+" && codeThis != "-" && codeThat != "-")  {
                         //wall off if r or r+1 = 0 but skip if W + 0
-                        //print ("Fixing up NS at \(r), \(c): this(lower): \(mapBlocks[r][c].wallString), upper: \(mapBlocks[r+1][c].wallString)")
+                        print ("Fixing up NS at \(r), \(c): this(lower): \(codeThis), upper: \(codeThat)")
                         if (["DP", "PD"].contains(String([codeThis, codeThat]))) {
+                            
                             map.getBlock(row: r+1, col: c).addCode(codeDir: .south, code: "D")
                             map.getBlock(row: r, col: c).addCode(codeDir: .north, code: "D")
                         } else if (["SP", "PS"].contains(String([codeThis, codeThat]))) {
@@ -555,7 +562,25 @@ class MapGenerator {
                         
                         //print ("---after \(r), \(c): this(lower): \(mapBlocks[r][c].wallString), upper: \(mapBlocks[r+1][c].wallString)")
                     }
+                    
+                    //If N is door, check to see if passage and if so, assign to S if not the same. Note that we don't have to check both since we've already fixed to match the S wall code
+                    if (blockThis.getWallCode(wallDir: .north) == "D") {
+                        assert(blockThat.getWallCode(wallDir: .south) == "D")
+                        var p = blockThis.getDoor(dir: .north)
+                        print (p)
+                        if (p.type == PassageType.hallway) {
+                            p = GetRandomDoor()
+                            print ("NEW: \(Unmanaged.passUnretained(p).toOpaque())")
+                            blockThis.addDoor(dir: .north, passage: p)
+                            blockThat.addDoor(dir: .south, passage: p)
+                            
+                        }
+                    }
+                
                 }
+                
+                
+                blockThat = map.getBlock(row: r, col: c+1)
                 
                 if (c < (map.mapWidth - 1)) {
                     
@@ -584,6 +609,21 @@ class MapGenerator {
                             }
                         }
                         //print ("---after \(r), \(c): this(lower): \(mapBlocks[r][c].wallString), upper: \(mapBlocks[r+1][c].wallString)")
+                        
+                    }
+                }
+                
+                
+                //If E is door, check to see if passage and if so, assign to W if not the same. Note that we don't have to check both since we've already fixed to match the W wall code
+                if (blockThis.getWallCode(wallDir: .east) == "D") {
+                    assert(blockThat.getWallCode(wallDir: .west) == "D")
+                    var p = blockThis.getDoor(dir: .east)
+                    print (p)
+                    if (p.type == PassageType.hallway) {
+                        p = GetRandomDoor()
+                        print ("NEW: \(p)")
+                        blockThis.addDoor(dir: .east, passage: p)
+                        blockThat.addDoor(dir: .west, passage: p)
                         
                     }
                 }

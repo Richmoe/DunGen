@@ -24,7 +24,7 @@ class Dungeon { //Environment?
     
     func buildDungeon() {
         var seedString = DGRand.getSeedString()
-        print("THE SEED ___________ \(seedString) ___________")
+
         
         /* Interesting:
          UCAY - mob behind door
@@ -32,13 +32,24 @@ class Dungeon { //Environment?
          */
         //seedString = "CCNT"
         
+        seedString = "VVYL" // secret and locked door
+        /* Bugs */
+        
+      
+        
         //seedString = "BXCT"
+        
+        
+        
+        print("THE SEED ___________ \(seedString) ___________")
         DGRand.sharedInstance.setSeed(seedString: seedString)
         
         
         let m = Map(width: mapWidth, height: mapHeight)
         
         let _ = MapGenerator(map: m)
+        
+        //trap generator 
         
         let _ = EncounterGenerator(map: m)
         

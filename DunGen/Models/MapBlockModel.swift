@@ -15,6 +15,10 @@ class MapBlock {
     var tileCode = TileCode.null
     
     var encounter: Encounter?
+    
+    
+    var passage = Array(repeating: Passage(), count: 4)
+    
     //P - Passage
     //E - dead end
     //W
@@ -157,17 +161,7 @@ class MapBlock {
         addCode(codeDir: wallDir, code: "W")
     }
     
-    func addDoor(doorDir: Direction) {
-        //        //print("Adding door to the \(doorDir) (was \(wallString)")
-        //        var chars = Array(wallString)     // gets an array of characters
-        //        let ix = Int(doorDir.rawValue / 2)
-        //
-        //        chars[ix] = "D"
-        //
-        //        wallString = String(chars)
-        
-        addCode(codeDir: doorDir, code: "D")
-    }
+
     func addCode(codeDir: Direction, code: Character) {
         //print("Adding \(code) to the \(codeDir) (was \(wallString)")
         
@@ -242,6 +236,39 @@ class MapBlock {
             }
         }
         return c
+    }
+    
+    func addDoor(dir: Direction, passage: Passage) {
+        let ix: Int
+        switch dir {
+        case .north:
+            ix = 0
+        case .east:
+            ix = 1
+        case .south:
+            ix = 2
+        default:
+            ix = 3
+        }
+        
+        self.passage[ix] = passage
+    }
+
+    func getDoor(dir: Direction) -> Passage {
+        
+        let ix: Int
+        switch dir {
+        case .north:
+            ix = 0
+        case .east:
+            ix = 1
+        case .south:
+            ix = 2
+        default:
+            ix = 3
+        }
+        
+        return passage[ix]
     }
     
 }
