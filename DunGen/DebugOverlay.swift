@@ -30,11 +30,47 @@ class DebugOverlay {
         for m in map.rooms {
             let atMap = m.at
             let pos = map.MapPointToCGPoint(atMap) + CGPoint(x: 10, y: 10)
-            addOverlay(text: "R\(m.id)", at: pos, offset: CGPoint(x: 10, y: 10))
+            addOverlay(text: "R\(m.id)", at: pos)
         }
 
     }
+   
     
+    func renderMapCodes() {
+        
+        let map = Global.adventure.dungeon.currentLevel()
+        for row in 0..<Global.adventure.dungeon.mapHeight {
+            for col in 0..<Global.adventure.dungeon.mapWidth {
+                
+                var pos = map.MapPointToCGPoint(MapPoint(row: row, col: col))
+               
+                
+                
+                
+                //map base
+                let wallStr = map.getBlock(row: row, col: col).wallString
+                for ix in 0...3 {
+                
+                        let offset: CGPoint
+                        switch ix {
+                        case 0:
+                            offset = CGPoint(x: 50,y: 100)
+                        case 1:
+                            offset = CGPoint(x: 100, y: 60)
+                        case 2:
+                            offset = CGPoint(x: 50, y: 0)
+                        default:
+                            offset = CGPoint(x: 0, y: 60)
+                        }
+                        //pos += offset
+                        
+
+                    addOverlay(text: String(Array(wallStr)[ix]), at: pos + offset, size: 25.0, color: .red)
+                }
+
+            }
+        }
+    }
     
     func renderDoors() {
         
@@ -42,10 +78,17 @@ class DebugOverlay {
         for row in 0..<Global.adventure.dungeon.mapHeight {
             for col in 0..<Global.adventure.dungeon.mapWidth {
                 
+                var pos = map.MapPointToCGPoint(MapPoint(row: row, col: col))
+                //Debug tile:
+                addOverlay(text: "\(row),\(col)", at: pos, size: 25)
+                
+                
                 //map base
                 let b = map.getBlock(row: row, col: col)
                 for ix in 0...3 {
                 
+
+                    
                     if (b.passage[ix].type != PassageType.hallway) {
 
                         let offset: CGPoint
@@ -59,7 +102,7 @@ class DebugOverlay {
                         default:
                             offset = CGPoint(x: 0, y: 50)
                         }
-                        let pos = map.MapPointToCGPoint(MapPoint(row: row, col: col)) + offset
+                        pos += offset
                         var text: String = "D"
                         if (b.passage[ix].locked) {
                             text = "L"
@@ -67,21 +110,21 @@ class DebugOverlay {
                         if (b.passage[ix].secret) {
                             text = "S"
                         }
-                        addOverlay(text: text, at: pos, size: 100.0)
+                        addOverlay(text: text, at: pos, size: 75.0)
                     }
                 }
 
             }
         }
     }
+
     
-    
-    func addOverlay(text: String, at: CGPoint, size: CGFloat = 100.0, offset: CGPoint = CGPoint(x: 0, y: 0)) {
+    func addOverlay(text: String, at: CGPoint, size: CGFloat = 100.0, color: UIColor = .blue) {
 
             
         let myLabel = SKLabelNode()
         myLabel.text = text
-        myLabel.fontColor = .blue
+        myLabel.fontColor = color
         myLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         myLabel.fontSize = size
 

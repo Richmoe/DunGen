@@ -520,7 +520,7 @@ class MapGenerator {
         var codeThat : Character
         var blockThis: MapBlock
         var blockThat: MapBlock
-        
+
         for r in (0..<map.mapBlocks.count) {
             for c in 0..<map.mapBlocks[r].count  {
                 
@@ -541,41 +541,29 @@ class MapGenerator {
                         print ("Fixing up NS at \(r), \(c): this(lower): \(codeThis), upper: \(codeThat)")
                         if (["DP", "PD"].contains(String([codeThis, codeThat]))) {
                             
-                            map.getBlock(row: r+1, col: c).addCode(codeDir: .south, code: "D")
-                            map.getBlock(row: r, col: c).addCode(codeDir: .north, code: "D")
+                            blockThat.addCode(codeDir: .south, code: "D")
+                            blockThis.addCode(codeDir: .north, code: "D")
                         } else if (["SP", "PS"].contains(String([codeThis, codeThat]))) {
-                            map.getBlock(row: r+1, col: c).addCode(codeDir: .south, code: "S")
-                            map.getBlock(row: r, col: c).addCode(codeDir: .north, code: "S")
+                            blockThat.addCode(codeDir: .south, code: "S")
+                            blockThis.addCode(codeDir: .north, code: "S")
                         } else if (codeThis == "0") {
-                            map.getBlock(row: r+1, col: c).addWall(wallDir: .south)
+                            blockThat.addWall(wallDir: .south)
                         } else if (codeThat == "0") {
-                            map.getBlock(row: r, col: c).addWall(wallDir: .north)
+                            blockThis.addWall(wallDir: .north)
                         } else {
                             //pick one to be authority:
                             if (DGRand.sharedInstance.getRand(to: 2) == 2) {
-                                map.getBlock(row: r+1, col: c).addCode(codeDir: .south, code: codeThis)
+                                blockThat.addCode(codeDir: .south, code: codeThis)
                                 
                             } else  {
-                                map.getBlock(row: r, col: c).addCode(codeDir: .north, code: codeThat)
+                                blockThis.addCode(codeDir: .north, code: codeThat)
                             }
                         }
                         
                         //print ("---after \(r), \(c): this(lower): \(mapBlocks[r][c].wallString), upper: \(mapBlocks[r+1][c].wallString)")
                     }
                     
-                    //If N is door, check to see if passage and if so, assign to S if not the same. Note that we don't have to check both since we've already fixed to match the S wall code
-                    if (blockThis.getWallCode(wallDir: .north) == "D") {
-                        assert(blockThat.getWallCode(wallDir: .south) == "D")
-                        var p = blockThis.getDoor(dir: .north)
-                        print (p)
-                        if (p.type == PassageType.hallway) {
-                            p = GetRandomDoor()
-                            print ("NEW: \(Unmanaged.passUnretained(p).toOpaque())")
-                            blockThis.addDoor(dir: .north, passage: p)
-                            blockThat.addDoor(dir: .south, passage: p)
-                            
-                        }
-                    }
+
                 
                 }
                 
@@ -590,22 +578,21 @@ class MapGenerator {
                     if (codeThis != codeThat && String([codeThis,codeThat]) != "0W" && String([codeThis,codeThat]) != "W0" && codeThis != "+" && codeThat != "+" && codeThis != "-" && codeThat != "-") {
                         //print ("Fixing up EW at \(r), \(c): west: \(mapBlocks[r][c].wallString), east: \(mapBlocks[r][c+1].wallString)")
                         if (["DP", "PD"].contains(String([codeThis, codeThat]))) {
-                            map.getBlock(row: r, col: c+1).addCode(codeDir: .west, code: "D")
-                            map.getBlock(row: r, col: c).addCode(codeDir: .east, code: "D")
+                            blockThat.addCode(codeDir: .west, code: "D")
+                            blockThis.addCode(codeDir: .east, code: "D")
                         } else if (["SP", "PS"].contains(String([codeThis, codeThat]))) {
-                            map.getBlock(row: r, col: c+1).addCode(codeDir: .west, code: "S")
-                            map.getBlock(row: r, col: c).addCode(codeDir: .east, code: "S")
-                        } else if (codeThis == "0" || map.getBlock(row: r, col: c).tileCode == TileCode.stairsUp || map.getBlock(row: r, col: c).tileCode == TileCode.stairsDown) {
-                            map.mapBlocks[r][c+1].addWall(wallDir: .west)
-                        } else if (codeThat == "0" || map.getBlock(row: r, col: c).tileCode == TileCode.stairsUp || map.getBlock(row: r, col: c).tileCode == TileCode.stairsDown) {
-                            map.getBlock(row: r, col: c).addWall(wallDir: .east)
+                            blockThat.addCode(codeDir: .west, code: "S")
+                            blockThis.addCode(codeDir: .east, code: "S")
+                        } else if (codeThis == "0" || blockThis.tileCode == TileCode.stairsUp || blockThis.tileCode == TileCode.stairsDown) {
+                            blockThat.addWall(wallDir: .west)
+                        } else if (codeThat == "0" || blockThis.tileCode == TileCode.stairsUp || blockThis.tileCode == TileCode.stairsDown) {
+                            blockThis.addWall(wallDir: .east)
                         } else {
                             //pick one to be authority:
                             if (DGRand.sharedInstance.getRand(to: 2) == 2) {
-                                map.getBlock(row: r, col: c+1).addCode(codeDir: .west, code: codeThis)
-                                
+                                blockThat.addCode(codeDir: .west, code: codeThis)
                             } else  {
-                                map.getBlock(row: r, col: c).addCode(codeDir: .east, code: codeThat)
+                                blockThis.addCode(codeDir: .east, code: codeThat)
                             }
                         }
                         //print ("---after \(r), \(c): this(lower): \(mapBlocks[r][c].wallString), upper: \(mapBlocks[r+1][c].wallString)")
@@ -613,30 +600,18 @@ class MapGenerator {
                     }
                 }
                 
-                
-                //If E is door, check to see if passage and if so, assign to W if not the same. Note that we don't have to check both since we've already fixed to match the W wall code
-                if (blockThis.getWallCode(wallDir: .east) == "D") {
-                    assert(blockThat.getWallCode(wallDir: .west) == "D")
-                    var p = blockThis.getDoor(dir: .east)
-                    print (p)
-                    if (p.type == PassageType.hallway) {
-                        p = GetRandomDoor()
-                        print ("NEW: \(p)")
-                        blockThis.addDoor(dir: .east, passage: p)
-                        blockThat.addDoor(dir: .west, passage: p)
-                        
-                    }
-                }
+
                 
             }
         }
-        
+
         
         //trimAllDeadEnds() {
         //Pass 2: go through all tiles to find dead ends; when found, walk back the passage until we get to a room or branch, walling it up along the way
         
         for r in (0..<map.mapBlocks.count) {
             for c in 0..<map.mapBlocks[r].count  {
+                
                 
                 if (map.getBlock(row: r, col: c).tileCode != .stairsUp && map.getBlock(row: r, col: c).tileCode != .stairsDown) {
                     //Now check for and walk back dead ends:
@@ -655,6 +630,43 @@ class MapGenerator {
             }
         }
         
+        //Populate doors:
+        
+        for r in (0..<map.mapBlocks.count) {
+            for c in 0..<map.mapBlocks[r].count  {
+                
+                blockThis = map.getBlock(row: r, col: c)
+                blockThat = map.getBlock(row: r+1, col: c)
+        //If N is door, check to see if passage and if so, assign to S if not the same. Note that we don't have to check both since we've already fixed to match the S wall code
+                if (blockThis.getWallCode(wallDir: .north) == "D") {
+                    assert(blockThat.getWallCode(wallDir: .south) == "D")
+                    var p = blockThis.getDoor(dir: .north)
+
+                    if (p.type == PassageType.hallway) {
+                        p = GetRandomDoor()
+                        blockThis.addDoor(dir: .north, passage: p)
+                        blockThat.addDoor(dir: .south, passage: p)
+                        
+                    }
+                }
+                
+                blockThat = map.getBlock(row: r, col: c+1)
+                
+                //If E is door, check to see if passage and if so, assign to W if not the same. Note that we don't have to check both since we've already fixed to match the W wall code
+                if (blockThis.getWallCode(wallDir: .east) == "D") {
+                    assert(blockThat.getWallCode(wallDir: .west) == "D")
+                    var p = blockThis.getDoor(dir: .east)
+                    if (p.type == PassageType.hallway) {
+                        p = GetRandomDoor()
+                        
+                        blockThis.addDoor(dir: .east, passage: p)
+                        blockThat.addDoor(dir: .west, passage: p)
+                        
+                    }
+                }
+            }
+        }
+
     }
     
     func trimDeadEnd(at: MapPoint) {
