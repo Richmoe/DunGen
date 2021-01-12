@@ -122,8 +122,9 @@ class MapGenerator {
                 
                 //bias dead-ends later in the map. Don't want one right at the beginning.
                 print ("In deaded - depth \(depth)")
-                if (depth > 10) {
-                    if (DGRand.sharedInstance.getRand(to: 10) == 1) {
+                if (depth > 0) {
+                    if (DGRand.sharedInstance.getRand(to: 10) > 5) {
+                        print("SSSEEECDREETTTK")
                         passageMoves = [TileCode.passage, TileCode.secretEnd]
                     } else {
                         passageMoves = [TileCode.passage, TileCode.deadend]
@@ -638,12 +639,16 @@ class MapGenerator {
                 blockThis = map.getBlock(row: r, col: c)
                 blockThat = map.getBlock(row: r+1, col: c)
         //If N is door, check to see if passage and if so, assign to S if not the same. Note that we don't have to check both since we've already fixed to match the S wall code
-                if (blockThis.getWallCode(wallDir: .north) == "D") {
-                    assert(blockThat.getWallCode(wallDir: .south) == "D")
+                if (blockThis.getWallCode(wallDir: .north) == "D" || blockThis.getWallCode(wallDir: .north) == "S") {
+                    assert(blockThat.getWallCode(wallDir: .south) == "D" || blockThis.getWallCode(wallDir: .south) == "S")
                     var p = blockThis.getDoor(dir: .north)
 
                     if (p.type == PassageType.hallway) {
                         p = GetRandomDoor()
+                        if (p.secret) {
+                            blockThis.addCode(codeDir: .north, code: "S")
+                            blockThat.addCode(codeDir: .south, code: "S")
+                        }
                         blockThis.addDoor(dir: .north, passage: p)
                         blockThat.addDoor(dir: .south, passage: p)
                         
@@ -653,12 +658,15 @@ class MapGenerator {
                 blockThat = map.getBlock(row: r, col: c+1)
                 
                 //If E is door, check to see if passage and if so, assign to W if not the same. Note that we don't have to check both since we've already fixed to match the W wall code
-                if (blockThis.getWallCode(wallDir: .east) == "D") {
-                    assert(blockThat.getWallCode(wallDir: .west) == "D")
+                if (blockThis.getWallCode(wallDir: .east) == "D" || blockThis.getWallCode(wallDir: .east) == "S") {
+                    assert(blockThat.getWallCode(wallDir: .west) == "D" || blockThat.getWallCode(wallDir: .west) == "S")
                     var p = blockThis.getDoor(dir: .east)
                     if (p.type == PassageType.hallway) {
                         p = GetRandomDoor()
-                        
+                        if (p.secret) {
+                            blockThis.addCode(codeDir: .east, code: "S")
+                            blockThat.addCode(codeDir: .west, code: "S")
+                        }
                         blockThis.addDoor(dir: .east, passage: p)
                         blockThat.addDoor(dir: .west, passage: p)
                         

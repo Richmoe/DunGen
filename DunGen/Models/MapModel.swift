@@ -109,10 +109,21 @@ class Map {
         } else {
             //Check wall
             let dirWall = toType.getWallCode(wallDir: moveDir.opposite())
-            if (dirWall == "W") {
+            if (dirWall == "W" || dirWall == "S") {
                 return false
             } else {
-                return true
+                if (dirWall == "D") {
+                    let passage = toType.getDoor(dir: moveDir.opposite())
+                    if (passage.locked || passage.secret) {
+                        print("DOOR IS LOCKED or SECRET!!!")
+                        return false
+                    } else {
+                        //Todo: Figure out traps
+                        return true
+                    }
+                } else {
+                    return true
+                }
                 
             }
         }

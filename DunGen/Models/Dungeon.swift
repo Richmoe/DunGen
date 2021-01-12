@@ -32,12 +32,11 @@ class Dungeon { //Environment?
          */
         //seedString = "CCNT"
         
-        seedString = "VVYL" // secret and locked door
         /* Bugs */
         
       
         
-        //seedString = "BXCT"
+        seedString = "DEW4"  //secret door at 7,17 7,18 and 1,22 2,22
         
         
         

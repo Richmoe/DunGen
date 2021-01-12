@@ -149,6 +149,10 @@ class MapController {
             //just in case:
             renderTile(stepMove)
             
+            //Temp:
+            revealSecretDoor(at: stepMove)
+            unlockDoor(at: stepMove)
+            
             fogOfWar()
         }
         
@@ -301,6 +305,42 @@ class MapController {
                         break
                     }
                 }
+            }
+        }
+    }
+    
+    func unlockDoor(at: MapPoint) {
+        //get wall that has S
+        let mapBlock = dungeon.getBlock(at)
+        //perhaps we could pass in direction, as this would not work with > 1 secret door but I don't think that's a big concern:
+        for dir in [Direction.north, .south, .east, .west] {
+            let p = mapBlock.getDoor(dir: dir)
+            if (p.locked) {
+                p.locked = false
+
+                print("unlock door to \(dir)")
+
+                return
+            }
+        }
+    }
+    
+    func revealSecretDoor(at: MapPoint) {
+        //get wall that has S
+        let mapBlock = dungeon.getBlock(at)
+        //perhaps we could pass in direction, as this would not work with > 1 secret door but I don't think that's a big concern:
+        for dir in [Direction.north, .south, .east, .west] {
+            let code = mapBlock.getWallCode(wallDir: dir)
+            if (code == "S") {
+                let p = mapBlock.getDoor(dir: dir)
+                p.secret = false
+                mapBlock.addCode(codeDir: dir, code: "D")
+                let offset = getCardinalMoveVector(dir: dir)
+                dungeon.getBlock(at + offset).addCode(codeDir: dir.opposite(), code: "D")
+                print("reveal secret door to \(dir) and also fixup wall at \(dungeon.getBlock(at + offset).wallString)")
+                renderTile(at)
+                //revealSpot(at + offset)
+                return
             }
         }
     }
