@@ -452,8 +452,6 @@ class MapGenerator {
             //print ("exit: \(exitAt), \(passage)")
         }
         
-        
-        
         plotRoom(room: room)
         return true
     }
@@ -474,135 +472,20 @@ class MapGenerator {
     }
     
     
-    
-    //    // MARK: Print
-    //    func printMapBlocks() {
-    //
-    //        var str = ""
-    //        for r in (0..<floor.count).reversed() {
-    //            str = "\(String(format: "%02d", r)): "
-    //            for c in 0..<floor[r].count {
-    //                str += "\(mapBlocks[r][c] )"
-    //                str += " "
-    //            }
-    //            print(str)
-    //        }
-    //        str = "    "
-    //        for c in 0..<floor[0].count {
-    //            str += "\(String(format: "%02d", c)) "
-    //        }
-    //        print (str)
-    //    }
-    //
-    //    func printFloor(floor: [[Int]]) {
-    //        var str = ""
-    //        for r in (0..<floor.count).reversed() {
-    //            str = "\(String(format: "%02d", r)): "
-    //            for c in 0..<floor[r].count {
-    //                str += String(format: "%02d", floor[r][c])
-    //                str += " "
-    //            }
-    //            print(str)
-    //        }
-    //        str = "    "
-    //        for c in 0..<floor[0].count {
-    //            str += "\(String(format: "%02d", c)) "
-    //        }
-    //        print (str)
-    //    }
-    
     //MARK: Fixup
     // This will walk through all map spots to make sure we close off dead ends, generate Passage types, and make sure both blocks contain new Passage
     
     func fixUpMap() {
         
-        
-        var codeThis : Character
-        var codeThat : Character
         var blockThis: MapBlock
         var blockThat: MapBlock
 
+        //Pass 1: make sure all blocks match edge
         for r in (0..<map.mapBlocks.count) {
             for c in 0..<map.mapBlocks[r].count  {
-                
-                blockThis = map.getBlock(row: r, col: c)
-                blockThat = map.getBlock(row: r+1, col: c)
-                if (r < (map.mapHeight - 1)) {
-                    
-  
-                    //Get North wall of this tile and south wall of tile above:
-                    codeThis = blockThis.getWallCode(wallDir: .north)
-                    codeThat = blockThat.getWallCode(wallDir: .south)
-                    
-                    
-                    //Check if N wall code of this is equal to S of R+1
-                    // Skip if code are equal or one code is wall and the other is blank (e.g. nothing there)
-                    if (codeThis != codeThat && String([codeThis,codeThat]) != "0W" && String([codeThis,codeThat]) != "W0" && codeThis != "+" && codeThat != "+" && codeThis != "-" && codeThat != "-")  {
-                        //wall off if r or r+1 = 0 but skip if W + 0
-                        print ("Fixing up NS at \(r), \(c): this(lower): \(codeThis), upper: \(codeThat)")
-                        if (["DP", "PD"].contains(String([codeThis, codeThat]))) {
-                            
-                            blockThat.addCode(codeDir: .south, code: "D")
-                            blockThis.addCode(codeDir: .north, code: "D")
-                        } else if (["SP", "PS"].contains(String([codeThis, codeThat]))) {
-                            blockThat.addCode(codeDir: .south, code: "S")
-                            blockThis.addCode(codeDir: .north, code: "S")
-                        } else if (codeThis == "0") {
-                            blockThat.addWall(wallDir: .south)
-                        } else if (codeThat == "0") {
-                            blockThis.addWall(wallDir: .north)
-                        } else {
-                            //pick one to be authority:
-                            if (DGRand.sharedInstance.getRand(to: 2) == 2) {
-                                blockThat.addCode(codeDir: .south, code: codeThis)
-                                
-                            } else  {
-                                blockThis.addCode(codeDir: .north, code: codeThat)
-                            }
-                        }
-                        
-                        //print ("---after \(r), \(c): this(lower): \(mapBlocks[r][c].wallString), upper: \(mapBlocks[r+1][c].wallString)")
-                    }
-                    
-
-                
-                }
-                
-                
-                blockThat = map.getBlock(row: r, col: c+1)
-                
-                if (c < (map.mapWidth - 1)) {
-                    
-                    //Check if E of this is equal to W of C+1
-                    codeThis = map.getBlock(row: r, col: c).getWallCode(wallDir: .east)
-                    codeThat = map.getBlock(row: r, col: c+1).getWallCode(wallDir: .west)
-                    if (codeThis != codeThat && String([codeThis,codeThat]) != "0W" && String([codeThis,codeThat]) != "W0" && codeThis != "+" && codeThat != "+" && codeThis != "-" && codeThat != "-") {
-                        //print ("Fixing up EW at \(r), \(c): west: \(mapBlocks[r][c].wallString), east: \(mapBlocks[r][c+1].wallString)")
-                        if (["DP", "PD"].contains(String([codeThis, codeThat]))) {
-                            blockThat.addCode(codeDir: .west, code: "D")
-                            blockThis.addCode(codeDir: .east, code: "D")
-                        } else if (["SP", "PS"].contains(String([codeThis, codeThat]))) {
-                            blockThat.addCode(codeDir: .west, code: "S")
-                            blockThis.addCode(codeDir: .east, code: "S")
-                        } else if (codeThis == "0" || blockThis.tileCode == TileCode.stairsUp || blockThis.tileCode == TileCode.stairsDown) {
-                            blockThat.addWall(wallDir: .west)
-                        } else if (codeThat == "0" || blockThis.tileCode == TileCode.stairsUp || blockThis.tileCode == TileCode.stairsDown) {
-                            blockThis.addWall(wallDir: .east)
-                        } else {
-                            //pick one to be authority:
-                            if (DGRand.sharedInstance.getRand(to: 2) == 2) {
-                                blockThat.addCode(codeDir: .west, code: codeThis)
-                            } else  {
-                                blockThis.addCode(codeDir: .east, code: codeThat)
-                            }
-                        }
-                        //print ("---after \(r), \(c): this(lower): \(mapBlocks[r][c].wallString), upper: \(mapBlocks[r+1][c].wallString)")
-                        
-                    }
-                }
-                
-
-                
+            
+                fixMatchBlock(blockAt: MapPoint(row: r, col: c), dir: Direction.north)
+                fixMatchBlock(blockAt: MapPoint(row: r, col: c), dir: Direction.east)
             }
         }
 
@@ -674,7 +557,46 @@ class MapGenerator {
                 }
             }
         }
+    }
+    
+    func fixMatchBlock(blockAt: MapPoint, dir: Direction) {
+        
+        var codeThis : Character
+        var codeThat : Character
+        var blockThis: MapBlock
 
+        blockThis = map.getBlock(blockAt)
+        if let blockThat = map.getBlock(at: blockAt, dir: dir) {
+            codeThis = blockThis.getWallCode(wallDir: dir)
+            codeThat = blockThat.getWallCode(wallDir: dir.opposite())
+            
+            if (codeThis != codeThat && String([codeThis,codeThat]) != "0W" && String([codeThis,codeThat]) != "W0"  && codeThis != "+" && codeThat != "+" && codeThis != "-" && codeThat != "-") {
+                if (["DP", "PD"].contains(String([codeThis, codeThat]))) { //Door on one side, hall on other = Door
+                    blockThat.addCode(codeDir: dir.opposite(), code: "D")
+                    blockThis.addCode(codeDir: dir, code: "D")
+                } else if (["SP", "PS"].contains(String([codeThis, codeThat]))) { //secret on one side, hall on other = Secret
+                    blockThat.addCode(codeDir: dir.opposite(), code: "S")
+                    blockThis.addCode(codeDir: dir, code: "S")
+                } else if (codeThis == "0") { //Wall off doors/passages to nowhere
+                    blockThat.addWall(wallDir: dir.opposite())
+                } else if (codeThat == "0") {
+                    blockThis.addWall(wallDir: dir)
+                } else {
+                    //pick one to be authority:
+                    if (DGRand.sharedInstance.getRand(to: 2) == 2) {
+                        blockThat.addCode(codeDir: dir.opposite(), code: codeThis)
+                        
+                    } else  {
+                        blockThis.addCode(codeDir: dir, code: codeThat)
+                    }
+                }
+            }
+            
+        } else {
+            //blockThat is null therefore wall off this direction
+            blockThis.addWall(wallDir: dir)
+        }
+        
     }
     
     func trimDeadEnd(at: MapPoint) {

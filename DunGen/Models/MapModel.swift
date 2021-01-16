@@ -148,6 +148,20 @@ class Map {
         }
     }
     
+    func getBlock(at: MapPoint, dir: Direction) -> MapBlock? {
+        
+        if (!offScreen(point: at)) {
+            let offset = getMoveVector(dir: dir)
+            if (!offScreen(point: at + offset)) {
+                return mapBlocks[at.row + offset.row][at.col + offset.col]
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }
+    
     func setBlock(at: MapPoint, block: MapBlock) {
         
         if (offScreen(point: at)) {
