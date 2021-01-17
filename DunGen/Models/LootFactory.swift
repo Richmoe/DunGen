@@ -17,14 +17,23 @@ class LootFactory {
     //while the data shows the magic table, we'll use Int for simplicity, e.g. table A = 0; for special rolls
     var magicTables : [MagicTableEntry] = [MagicTableEntry]()
     
+    
+    typealias HoardTableEntry = (cr: Int, roll: Int, diceGemArt: String, gemArtTable: String, diceMagic1: String, magicTable1: String, diceMagic2: String, magicTable2: String)
+    var hoardTable: [HoardTableEntry] = [HoardTableEntry]()
+    
+    typealias GemTableEntry = (table: String, description: String)
+    var gemOrArtTable: [GemTableEntry] = [GemTableEntry]()
+    
     private init() {
-        parseMagicList()
+        parseTreasureLists()
     }
     
     
-    func parseMagicList() {
+    func parseTreasureLists() {
         
-        let parsedCSV: [[String]] = Helper.loadFromCSV(fileName: "DGMagicTables.csv")
+        
+        //Magic
+        var parsedCSV: [[String]] = Helper.loadFromCSV(fileName: "DGMagicTables.csv")
         
         //Assume first row is header:
         for item in parsedCSV[1...] {
@@ -39,12 +48,47 @@ class LootFactory {
             }
         }
         
+        //Treasure Hoard Table,d100,Gems or Art Objects,Magic Item Count,Magic Item Table,Roll2,table2
+        let iCR = 0
+        let iRoll = 1
+        let iDiceGemOrArt = 2
+        let iGemOrArtTable = 3
+        let iDiceMagic1 = 4
+        let iMagicTable1 = 5
+        let iDiceMagic2 = 6
+        let iDiceTable2 = 7
+        
+        parsedCSV = Helper.loadFromCSV(fileName: "DGTreasureHoardTable.csv")
+        
+        for item in parsedCSV[1...] {
+            if (item.count != 8) {
+                break
+            }
+            
+            if let cr = Int(item[iCR]), let roll = Int(item[iRoll]) {
+                hoardTable.append((cr,roll,item[iDiceGemOrArt],item[iGemOrArtTable],item[iDiceMagic1],item[iMagicTable1],item[iDiceMagic2],item[iDiceTable2]))
+            }
+        }
+        
+        
+        //GemOrArtTable:
+        parsedCSV = Helper.loadFromCSV(fileName: "DGGemArtTable.csv")
+        
+        for item in parsedCSV[1...] {
+            if (item.count != 2) {
+                break
+            }
+
+            gemOrArtTable.append((item[0],item[1]))
+        }
+        
+        
         
         //test:
 //        for _ in 0...10 {
 //
 //
-//            print(" \(getMagicItem(table: "i"))")
+            print(" \(getMagicItem(table: "i"))")
 //        }
     }
     
