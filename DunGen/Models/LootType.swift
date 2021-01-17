@@ -10,21 +10,22 @@ import Foundation
 
 
 class Loot {
-    var treasurePlatinum = 0
-    var treasureGold = 0
-    var treasureElectrum = 0
-    var treasureSilver = 0
-    var treasureCopper = 0
+    var platinum = 0
+    var gold = 0
+    var electrum = 0
+    var silver = 0
+    var copper = 0
     
-    var treasureMisc : [String] = []
-    var treasureMagic: [String] = []
+    var misc : [String] = []
+    var magic : [String] = []
+    var gem : [String] = []
     
     
     //
     func random() {
-        treasureGold = GetDiceRoll("1d4")
-        treasureSilver = GetDiceRoll("1d8")
-        treasureCopper = GetDiceRoll("2d12")
+        gold = GetDiceRoll("1d4")
+        silver = GetDiceRoll("1d8")
+        copper = GetDiceRoll("2d12")
         
     }
 }

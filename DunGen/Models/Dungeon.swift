@@ -52,6 +52,9 @@ class Dungeon { //Environment?
         
         let _ = EncounterGenerator(map: m)
         
+        //Temp:
+        let _ = LootFactory.sharedInstance.getTreasureHoard(cr: 1)
+        
         //m.generate()
         
         self.level.append(m)

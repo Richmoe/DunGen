@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970326C725B28C6C00F5C437 /* DGMagicTables.csv in Resources */ = {isa = PBXBuildFile; fileRef = 970326C625B28C6C00F5C437 /* DGMagicTables.csv */; };
 		970AB2562596AD8A00F7E65B /* DGMonsters.csv in Resources */ = {isa = PBXBuildFile; fileRef = 970AB2552596AD8A00F7E65B /* DGMonsters.csv */; };
 		9726D6E2246454FE00840A04 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726D6E1246454FE00840A04 /* MapController.swift */; };
 		9726D6E62466573400840A04 /* DungeonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726D6E52466573400840A04 /* DungeonUIView.swift */; };
@@ -48,9 +49,11 @@
 		97BCDC6A245D1B7B00D7C191 /* DungeonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 97BCDC69245D1B7B00D7C191 /* DungeonScene.sks */; };
 		97D76C7725A0F9C90068508B /* RoomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D76C7625A0F9C90068508B /* RoomFactory.swift */; };
 		97D76C7B25A149A00068508B /* DebugOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D76C7A25A149A00068508B /* DebugOverlay.swift */; };
+		97D76C7F25B2803F0068508B /* LootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D76C7E25B2803F0068508B /* LootFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		970326C625B28C6C00F5C437 /* DGMagicTables.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DGMagicTables.csv; sourceTree = "<group>"; };
 		970AB2552596AD8A00F7E65B /* DGMonsters.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DGMonsters.csv; sourceTree = "<group>"; };
 		9726D6E1246454FE00840A04 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		9726D6E52466573400840A04 /* DungeonUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonUIView.swift; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 		97BCDC69245D1B7B00D7C191 /* DungeonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DungeonScene.sks; sourceTree = "<group>"; };
 		97D76C7625A0F9C90068508B /* RoomFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomFactory.swift; sourceTree = "<group>"; };
 		97D76C7A25A149A00068508B /* DebugOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugOverlay.swift; path = DunGen/DebugOverlay.swift; sourceTree = SOURCE_ROOT; };
+		97D76C7E25B2803F0068508B /* LootFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 				97BCDC61245C759700D7C191 /* MapTileSet.swift */,
 				9739B520245A74B500C043B7 /* LaunchScreen.storyboard */,
 				9739B51B245A74B300C043B7 /* Main.storyboard */,
+				970326C625B28C6C00F5C437 /* DGMagicTables.csv */,
 				970AB2552596AD8A00F7E65B /* DGMonsters.csv */,
 				975B75D2246CAEE800E09936 /* Monsters.csv */,
 				975B75D8246F07BE00E09936 /* crToExp.csv */,
@@ -162,6 +167,7 @@
 				975B75CE246B772800E09936 /* MobFactory.swift */,
 				975B75D4246E433A00E09936 /* EncounterModel.swift */,
 				97711F5624BBE2D800D1E6D1 /* LootType.swift */,
+				97D76C7E25B2803F0068508B /* LootFactory.swift */,
 				977E0A51245CE36B00AC41B1 /* MapBlockModel.swift */,
 				977E0A53245CE36D00AC41B1 /* MapTypes.swift */,
 				977E0A55245CE36E00AC41B1 /* PlayerModel.swift */,
@@ -248,6 +254,7 @@
 			files = (
 				9739B51D245A74B300C043B7 /* Main.storyboard in Resources */,
 				97BCDC6A245D1B7B00D7C191 /* DungeonScene.sks in Resources */,
+				970326C725B28C6C00F5C437 /* DGMagicTables.csv in Resources */,
 				975B75D9246F07BF00E09936 /* crToExp.csv in Resources */,
 				9739B51F245A74B500C043B7 /* Assets.xcassets in Resources */,
 				9739B522245A74B500C043B7 /* LaunchScreen.storyboard in Resources */,
@@ -270,6 +277,7 @@
 				977E0A54245CE36D00AC41B1 /* MapTypes.swift in Sources */,
 				977E0A5D245F91A600AC41B1 /* PartyModel.swift in Sources */,
 				975B75E12470D78900E09936 /* BattleMobItem.swift in Sources */,
+				97D76C7F25B2803F0068508B /* LootFactory.swift in Sources */,
 				978D11C124785EED00355716 /* MapView.swift in Sources */,
 				975B75CD246894BC00E09936 /* MonsterModel.swift in Sources */,
 				975B75CB2468931900E09936 /* MobModel.swift in Sources */,
