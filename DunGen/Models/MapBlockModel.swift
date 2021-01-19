@@ -15,6 +15,7 @@ class MapBlock {
     var tileCode = TileCode.null
     
     var encounter: Encounter?
+    var treasure: Drop?
     
     
     var passage = Array(repeating: Passage(), count: 4)

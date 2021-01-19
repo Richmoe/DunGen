@@ -17,6 +17,8 @@ class Drop {
     // TOMBSTONE
     // CHEST
     var type : Int
+    var locked: Bool = false
+    var trapped: Bool = false
     
     let uid:UUID
     
@@ -38,9 +40,26 @@ class Drop {
     
     func instantiateSprite(at: CGPoint) -> SKSpriteNode {
         
-        let s  = SKSpriteNode(imageNamed: "tombstone.png")
+        let image: String
+        if (type == 1) {
+            image = "tombstone.png"
+        } else {
+            if (type == 2) {
+                image = "treasureChest128.png"
+            } else {
+                image = "tombstone.png"
+            }
+        }
+        
+        let s  = SKSpriteNode(imageNamed: image)
         s.name = name
-        s.setScale(0.25)
+        if (type == 1) {
+            s.setScale(0.25)
+        } else {
+            if (type == 2) {
+                s.setScale(0.5)
+            }
+        }
         s.position = at
         s.zPosition = Global.zPosDrop
         sprite = s

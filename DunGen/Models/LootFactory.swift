@@ -88,7 +88,12 @@ class LootFactory {
 //        for _ in 0...10 {
 //
 //
-            print(" \(getMagicItem(table: "i"))")
+//            print(" \(getMagicItem(table: "i"))")
+//        for x in [1,4,7,10,16,25] {
+//            let l = getTreasureHoard(cr: x)
+//            print("\(l)")
+//        }
+
 //        }
     }
     
@@ -186,30 +191,96 @@ class LootFactory {
     
     func getTreasureHoard(cr: Int) -> Loot {
         
-        let loot = Loot()
-        let roll = DGRand.sharedInstance.getRand(to: 100)
+        var loot = Loot()
         
         if (cr <= 4) {
             loot.copper = GetDiceRoll("6d6") * 100
             loot.silver = GetDiceRoll("3d6") * 100
             loot.gold = GetDiceRoll("2d6") * 10
+            
+            loot = getArtAndMagic(cr: 4, loot: loot)
         } else if (cr <= 10) {
             loot.copper = GetDiceRoll("2d6") * 100
             loot.silver = GetDiceRoll("2d6") * 1000
             loot.gold = GetDiceRoll("6d6") * 100
             loot.platinum = GetDiceRoll("3d6") * 10
+            
+            loot = getArtAndMagic(cr: 10, loot: loot)
         } else if (cr <= 16) {
             loot.gold = GetDiceRoll("4d6") * 1000
             loot.platinum = GetDiceRoll("5d6") * 100
             
+            loot = getArtAndMagic(cr: 16, loot: loot)
         } else { //cr 17+
             loot.gold = GetDiceRoll("12d6") * 1000
             loot.platinum = GetDiceRoll("8d6") * 1000
+            
+            loot = getArtAndMagic(cr: 17, loot: loot)
         }
         
-        
         return loot
+    }
+    
+    func getArtAndMagic(cr: Int, loot: Loot) -> Loot {
+        let newLoot = loot
+        let roll = DGRand.sharedInstance.getRand(to: 100)
         
+        let filteredListByTable = hoardTable.filter { $0.cr == cr }
+        
+        for item in filteredListByTable {
+            
+            if (roll <= item.roll) {
+                
+                //gem or art
+                if (item.diceGemArt != "") {
+                    //get value: entry format [Gem|Art] #val#
+                    let temp = item.gemArtTable.components(separatedBy: " ")
+                    if let val = Int(temp[1]) {
+                        let gemOrArtCount = GetDiceRoll(item.diceGemArt)
+                        let filterGemOrArtTable = gemOrArtTable.filter { $0.table == item.gemArtTable }
+                        for _ in 1...gemOrArtCount {
+                            let r = DGRand.sharedInstance.getRand(to: filterGemOrArtTable.count) - 1
+                            newLoot.gemOrArt.append(filterGemOrArtTable[r].description + " (GP \(val))")
+                            
+                        }
+                    } else {
+                        print ("error/")
+                    }
+                }
+                //First table
+                if (item.diceMagic1 != "") {
+                    let magic1Count = GetDiceRoll(item.diceMagic1)
+                    let filteredMagicTable = magicTables.filter { $0.table == item.magicTable1}
+                    for _ in 1...magic1Count {
+                        let roll = GetDiceRoll("1d100")
+                        for i in 0..<filteredMagicTable.count {
+                            if (roll <= filteredMagicTable[i].roll) {
+                                newLoot.magic.append(filteredMagicTable[i].item)
+                                break
+                            }
+                        }
+                    }
+                }
+                //Opt 2nd table
+                if (item.diceMagic2 != "") {
+                    let magic2Count = GetDiceRoll(item.diceMagic2)
+                    let filteredMagicTable = magicTables.filter { $0.table == item.magicTable2 }
+                    for _ in 1...magic2Count {
+                        let roll = GetDiceRoll("1d100")
+                        for i in 0..<filteredMagicTable.count {
+                            if (roll <= filteredMagicTable[i].roll) {
+                                newLoot.magic.append(filteredMagicTable[i].item)
+                                break
+                            }
+                        }
+                        
+                    }
+                }
+                break
+            }
+        }
+        
+        return newLoot
     }
 }
 

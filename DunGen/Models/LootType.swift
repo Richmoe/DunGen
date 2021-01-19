@@ -18,7 +18,7 @@ class Loot {
     
     var misc : [String] = []
     var magic : [String] = []
-    var gem : [String] = []
+    var gemOrArt : [String] = []
     
     
     //

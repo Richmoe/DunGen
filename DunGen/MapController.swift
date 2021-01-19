@@ -211,6 +211,17 @@ class MapController {
                 print("Encounter!!!")
                 e.initMobSprites(node: tileMap)
             }
+            
+            if let t = mb.treasure {
+                t.instantiateSprite(at: dungeon.currentLevel().MapPointCenterToCGPoint(mp))
+            }
+//            else {
+//                //test
+//                let tempPos = dungeon.currentLevel().MapPointCenterToCGPoint(mp)
+//                let d = Drop(type: 2,name: "Treasure", loot: Loot())
+//                d.instantiateSprite(at: tempPos)
+//                addDrop(drop: d, at: tempPos)
+//            }
         }
         
     }
