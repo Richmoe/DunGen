@@ -102,7 +102,7 @@ class MapGenerator {
         
         //let test = [4, 2, 2, 2, 4, 4, 2, 4, 4, 10, 2]
         repeat {
-            roll = DGRand.sharedInstance.getRand(to: 40)
+            roll = DGRand.getRand(40)
             
             switch roll {
             case 1...4:
@@ -121,10 +121,10 @@ class MapGenerator {
             case 19,20:
                 
                 //bias dead-ends later in the map. Don't want one right at the beginning.
-                print ("In deaded - depth \(depth)")
+                //print ("In deaded - depth \(depth)")
                 if (depth > 0) {
-                    if (DGRand.sharedInstance.getRand(to: 10) > 5) {
-                        print("SSSEEECDREETTTK")
+                    if (DGRand.getRand(10) > 5) {
+                        //print("SSSEEECDREETTTK")
                         passageMoves = [TileCode.passage, TileCode.secretEnd]
                     } else {
                         passageMoves = [TileCode.passage, TileCode.deadend]
@@ -267,8 +267,8 @@ class MapGenerator {
         mapSpot += MapPoint(row: 1, col: 0)
         
         //let r = Int.random(in: 1...10)
-        let roll = DGRand.sharedInstance.getRand(to: 10)
-        print ("room type: \(roll)")
+        let roll = DGRand.getRand(10)
+        //print ("room type: \(roll)")
         var passageTypes = [PassageType.hallway, PassageType.hallway, PassageType.hallway]
         switch roll {
         case 1:
@@ -504,7 +504,7 @@ class MapGenerator {
                     
                     if (wallCount == 3) {
                         
-                        if (DGRand.sharedInstance.getRand(to: 20) != 1) { //5% chance of keeping the deadend
+                        if (DGRand.getRand(20) != 1) { //5% chance of keeping the deadend
                             trimDeadEnd(at: MapPoint(row: r, col: c))
                         } else {
                             print("keeping deadend")
@@ -519,7 +519,11 @@ class MapGenerator {
         for r in (0..<map.mapBlocks.count) {
             for c in 0..<map.mapBlocks[r].count  {
                 
+                fixDoors(blockAt: MapPoint(row: r, col: c), dir: Direction.north)
+                fixDoors(blockAt: MapPoint(row: r, col: c), dir: Direction.east)
+
                 blockThis = map.getBlock(row: r, col: c)
+                /*
                 blockThat = map.getBlock(row: r+1, col: c)
         //If N is door, check to see if passage and if so, assign to S if not the same. Note that we don't have to check both since we've already fixed to match the S wall code
                 if (blockThis.getWallCode(wallDir: .north) == "D" || blockThis.getWallCode(wallDir: .north) == "S") {
@@ -537,6 +541,7 @@ class MapGenerator {
                         
                     }
                 }
+
                 
                 blockThat = map.getBlock(row: r, col: c+1)
                 
@@ -555,8 +560,36 @@ class MapGenerator {
                         
                     }
                 }
+ */
             }
         }
+    }
+    
+    func fixDoors(blockAt: MapPoint, dir: Direction) {
+        
+        var blockThis : MapBlock
+        blockThis = map.getBlock(blockAt)
+        
+        if (blockThis.getWallCode(wallDir: dir) == "D" || blockThis.getWallCode(wallDir: dir) == "S") {
+            if let blockThat = map.getBlock(at: blockAt, dir: dir) {
+                assert(blockThat.getWallCode(wallDir: dir.opposite()) == "D" || blockThat.getWallCode(wallDir: dir.opposite()) == "S")
+                var p = blockThis.getDoor(dir: dir)
+                
+                if (p.type == PassageType.hallway) {
+                    p = GetRandomDoor()
+                    if (p.secret) {
+                        blockThis.addCode(codeDir: dir, code: "S")
+                        blockThat.addCode(codeDir: dir.opposite(), code: "S")
+                    }
+                    blockThis.addDoor(dir: dir, passage: p)
+                    blockThat.addDoor(dir: dir.opposite(), passage: p)
+                    
+                }
+            } else {
+                assertionFailure("Is this a door to nowhere?")
+            }
+        }
+ 
     }
     
     func fixMatchBlock(blockAt: MapPoint, dir: Direction) {
@@ -583,7 +616,7 @@ class MapGenerator {
                     blockThis.addWall(wallDir: dir)
                 } else {
                     //pick one to be authority:
-                    if (DGRand.sharedInstance.getRand(to: 2) == 2) {
+                    if (DGRand.getRand(2) == 2) {
                         blockThat.addCode(codeDir: dir.opposite(), code: codeThis)
                         
                     } else  {

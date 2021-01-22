@@ -102,7 +102,7 @@ class Map {
         
         let toType = getBlock(toPt) //mapBlocks[toMP.row][toMP.col]
         
-        print("Can enter: \(toType.tileCode)? ")
+        //print("Can enter: \(toType.tileCode)? ")
         
         if (toType.tileCode == TileCode.null) {
             return false

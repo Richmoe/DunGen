@@ -278,6 +278,7 @@ class LootFactory {
                 }
                 break
             }
+
         }
         
         return newLoot

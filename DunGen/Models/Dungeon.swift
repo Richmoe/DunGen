@@ -36,8 +36,8 @@ class Dungeon { //Environment?
         
       
         
-        seedString = "DEW4"  //secret door at 7,17 7,18 and 1,22 2,22
-        
+        //seedString = "DEW4"  //secret door at 7,17 7,18 and 1,22 2,22
+        seedString = "X7ZW" //2 secret doors, encounter behind door which triggers the "encounter" overlay when trying to move forward. TODO: fix so that if the door is shut, the encounter doesn't trigger
         
         
         print("THE SEED ___________ \(seedString) ___________")

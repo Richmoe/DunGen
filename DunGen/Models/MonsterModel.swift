@@ -41,7 +41,7 @@ class Monster: Mob {
         
         self.hitPoints = GetDiceRoll(hitDice)
         self.maxHitPoints = self.hitPoints
-        print ("Making \(self.name) with \(self.hitPoints) HPs \(self.hitDice)")
+        //print ("Making \(self.name) with \(self.hitPoints) HPs \(self.hitDice)")
         
     }
 }

@@ -177,7 +177,7 @@ class BattleController : ObservableObject {
                 
                 //if (mm.uid == mob!.uid) {
                 if (mm === mob) {
-                    print ("Current target found, ix: \(i)")
+                    //print ("Current target found, ix: \(i)")
                     currentTargetIx = i
                     return
                 }

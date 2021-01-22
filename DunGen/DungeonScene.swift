@@ -241,7 +241,7 @@ class DungeonScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
         
-        print ("TouchUp pos: \(pos)")
+        //print ("TouchUp pos: \(pos)")
         if (Global.adventure.inBattle == true) {
 
             if let bc = Global.adventure.currentBattle {
@@ -270,9 +270,8 @@ class DungeonScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        print ("---")
         for t in touches {
-            print ("TapCount: \(t.tapCount)")
+            //print ("TapCount: \(t.tapCount)")
             self.touchUp(atPoint: t.location(in: self))
             
         }
