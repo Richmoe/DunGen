@@ -107,7 +107,7 @@ class Encounter {
                 let _ = d.instantiateSprite(at: mob[i].at())
                 if let ds = Global.dungeonScene {
                     if let mc = ds.mapController {
-                        mc.addDrop(drop: d, at: mob[i].at())
+                        mc.addDrop(drop: d)
                     }
                 }
             }

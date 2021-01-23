@@ -24,7 +24,7 @@ class EncounterGenerator {
     func generateEncounters () {
         
         //calculate how many we want for the dungeon / divided by # of levels based on overall CR rating
-        let encounterCount = max(4, DGRand.getRand(map.rooms.count - 1))
+        let encounterCount = max(4, DGRand.getRand(map.rooms.count / 2))
         //
         for _ in 1...encounterCount {
             

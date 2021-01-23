@@ -51,9 +51,10 @@ class Dungeon { //Environment?
         //trap generator 
         
         let _ = EncounterGenerator(map: m)
+        let _ = TreasureGenerator(map: m)
         
         //Temp:
-        let _ = LootFactory.sharedInstance.getTreasureHoard(cr: 1)
+        //let _ = LootFactory.sharedInstance.getTreasureHoard(cr: 1)
         
         //m.generate()
         

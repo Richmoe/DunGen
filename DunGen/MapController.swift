@@ -28,7 +28,7 @@ class MapController {
         createTargetSprite()
     }
     
-    func addDrop(drop: Drop, at: CGPoint) {
+    func addDrop(drop: Drop) {
         
         
         //add to drop queue
@@ -213,7 +213,9 @@ class MapController {
             }
             
             if let t = mb.treasure {
-                t.instantiateSprite(at: dungeon.currentLevel().MapPointCenterToCGPoint(mp))
+                print("Treasure")
+                let s = t.instantiateSprite(at: dungeon.currentLevel().MapPointCenterToCGPoint(mp))
+                addDrop(drop: t)
             }
 //            else {
 //                //test
