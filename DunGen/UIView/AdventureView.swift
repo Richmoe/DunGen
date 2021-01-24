@@ -45,6 +45,7 @@ struct AdventureView: View {
                     .frame(maxWidth: 375)
                     //.fixedSize(horizontal: false, vertical: false)
             }
+            .overlay(OverlayView(adventure: Global.adventure), alignment: .topLeading)
 
 
             HStack {
