@@ -89,6 +89,35 @@ class Encounter {
         }
     }
     
+    func toString() -> String {
+        var mobName = [String]()
+        var mobCount = [Int]()
+        
+        mobName.append(mob[0].name)
+        mobCount.append(1)
+        
+        for i in 1..<mob.count {
+            
+            if let index = mobName.firstIndex(of: mob[i].name ) {
+                mobCount[index] += 1
+            } else {
+                mobName.append(mob[i].name)
+                mobCount.append(1)
+            }
+        }
+        
+        //Build string:
+        var str = ""
+        
+        for i in 0..<mobName.count {
+            if (i > 0) {
+                str += "\r\n"
+            }
+            str +=  "\(mobCount[i]) " + mobName[i] + (mobCount[i] > 1 ? "s" : "")
+        }
+        return str
+    }
+    
     func endEncounter() {
         
         stateActive = false
