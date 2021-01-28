@@ -80,6 +80,7 @@ class MapController {
                         }
                     } else {
                         //print ("First click on encounter")
+                        Global.adventure.currentStatus = e.toString()
                         targetSpriteAt(clickSpot)
                     }
                 }

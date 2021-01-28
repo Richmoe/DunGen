@@ -13,24 +13,29 @@ struct OverlayView: View {
     @ObservedObject var adventure: Adventure
     
     var body: some View {
-        ZStack(alignment: .top) {
-            Rectangle()
-                .fill(Color.white)
-            VStack() {
-                Text("Status").font(.headline)
-                Spacer()
-                ScrollView {
-                    //ForEach(0 ..< 12) { _ in
-                    //    Text("Message").font(.body)
-                    //}
-                    Text(adventure.currentStatus).font(.body)
-                    
+        
+        if (!adventure.inBattle) {
+            ZStack(alignment: .top) {
+                Rectangle()
+                    .fill(Color.white)
+                VStack() {
+                    Text("Status").font(.headline)
+                    Spacer()
+                    ScrollView {
+                        //ForEach(0 ..< 12) { _ in
+                        //    Text("Message").font(.body)
+                        //}
+                        Text(adventure.currentStatus).font(.body)
+                        
+                    }
                 }
             }
+            .frame(width: 350, height: 200, alignment: .topLeading)
+            .clipped()
+            //.clipShape(Rectangle().frame(width:350, height:200))
+        } else {
+            EmptyView()
         }
-        .frame(width: 350, height: 200, alignment: .topLeading)
-        .clipped()
-        //.clipShape(Rectangle().frame(width:350, height:200))
     }
 }
 
