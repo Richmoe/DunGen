@@ -81,14 +81,10 @@ class Drop {
         }
     }
     
-    func getLoot() {
+    func getLoot() -> Loot{
         print("Getting loot")
         
-        print ("Treasure: \(loot.platinum)P")
-        print ("Treasure: \(loot.gold)G")
-        print ("Treasure: \(loot.electrum)E")
-        print ("Treasure: \(loot.silver)S")
-        print ("Treasure: \(loot.copper)C")
+       return loot
         
         
     }

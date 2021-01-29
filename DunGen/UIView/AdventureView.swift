@@ -55,7 +55,7 @@ struct AdventureView: View {
                 }
                 Spacer()
                 Button("Treasure") {
-
+                    adventure.showTreasure = !adventure.showTreasure
                 }
                 Spacer()
 

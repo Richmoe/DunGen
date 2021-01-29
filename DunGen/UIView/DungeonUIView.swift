@@ -29,6 +29,19 @@ struct DungeonUIView: View {
                 
                 
             }
+        } else if (adventure.showTreasure) {
+            ZStack() {
+                Image("Char BG")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                
+                
+                TreasureListView(adventure: adventure)
+                    .padding(.leading, 60)
+                    .frame(alignment: .top)
+                
+                
+            }
         } else {
             EmptyView()
         }

@@ -47,9 +47,13 @@ class Adventure : ObservableObject {
     
     @Published var experienceAccumulator: Int = 0
     
+    @Published var lootAccumulator: Loot = Loot()
+    
     @Published var historyList = [String]()
     
     private var crToExpTable = Dictionary<Int, Int>()
+    
+    @Published var showTreasure = false
     
     @Published var currentStatus: String = "This is a status message that has a bunch of stuff in it. It may be a paragraph of info. Let's see how it fits in the Overlay."
     
@@ -67,6 +71,11 @@ class Adventure : ObservableObject {
     func addToHistory(_ str: String) {
         
         historyList.append(str)
+    }
+    
+    func getLoot(_ l: Loot) {
+        lootAccumulator.addLoot(l)
+        lootAccumulator.printDebug()
     }
     
     

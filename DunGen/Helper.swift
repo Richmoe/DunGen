@@ -44,6 +44,39 @@ class Helper {
         
     }
     
+    
+    static func aggregateStringArray (array: [String], usePlural: Bool) -> [String] {
+        
+        var item = [String]()
+        var itemCount = [Int]()
+        
+        item.append(array[0])
+        itemCount.append(1)
+        
+        for i in 1..<array.count {
+            
+            if let index = item.firstIndex(of: array[i] ) {
+                itemCount[index] += 1
+            } else {
+                item.append(array[i])
+                itemCount.append(1)
+            }
+        }
+        
+        //Build string:
+        var str = [String]()
+        
+        for i in 0..<item.count {
+            if (usePlural) {
+                str.append("\(itemCount[i]) " + item[i] +  (itemCount[i] > 1 ? "s" : "") )
+            } else {
+                //use $ x #  pattern
+                str.append("\(item[i])" + (itemCount[i] > 1 ? " x \(itemCount[i])" : ""))
+            }
+        }
+        
+        return str
+    }
 
     
 }
