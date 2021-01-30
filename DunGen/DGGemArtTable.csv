@@ -1,101 +1,101 @@
-Category,Description
-Gem 10,Azurite (opaque mottled deep blue)
-Gem 10,Banded agate (translucent striped brown blue white or red)
-Gem 10,Blue quartz (transparent pale blue)
-Gem 10,Eye agate (translucent circles of gray white brown blue or green)
-Gem 10,Hematite (opaque gray-black)
-Gem 10,Lapis lazuli (opaque light and dark blue with yellow flecks)
-Gem 10,Malachite (opaque striated light and dark green)
-Gem 10,Moss agate (translucent pink or yellow-white with mossy gray or green markings)
-Gem 10,Obsidian (opaque black)
-Gem 10,Rhodochrosite (opaque light pink)
-Gem 10,Tiger eye (translucent brown with golden center)
-Gem 10,Turquoise (opaque light blue-green)
-Gem 50,Bloodstone (opaque dark gray with red flecks)
-Gem 50,Carnelian (opaque orange to red-brown)
-Gem 50,Chalcedony (opaque white)
-Gem 50,Chrysoprase (translucent green)
-Gem 50,Citrine (transparent pale yellow-brown)
-Gem 50,Jasper (opaque blue black or brown)
-Gem 50,Moonstone (translucent white with pale blue glow)
-Gem 50,Onyx (opaque bands of black and white or pure black or white)
-Gem 50,Quartz (transparent white smoky gray or yellow)
-Gem 50,Sardonyx (opaque bands of red and white)
-Gem 50,Star rose quartz (translucent rosy stone with white star-shaped center)
-Gem 50,Zircon (transparent pale blue-green)
-Gem 100,Amber (transparent watery gold to rich gold)
-Gem 100,Amethyst
-Gem 100,Chrysoberyl
-Gem 100,Coral
-Gem 100,Garnet
-Gem 100,Jade
-Gem 100,Jet
-Gem 100,Pearl
-Gem 100,Spinel
-Gem 100,Tourmaline
-Gem 500,Alexandrite (transparent dark green)
-Gem 500,Aquamarine (transparent pale blue-green)
-Gem 500,Black pearl (opaque pure black)
-Gem 500,Blue spinel (transparent deep blue)
-Gem 500,Peridot (transparent rich olive green)
-Gem 500,Topaz (transparent golden yellow)
-Gem 1000,Black opal (translucent dark green with black mottling and golden flecks)
-Gem 1000,Blue sapphire (transparent blue-white to medium blue)
-Gem 1000,Emerald (transparent deep bright green)
-Gem 1000,Fire opal (translucent fiery red)
-Gem 1000,Opal (translucent pale blue with green and golden mottling)
-Gem 1000,Star ruby (translucent ruby with white star-shaped center)
-Gem 1000,Star sapphire (translucent blue sapphire with white star-shaped center)
-Gem 1000,Yellow sapphire (transparent fiery yellow or yellow green)
-Gem 5000,Black sapphire (translucent lustrous black with glowing highlights)
-Gem 5000,Diamond (transparent blue-white canary pink brown or blue)
-Gem 5000,Jacinth (transparent fiery orange)
-Gem 5000,Ruby (transparent clear red to deep crimson)
-Art 25,Silver ewer
-Art 25,Carved bone statuette
-Art 25,Small gold bracelet
-Art 25,Cloth-of-gold vestments
-Art 25,Black velvet mask stitched with silver thread
-Art 25,Copper chalice with silver filigree
-Art 25,Pair of engraved bone dice
-Art 25,Small mirror set in a painted wooden frame
-Art 25,Embroidered silk handkerchief
-Art 25,Gold locket with a painted portrait inside
-Art 250,Gold ring set with bloodstones
-Art 250,Carved ivory statuette
-Art 250,Large gold bracelet
-Art 250,Silver necklace with a gemstone pendant
-Art 250,Bronze crown
-Art 250,Silk robe with gold embroidery
-Art 250,Large well-made tapestry
-Art 250,Brass mug with jade inlay
-Art 250,Box of turquoise animal figurines
-Art 250,Gold bird cage with electrum filigree
-Art 750,Silver chalice set with moonstones
-Art 750,Silver-plated steellongsword with jet set in hilt
-Art 750,Carved harp of exotic wood with ivory inlay and zircon gems
-Art 750,Small gold idol
-Art 750,Gold dragon comb set with red garnets as eyes
-Art 750,Bottle stopper cork embossed with gold leaf and set with amethysts
-Art 750,Ceremonial electrum dagger with a black pearl in the pommel
-Art 750,Silver and gold brooch
-Art 750,Obsidian statuette with gold fittings and inlay
-Art 750,Painted gold war mask
-Art 2500,Fine gold chain set with a fire opal
-Art 2500,Old masterpiece painting
-Art 2500,Embroidered silk and velvet mantle set with numerous moonstones
-Art 2500,Platinum bracelet set with a sapphire
-Art 2500,Embroidered glove set with jewel chips
-Art 2500,Jeweled anklet
-Art 2500,Gold music box
-Art 2500,Gold circlet set with four aquamarines
-Art 2500,Eye patch with a mock eye set in blue sapphire andmoonstone
-Art 2500,A necklace string of small pink pearls
-Art 7500,Jeweled gold crown
-Art 7500,Jeweled platinum ring
-Art 7500,Small gold statuette set with rubies
-Art 7500,Gold cup set with emeralds
-Art 7500,Gold jewelry box with platinum filigree
-Art 7500,Painted gold child's sarcophagus
-Art 7500,Jade game board with solid gold playing pieces
-Art 7500,Bejeweled ivory drinking horn with gold filigree
+Category,summary,Description
+Gem 10,Azurite,Azurite (opaque mottled deep blue)
+Gem 10,Banded Agate,Banded agate (translucent striped brown blue white or red)
+Gem 10,Blue Quartz,Blue quartz (transparent pale blue)
+Gem 10,Eye Agate,Eye agate (translucent circles of gray white brown blue or green)
+Gem 10,Hematite,Hematite (opaque gray-black)
+Gem 10,Lapis Lazuli,Lapis lazuli (opaque light and dark blue with yellow flecks)
+Gem 10,Malachite,Malachite (opaque striated light and dark green)
+Gem 10,Moss Agate,Moss agate (translucent pink or yellow-white with mossy gray or green markings)
+Gem 10,Obsidian,Obsidian (opaque black)
+Gem 10,Rhodochrosite,Rhodochrosite (opaque light pink)
+Gem 10,Tiger Eye,Tiger eye (translucent brown with golden center)
+Gem 10,Turquoise,Turquoise (opaque light blue-green)
+Gem 50,Bloodstone,Bloodstone (opaque dark gray with red flecks)
+Gem 50,Carnelian,Carnelian (opaque orange to red-brown)
+Gem 50,Chalcedony,Chalcedony (opaque white)
+Gem 50,Chrysoprase,Chrysoprase (translucent green)
+Gem 50,Citrine,Citrine (transparent pale yellow-brown)
+Gem 50,Jasper,Jasper (opaque blue black or brown)
+Gem 50,Moonstone,Moonstone (translucent white with pale blue glow)
+Gem 50,Onyx,Onyx (opaque bands of black and white or pure black or white)
+Gem 50,Quartz,Quartz (transparent white smoky gray or yellow)
+Gem 50,Sardonyx,Sardonyx (opaque bands of red and white)
+Gem 50,Star Rose Quartz,Star rose quartz (translucent rosy stone with white star-shaped center)
+Gem 50,Zircon,Zircon (transparent pale blue-green)
+Gem 100,Amber,Amber (transparent watery gold to rich gold)
+Gem 100,Amethyst,Amethyst
+Gem 100,Chrysoberyl,Chrysoberyl
+Gem 100,Coral,Coral
+Gem 100,Garnet,Garnet
+Gem 100,Jade,Jade
+Gem 100,Jet,Jet
+Gem 100,Pearl,Pearl
+Gem 100,Spinel,Spinel
+Gem 100,Tourmaline,Tourmaline
+Gem 500,Alexandrite,Alexandrite (transparent dark green)
+Gem 500,Aquamarine,Aquamarine (transparent pale blue-green)
+Gem 500,Black Pearl,Black pearl (opaque pure black)
+Gem 500,Blue Spinel,Blue spinel (transparent deep blue)
+Gem 500,Peridot,Peridot (transparent rich olive green)
+Gem 500,Topaz,Topaz (transparent golden yellow)
+Gem 1000,Black Opal,Black opal (translucent dark green with black mottling and golden flecks)
+Gem 1000,Blue Sapphire,Blue sapphire (transparent blue-white to medium blue)
+Gem 1000,Emerald,Emerald (transparent deep bright green)
+Gem 1000,Fire Opal,Fire opal (translucent fiery red)
+Gem 1000,Opal,Opal (translucent pale blue with green and golden mottling)
+Gem 1000,Star Ruby,Star ruby (translucent ruby with white star-shaped center)
+Gem 1000,Star Sapphire,Star sapphire (translucent blue sapphire with white star-shaped center)
+Gem 1000,Yellow Sapphire,Yellow sapphire (transparent fiery yellow or yellow green)
+Gem 5000,Black Sapphire,Black sapphire (translucent lustrous black with glowing highlights)
+Gem 5000,Diamond,Diamond (transparent blue-white canary pink brown or blue)
+Gem 5000,Jacinth,Jacinth (transparent fiery orange)
+Gem 5000,Ruby,Ruby (transparent clear red to deep crimson)
+Art 25,Silver ewer,Silver ewer
+Art 25,Carved bone statuette,Carved bone statuette
+Art 25,Small gold bracelet,Small gold bracelet
+Art 25,Cloth-of-gold vestments,Cloth-of-gold vestments
+Art 25,Black velvet mask,Black velvet mask stitched with silver thread
+Art 25,Copper chalice with silver filigree,Copper chalice with silver filigree
+Art 25,Pair of engraved bone dice,Pair of engraved bone dice
+Art 25,Small mirror in frame,Small mirror set in a painted wooden frame
+Art 25,Embroidered silk handkerchief,Embroidered silk handkerchief
+Art 25,Gold locket ,Gold locket with a painted portrait inside
+Art 250,Gold ring with bloodstones,Gold ring set with bloodstones
+Art 250,Carved ivory statuette,Carved ivory statuette
+Art 250,Large gold bracelet,Large gold bracelet
+Art 250,Silver necklace with gem,Silver necklace with a gemstone pendant
+Art 250,Bronze crown,Bronze crown
+Art 250,Silk robe with gold embroidery,Silk robe with gold embroidery
+Art 250,Large well-made tapestry,Large well-made tapestry
+Art 250,Brass mug with jade inlay,Brass mug with jade inlay
+Art 250,Box of turquoise animal figurines,Box of turquoise animal figurines
+Art 250,Gold bird cage,Gold bird cage with electrum filigree
+Art 750,Silver chalice set with moonstones,Silver chalice set with moonstones
+Art 750,Silver-plated sword with jet in hilt,Silver-plated steel longsword with jet set in hilt
+Art 750,Carved bejeweled harp,Carved harp of exotic wood with ivory inlay and zircon gems
+Art 750,Small gold idol,Small gold idol
+Art 750,Gold dragon comb with garnets,Gold dragon comb set with red garnets as eyes
+Art 750,Gold-leaf bottle stopper with amethysts,Bottle stopper cork embossed with gold leaf and set with amethysts
+Art 750,Dagger with a black pearl in pommel,Ceremonial electrum dagger with a black pearl in the pommel
+Art 750,Silver and gold brooch,Silver and gold brooch
+Art 750,Obsidian and gold statuette,Obsidian statuette with gold fittings and inlay
+Art 750,Painted gold war mask,Painted gold war mask
+Art 2500,Fine gold chain set with a fire opal,Fine gold chain set with a fire opal
+Art 2500,Old masterpiece painting,Old masterpiece painting
+Art 2500,Embroidered mantle with moonstones,Embroidered silk and velvet mantle set with numerous moonstones
+Art 2500,Platinum bracelet with sapphire,Platinum bracelet set with a sapphire
+Art 2500,Embroidered glove with jewel chips,Embroidered glove set with jewel chips
+Art 2500,Jeweled anklet,Jeweled anklet
+Art 2500,Gold music box,Gold music box
+Art 2500,Gold circlet set with four aquamarines,Gold circlet set with four aquamarines
+Art 2500,Eye patch with a sapphire eye,Eye patch with a mock eye set in blue sapphire and moonstone
+Art 2500,Necklace of pink pearls,A necklace string of small pink pearls
+Art 7500,Jeweled gold crown,Jeweled gold crown
+Art 7500,Jeweled platinum ring,Jeweled platinum ring
+Art 7500,Small gold and ruby statuette,Small gold statuette set with rubies
+Art 7500,Gold cup with emeralds,Gold cup set with emeralds
+Art 7500,Gold box with platinum filigree,Gold jewelry box with platinum filigree
+Art 7500,Painted gold child's sarcophagus,Painted gold child's sarcophagus
+Art 7500,Jade game board with gold pieces,Jade game board with solid gold playing pieces
+Art 7500,Bejeweled ivory drinking horn,Bejeweled ivory drinking horn with gold filigree

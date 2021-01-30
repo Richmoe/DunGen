@@ -75,7 +75,7 @@ class LootFactory {
         parsedCSV = Helper.loadFromCSV(fileName: "DGGemArtTable.csv")
         
         for item in parsedCSV[1...] {
-            if (item.count != 2) {
+            if (item.count != 3) {
                 break
             }
 
