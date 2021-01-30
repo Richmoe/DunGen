@@ -50,16 +50,18 @@ class Helper {
         var item = [String]()
         var itemCount = [Int]()
         
-        item.append(array[0])
-        itemCount.append(1)
-        
-        for i in 1..<array.count {
+        if (array.count > 0) {
+            item.append(array[0])
+            itemCount.append(1)
             
-            if let index = item.firstIndex(of: array[i] ) {
-                itemCount[index] += 1
-            } else {
-                item.append(array[i])
-                itemCount.append(1)
+            for i in 1..<array.count {
+                
+                if let index = item.firstIndex(of: array[i] ) {
+                    itemCount[index] += 1
+                } else {
+                    item.append(array[i])
+                    itemCount.append(1)
+                }
             }
         }
         

@@ -50,6 +50,40 @@ class Loot {
         }
     }
     
+    func toString() -> String {
+        
+        var str = ""
+        
+        if (platinum > 0) {
+            str += "\(platinum) PP\r\n"
+        }
+        if (gold > 0) {
+            str += "\(gold) GP\r\n"
+        }
+        if (electrum > 0) {
+            str += "\(electrum) EP\r\n"
+        }
+        if (silver > 0) {
+            str += "\(silver) SP\r\n"
+        }
+        if (copper > 0) {
+            str += "\(copper) CP\r\n"
+        }
+        
+        let gems = getGemOrArtReadout()
+        for g in gems {
+            str += "\(g)\r\n"
+        }
+        
+        let magic = getMagicReadout()
+        for m in magic {
+            str += "\(m)\r\n"
+        }
+        
+        
+        return str
+    }
+    
     func printDebug() {
         print("P: \(platinum), G: \(gold), E: \(electrum), S: \(silver), C: \(copper)")
         var tempString = "MISC: "

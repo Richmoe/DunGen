@@ -83,6 +83,7 @@ class Drop {
     
     func getLoot() -> Loot{
         print("Getting loot")
+        print(loot.toString())
         
        return loot
         

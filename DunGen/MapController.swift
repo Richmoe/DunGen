@@ -111,6 +111,7 @@ class MapController {
                 for i in 0..<dropQueue.count {
                     if (sprites[0] == dropQueue[i].sprite) {
                         print ("Clicked a drop!!")
+                        
                         Global.adventure.getLoot(dropQueue[i].getLoot())
                         dropQueue[i].sprite?.removeFromParent()
                         dropQueue.remove(at: i)

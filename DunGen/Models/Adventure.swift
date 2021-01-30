@@ -75,7 +75,9 @@ class Adventure : ObservableObject {
     
     func getLoot(_ l: Loot) {
         lootAccumulator.addLoot(l)
-        lootAccumulator.printDebug()
+        
+        currentStatus = l.toString()
+        //lootAccumulator.printDebug()
     }
     
     
