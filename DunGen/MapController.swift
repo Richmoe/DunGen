@@ -267,22 +267,7 @@ class MapController {
                 
                 //map base
                 renderTile(layer: layer, mp: MapPoint(row: row, col: col))
-                
-                
-                //Debug overlay
-                let tileBlock = (dungeon.getBlock(MapPoint(row: row, col: col)))
-                
-                if tileBlock.encounter != nil {
-                    renderTile(layer: overlay, code: "DEBUG_ROOM", mp: MapPoint(row: row, col: col))
-                    
-                }
-                
-                //Secret wall override:
-                if (tileBlock.wallString.contains("S")) {
-                    renderTile(layer: overlay, code: "Sxxx", mp: MapPoint(row: row, col: col))
-                    
-                }
-                
+
             }
         }
     }

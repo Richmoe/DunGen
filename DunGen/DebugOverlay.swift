@@ -85,6 +85,15 @@ class DebugOverlay {
                 
                 //map base
                 let b = map.getBlock(row: row, col: col)
+                
+                if (b.encounter != nil) {
+                    
+                    addOverlay(text: "E", at: pos + CGPoint(x: 40, y: 40), size: 100, color: .green, bold: true)
+                }
+                
+                if (b.treasure != nil) {
+                    addOverlay(text: "$", at: pos + CGPoint(x:40, y:40), size: 100, color: .orange, bold: true)
+                }
                 for ix in 0...3 {
                 
 
@@ -119,11 +128,14 @@ class DebugOverlay {
     }
 
     
-    func addOverlay(text: String, at: CGPoint, size: CGFloat = 100.0, color: UIColor = .blue) {
+    func addOverlay(text: String, at: CGPoint, size: CGFloat = 100.0, color: UIColor = .blue, bold: Bool = false) {
 
             
         let myLabel = SKLabelNode()
         myLabel.text = text
+        if (bold) {
+            myLabel.fontName = "HelveticaNeue-Bold"
+        }
         myLabel.fontColor = color
         myLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         myLabel.fontSize = size
