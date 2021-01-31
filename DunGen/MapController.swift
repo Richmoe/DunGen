@@ -152,12 +152,30 @@ class MapController {
             renderTile(stepMove)
             
             //Temp:
-            revealSecretDoor(at: stepMove)
-            unlockDoor(at: stepMove)
+            //revealSecretDoor(at: stepMove)
+            //unlockDoor(at: stepMove)
+            let mb = dungeon.getBlock(stepMove)
+            if (mb.hasHidden()) {
+                passiveSearch(at: stepMove)
+            }
             
             fogOfWar()
         }
         
+    }
+    
+    func passiveSearch(at: MapPoint) {
+        
+        //roll passive perception check for party:
+        let roll = GetDiceRoll("d20")
+        
+        print("passive search: roll: \(roll)")
+        
+        //Not going to bother with passive perception at this point, so let's assume all secret doors are DC15
+        if (roll > 15) {
+            revealSecretDoor(at: at)
+            Global.adventure.currentStatus = "You notice what appears to be a secret door!"
+        }
     }
     
     func placeParty() {

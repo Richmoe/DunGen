@@ -83,6 +83,13 @@ class MapBlock {
         // print ("After: \(wallString)")
     }
     
+    func hasHidden() -> Bool {
+        if (wallString.contains("S")) {
+            return true
+        }
+        return false
+    }
+    
     func rotateForDir(heading: Direction) {
         if (heading.rawValue > Direction.north.rawValue) {
             rotCW()
