@@ -28,7 +28,21 @@ struct OverlayView: View {
                         Text(adventure.currentStatus).font(.body)
                         
                     }
+                    HStack() {
+                        Button("Search") {
+                            if let d = Global.dungeonScene {
+                                d.clickButton(name: "Search")
+                            }
+                        }
+                        Spacer()
+                        Button("Pick Lock") {
+                            if let d = Global.dungeonScene {
+                                d.clickButton(name: "Pick")
+                            }
+                        }
+                    }
                 }
+
             }
             .frame(width: 350, height: 200, alignment: .topLeading)
             .clipped()

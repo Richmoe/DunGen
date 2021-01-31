@@ -178,6 +178,33 @@ class MapController {
         }
     }
     
+    func activeSearch(at: MapPoint) {
+        
+        //Active search will check around the players (3x3 grid)
+        for r in -1...1 {
+            for c in -1...1 {
+                let mb = dungeon.getBlock(at + MapPoint(row: r, col: c))
+                if (mb.hasHidden()) {
+
+                    //roll passive perception check for party:
+                    let roll = GetDiceRoll("d20")
+                    
+                    print("active search: roll: \(roll)")
+                    
+                    //TODO figure this out
+                    if (roll > 12) {
+                        revealSecretDoor(at: at)
+                        Global.adventure.currentStatus = "You notice what appears to be a secret door!"
+                    }
+                //} else {
+                //    print("Nothing to find at \(r), \(c)")
+                }
+                
+            }
+        }
+
+    }
+    
     func placeParty() {
         goToTile(dungeon.getPlayerEntrance())
         fogOfWar()
