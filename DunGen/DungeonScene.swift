@@ -338,7 +338,7 @@ class DungeonScene: SKScene {
         switch name {
         case "Pick":
             if let m = mapController {
-                m.activeSearch(at: Global.party.at)
+                m.pickLock(at: Global.party.at)
             }
             
         case "Search":

@@ -115,6 +115,11 @@ class Map {
                 if (dirWall == "D") {
                     let passage = toType.getDoor(dir: moveDir.opposite())
                     if (passage.locked || passage.secret) {
+                        //Do we have secret at this point???
+                        
+                        if (passage.locked) {
+                            Global.adventure.currentStatus = "The door is locked."
+                        }
                         print("DOOR IS LOCKED or SECRET!!!")
                         return false
                     } else {

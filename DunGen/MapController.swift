@@ -183,27 +183,45 @@ class MapController {
         //Active search will check around the players (3x3 grid)
         for r in -1...1 {
             for c in -1...1 {
-                let mb = dungeon.getBlock(at + MapPoint(row: r, col: c))
-                if (mb.hasHidden()) {
-
-                    //roll passive perception check for party:
-                    let roll = GetDiceRoll("d20")
-                    
-                    print("active search: roll: \(roll)")
-                    
-                    //TODO figure this out
-                    if (roll > 12) {
-                        revealSecretDoor(at: at)
-                        Global.adventure.currentStatus = "You notice what appears to be a secret door!"
+                let srchPt = at + MapPoint(row: r, col: c)
+                if (canSee(from: at, to: srchPt)) {
+                    let mb = dungeon.getBlock(srchPt)
+                    if (mb.hasHidden()) {
+                        
+                        //roll passive perception check for party:
+                        let roll = GetDiceRoll("d20")
+                        
+                        print("active search: roll: \(roll)")
+                        
+                        //TODO figure this out
+                        if (roll > 12) {
+                            revealSecretDoor(at: srchPt)
+                            Global.adventure.currentStatus = "You notice what appears to be a secret door!"
+                            return
+                        }
                     }
-                //} else {
-                //    print("Nothing to find at \(r), \(c)")
                 }
-                
             }
         }
-
+        Global.adventure.currentStatus = "You don't find anything."
     }
+    
+    func pickLock(at: MapPoint) {
+        
+        let roll = GetDiceRoll("d20")
+        
+        print("unlock: roll: \(roll)")
+        
+        //Todo:
+        if (roll > 15) {
+            unlockDoor(at: at)
+            Global.adventure.currentStatus = "You've successfully unlocked the door!"
+        } else {
+            Global.adventure.currentStatus = "The lock proves to be too difficult for you."
+        }
+    }
+    
+    
     
     func placeParty() {
         goToTile(dungeon.getPlayerEntrance())
@@ -355,7 +373,7 @@ class MapController {
     }
     
     func unlockDoor(at: MapPoint) {
-        //get wall that has S
+        
         let mapBlock = dungeon.getBlock(at)
         //perhaps we could pass in direction, as this would not work with > 1 secret door but I don't think that's a big concern:
         for dir in [Direction.north, .south, .east, .west] {
