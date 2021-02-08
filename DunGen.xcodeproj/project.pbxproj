@@ -41,6 +41,7 @@
 		977E0A56245CE36E00AC41B1 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A55245CE36E00AC41B1 /* PlayerModel.swift */; };
 		977E0A59245CE37100AC41B1 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A58245CE37100AC41B1 /* RoomModel.swift */; };
 		977E0A5D245F91A600AC41B1 /* PartyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E0A5C245F91A600AC41B1 /* PartyModel.swift */; };
+		977E1A9E25CFA1760069BCDE /* TrapType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977E1A9D25CFA1760069BCDE /* TrapType.swift */; };
 		978AAFA024971CC5003245A0 /* MapGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978AAF9F24971CC5003245A0 /* MapGenerator.swift */; };
 		978D11C124785EED00355716 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11C024785EEC00355716 /* MapView.swift */; };
 		978D11C32478605700355716 /* AdventureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978D11C22478605700355716 /* AdventureView.swift */; };
@@ -94,6 +95,7 @@
 		977E0A55245CE36E00AC41B1 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		977E0A58245CE37100AC41B1 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		977E0A5C245F91A600AC41B1 /* PartyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyModel.swift; sourceTree = "<group>"; };
+		977E1A9D25CFA1760069BCDE /* TrapType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapType.swift; sourceTree = "<group>"; };
 		978AAF9F24971CC5003245A0 /* MapGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGenerator.swift; sourceTree = "<group>"; };
 		978D11C024785EEC00355716 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		978D11C22478605700355716 /* AdventureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureView.swift; sourceTree = "<group>"; };
@@ -153,16 +155,12 @@
 				975B75DA246F248E00E09936 /* Helper.swift */,
 				978D11CE247B36B400355716 /* UIView */,
 				977E0A5B245CE3C700AC41B1 /* Models */,
+				977E1AA125CFA23C0069BCDE /* Factories */,
+				977E1AA225CFA26E0069BCDE /* Tables */,
 				9739B51E245A74B500C043B7 /* Assets.xcassets */,
 				97BCDC61245C759700D7C191 /* MapTileSet.swift */,
 				9739B520245A74B500C043B7 /* LaunchScreen.storyboard */,
 				9739B51B245A74B300C043B7 /* Main.storyboard */,
-				970326C625B28C6C00F5C437 /* DGMagicTables.csv */,
-				970326CA25B4B17500F5C437 /* DGGemArtTable.csv */,
-				970326C925B4B17500F5C437 /* DGTreasureHoardTable.csv */,
-				970AB2552596AD8A00F7E65B /* DGMonsters.csv */,
-				975B75D2246CAEE800E09936 /* Monsters.csv */,
-				975B75D8246F07BE00E09936 /* crToExp.csv */,
 				9739B523245A74B500C043B7 /* Info.plist */,
 				97BCDC67245D1A0D00D7C191 /* CGPoint+Extensions.swift */,
 			);
@@ -176,23 +174,45 @@
 				97711F5424BBD9A800D1E6D1 /* DropModel.swift */,
 				975B75DC246F929900E09936 /* Dungeon.swift */,
 				977E0A4F245CE35800AC41B1 /* MapModel.swift */,
-				975B75CE246B772800E09936 /* MobFactory.swift */,
 				975B75D4246E433A00E09936 /* EncounterModel.swift */,
-				97711F5624BBE2D800D1E6D1 /* LootType.swift */,
-				97D76C7E25B2803F0068508B /* LootFactory.swift */,
 				977E0A51245CE36B00AC41B1 /* MapBlockModel.swift */,
-				977E0A53245CE36D00AC41B1 /* MapTypes.swift */,
 				977E0A55245CE36E00AC41B1 /* PlayerModel.swift */,
-				97D76C7625A0F9C90068508B /* RoomFactory.swift */,
 				977E0A58245CE37100AC41B1 /* RoomModel.swift */,
-				975B75CA2468931900E09936 /* MobModel.swift */,
 				975B75CC246894BC00E09936 /* MonsterModel.swift */,
 				977E0A5C245F91A600AC41B1 /* PartyModel.swift */,
-				978AAF9F24971CC5003245A0 /* MapGenerator.swift */,
-				979CFBA2249A512100F6E8F0 /* EncounterGenerator.swift */,
-				970326CE25BC830A00F5C437 /* TreasureGenerator.swift */,
+				977E0A53245CE36D00AC41B1 /* MapTypes.swift */,
+				975B75CA2468931900E09936 /* MobModel.swift */,
+				97711F5624BBE2D800D1E6D1 /* LootType.swift */,
+				977E1A9D25CFA1760069BCDE /* TrapType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		977E1AA125CFA23C0069BCDE /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				975B75CE246B772800E09936 /* MobFactory.swift */,
+				97D76C7E25B2803F0068508B /* LootFactory.swift */,
+				978AAF9F24971CC5003245A0 /* MapGenerator.swift */,
+				979CFBA2249A512100F6E8F0 /* EncounterGenerator.swift */,
+				97D76C7625A0F9C90068508B /* RoomFactory.swift */,
+				970326CE25BC830A00F5C437 /* TreasureGenerator.swift */,
+			);
+			name = Factories;
+			path = Models/Factories;
+			sourceTree = "<group>";
+		};
+		977E1AA225CFA26E0069BCDE /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				970326C625B28C6C00F5C437 /* DGMagicTables.csv */,
+				970326CA25B4B17500F5C437 /* DGGemArtTable.csv */,
+				970326C925B4B17500F5C437 /* DGTreasureHoardTable.csv */,
+				970AB2552596AD8A00F7E65B /* DGMonsters.csv */,
+				975B75D2246CAEE800E09936 /* Monsters.csv */,
+				975B75D8246F07BE00E09936 /* crToExp.csv */,
+			);
+			path = Tables;
 			sourceTree = "<group>";
 		};
 		978D11CE247B36B400355716 /* UIView */ = {
@@ -310,6 +330,7 @@
 				975B75D5246E433A00E09936 /* EncounterModel.swift in Sources */,
 				9739B512245A74B300C043B7 /* AppDelegate.swift in Sources */,
 				978AAFA024971CC5003245A0 /* MapGenerator.swift in Sources */,
+				977E1A9E25CFA1760069BCDE /* TrapType.swift in Sources */,
 				970326CF25BC830A00F5C437 /* TreasureGenerator.swift in Sources */,
 				9726D6E2246454FE00840A04 /* MapController.swift in Sources */,
 				97D76C7B25A149A00068508B /* DebugOverlay.swift in Sources */,
