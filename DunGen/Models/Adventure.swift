@@ -82,7 +82,7 @@ class Adventure : ObservableObject {
     
     
 
-    func calcEncounter(encounter: Encounter) {
+    func calcEncounterExperience(encounter: Encounter) {
         
         
         var exp = 0

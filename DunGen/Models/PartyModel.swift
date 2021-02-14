@@ -34,19 +34,21 @@ class Party : ObservableObject {
         //temp
 
             
-            var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar1")
+            var p1 = Player(name: "Cherrydale", level: 4, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar1")
             self.addPlayer(p1)
             
-            p1 = Player(name: "Tomalot", level: 2, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar2")
+            p1 = Player(name: "Tomalot", level: 4, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar2")
             self.addPlayer(p1)
             
-            p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar3")
+            p1 = Player(name: "Svenwolf", level: 5, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar3")
             self.addPlayer(p1)
             
-            p1 = Player(name: "Sookie", level: 3, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar4")
+            p1 = Player(name: "Sookie", level: 5, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar4")
             self.addPlayer(p1)
         
             print("Party Average: \(getPartyLevelAverage())")
+        
+        Global.adventure.challenge = getPartyLevelAverage()
 
     }
     
@@ -88,7 +90,7 @@ class Party : ObservableObject {
     }
     
     
-    func getPartyDifficulty(type: String) -> Int {
+    func getPartyTargetEncounterExp(type: String) -> Int {
         
         //just using string "Easy, Medium, Hard, Deadly"
         //But only use first char:
@@ -116,8 +118,9 @@ class Party : ObservableObject {
             sumLevel += p.level
         }
         
-        //Manual round since I can't be bothered looking up a function
-        return Int(Double(sumLevel) / Double(player.count) + 0.5)
+        //Manual round since I can't be bothered looking up a function, plus I want to round down
+        let roundDownAverage = Int(Double(sumLevel) / Double(player.count) - 0.5)
+        return (max(1,roundDownAverage))
     }
     
     func initAvatars(onLayer: SKScene) {

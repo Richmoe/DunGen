@@ -80,7 +80,8 @@ class EncounterGenerator {
             }
         }
         
-        let targetExp = Global.party.getPartyDifficulty(type: diff)
+        let targetExp = Global.party.getPartyTargetEncounterExp(type: diff)
+        print ("Target Exp: \(targetExp) \(diff)")
         getMobsForDifficulty(targetExp: targetExp, encounter: e)
 
         
@@ -143,9 +144,9 @@ class EncounterGenerator {
         
 
         if (encounterPattern <= 10) {
-            //print("Single Monster @ exp: \(targetCR)")
+            print("Single Monster @ exp: \(targetCR)")
             let m = MobFactory.sharedInstance.getMobBy(cr: targetCR)
-            //print("Fighting a \(m.name)")
+            print("Fighting a \(m.name)")
             encounter.addMonster(MobFactory.sharedInstance.makeMonster(name: m.name))
         } else if (encounterPattern <= 40){
             
@@ -153,7 +154,7 @@ class EncounterGenerator {
 
             //Doing target CR - 1 so:
             let targCR_minus = Global.adventure.crMath(cr: targetCR, mod: -1 * DGRand.getRandRand(3))
-            //print("Multiple Monsters @ exp: \(targetCR) : using CR: \(targCR_minus)")
+            print("Multiple Monsters @ exp: \(targetCR) : using CR: \(targCR_minus)")
             
             var curExp = 0
             
@@ -161,12 +162,12 @@ class EncounterGenerator {
             let m = MobFactory.sharedInstance.getMobBy(cr: targCR_minus)
             repeat {
   
-                //print ("Fighting a \(m.name)")
+                print ("Fighting a \(m.name)")
                 curExp += Global.adventure.getExpFromCr(cr: m.challengeRating)
                 encounter.addMonster(MobFactory.sharedInstance.makeMonster(name: m.name))
                 maxMobs -= 1
             } while (curExp < targetExp && maxMobs > 0)
-            //print ("total exp: \(curExp)")
+            print ("total exp: \(curExp)")
         }
         else if (encounterPattern <= 1010){
 

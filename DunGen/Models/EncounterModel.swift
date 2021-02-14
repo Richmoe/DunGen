@@ -123,7 +123,7 @@ class Encounter {
         stateActive = false
         
         //register with Adventure
-        Global.adventure.calcEncounter(encounter: self)
+        Global.adventure.calcEncounterExperience(encounter: self)
         
         //transfer mobs to drops
         
