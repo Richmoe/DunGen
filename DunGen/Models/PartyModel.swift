@@ -37,14 +37,16 @@ class Party : ObservableObject {
             var p1 = Player(name: "Cherrydale", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar1")
             self.addPlayer(p1)
             
-            p1 = Player(name: "Tomalot", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar2")
+            p1 = Player(name: "Tomalot", level: 2, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar2")
             self.addPlayer(p1)
             
             p1 = Player(name: "Svenwolf", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar3")
             self.addPlayer(p1)
             
-            p1 = Player(name: "Sookie", level: 1, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar4")
+            p1 = Player(name: "Sookie", level: 3, experience: 0, armorClass: 6, hitPoints: 8, initiativeBonus: 2, avatar: "Avatar4")
             self.addPlayer(p1)
+        
+            print("Party Average: \(getPartyLevelAverage())")
 
     }
     
@@ -106,6 +108,16 @@ class Party : ObservableObject {
             //error out
             return 0
         }
+    }
+    
+    func getPartyLevelAverage() -> Int {
+        var sumLevel = 0
+        for p in player {
+            sumLevel += p.level
+        }
+        
+        //Manual round since I can't be bothered looking up a function
+        return Int(Double(sumLevel) / Double(player.count) + 0.5)
     }
     
     func initAvatars(onLayer: SKScene) {
