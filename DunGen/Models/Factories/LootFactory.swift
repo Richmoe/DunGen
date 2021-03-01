@@ -131,7 +131,28 @@ class LootFactory {
         
         let roll = DGRand.sharedInstance.getRand(to: 100)
         
-        if (cr <= 4) {
+        
+        if (cr <= 1) {
+            if (roll <= 80) {
+                //Nada
+            } else if (roll <= 92) {
+                loot.copper = GetDiceRoll("2d6")
+            } else if (roll <= 98) {
+                loot.silver = GetDiceRoll("1d6")
+            } else {
+                loot.electrum = GetDiceRoll("1d2")
+            }
+        } else if (cr <= 2) {
+            if (roll <= 40) {
+                loot.copper = GetDiceRoll("3d6")
+            } else if (roll <= 80) {
+                loot.silver = GetDiceRoll("2d6")
+            } else if (roll <= 95) {
+                loot.electrum = GetDiceRoll("1d6")
+            } else {
+                loot.gold = GetDiceRoll("1d3")
+            }
+        } else if (cr <= 4) {
             if (roll <= 30) {
                 loot.copper = GetDiceRoll("5d6")
             } else if (roll <= 60) {

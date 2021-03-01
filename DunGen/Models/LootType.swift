@@ -80,6 +80,32 @@ class Loot {
             str += "\(m)\r\n"
         }
         
+        if (str.count == 0) {
+            let r = DGRand.getRand(15)
+            switch r {
+            case 0:
+                str = "Nothing of value"
+            case 1:
+                str = "Worthless trinkets"
+            case 2:
+                str = "Moldy cheese"
+            case 3:
+                str = "Stale bread"
+            case 4:
+                str = "Rotting clothing"
+            case 5:
+                str = "A scrap of rusty armor"
+            case 6:
+                str = "A broken dagger"
+            case 7:
+                str = "Garbage"
+            case 8:
+                str = "A half-eaten mouse"
+            default:
+                str = "Nothing"
+            }
+        }
+        
         
         return str
     }

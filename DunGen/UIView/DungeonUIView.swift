@@ -42,6 +42,19 @@ struct DungeonUIView: View {
                 
                 
             }
+        } else if (adventure.showCharacters) {
+            ZStack() {
+                Image("Char BG")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                
+                
+                PlayerEditView(party: Global.party)
+                    .padding(.leading, 60)
+                    .frame(alignment: .top)
+                
+                
+            }
         } else {
             EmptyView()
         }

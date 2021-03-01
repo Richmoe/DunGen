@@ -54,6 +54,7 @@ class Adventure : ObservableObject {
     private var crToExpTable = Dictionary<Int, Int>()
     
     @Published var showTreasure = false
+    @Published var showCharacters = false
     
     @Published var currentStatus: String = "This is a status message that has a bunch of stuff in it. It may be a paragraph of info. Let's see how it fits in the Overlay."
     

@@ -81,9 +81,9 @@ class Drop {
         }
     }
     
-    func getLoot() -> Loot{
-        print("Getting loot")
-        print(loot.toString())
+    func getLoot() -> Loot {
+        //print("Getting loot")
+        //print(loot.toString())
         
        return loot
         

@@ -49,16 +49,21 @@ struct AdventureView: View {
 
 
             HStack {
+                Group {
                 Spacer()
                 Button("Experience: \(adventure.experienceAccumulator)") {
 
+                }
                 }
                 Spacer()
                 Button("Treasure") {
                     adventure.showTreasure = !adventure.showTreasure
                 }
                 Spacer()
-
+                Button("Players") {
+                    adventure.showCharacters = !adventure.showCharacters
+                }
+                Spacer()
                 
                 Button("Debug") {
                     self.showActionSheet = true

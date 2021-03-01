@@ -42,26 +42,16 @@ class Encounter {
     
     init(at: MapPoint) {
         
-        /*
-        var m : Monster
-        for _ in 1...4 {
-            m =  MobFactory.sharedInstance.makeMonster(name: "goblin")
-            mob.append(m)
-            
-            //TEMP
-            let l = Loot()
-            l.random()
-            loot.append(l)
-        }
- */
         self.at = at
     }
     
     func addMonster (_ m: Monster) {
         mob.append(m)
-        //TEMP
-        let l = Loot()
-        l.random()
+
+        //convert mob cr to treasure cr (int with 0 = all <1)
+        let cr = Int(m.challengeRating)
+        print("AddMonster cr: \(cr), \(m.challengeRating)")
+        let l = LootFactory.sharedInstance.getIndividualTreasure(cr: cr)
         loot.append(l)
     }
     
