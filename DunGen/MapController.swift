@@ -80,7 +80,7 @@ class MapController {
                         }
                     } else {
                         //print ("First click on encounter")
-                        Global.adventure.currentStatus = e.toString()
+                        Global.adventure.setStatus( e.toString() )
                         targetSpriteAt(clickSpot)
                     }
                 }
@@ -174,7 +174,7 @@ class MapController {
         //Not going to bother with passive perception at this point, so let's assume all secret doors are DC15
         if (roll > 15) {
             revealSecretDoor(at: at)
-            Global.adventure.currentStatus = "You notice what appears to be a secret door!"
+            Global.adventure.setStatus("You notice what appears to be a secret door!", timed: true)
         }
     }
     
@@ -196,14 +196,14 @@ class MapController {
                         //TODO figure this out
                         if (roll > 12) {
                             revealSecretDoor(at: srchPt)
-                            Global.adventure.currentStatus = "You notice what appears to be a secret door!"
+                            Global.adventure.setStatus("You notice what appears to be a secret door!", timed: true)
                             return
                         }
                     }
                 }
             }
         }
-        Global.adventure.currentStatus = "You don't find anything."
+        Global.adventure.setStatus("You don't find anything.", timed: true)
     }
     
     func pickLock(at: MapPoint) {
@@ -215,9 +215,9 @@ class MapController {
         //Todo:
         if (roll > 15) {
             unlockDoor(at: at)
-            Global.adventure.currentStatus = "You've successfully unlocked the door!"
+            Global.adventure.setStatus("You've successfully unlocked the door!", timed: true)
         } else {
-            Global.adventure.currentStatus = "The lock proves to be too difficult for you."
+            Global.adventure.setStatus("The lock proves to be too difficult for you.", timed: true)
         }
     }
     

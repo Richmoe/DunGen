@@ -57,6 +57,7 @@ class Adventure : ObservableObject {
     @Published var showCharacters = false
     
     @Published var currentStatus: String = "This is a status message that has a bunch of stuff in it. It may be a paragraph of info. Let's see how it fits in the Overlay."
+    var statusTimer: Timer?
     
     init() {
 
@@ -66,6 +67,7 @@ class Adventure : ObservableObject {
 
         
         loadCrToExpTable()
+        
 
     }
     
@@ -77,10 +79,31 @@ class Adventure : ObservableObject {
     func getLoot(_ l: Loot) {
         lootAccumulator.addLoot(l)
         
-        currentStatus = l.toString()
+        setStatus(l.toString(), timed: true)
         //lootAccumulator.printDebug()
     }
     
+    func setStatus (_ str: String, timed: Bool = false) {
+        
+        currentStatus = str
+        
+        if let t = statusTimer {
+            t.invalidate()
+        }
+        
+        if (timed) {
+            statusTimer = Timer.scheduledTimer(withTimeInterval: 4.0,  repeats: false) {timer in
+                print("timer fired")
+                self.getCurrentStatus()
+            }
+        }
+        
+    }
+    
+    func getCurrentStatus() {
+        
+        setStatus("")
+    }
     
 
     func calcEncounterExperience(encounter: Encounter) {

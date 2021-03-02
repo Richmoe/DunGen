@@ -118,7 +118,7 @@ class Map {
                         //Do we have secret at this point???
                         
                         if (passage.locked) {
-                            Global.adventure.currentStatus = "The door is locked."
+                            Global.adventure.setStatus("The door is locked.", timed: true)
                         }
                         print("DOOR IS LOCKED or SECRET!!!")
                         return false
