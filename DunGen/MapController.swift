@@ -20,6 +20,9 @@ class MapController {
     
     var dropQueue = [Drop]()
     
+    var lastRoom : Int = 0
+    
+    
     init(dungeon: Dungeon, tileMap: SKTileMapNode) {
         
         self.dungeon = dungeon
@@ -52,6 +55,8 @@ class MapController {
         
         //Check the grid we clicked on. If self, ignore
         let clickSpot = dungeon.currentLevel().CGPointToMapPoint(clickPt)
+        
+        //print ("clickSpot \(clickSpot) finds room \(dungeon.currentLevel().getRoom(mapPt: clickSpot))")
         
         //Figure out if anything is there:
         let block = dungeon.currentLevel().getBlock(clickSpot)
@@ -159,7 +164,23 @@ class MapController {
                 passiveSearch(at: stepMove)
             }
             
+            //
             fogOfWar()
+            
+            
+            let rid = dungeon.currentLevel().getRoom(mapPt: stepMove)
+            if (rid != lastRoom) {
+                lastRoom = rid
+                if (rid == 0) {
+                    Global.adventure.setStatus("")
+                } else {
+                    let r = dungeon.currentLevel().rooms[rid - 1]
+                    //print ("Room ID: \(rid) and from array I get \(r.id)")
+                    Global.adventure.setStatus(r.getDescription())
+                    
+                }
+            }
+
         }
         
     }

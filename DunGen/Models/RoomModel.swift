@@ -199,4 +199,11 @@ class Room {
         return range.last!
     }
     
+    func getDescription() -> String {
+        
+        let d = DescriptionFactory.sharedInstance
+        
+        return "A large empty room"
+    }
+    
 }

@@ -1,0 +1,54 @@
+d100,stuff
+1,broken arrow
+4,charcoal lump
+6,bone
+7,broken bottle
+8,corroded chain
+9,splintered club
+19,cobweb
+20,bent copper coin
+22,ceiling crack
+24,floor crack
+26,wall crack
+27,dagger hilt
+29,damp ceiling
+33,damp wall
+40,animal scat
+41,bloody handprint
+44,dung piece
+49,dust
+50,cracked flask
+51,food scrap
+52,common fungi
+55,wood chunk
+56,fur chunk
+57,cracked hammer head
+58,badly-dented helmet
+59,bent iron bar
+60,blunt javelin head
+61,leather boot
+64,branch
+68,mold spot
+69,pick handle
+70,broken pole
+71,pottery shard
+73,rag
+74,rotten rope
+76,dirt pile
+77,torn sack
+78,slimy ceiling
+79,slimy floor
+80,slimy wall
+81,rusted spike
+83,stick
+84,small stone
+85,straw
+86,broken sword blade
+87,broken fang
+88,torch stub
+91,ruined painting
+93,small puddle
+95,large puddle
+96,candle
+97,candle stub
+100,rotten fruit
