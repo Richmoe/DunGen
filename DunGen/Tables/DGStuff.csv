@@ -7,19 +7,19 @@ d100,stuff
 9,splintered club
 19,cobweb
 20,bent copper coin
-22,ceiling crack
-24,floor crack
-26,wall crack
+22,blank paper
+24,tile
+26,plank
 27,dagger hilt
-29,damp ceiling
-33,damp wall
-40,animal scat
-41,bloody handprint
+29,cracked flask
+33,wine bottle
+40,animal dropping
+41,bloody bone
 44,dung piece
-49,dust
+49,dust bunny
 50,cracked flask
 51,food scrap
-52,common fungi
+52,fungus
 55,wood chunk
 56,fur chunk
 57,cracked hammer head
@@ -27,8 +27,8 @@ d100,stuff
 59,bent iron bar
 60,blunt javelin head
 61,leather boot
-64,branch
-68,mold spot
+64,empty bag
+68,moldy cheese
 69,pick handle
 70,broken pole
 71,pottery shard
@@ -36,19 +36,19 @@ d100,stuff
 74,rotten rope
 76,dirt pile
 77,torn sack
-78,slimy ceiling
-79,slimy floor
-80,slimy wall
+78,slimy stone
+79,worthless gemstone
+80,leather strap
 81,rusted spike
 83,stick
-84,small stone
-85,straw
+84,small shoe
+85,cheap cloth
 86,broken sword blade
 87,broken fang
 88,torch stub
 91,ruined painting
-93,small puddle
-95,large puddle
+93,small cup
+95,large goblet
 96,candle
 97,candle stub
-100,rotten fruit
+100,eggshell

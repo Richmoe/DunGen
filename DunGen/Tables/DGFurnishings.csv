@@ -12,14 +12,14 @@ d100,furn
 12,brazier
 13,bucket
 14,buffet
-15,bunks
+15,bunk
 16,large barrel
 17,cabinet
 18,candelabrum
 19,large carpet
 20,cask
 21,chandelier
-22,charcoal
+22,empty sack
 24,chair
 25,padded chair
 26,padded arm chair
@@ -27,7 +27,7 @@ d100,furn
 28,medium chest
 29,chest
 30,wardrobe
-31,coal
+31,torture rack
 33,couch
 34,crate
 35,weapon stand
@@ -58,7 +58,7 @@ d100,furn
 66,large cask
 67,quilt
 70,small rug
-71,rushes
+71,branch
 72,sack
 73,wall sconce
 74,screen
@@ -71,7 +71,7 @@ d100,furn
 82,stand
 83,statue
 84,high stool
-85,normal stool
+85,stool
 86,large table
 87,long table
 88,low table
@@ -85,5 +85,5 @@ d100,furn
 96,trough
 97,urn
 98,wall basin
-99,wood shelving
+99,log
 100,workbench

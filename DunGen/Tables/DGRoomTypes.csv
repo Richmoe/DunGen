@@ -1,49 +1,48 @@
-d200,room
-1,Antechamber
-4,Armory
-5,Audience chamber
-6,Aviary
-7,Banquet room
-11,Barracks
-12,Latrine
-16,Bedroom
-17,Bestiary
-20,Cell
-21,Chapel
-22,Cistern
-23,Classroom
-24,Closet
-25,Conjuring room
-26,Court
-30,Crypt
-33,Dining room
-34,Divination room
-35,Dormitory
-36,Dressing room
-37,Game room
-42,Guardroom
-48,Hall
-49,Great Hall
-50,Kennel
-54,Kitchen
-55,Laboratory
-56,Library
-57,Lounge
-58,Office
-59,Pantry
-60,Animal Pen
-61,Shrine
-62,Smithy
-63,Stable
-66,Storage room
-67,Vault
-70,Study
-71,Temple
-72,Throne room
-75,Torture chamber
-76,Training room
-77,Trophy room
-78,Nursery
-79,Well
-82,Workshop
-200,Empty
+d82,room
+1,antechamber
+4,armory
+5,audience chamber
+6,aviary
+7,banquet room
+11,barracks
+12,latrine
+16,bedroom
+17,bestiary
+20,cell
+21,chapel
+22,cistern
+23,classroom
+24,closet
+25,conjuring room
+26,court
+30,crypt
+33,dining room
+34,divination room
+35,dormitory
+36,dressing room
+37,game room
+42,guardroom
+48,hall
+49,great hall
+50,kennel
+54,kitchen
+55,laboratory
+56,library
+57,lounge
+58,office
+59,pantry
+60,animal pen
+61,shrine
+62,smithy
+63,stable
+66,storage room
+67,vault
+70,study
+71,temple
+72,throne room
+75,torture chamber
+76,training room
+77,trophy room
+78,nursery
+79,well
+82,workshop

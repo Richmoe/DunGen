@@ -31,17 +31,23 @@ class DescriptionFactory {
         parseLists()
         
         //Test:
+        /*
         print ("Get Test: \(getDescription(type: "a_room", index: getRandomEntry(type: "room")))")
-        print ("Get Test: \(getDescription(type: "furnishings_s", index: getRandomEntry(type: "furnishings")))")
+        print ("Get Test: \(getDescription(type: "furn_s", index: getRandomEntry(type: "furn")))")
         print ("Get Test: \(getDescription(type: "A_ROOM", index: getRandomEntry(type: "room")))")
         
         print ("Test temmplate: \(parseTemplate("Hello %Adj% World"))")
+        */
+        
+        for _ in 0...10 {
+            print("test Template2: \(parseTemplate(getDescription(type: "template")))")
+        }
     }
     
     func parseLists() {
+
         
-        
-        for filename in ["DGRoomTypes", "DGAdjectives", "DGFurnishings", "DGSmells", "DGStuff"] {
+        for filename in ["DGTemplates", "DGRoomTypes", "DGAdjectives", "DGFurnishings", "DGSmells", "DGStuff"] {
             let parsedCSV: [[String]] = Helper.loadFromCSV(fileName: "\(filename).csv")
             
             //2d array: [ix, string]
@@ -55,7 +61,7 @@ class DescriptionFactory {
                 }
                 
                 if let roll = Int(d[0]) {
-                    dtab.append((roll: roll, item: d[1].lowercased()))
+                    dtab.append((roll: roll, item: d[1]))
                 }
             }
             
@@ -116,7 +122,7 @@ class DescriptionFactory {
                         if (returnString.last == "y") {
                             returnString.removeLast()
                             returnString = returnString + "ies"
-                        } else if (returnString.last == "s") {
+                        } else if (returnString.last == "s" || returnString.last == "x") {
                             returnString = returnString + "es"
                         } else {
                             returnString = returnString + "s"
@@ -162,7 +168,6 @@ class DescriptionFactory {
         var outString = ""
         
         for char in template {
-            
             if (char == "%") {
                 if (inKeyword) {
                     //resolve keyword
@@ -175,10 +180,15 @@ class DescriptionFactory {
                     inKeyword = true
                 }
             } else {
+                var ch = char
+                if (char == "<") {
+                    ch = ","
+                }
+                
                 if (inKeyword) {
-                    keyword = keyword + String(char)
+                    keyword = keyword + String(ch)
                 } else {
-                    outString = outString + String(char)
+                    outString = outString + String(ch)
                 }
             }
             
