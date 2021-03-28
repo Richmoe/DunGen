@@ -65,6 +65,7 @@ class TreasureGenerator {
         //store it at the block
         map.getBlock(treasureAt).treasure = Drop(type: 2, name: "Treasure Chest", loot: loot)
         
+        room.treasure = loot
         print("Generated treasure at \(treasureAt)")
         
     }

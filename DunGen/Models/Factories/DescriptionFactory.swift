@@ -44,6 +44,10 @@ class DescriptionFactory {
         }
     }
     
+    func getRoomDescription() -> String {
+        return parseTemplate(getDescription(type: "template"))
+    }
+    
     func parseLists() {
 
         

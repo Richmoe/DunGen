@@ -117,6 +117,18 @@ class MapController {
                     if (sprites[0] == dropQueue[i].sprite) {
                         print ("Clicked a drop!!")
                         
+                        //get room at clickspot:
+                        let rid = dungeon.currentLevel().getRoom(mapPt: clickSpot)
+                        if (rid > 0) {
+                            let r = dungeon.currentLevel().rooms[rid - 1]
+                        
+                            if let rLoot = r.treasure {
+                                if (rLoot === dropQueue[i].getLoot()) {
+                                    r.treasure = nil
+                                }
+                            }
+                        }
+                        
                         Global.adventure.getLoot(dropQueue[i].getLoot())
                         dropQueue[i].sprite?.removeFromParent()
                         dropQueue.remove(at: i)

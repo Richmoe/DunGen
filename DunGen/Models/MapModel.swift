@@ -41,8 +41,8 @@ class Map {
     func getRoom(mapPt: MapPoint) -> Int {
         
         for r in rooms {
-            if (r.at.col <= mapPt.col && (r.at.col + r.width) >= mapPt.col) {
-                if (r.at.row <= mapPt.row && (r.at.row + r.height) >= mapPt.row) {
+            if (r.at.col <= mapPt.col && (r.at.col + r.width) > mapPt.col) {
+                if (r.at.row <= mapPt.row && (r.at.row + r.height) > mapPt.row) {
                     return r.id
                 }
             }

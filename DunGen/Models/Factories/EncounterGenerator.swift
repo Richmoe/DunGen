@@ -90,6 +90,12 @@ class EncounterGenerator {
         //print("Encounter \(e) at map block: \(encounterAt)")
         map.getBlock(encounterAt).encounter = e
         
+        //Store it in the room too:
+        room.encounter = e
+        
+        //and finally, store room in encounter
+        e.room = room
+        
         //TODO handle > 4 which means it spans multiple spots? Push that to the battle mode?
         
         

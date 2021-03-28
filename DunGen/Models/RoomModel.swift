@@ -20,11 +20,14 @@ class Room {
     var floorBlocks: [[MapBlock]]
     
     var exitStack: [(MapPoint,Passage)] = []
+    var description: String = ""
     
 //    var hasEncounter = false
 //    var hasTrip = false
 //    var hasTreasure = false
     var hasSpecial = false //flag for if the room has something special about it, encounter, etc
+    var encounter: Encounter? //pointer to opt enc
+    var treasure: Loot? //pointer to opt loot
     
     init (at: MapPoint, w: Int = 0, h: Int = 0) {
         
@@ -201,9 +204,21 @@ class Room {
     
     func getDescription() -> String {
         
-        let d = DescriptionFactory.sharedInstance
+        if (description.count == 0) {
+            let d = DescriptionFactory.sharedInstance
+            description = d.getRoomDescription()
+        }
         
-        return "A large empty room"
+        var desc = description
+        
+        if let _ = treasure {
+            desc = desc + "\n\nYou also see a treasure chest"
+        }
+        
+        if let e = encounter {
+            desc = desc + "\n\nYou also see " + e.toString()
+        }
+        return desc
     }
     
 }

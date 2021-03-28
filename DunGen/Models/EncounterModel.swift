@@ -19,6 +19,8 @@ class Encounter {
     // Map location
     @Published var at = MapPoint(row: 0, col: 0)
     
+    var room: Room?
+    
 //    let STATE_ACTIVE = 0
 //    let STATE_CLEARED = 1
     var stateActive = true
@@ -131,6 +133,11 @@ class Encounter {
                 }
             }
     
+        }
+        
+        //Clear from room:
+        if let r = room {
+            r.encounter = nil
         }
 
         removeMapSprites()
