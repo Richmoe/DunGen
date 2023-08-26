@@ -40,12 +40,12 @@ class DescriptionFactory {
         */
         
         for _ in 0...10 {
-            print("test Template2: \(parseTemplate(getDescription(type: "template")))")
+            print("test Template2: \(parseTemplate(getDescription(type: "description")))")
         }
     }
     
     func getRoomDescription() -> String {
-        return parseTemplate(getDescription(type: "template"))
+        return parseTemplate(getDescription(type: "description"))
     }
     
     func parseLists() {
